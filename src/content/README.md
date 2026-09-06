@@ -1,0 +1,1 @@
+Typed, Zod-validated single source of copy, rates, nav items, FAQs, SEO strings and contact details, sourced only from `docs/02_CONTENT_SOURCE_OF_TRUTH.md`. No MUI, no JSX — see CLAUDE.md §3 and §5.4.

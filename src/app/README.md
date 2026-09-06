@@ -1,0 +1,1 @@
+Next.js App Router routes only: `metadata`/`generateMetadata`, data loading, JSON-LD injection, and a single container import per `page.tsx` (target <=40 lines, no JSX layout). No MUI, no business logic — see CLAUDE.md §5.2.

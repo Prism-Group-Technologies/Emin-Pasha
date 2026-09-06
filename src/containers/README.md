@@ -1,0 +1,1 @@
+Page content composed from `src/components`, one folder per page with atomic sub-folders (`atoms/`, `molecules/`, `organisms/`, `hooks/`, `types/`, `utils/`, `constants/`) added as each page is built. No MUI imports, no business logic beyond composition — see CLAUDE.md §5.2.

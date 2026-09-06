@@ -1,0 +1,63 @@
+{
+  "name": "emin-pasha-hotel-spa",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "analyze": "ANALYZE=true next build --webpack",
+    "check:content": "tsx scripts/check-content.ts",
+    "generate:llms": "tsx scripts/generate-llms.ts",
+    "check:seo": "tsx scripts/check-seo.ts",
+    "prebuild": "yarn generate:llms",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@emotion/cache": "11.14.0",
+    "@emotion/react": "11.14.0",
+    "@emotion/server": "11.11.0",
+    "@emotion/styled": "11.14.1",
+    "@hookform/resolvers": "5.7.1",
+    "@mui/icons-material": "6.5.0",
+    "@mui/material": "6.5.0",
+    "@mui/material-nextjs": "6.5.0",
+    "@mui/x-date-pickers": "7.29.4",
+    "date-fns": "4.4.0",
+    "next": "16.2.12",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-hook-form": "7.84.0",
+    "zod": "4.4.3",
+    "zustand": "5.0.14"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "16.2.12",
+    "@testing-library/dom": "10.4.1",
+    "@testing-library/jest-dom": "6.9.1",
+    "@testing-library/react": "16.3.0",
+    "@testing-library/user-event": "14.6.1",
+    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@types/node": "20.19.43",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "@vitejs/plugin-react": "5.0.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.2.12",
+    "jsdom": "27.0.0",
+    "prettier": "3.9.6",
+    "server-only": "0.0.1",
+    "tsx": "4.23.3",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
+  }
+}

@@ -1,0 +1,10 @@
+.next/
+out/
+build/
+coverage/
+node_modules/
+yarn.lock
+next-env.d.ts
+docs/
+CLAUDE.md
+*.tgz

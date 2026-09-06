@@ -1,0 +1,51 @@
+# The Emin Pasha Hotel & Spa
+
+> A collage of history, culture and nature — in a pouch of serenity.
+
+## Identity
+
+- **Name:** The Emin Pasha Hotel & Spa
+- **Short name:** Emin Pasha
+- **Category:** Luxury boutique hotel, spa and lifestyle destination
+- **Address:** Plot 27 Akii Bua Road, Nakasero, P.O. Box 74764, Kampala, Uganda
+- **Neighbourhood:** Nakasero — Kampala's diplomatic, business and embassy quarter
+- **Telephone:** +256 312 264 712
+- **Email:** info@eminpasha.com
+- **Reservations:** reservations@eminpasha.com
+- **WhatsApp:** +256 764 042 543 (https://wa.me/256764042543)
+- **Check-in / check-out:** 14:00 / 10:00
+- **Currency:** UGX
+- **Website:** http://localhost:3000
+
+## Summary
+
+The Emin Pasha Hotel & Spa is Kampala's boutique landmark: a garden estate in the heart of Nakasero with three restaurants, two bars, a full spa and wellness centre, a 300ft pool and some of the city's most characterful event spaces. It is named after Emin Pasha — the physician and naturalist who came to this region not to conquer it but to understand it — and that spirit of curiosity, humanity and warmth is what our guests actually feel when they stay with us.
+
+## Rooms and rates
+
+Four ways to stay, one thing in common: the gardens outside your window and the quiet of Nakasero beyond them. Every room and suite comes with fast unlimited fibre, 24/7 room service and an à la carte breakfast served the way you like it. Rates from UGX 250,000 per night.
+
+| Room category | Sleeps | Rate per night |
+|---|---|---|
+| Superior Room | 1–2 guests | UGX 350,000 |
+| Garden Room | 1–2 guests | UGX 250,000 |
+| Garden Suites | 2–3 guests | UGX 250,000 |
+| Superior Suites | 1–3 guests | UGX 250,000 |
+
+Every room includes: 24/7 room service with a Special-Select In-Room Dining Menu; fast unlimited fibre internet across a secure cabled and Wi-Fi network; à la carte breakfast with a bespoke service offering; in-room safe for valuables.
+
+Rates are quoted in Ugandan Shillings (UGX). No USD rate is published.
+
+## Contact and booking
+
+- Telephone: +256 312 264 712
+- Email: info@eminpasha.com
+- Reservations: reservations@eminpasha.com
+- WhatsApp: https://wa.me/256764042543
+- instagram: https://www.instagram.com/eminpashahotelandspa
+- facebook: https://www.facebook.com/eminpashahotelandspa/
+- x: https://x.com/theeminpasha
+
+Online booking URL is not yet published; book by phone, WhatsApp or email.
+
+Full fact sheet: http://localhost:3000/llms-full.txt

@@ -1,0 +1,213 @@
+# The Emin Pasha Hotel & Spa
+
+> A collage of history, culture and nature — in a pouch of serenity.
+
+## Identity
+
+- **Name:** The Emin Pasha Hotel & Spa
+- **Short name:** Emin Pasha
+- **Category:** Luxury boutique hotel, spa and lifestyle destination
+- **Address:** Plot 27 Akii Bua Road, Nakasero, P.O. Box 74764, Kampala, Uganda
+- **Neighbourhood:** Nakasero — Kampala's diplomatic, business and embassy quarter
+- **Telephone:** +256 312 264 712
+- **Email:** info@eminpasha.com
+- **Reservations:** reservations@eminpasha.com
+- **WhatsApp:** +256 764 042 543 (https://wa.me/256764042543)
+- **Check-in / check-out:** 14:00 / 10:00
+- **Currency:** UGX
+- **Website:** http://localhost:3000
+
+## About
+
+For the discerning traveller, diplomat, executive and Kampala local who wants luxury with a soul rather than luxury off a shelf, The Emin Pasha Hotel & Spa is a boutique hotel and spa set in landscaped gardens in the heart of Nakasero that blends historic charm with modern comfort, bespoke service and a genuine appreciation of Uganda's heritage. Unlike the international chain hotels that dominate Kampala's upper tier, Emin Pasha is independent, intimate, garden-set and rooted in a specific Ugandan story — a place where guests feel they have arrived somewhere, not merely checked in.
+
+## Rooms and rates
+
+Four ways to stay, one thing in common: the gardens outside your window and the quiet of Nakasero beyond them. Every room and suite comes with fast unlimited fibre, 24/7 room service and an à la carte breakfast served the way you like it. Rates from UGX 250,000 per night.
+
+| Room category | Sleeps | Rate per night |
+|---|---|---|
+| Superior Room | 1–2 guests | UGX 350,000 |
+| Garden Room | 1–2 guests | UGX 250,000 |
+| Garden Suites | 2–3 guests | UGX 250,000 |
+| Superior Suites | 1–3 guests | UGX 250,000 |
+
+Every room includes: 24/7 room service with a Special-Select In-Room Dining Menu; fast unlimited fibre internet across a secure cabled and Wi-Fi network; à la carte breakfast with a bespoke service offering; in-room safe for valuables.
+
+Rates are quoted in Ugandan Shillings (UGX). No USD rate is published.
+
+## Restaurants and bars
+
+Savour exceptional cuisine inspired by Uganda's rich flavours, served in elegant settings steeped in history. Three uniquely distinct restaurants and two bars, celebrated for their cuisine, their service and their organic ambience. Our dining rooms feature a modern dumbwaiter, so that the culinary artistry on display becomes part of the experience. The menu draws on Asian, European and African influences — classic favourites alongside creative dishes worth travelling for.
+
+- **Hakki Pasha Restaurant & Bar** (restaurant) — The premium dining establishment: a delectable fusion of international and local flavours expertly crafted by the culinary team; exquisite dishes and handcrafted cocktails in a vibrant, elegant setting.
+- **Sir Samuel Baker Fine Dining** (restaurant) — A sophisticated fine-dining restaurant; a culinary journey showcasing the finest ingredients and meticulous attention to detail.
+- **The Rooftop Terrace** (bar) — Breathtaking panoramic views of the city; a serene atmosphere, refreshing beverages and scenic beauty.
+- **Manutea Wine & Whisky Lounge** (bar) — A sophisticated ambience with a carefully curated selection of fine wines and whiskies from around the world.
+- **In-Room Dining** (in-room) — 24/7 across every room category, with a Special-Select In-Room Dining Menu.
+
+Restaurant and bar opening hours are not published; contact the hotel to confirm.
+
+## Spa, gym and pool
+
+- **Swanky Spa & Wellness Centre** — Daily, 7:00am – 9:00pm. Rejuvenate body and mind with signature treatments crafted to restore balance, beauty and inner calm; a team of professionals delivering the most calming and luxurious spa experience in the city.
+  Treatments offered: Tailored massage treatments; Facials; Deep sea-salt treatments; A full, rejuvenating Turkish bath experience.
+- **Emin Pasha Gym** — Daily, 6:00am – 9:00pm. Newly renovated, state-of-the-art facility with cutting-edge equipment, personalised fitness programmes, group fitness classes and certified trainers. Membership available to non-resident members as well as hotel guests.
+- **Swimming Pool** — open to hotel guests and the general public. Maximum depth 1.60m; There is no lifeguard on duty; Children may use the pool only when accompanied by a parent, adult or guardian.
+
+Spa treatment prices, gym membership rates and pool day-pass rates are not published; contact the hotel.
+
+## Meetings, events and weddings
+
+- **Kudara Hall** — A state-of-the-art facility, ideal for corporate events, meetings and conferences, with modern amenities and personalised service.
+- **Private Meeting Rooms** — Newly designed, equipped with cutting-edge technology and a dedicated F&B support team.
+- **The Business Centre** — Full office amenities, bookable by individuals and companies; fully equipped for virtual sessions including waiting-room functionality. Equipment includes, but is not limited to: Bluetooth speakerphones, conference bars, collaboration displays, projectors. Provided as standard: internet, bottled water, projectors and notebooks. Dedicated staff are assigned to business centre guests.
+- **Acropole Lounge** — An oasis of elegance nestled within the heart of the hotel; modern design merged with timeless charm; soft lighting over plush furnishings; a harmonious blend of contemporary elements and classic accents. Retrofitted to exude a collage of vintage rustic and modern contemporary experiences, with seating for every mood: by the fireplace (sumptuous armchairs and cosy couches, intimate conversation, a glass of fine wine, the astounding fountain); at the bar (skilled mixologists, artisanal cocktails); in the alcoves (secluded, for solitude or discreet business discussion).
+- **Mehmed Pasha Lounge** — Spectacularly located, with a scenic view directly onto the lustrous gardens and their diverse flora; the ultimate destination for the individual who wants to close out clutter and be in sync with their mind and thoughts; outdoor and indoor seating.
+- **Equatorial Gardens** — Lush greenery, a haven of tranquillity amidst the bustling city; picturesque landscapes, fresh air, inner peace; the perfect outdoor event space — and the best outdoor picture spot in the city.
+
+Capacities by layout are not published; contact the hotel with your numbers.
+
+## Offers
+
+- **Friday Band Night** — Live music, a full bar and the Emin Pasha gardens after dark. Kampala's most characterful Friday night out. UGX 85,000.
+- **Equatorial Sunset Happy Hour** — Sunset Combo UGX 60,000; House Cocktails UGX 20,000. 3:00pm – 8:00pm.
+
+## Policies
+
+### Booking, payments & guarantees
+
+- All group bookings must be confirmed 14 days prior to arrival, and full payment of group bookings is required 14 days prior to arrival.
+- All final changes and rooming lists must be received in writing 7 days prior to arrival for all groups. Any changes made thereafter will be charged in full.
+- Bookings not confirmed in writing within the above timeframes will be released.
+- Groups of over 10 rooms must be guaranteed with a 50% deposit at the time of booking.
+- All rates are non-commissionable and non-negotiable.
+- All non-guaranteed bookings are released at 18h00 daily if not guaranteed by company LPO, credit card or prepayment.
+- Bookings settled by a local company require an LPO (Local Purchase Order) before guest arrival; alternatively, full payment is required before check-in.
+- Credit cards accepted: Visa, MasterCard and American Express only.
+- Electronic funds transfer must be completed one week prior to check-in, with proof of payment sent to the hotel for verification.
+
+### Check-in / check-out
+
+- Check-out: strictly 10h00. Check-in: 14h00.
+- Early check-in on request; not guaranteed during high occupancy. To guarantee it, reserve the room from the night before arrival, charged at 100% of the daily rate including taxes.
+- Late check-out, bookable at the front desk on the morning of departure: 10h00–18h00 at 50% of the daily rate; 18h00 onwards at 100%. Strictly subject to availability.
+
+### Cancellations
+
+- A no-show / cancellation fee applies if bookings are not cancelled in writing at least 48 hours prior to arrival.
+- No-shows and late cancellations are charged at one night's full accommodation including taxes, on the rate booked.
+- If hotel occupancy is high at the time of a no-show or late cancellation, the full number of nights will be charged.
+
+### Special check-in instructions
+
+- Guests will receive an email before arrival with check-in instructions, and front desk staff will greet guests on arrival. For further detail, contact the property using the information on your booking confirmation.
+
+### Spa etiquette
+
+- Arrival — please arrive 15 minutes before your scheduled treatment and enjoy the calm and serenity of the Spa atmosphere. Arriving late makes it necessary to curtail the time of your treatment.
+- Mobile phones — kindly refrain from using your mobile phone anywhere on the Spa premises, and keep it on silent mode at all times.
+- Personal items — we provide a secure place for personal items inside the Spa complex; however, we do not accept liability for loss or damage. We recommend that valuables are stored in the safe located in your room or suite.
+- Health — please communicate any health conditions, including high blood pressure, allergies, pregnancy or any other health-related concern, when making your appointment. We do not recommend consuming alcohol before or directly after spa treatments, or before using any facility in the Spa and Health Club.
+- Age — minimum age for entry to the Spa, the Health Club and the hydrothermal facilities is 16 years. Children under 16 may use the hotel pool if accompanied by a parent or adult.
+- Pool safety — maximum depth 1.60m. There is no lifeguard at the pool. Children may use the pool only when accompanied by an adult, parent or guardian.
+- Smoking — not permitted in the Spa, the Health Club or the sauna area.
+
+## Frequently asked questions
+
+### Where exactly is the hotel?
+
+Plot 27 Akii Bua Road, Nakasero, Kampala — in the city's diplomatic and business quarter, close to the commercial district and cultural attractions, but set back inside landscaped private gardens.
+
+### What are check-in and check-out times?
+
+Check-in from 14h00, check-out strictly by 10h00. Early check-in and late check-out are available on request, subject to availability and charges.
+
+### Do you offer airport transfers?
+
+Yes. Our chauffeured transfer service operates to and from the airport, with flight monitoring so that your driver is waiting regardless of delays. Airport pick-up and drop-off are complimentary on stays of more than one week. Arrange yours at reservations@eminpasha.com.
+
+### Is breakfast included?
+
+Yes — guests are entitled to an à la carte breakfast with a bespoke service offering. Children may not be eligible for complimentary breakfast.
+
+### Is there Wi-Fi?
+
+Yes — fast, unlimited internet across a secure cabled and Wi-Fi fibre network.
+
+### Is there parking?
+
+Yes — adequate and secure parking in a state-of-the-art lot, manned by security personnel.
+
+### Can non-guests use the pool, spa or gym?
+
+Yes. The pool is open to hotel guests and the general public, for swimming or as a venue for poolside parties and events. Gym membership is available for purchase, giving access to our modern facility and professional trainers. The spa welcomes non-resident bookings.
+
+### Are children welcome?
+
+Yes. Children stay free using existing bedding, and may use the hotel pool accompanied by a parent or adult. Please note the Spa, Health Club and hydrothermal facilities are restricted to guests aged 16 and over.
+
+### Is there a lifeguard at the pool?
+
+No. The maximum depth is 1.60m, and children may only use the pool when accompanied by an adult, parent or guardian.
+
+### Do you host weddings and conferences?
+
+Yes. Kudara Hall for conferences and corporate events, private meeting rooms for board-level sessions, and the Equatorial Gardens and wider grounds for weddings, receptions and outdoor events — with accommodation, three restaurants and a dedicated F&B support team on site.
+
+### What payment methods do you accept?
+
+Visa, MasterCard and American Express. Electronic funds transfers must be completed one week before check-in with proof of payment sent for verification. Local company bookings require an LPO before arrival, or full prepayment.
+
+### What is your cancellation policy?
+
+Cancellations must be made in writing at least 48 hours before arrival. No-shows and late cancellations are charged at one night's full accommodation including taxes; during high occupancy, the full number of nights will be charged.
+
+### Do you have a gift shop?
+
+Yes — the Emin Pasha CG Shop, selling authentic Ugandan art pieces and décor.
+
+## Contact and booking
+
+- Telephone: +256 312 264 712
+- Email: info@eminpasha.com
+- Reservations: reservations@eminpasha.com
+- WhatsApp: https://wa.me/256764042543
+- instagram: https://www.instagram.com/eminpashahotelandspa
+- facebook: https://www.facebook.com/eminpashahotelandspa/
+- x: https://x.com/theeminpasha
+
+Online booking URL is not yet published; book by phone, WhatsApp or email.
+
+## Pages
+
+- http://localhost:3000 — boutique hotel Kampala · luxury hotel Kampala · hotels in Nakasero
+- http://localhost:3000/accommodation — hotels in Kampala · rooms Kampala
+- http://localhost:3000/accommodation/superior-room — hotel room Nakasero · corporate hotel Kampala
+- http://localhost:3000/accommodation/garden-room — hotel with gardens in Kampala
+- http://localhost:3000/accommodation/garden-suites — family suite Kampala
+- http://localhost:3000/accommodation/superior-suites — long-stay hotel Kampala
+- http://localhost:3000/dining — restaurants Kampala · fine dining Kampala
+- http://localhost:3000/dining/hakki-pasha-restaurant-bar — restaurant Nakasero
+- http://localhost:3000/dining/sir-samuel-baker-fine-dining — fine dining Kampala
+- http://localhost:3000/dining/rooftop-terrace — rooftop bar Kampala
+- http://localhost:3000/dining/manutea-wine-whisky-lounge — whisky bar Kampala
+- http://localhost:3000/dining/in-room-dining — room service hotel Kampala
+- http://localhost:3000/lounges-and-spaces — lounge Nakasero · garden lounge Kampala
+- http://localhost:3000/spa-and-wellness — spa hotel Kampala
+- http://localhost:3000/spa — best spa in Kampala · Turkish bath Kampala
+- http://localhost:3000/gym — gym membership Nakasero
+- http://localhost:3000/swimming-pool — swimming pool open to public Kampala
+- http://localhost:3000/spa-etiquette — spa policies Kampala
+- http://localhost:3000/meetings-and-events — conference venue Kampala
+- http://localhost:3000/kudara-hall — conference venue Kampala · event hall Kampala
+- http://localhost:3000/meeting-rooms — meeting room Kampala
+- http://localhost:3000/business-centre — business centre with meeting rooms Kampala
+- http://localhost:3000/weddings — wedding venue Kampala · wedding venue Uganda
+- http://localhost:3000/experiences/airport-transfer — hotel near Entebbe airport transfer
+- http://localhost:3000/experiences/cg-shop — art shop Kampala
+- http://localhost:3000/offers — Friday Band Night Kampala · happy hour Kampala
+- http://localhost:3000/our-story — who was Emin Pasha · Emin Pasha Uganda
+- http://localhost:3000/gallery — hotel photos Nakasero
+- http://localhost:3000/faq — Emin Pasha hotel questions
+- http://localhost:3000/contact — contact Emin Pasha Hotel · hotel Nakasero address

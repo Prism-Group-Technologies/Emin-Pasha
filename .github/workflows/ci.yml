@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# Cancel superseded runs on the same branch — a PR that is pushed to twice in
+# a minute should not queue two full builds.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          # Pinned by .nvmrc — the toolchain needs >=20.19.0 (DECISIONS.md D04).
+          node-version-file: .nvmrc
+          cache: yarn
+
+      - name: Install
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Typecheck
+        run: yarn typecheck
+
+      - name: Format
+        run: yarn format:check
+
+      - name: Content integrity
+        run: yarn check:content
+
+      - name: Unit and component tests
+        run: yarn test
+
+      - name: Build
+        run: yarn build
+
+      # check:seo asserts canonicals, metadata lengths, the NAP audit and the
+      # no-orphan rule against the *built* content, so it runs after build.
+      - name: SEO and NAP audit
+        run: yarn check:seo
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: verify
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn build
+      - name: Lighthouse CI
+        run: npx --yes @lhci/cli@0.14.x autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
