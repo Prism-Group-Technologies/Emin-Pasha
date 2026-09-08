@@ -1,5 +1,6 @@
 import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
+import { MediaFrame } from "@/components/atoms/MediaFrame";
 import { ROOM_ASSET_IDS } from "@/containers/accommodation/constants";
 import { assets } from "@/content/assets";
 
@@ -34,12 +35,13 @@ export function RoomGallery({ roomId, roomName }: { roomId: string; roomName: st
       }}
     >
       {gallery.map((asset, index) => (
-        <AssetImage
-          key={asset.id}
-          asset={asset}
-          priority={index === 0}
-          sizes={gallery.length > 1 ? "(max-width: 900px) 100vw, 50vw" : "100vw"}
-        />
+        <MediaFrame key={asset.id} radius="lg" hoverZoom>
+          <AssetImage
+            asset={asset}
+            priority={index === 0}
+            sizes={gallery.length > 1 ? "(max-width: 900px) 100vw, 50vw" : "100vw"}
+          />
+        </MediaFrame>
       ))}
     </Box>
   );

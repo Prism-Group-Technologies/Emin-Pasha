@@ -1,77 +1,59 @@
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
+import { Box } from "@/components/atoms/Box";
 import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
-import { SectionShell } from "@/components/templates/SectionShell";
-import { RoomCard } from "@/containers/accommodation/molecules/RoomCard";
-import { ComparisonTable } from "@/containers/accommodation/organisms/ComparisonTable";
-import { FaqBlock } from "@/containers/accommodation/organisms/FaqBlock";
-import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { RoomGrid } from "@/containers/accommodation/organisms/RoomGrid";
-import { getBookingWidgetData } from "@/containers/booking";
-import { DeferredInlineBookingWidget } from "@/containers/booking/organisms/DeferredBookingWidget";
-import { faqItems } from "@/content/faq";
-import { accommodationPageIntro, rooms } from "@/content/rooms";
-import { alternatingDirection } from "@/theme/motion";
-import { maxGuests } from "@/utils/capacity";
-
-const ROOM_FAQ_IDS = [
-  "check-in-check-out-times",
-  "breakfast-included",
-  "wifi",
-  "children-welcome",
-  "cancellation-policy",
-];
-const roomFaqs = faqItems.filter((item) => ROOM_FAQ_IDS.includes(item.id));
+import { accommodationSectionMotion as m } from "@/containers/accommodation/motion";
+import { AccommodationHero } from "@/containers/accommodation/organisms/AccommodationHero";
+import { AmenitiesSection } from "@/containers/accommodation/organisms/AmenitiesSection";
+import { BookDirectSection } from "@/containers/accommodation/organisms/BookDirectSection";
+import { BookingSection } from "@/containers/accommodation/organisms/BookingSection";
+import { ClosingSection } from "@/containers/accommodation/organisms/ClosingSection";
+import { ComparisonSection } from "@/containers/accommodation/organisms/ComparisonSection";
+import { FaqSection } from "@/containers/accommodation/organisms/FaqSection";
+import { GuestVoices } from "@/containers/accommodation/organisms/GuestVoices";
+import { LocationSection } from "@/containers/accommodation/organisms/LocationSection";
+import { PackagesSection } from "@/containers/accommodation/organisms/PackagesSection";
+import { RoomsSection } from "@/containers/accommodation/organisms/RoomsSection";
+import { accommodationPageIntro } from "@/content/rooms";
 
 /**
- * The Accommodation index. A Server Component; only the guest filter, the
- * booking widget and the FAQ accordion are client islands.
+ * The Accommodation index. A Server Component that composes the section
+ * organisms and holds no logic of its own — the only client islands are the
+ * guest filter inside `RoomsSection` and the deferred booking widget inside
+ * `BookingSection`. Scroll motion is entirely CSS.
+ *
+ * The order is a funnel, not a brochure:
+ *
+ *   hero          — the promise, the rate, and the two in-page CTAs
+ *   rooms         — the four categories, filterable by party size
+ *   amenities     — what every room includes, then the wider estate
+ *   comparison    — the four side by side, the "compare" anchor target
+ *   packages      — four reasons to be here, priced from the rate card
+ *   book direct   — the answer to "should I use an aggregator instead?"
+ *   booking       — check dates: the primary conversion surface, #book
+ *   guest voices  — three attributed reviews, accommodation first
+ *   faq           — the five questions reservations answer most
+ *   location      — Nakasero, check-in/out, directions, cross-sell
+ *   closing       — the last exit, on all three contact channels
+ *
+ * Conversion surfaces are spread rather than stacked: a visitor ready at the
+ * hero jumps straight to #book; one who needs the whole argument still gets it.
  */
 export function AccommodationContainer() {
-  const bookingData = getBookingWidgetData();
-  const guestCeiling = Math.max(...rooms.map((room) => maxGuests(room.capacity)));
-
   return (
     <>
-      <SectionShell
-        motion={alternatingDirection(0)}
-        eyebrow="§ ACCOMMODATION"
-        heading="Rooms & Suites"
-        headingLevel="h1"
-      >
-        <Stack spacing={5}>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Accommodation" }]} />
-          <Text variant="subtitle1" sx={{ maxWidth: "68ch" }}>
-            {accommodationPageIntro}
-          </Text>
-        </Stack>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(1)}>
-        <RoomGrid capacities={rooms.map((room) => room.capacity)} maxGuestsAllowed={guestCeiling}>
-          {rooms.map((room) => (
-            <RoomCard key={room.id} room={room} />
-          ))}
-        </RoomGrid>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(2)} heading="Compare the four" variant="raised">
-        <ComparisonTable rooms={rooms} />
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(3)} heading="Check dates">
-        <DeferredInlineBookingWidget data={bookingData} />
-      </SectionShell>
-
-      {roomFaqs.length > 0 && (
-        <SectionShell motion={alternatingDirection(4)} heading="Good to know" variant="raised">
-          <FaqBlock items={roomFaqs} />
-        </SectionShell>
-      )}
-
-      <SectionShell motion={alternatingDirection(5)} heading="While you are here">
-        <RelatedLinks hrefs={["/dining", "/spa", "/offers"]} />
-      </SectionShell>
+      <AccommodationHero lede={accommodationPageIntro} />
+      <Box sx={{ maxWidth: 1280, mx: "auto", px: { xs: 5, md: 8 }, pt: { xs: 6, md: 7 } }}>
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Accommodation" }]} />
+      </Box>
+      <RoomsSection motion={m.rooms} />
+      <AmenitiesSection motion={m.amenities} />
+      <ComparisonSection motion={m.comparison} />
+      <PackagesSection motion={m.packages} />
+      <BookDirectSection motion={m.bookDirect} />
+      <BookingSection motion={m.booking} />
+      <GuestVoices motion={m.guestVoices} />
+      <FaqSection motion={m.faq} />
+      <LocationSection motion={m.location} />
+      <ClosingSection motion={m.closing} />
     </>
   );
 }

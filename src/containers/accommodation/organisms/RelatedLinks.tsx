@@ -1,16 +1,39 @@
 import { Box } from "@/components/atoms/Box";
+import { Icon, type IconName } from "@/components/atoms/Icon";
+import { IconBadge } from "@/components/atoms/IconBadge";
 import { Link } from "@/components/atoms/Link";
+import { Text } from "@/components/atoms/Text";
 import { findNavItem } from "@/content/navigation";
+import { radiusTokens } from "@/theme/tokens";
+
+const ICON_BY_HREF: Record<string, IconName> = {
+  "/spa": "spa",
+  "/dining": "restaurant",
+  "/offers": "celebration",
+  "/experiences/airport-transfer": "directions",
+};
 
 /**
- * Internal links out of Accommodation. Labels resolve from `navigation` by
- * href, so a section renamed anywhere is renamed here too (CLAUDE.md §5.4).
+ * Internal links out of Accommodation, as a row of cards. Labels resolve
+ * from `navigation` by href, so a section renamed anywhere is renamed here
+ * too (CLAUDE.md §5.4). Shared by the location band and the room detail page.
  */
 export function RelatedLinks({ hrefs }: { hrefs: string[] }) {
   return (
     <Box
       component="ul"
-      sx={{ listStyle: "none", m: 0, p: 0, display: "flex", flexWrap: "wrap", gap: 6 }}
+      sx={{
+        listStyle: "none",
+        m: 0,
+        p: 0,
+        display: "grid",
+        gridTemplateColumns: {
+          xs: "1fr",
+          sm: "repeat(2, minmax(0, 1fr))",
+          md: "repeat(3, minmax(0, 1fr))",
+        },
+        gap: 3,
+      }}
     >
       {hrefs.map((href) => {
         const item = findNavItem(href);
@@ -18,11 +41,36 @@ export function RelatedLinks({ hrefs }: { hrefs: string[] }) {
           return null;
         }
         return (
-          <li key={href}>
-            <Link href={href} variant="h4" underline="hover">
-              {item.label}
+          <Box component="li" key={href}>
+            <Link
+              href={href}
+              underline="none"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 3,
+                p: 3,
+                height: "100%",
+                border: "1px solid",
+                borderColor: "divider",
+                borderRadius: `${radiusTokens.lg}px`,
+                color: "text.primary",
+                transition: "border-color 200ms cubic-bezier(0.16,1,0.3,1)",
+                "&:hover": { borderColor: "primary.main" },
+              }}
+            >
+              <IconBadge name={ICON_BY_HREF[href] ?? "arrow-forward"} size={40} />
+              <Text variant="h5" component="span" sx={{ flex: 1 }}>
+                {item.label}
+              </Text>
+              <Icon
+                name="arrow-forward"
+                fontSize="small"
+                aria-hidden
+                sx={{ color: "primary.main", flexShrink: 0 }}
+              />
             </Link>
-          </li>
+          </Box>
         );
       })}
     </Box>

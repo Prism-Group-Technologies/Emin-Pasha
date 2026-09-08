@@ -1,6 +1,6 @@
 import type { Components, Theme } from "@mui/material/styles";
 
-import { easingTokens, motionTokens, radiusTokens, shadowTokens } from "./tokens";
+import { colorTokens, easingTokens, motionTokens, radiusTokens, shadowTokens } from "./tokens";
 
 const hoverTransition = `background-color ${motionTokens.buttonHover}ms ${easingTokens.emin}, transform ${motionTokens.buttonHover}ms ${easingTokens.emin}`;
 
@@ -68,8 +68,19 @@ export const components: Components<Theme> = {
   MuiButton: {
     defaultProps: { disableElevation: true },
     styleOverrides: {
-      root: { borderRadius: radiusTokens.sm, transition: hoverTransition },
+      root: { borderRadius: radiusTokens.md, transition: hoverTransition },
       contained: { "&:hover": { boxShadow: shadowTokens.hover } },
+      // White (ink.contrastCopy #FBFAF7) label on the gold fill. White fails AA
+      // on gold.500 (2.2:1), so the contained-primary fill drops to gold.800
+      // (6.6:1) with gold.900 on hover (10.2:1) — see the note in tokens.ts.
+      // The `contained` boxShadow-on-hover above still applies: Emotion merges
+      // the two `&:hover` blocks. `containedSecondary` already puts sand.50 on
+      // garden.500 (6.9:1) through the palette, so it needs nothing here.
+      containedPrimary: {
+        backgroundColor: colorTokens.gold[800],
+        color: colorTokens.ink.contrastCopy,
+        "&:hover": { backgroundColor: colorTokens.gold[900] },
+      },
     },
   },
   MuiTextField: {
@@ -104,10 +115,11 @@ export const components: Components<Theme> = {
     },
   },
   MuiChip: {
-    // Capped at radius-sm, not MUI's default fully-rounded pill — DESIGN_DIRECTION.md
-    // §D rejects large/full rounded corners as an anti-cliché guardrail (D03).
+    // Now a full pill. The original radius-sm cap was an anti-cliché guardrail
+    // (D03); it was lifted with the warm-contemporary refresh, where pill tags
+    // (room inclusions, package audiences) are the intended reading.
     styleOverrides: {
-      root: { borderRadius: radiusTokens.sm },
+      root: { borderRadius: radiusTokens.pill },
     },
   },
   MuiLink: {

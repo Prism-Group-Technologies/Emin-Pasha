@@ -9,7 +9,24 @@ export const colorTokens = {
   // corrected after /styleguide's live contrast check caught the error, see
   // DECISIONS.md D16). Use gold.800 for inline gold text on light surfaces;
   // gold.700 is fine only for icons/borders/large text (>=3:1 needed).
-  gold: { 500: "#C4A832", 300: "#D4BC5E", 700: "#8A731A", 800: "#6B5813" },
+  //
+  // gold.800 also serves as the contained-button / brand-FAB *fill* now that
+  // those render white (ink.contrastCopy #FBFAF7) label text — white needs
+  // gold.800 (6.6:1) beneath it, not gold.500 (2.2:1). gold.900 (#4A3D0D) is
+  // the hover fill (10.2:1). Both pairs are asserted live in the /styleguide
+  // contrast rows.
+  // gold.50 (#F6F1DF) is a wash tint, background-only: it carries `ink.900`
+  // body text at 17.4:1 and `gold.800` at 5.1:1, so it is safe as the ground
+  // for a tinted icon chip or a soft section band. Never used as a fill under
+  // white text.
+  gold: {
+    50: "#F6F1DF",
+    500: "#C4A832",
+    300: "#D4BC5E",
+    700: "#8A731A",
+    800: "#6B5813",
+    900: "#4A3D0D",
+  },
   // `contrastCopy`/`contrastMuted` are the two text values used on the dark
   // band (see templates/sectionShellStyles.ts). They are fixed rather than
   // scheme-dependent because the band itself is fixed — 17.9:1 and 8.4:1
@@ -22,7 +39,10 @@ export const colorTokens = {
     contrastMuted: "#B9B2A2",
   },
   sand: { 50: "#FBFAF7", 100: "#F2EFE8", 200: "#E4DFD3", 400: "#B9B2A2", 800: "#3A362E" },
-  garden: { 700: "#22402F", 500: "#34614A", 200: "#A9C2B2" },
+  // garden.50 (#E9F1EB) mirrors gold.50 as a background-only wash — `ink.900`
+  // on it measures 16.9:1, `garden.700` 6.4:1. Tinted chip ground / soft band
+  // only, never a fill under light text.
+  garden: { 50: "#E9F1EB", 700: "#22402F", 500: "#34614A", 200: "#A9C2B2" },
   support: {
     success: { light: "#2E7D5B", dark: "#6FBE99" },
     warning: { light: "#B8860B", lightText: "#8C6408", dark: "#E0B84D" },
@@ -38,23 +58,19 @@ export const colorTokens = {
  * being recognisable, which is the only reason to use the vendor's colour
  * instead of our own gold in the first place.
  *
- * `whatsapp.main` is WhatsApp's own #25D366. Measured against it, the white
- * glyph is **1.98:1** — below the 3:1 WCAG 1.4.11 asks of a graphical object,
- * and unfixable while the fill stays brand-true, since no glyph colour clears
- * 3:1 on this green except a dark one. Two mitigations, then the honest note:
+ * `whatsapp.main` is WhatsApp's own **dark** green #128C7E, not the lighter
+ * #25D366: the FAB carries a white glyph, and white measures **4.13:1** on
+ * #128C7E — an AA pass for the graphical object — versus only 1.98:1 on
+ * #25D366. `hover` (#0E7C6F) is a shade darker again, so the glyph stays
+ * compliant through the hover state.
  *
- *   - `ring` (#0E7A3C) outlines the control so its *boundary* is identifiable
- *     against both grounds — 5.2:1 on sand.50, 3.5:1 on ink.900 — which is
- *     the other half of what 1.4.11 requires, and the half that is fixable.
+ *   - `ring` (#0E7A3C) still outlines the control so its *boundary* is
+ *     identifiable against both grounds — 5.2:1 on sand.50, 3.5:1 on ink.900.
  *   - The button is never icon-only to assistive tech: it carries a full
  *     `aria-label`, so the glyph is decoration over a named control.
- *
- * If the 1.98:1 is judged unacceptable, swap `main` to WhatsApp's own dark
- * green **#128C7E** — white on it measures 4.13:1 and passes — and this is
- * the only line that changes.
  */
 export const brandColorTokens = {
-  whatsapp: { main: "#25D366", hover: "#1EBE5B", ring: "#0E7A3C", glyph: "#FFFFFF" },
+  whatsapp: { main: "#128C7E", hover: "#0E7C6F", ring: "#0E7A3C", glyph: "#FFFFFF" },
 } as const;
 
 /** 4px base spacing scale, `space-1`…`space-11` in DESIGN_DIRECTION.md §B.4. */
@@ -78,20 +94,43 @@ export function spacingFn(factor: number): number {
   return factor * SPACING_BASE_PX;
 }
 
-export const radiusTokens = { sm: 2, md: 4, lg: 8 } as const;
+/**
+ * Corner radii. The original scale (2 / 4 / 8) came from DESIGN_DIRECTION.md
+ * §D's anti-cliché guardrails; it was relaxed toward a warm-contemporary
+ * hospitality look (rounded imagery and cards) in the D-series follow-up that
+ * also added the soft shadow ramp below. `sm`/`md`/`lg` grew in place so no
+ * call site needed changing; `xl` and `pill` are new. `pill` (999) is now the
+ * chip radius — see `theme/components.ts`.
+ */
+export const radiusTokens = { sm: 6, md: 12, lg: 20, xl: 28, pill: 999 } as const;
 
+/**
+ * Soft elevation, added alongside the radius relaxation. The rgba is built on
+ * `ink.600` (#2A2823, a warm near-black) rather than pure black so the shadow
+ * reads warm against the sand grounds. `xs`→`lg` is a four-step ramp for
+ * resting/hover card states; `hover` is kept as an alias of `md` for the
+ * existing `MuiButton` contained-hover override. `modal` is unchanged.
+ *
+ * These are consumed **explicitly** through `sx` and `cardSurface()` — the
+ * `muiShadowLevels` array below is deliberately left flat so Menu / Popover /
+ * Tooltip / Paper elevation is not silently changed sitewide.
+ */
 export const shadowTokens = {
   none: "none",
-  hover: "0 12px 24px rgba(11,11,10,0.08)",
+  xs: "0 1px 2px rgba(42,40,35,0.06)",
+  sm: "0 4px 14px rgba(42,40,35,0.07)",
+  md: "0 12px 32px rgba(42,40,35,0.09)",
+  lg: "0 28px 64px rgba(42,40,35,0.13)",
+  hover: "0 12px 32px rgba(42,40,35,0.09)",
   modal: "0 24px 64px rgba(11,11,10,0.24)",
 } as const;
 
 /**
- * MUI's 25-level Material elevation array, disciplined down to our two real
- * shadow states (DESIGN_DIRECTION.md §B.4, approved D03): everything is
- * `none` except index 24, which Dialog/Popover/Menu use by default — that
- * one gets shadow-modal. Hover shadows are applied per-component via `sx`
- * in Step 5, not through this static elevation array.
+ * MUI's 25-level Material elevation array, still disciplined down to two real
+ * states: everything is `none` except index 24, which Dialog/Popover/Menu use
+ * by default — that one gets shadow-modal. The soft `xs`→`lg` ramp above is
+ * applied per-component via `sx` / `cardSurface`, never through this array, so
+ * adding it did not change any surface that was not opted in by hand.
  */
 export const muiShadowLevels: readonly string[] = [
   ...Array<string>(24).fill(shadowTokens.none),
@@ -145,6 +184,10 @@ export const motionTokens = {
   staggerStep: 80,
   kenBurns: 6000,
   reducedMotionMax: 150,
+  /** Card lift / shadow transition on hover — see `cardSurface()`. */
+  cardHover: 200,
+  /** Image scale-up on hover inside `MediaFrame`. */
+  imageZoom: 640,
 } as const;
 
 /**

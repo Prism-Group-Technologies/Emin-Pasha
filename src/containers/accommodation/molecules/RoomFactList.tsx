@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import { Box } from "@/components/atoms/Box";
+import { Icon } from "@/components/atoms/Icon";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
 
@@ -12,10 +13,10 @@ export interface RoomFactListProps {
 }
 
 /**
- * A headed list of verified room facts.
+ * A headed list of verified room facts, each on a gold check.
  *
  * "What is included" and "Children and extra beds" were two copies of the same
- * `<h3>` plus bulleted `<ul>`, differing only in their content — and between
+ * `<h3>` plus bulleted list, differing only in their content — and between
  * them they were most of what pushed `RoomDetailContainer` past the repo's
  * lines-per-function ceiling. One component, used twice.
  *
@@ -30,11 +31,19 @@ export function RoomFactList({ title, items, footnote }: RoomFactListProps) {
       <Text variant="h3" component="h2">
         {title}
       </Text>
-      <Box component="ul" sx={{ m: 0, pl: 5, display: "grid", gap: 2 }}>
+      <Box component="ul" sx={{ listStyle: "none", m: 0, p: 0, display: "grid", gap: 2 }}>
         {items.map((item) => (
-          <Text key={item} component="li" variant="body1" color="text.secondary">
-            {item}
-          </Text>
+          <Box key={item} component="li" sx={{ display: "flex", gap: 2 }}>
+            <Icon
+              name="check-circle"
+              aria-hidden
+              fontSize="small"
+              sx={{ color: "primary.main", mt: "3px", flexShrink: 0 }}
+            />
+            <Text variant="body1" color="text.secondary">
+              {item}
+            </Text>
+          </Box>
         ))}
       </Box>
       {footnote}

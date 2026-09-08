@@ -16,6 +16,7 @@ export function FaqBlock({ items }: { items: FaqItem[] }) {
 
   return (
     <Accordion
+      variant="soft"
       items={items.map((item) => ({ id: item.id, question: item.question, answer: item.answer }))}
       expanded={expanded}
       onChange={(id) => setExpanded(expanded === id ? false : id)}

@@ -8,7 +8,7 @@ import type { SystemStyleObject } from "@mui/system";
  * reason the helpers exist.
  */
 
-import { colorTokens } from "@/theme/tokens";
+import { colorTokens, radiusTokens, shadowTokens } from "@/theme/tokens";
 
 export type SectionVariant = "default" | "raised" | "bleed" | "contrast";
 
@@ -110,10 +110,16 @@ export const cardSurface = (accent = true): SystemStyleObject<Theme> => ({
   bgcolor: "background.default",
   border: "1px solid",
   borderColor: "divider",
+  borderRadius: `${radiusTokens.lg}px`,
+  boxShadow: shadowTokens.sm,
   ...(accent && { borderTop: "2px solid", borderTopColor: "primary.main" }),
   transition:
-    "border-color 200ms cubic-bezier(0.16,1,0.3,1), transform 200ms cubic-bezier(0.16,1,0.3,1)",
-  "&:hover": { borderColor: "primary.main", transform: "translateY(-3px)" },
+    "border-color 200ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1), transform 200ms cubic-bezier(0.16,1,0.3,1)",
+  "&:hover": {
+    borderColor: "primary.main",
+    boxShadow: shadowTokens.lg,
+    transform: "translateY(-4px)",
+  },
   "@media (prefers-reduced-motion: reduce)": {
     transition: "none",
     "&:hover": { transform: "none" },

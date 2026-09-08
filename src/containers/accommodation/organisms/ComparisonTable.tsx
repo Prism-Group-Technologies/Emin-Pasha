@@ -1,75 +1,115 @@
 import { Box } from "@/components/atoms/Box";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
+import { ROOM_POPULAR_ID } from "@/containers/accommodation/constants";
 import { identity } from "@/content/identity";
 import type { RoomCategory } from "@/schemas/content/roomCategory";
+import { colorTokens, radiusTokens } from "@/theme/tokens";
 import { formatUgx } from "@/utils/currency";
 
+const HEADINGS = ["Category", "Sleeps", "From", "Suits"] as const;
+
+const cell = { py: 4, px: { xs: 4, md: 6 }, borderBottom: "1px solid", borderColor: "divider" } as const;
+
+function ComparisonRow({ room }: { room: RoomCategory }) {
+  const popular = room.id === ROOM_POPULAR_ID;
+  return (
+    <Box
+      component="tr"
+      sx={
+        popular
+          ? {
+              // gold.500 at low alpha: a warm tint on the light ground, a warm
+              // glow on the dark one — theme-aware where a fixed gold.50 fill
+              // would strand light text on a near-white row in dark mode.
+              bgcolor: "rgba(196,168,50,0.10)",
+              "& th": { boxShadow: `inset 3px 0 0 ${colorTokens.gold[700]}` },
+            }
+          : undefined
+      }
+    >
+      <Box component="th" scope="row" sx={{ ...cell, textAlign: "left" }}>
+        <Link href={`/accommodation/${room.id}`} variant="body1">
+          {room.name}
+        </Link>
+        {popular && (
+          <Text variant="body2" sx={{ color: "primary.main", fontWeight: 600 }}>
+            Most requested
+          </Text>
+        )}
+      </Box>
+      <Box component="td" sx={cell}>
+        <Text variant="body2" color="text.secondary">
+          {room.capacity}
+        </Text>
+      </Box>
+      <Box component="td" sx={cell}>
+        <Text component="span" sx={{ fontFamily: "var(--font-display)", fontSize: "1.125rem" }}>
+          {formatUgx(room.rateUgx)}
+        </Text>
+      </Box>
+      <Box component="td" sx={cell}>
+        <Text variant="body2" color="text.secondary">
+          {room.sellTo}
+        </Text>
+      </Box>
+    </Box>
+  );
+}
+
 /**
- * The four categories side by side. Columns are limited to fields the source
- * actually verifies — name, capacity, rate and who each suits. There is no
- * size, bed or view column, because there is no verified size, bed or view
- * to put in one, and an empty column implies a missing fact rather than an
- * unverified one.
+ * The four categories side by side, on `md` and up. Columns are limited to
+ * fields the source verifies — an empty "size / bed / view" column would
+ * imply a missing fact rather than an unverified one.
  *
- * A real `<table>` with scoped headers, wrapped in its own horizontal scroll
- * container so the page body never scrolls sideways on mobile.
+ * A real `<table>` with scoped headers, in a rounded clipped shell with its
+ * own horizontal scroll so the page body never scrolls sideways. The
+ * most-requested row is tinted; the rate column carries the display face.
  */
 export function ComparisonTable({ rooms }: { rooms: RoomCategory[] }) {
   return (
-    <Box sx={{ overflowX: "auto" }}>
-      <Box component="table" sx={{ width: "100%", minWidth: 640, borderCollapse: "collapse" }}>
-        <caption style={{ textAlign: "left", paddingBottom: 12 }}>
-          <Text component="span" variant="body2" color="text.secondary">
-            The four categories compared. All rates in {identity.currency}, per night.
-          </Text>
-        </caption>
-        <Box component="thead">
-          <Box component="tr">
-            {["Category", "Sleeps", "From", "Suits"].map((heading) => (
-              <Box
-                key={heading}
-                component="th"
-                scope="col"
-                sx={{
-                  textAlign: "left",
-                  py: 3,
-                  borderBottom: "1px solid",
-                  borderColor: "primary.main",
-                }}
-              >
-                <Text variant="overline" component="span">
-                  {heading}
-                </Text>
-              </Box>
-            ))}
+    <Box
+      sx={{
+        border: "1px solid",
+        borderColor: "divider",
+        borderRadius: `${radiusTokens.lg}px`,
+        overflow: "hidden",
+      }}
+    >
+      <Box sx={{ overflowX: "auto" }}>
+        <Box component="table" sx={{ width: "100%", minWidth: 720, borderCollapse: "collapse" }}>
+          <Box component="caption" sx={{ textAlign: "left", px: { xs: 4, md: 6 }, pt: 4 }}>
+            <Text component="span" variant="body2" color="text.secondary">
+              The four categories compared. All rates in {identity.currency}, per night.
+            </Text>
           </Box>
-        </Box>
-        <Box component="tbody">
-          {rooms.map((room) => (
-            <Box component="tr" key={room.id}>
-              <Box
-                component="th"
-                scope="row"
-                sx={{ textAlign: "left", py: 4, borderBottom: "1px solid", borderColor: "divider" }}
-              >
-                <Link href={`/accommodation/${room.id}`} variant="body1">
-                  {room.name}
-                </Link>
-              </Box>
-              {[room.capacity, formatUgx(room.rateUgx), room.sellTo].map((value) => (
+          <Box component="thead">
+            <Box component="tr">
+              {HEADINGS.map((heading) => (
                 <Box
-                  key={value}
-                  component="td"
-                  sx={{ py: 4, pr: 4, borderBottom: "1px solid", borderColor: "divider" }}
+                  key={heading}
+                  component="th"
+                  scope="col"
+                  sx={{
+                    textAlign: "left",
+                    px: { xs: 4, md: 6 },
+                    py: 3,
+                    borderBottom: "2px solid",
+                    borderColor: "primary.main",
+                  }}
                 >
-                  <Text variant="body2" color="text.secondary">
-                    {value}
+                  <Text variant="overline" component="span">
+                    {heading}
                   </Text>
                 </Box>
               ))}
             </Box>
-          ))}
+          </Box>
+          <Box component="tbody" sx={{ "& tr:nth-of-type(odd)": { bgcolor: "action.hover" } }}>
+            {rooms.map((room) => (
+              <ComparisonRow key={room.id} room={room} />
+            ))}
+          </Box>
         </Box>
       </Box>
     </Box>

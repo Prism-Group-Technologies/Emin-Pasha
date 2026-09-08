@@ -6,15 +6,14 @@ import { Box } from "@/components/atoms/Box";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
 import { NumberStepper } from "@/components/molecules/NumberStepper";
-import { useGuestFilter } from "@/containers/accommodation/hooks/useGuestFilter";
-import { maxGuests } from "@/utils/capacity";
+import { useRoomFilter } from "@/containers/accommodation/hooks/useRoomFilter";
+import { radiusTokens } from "@/theme/tokens";
 
 export interface RoomGridProps {
   /** Server-rendered cards, in the same order as `capacities`. */
   children: ReactNode[];
-  /** Each card's approved capacity string, parsed here to filter. */
+  /** Each card's approved capacity string, parsed by the hook to filter. */
   capacities: string[];
-  maxGuestsAllowed: number;
 }
 
 /**
@@ -22,35 +21,46 @@ export interface RoomGridProps {
  *
  * Cards arrive as `children` rather than being constructed here. `RoomCard`
  * is a Server Component that reads `content/assets` and `content/ctas`;
- * rendering it from inside this client component pulled both — and Zod —
- * into the client bundle, measured at **63 KB gzipped**. Filtering only
- * toggles visibility, so no card is ever built on the client.
+ * building it inside this client component pulled both — and Zod — into the
+ * client bundle (measured at 63 KB gzipped). Filtering only toggles
+ * visibility, so no card is ever built on the client.
  *
- * The result count is announced through `aria-live`: a filter that silently
- * removes cards leaves a screen-reader user with no idea anything happened
- * (CLAUDE.md §10).
+ * All derivation — the stepper ceiling, per-card visibility, the count
+ * string — lives in `useRoomFilter`. The count is announced through
+ * `aria-live` so a screen-reader user hears the grid change.
  */
-export function RoomGrid({ children, capacities, maxGuestsAllowed }: RoomGridProps) {
-  const { guests, setGuests } = useGuestFilter();
-  const shown = capacities.map((capacity) => maxGuests(capacity) >= guests);
-  const visibleCount = shown.filter(Boolean).length;
+export function RoomGrid({ children, capacities }: RoomGridProps) {
+  const { guests, setGuests, guestCeiling, visible, statusText } = useRoomFilter(capacities);
 
   return (
     <Stack spacing={6}>
-      <Box sx={{ maxWidth: 320 }}>
-        <NumberStepper
-          label="Guests"
-          value={guests}
-          min={1}
-          max={maxGuestsAllowed}
-          onChange={setGuests}
-        />
-      </Box>
-      <Text role="status" aria-live="polite" variant="body2" color="text.secondary">
-        {visibleCount === capacities.length
-          ? `Showing all ${capacities.length} categories.`
-          : `Showing ${visibleCount} of ${capacities.length} categories that sleep ${guests}.`}
-      </Text>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={{ xs: 3, sm: 5 }}
+        sx={{
+          alignItems: { xs: "stretch", sm: "center" },
+          justifyContent: "space-between",
+          p: { xs: 3, sm: 4 },
+          border: "1px solid",
+          borderColor: "divider",
+          borderRadius: `${radiusTokens.lg}px`,
+          bgcolor: "background.paper",
+        }}
+      >
+        <Box sx={{ minWidth: { sm: 260 } }}>
+          <NumberStepper
+            label="Guests"
+            value={guests}
+            min={1}
+            max={guestCeiling}
+            onChange={setGuests}
+          />
+        </Box>
+        <Text role="status" aria-live="polite" variant="body2" color="text.secondary">
+          {statusText}
+        </Text>
+      </Stack>
+
       <Box
         sx={{
           display: "grid",
@@ -59,12 +69,12 @@ export function RoomGrid({ children, capacities, maxGuestsAllowed }: RoomGridPro
             sm: "repeat(2, minmax(0, 1fr))",
             lg: "repeat(4, minmax(0, 1fr))",
           },
-          gap: { xs: 6, md: 5 },
+          gap: { xs: 5, md: 4 },
           alignItems: "stretch",
         }}
       >
         {children.map((card, index) => (
-          <Box key={capacities[index]} sx={{ display: shown[index] ? "block" : "none" }}>
+          <Box key={capacities[index]} sx={{ display: visible[index] ? "grid" : "none" }}>
             {card}
           </Box>
         ))}

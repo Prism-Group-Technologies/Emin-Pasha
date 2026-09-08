@@ -18,23 +18,23 @@ export type FloatingActionTone = "brand" | "whatsapp";
  * is rendered from a Server Component (the WhatsApp action is a plain anchor
  * and costs no client JS), and a function cannot cross the Server→Client
  * boundary as a prop into MUI's own client components — DECISIONS.md D22, the
- * same constraint `SkipLink` documents. Palette *strings* (`primary.main`)
- * are fine: MUI resolves those to CSS variables, so `brand` still repaints
- * itself between light and dark without any callback.
+ * same constraint `SkipLink` documents. Plain token strings are fine: both
+ * tones are fixed hexes that read identically in light and dark, so nothing
+ * here needs to repaint between schemes.
  *
- * `brand` reuses `primary.main` on `primary.contrastText` — the exact pair
- * `SkipLink` and the primary `Button` already use, so the control reads as
- * part of the same family. Gold-on-ink measures 8.1:1 for the glyph and is
- * identical in both schemes; the `gold.700` hairline is there because gold
- * itself is only 2.2:1 against sand.50, so without it the button's *edge*
- * would be invisible on a light page (WCAG 1.4.11 again).
+ * `brand` fills with `gold.800` and puts `ink.contrastCopy` (#FBFAF7 — the
+ * same white the contained `Button` now uses) on top: 6.6:1, an AA pass, and
+ * identical in both schemes. Hover deepens the fill to `gold.900` (10.2:1).
+ * The `gold.700` hairline is kept as a decorative edge only — the darker fill
+ * already clears 3:1 against a light page on its own, so it is no longer
+ * load-bearing for WCAG 1.4.11.
  */
 const TONE_STYLES: Record<FloatingActionTone, Record<string, unknown>> = {
   brand: {
-    bgcolor: "primary.main",
-    color: "primary.contrastText",
+    bgcolor: colorTokens.gold[800],
+    color: colorTokens.ink.contrastCopy,
     border: `1px solid ${colorTokens.gold[700]}`,
-    "&:hover": { bgcolor: colorTokens.gold[300] },
+    "&:hover": { bgcolor: colorTokens.gold[900] },
   },
   whatsapp: {
     bgcolor: brandColorTokens.whatsapp.main,
