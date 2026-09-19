@@ -125,3 +125,24 @@ export const cardSurface = (accent = true): SystemStyleObject<Theme> => ({
     "&:hover": { transform: "none" },
   },
 });
+
+/**
+ * A photograph that meets the edges of a `cardSurface`, at the top of it.
+ *
+ * `cardSurface` is padded, so a bleed has to cancel that padding with a
+ * matching negative margin and then re-cut the two corners it has taken over.
+ * Both numbers therefore have to track `cardSurface`'s own `p`, which is why
+ * this lives beside it rather than in the two cards that use it.
+ *
+ * An inset thumbnail was the alternative and reads as a picture pasted onto a
+ * card; a bleed reads as the card being of the thing. The gold top rule stays
+ * where it was, directly above the image.
+ */
+export const cardMedia = (): SystemStyleObject<Theme> => ({
+  mx: { xs: -5, md: -6 },
+  mt: { xs: -5, md: -6 },
+  mb: 5,
+  overflow: "hidden",
+  borderTopLeftRadius: `${radiusTokens.lg}px`,
+  borderTopRightRadius: `${radiusTokens.lg}px`,
+});

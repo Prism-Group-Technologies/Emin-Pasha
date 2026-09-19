@@ -29,14 +29,21 @@ import type { BoxProps } from "@/components/atoms/Box";
  * Verified:
  *
  *   - light, on `sand.50` ............................ 3.66:1
- *   - hero glass over a black video frame ............ 5.14:1
- *   - hero glass over a **white** video frame ........ 3.35:1
+ *   - hero glass, darkest frame of the footage ....... 5.14:1
+ *   - hero glass, **brightest** frame of the footage . 3.48:1
  *
- * The last is the one that governs. The panel floats over footage this file
- * cannot see, so the edge has to hold at the brightest frame the video can
- * produce — and it does, because HeroVideo lays a 0.35 black wash over the
- * video before the panel's own 0.58 goes on top. Drop either of those and
- * this number is the first thing to re-measure.
+ * The last one governs, and it is measured rather than assumed: all 736
+ * frames of `public/video/emin-pasha.mp4` were sampled over the region this
+ * panel covers, and the brightest is rgb(174,158,144). Against a synthetic
+ * pure-white frame the same border would be 2.38:1 and would fail — that
+ * frame does not occur in this footage, which is the whole reason the number
+ * above is a measurement and not a worst case.
+ *
+ * So this is tied to the asset. `HERO_SCRIM` has already faded to fully
+ * transparent by the bottom of the hero, and the flat 35% wash that used to
+ * back it was removed, which leaves the panel's own 0.58 as the only thing
+ * between these borders and the video. **Swap in brighter footage and
+ * re-measure**; there is no longer any margin being held in reserve for it.
  */
 export function bookingFieldSx(invalid?: boolean): BoxProps["sx"] {
   return {

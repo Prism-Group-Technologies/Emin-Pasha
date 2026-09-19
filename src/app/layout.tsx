@@ -50,7 +50,7 @@ export default function RootLayout({
             __html: JSON.stringify([hotelJsonLd(), organizationJsonLd(), webSiteJsonLd()]),
           }}
         />
-        <InitColorSchemeScript />
+        <InitColorSchemeScript defaultMode="light" />
         <ThemeRegistry>
           {/* The shell is mounted once here rather than per page, so the
               header keeps its scroll/menu state across client-side

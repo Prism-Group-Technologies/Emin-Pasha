@@ -36,6 +36,194 @@ const raw: AssetRefInput[] = [
     status: "placeholder",
   },
 
+  // The homepage intro carousel. Five room slots rather than one collage
+  // frame: the section's only CTA is "View Rooms", so the photograph beside
+  // it should be a room. All five share the collage's 3:2 box so the carousel
+  // drops into the old geometry without moving anything (CLS stays at 0).
+  {
+    id: "home-intro-room-1",
+    page: "home",
+    subject: "Superior Room — fretwork headboard and bench seating",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "high",
+    altText: "A Superior Room with a carved fretwork headboard and upholstered bench seating",
+    status: "placeholder",
+  },
+  {
+    id: "home-intro-room-2",
+    page: "home",
+    subject: "Deluxe Room — king bed under lamplight",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Deluxe Room with a king bed, botanical prints and lit bedside lamps",
+    status: "placeholder",
+  },
+  {
+    id: "home-intro-room-3",
+    page: "home",
+    subject: "Superior Suite — bed dressed with a teal throw",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Superior Suite with a teal throw across the bed and sheer curtains at the window",
+    status: "placeholder",
+  },
+  {
+    id: "home-intro-room-4",
+    page: "home",
+    subject: "Deluxe Suite — gold runner and dressing mirror",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Deluxe Suite with a gold bed runner and a framed dressing mirror",
+    status: "placeholder",
+  },
+  {
+    id: "home-intro-room-5",
+    page: "home",
+    subject: "Deluxe Room — doors opening onto the grounds",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Deluxe Room with its doors open onto the hotel's landscaped grounds",
+    status: "placeholder",
+  },
+
+  // The homepage rate cards. One slot per category in `content/rooms.ts`,
+  // keyed `home-rate-<room id>` so `RoomsRates` can look a card's image up
+  // from the room it is already iterating over.
+  //
+  // Deliberately different frames from `home-intro-room-*` above: both
+  // sections sit on the same page, and showing the same photograph twice makes
+  // a four-room property look like a two-room one. The rate-card frames are
+  // the wider, calmer angles, because they are rendered small.
+  {
+    id: "home-rate-superior-room",
+    page: "home",
+    subject: "Superior Room — artwork above upholstered bench seating",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Superior Room with framed artwork above upholstered bench seating",
+    status: "placeholder",
+  },
+  {
+    id: "home-rate-deluxe-room",
+    page: "home",
+    subject: "Deluxe Room — daylight, armchair and writing desk",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Deluxe Room in daylight with an armchair beside a writing desk",
+    status: "placeholder",
+  },
+  {
+    id: "home-rate-deluxe-suites",
+    page: "home",
+    subject: "Deluxe Suite — gold runner, bedside lamps lit",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Deluxe Suite with a gold bed runner and lit bedside lamps",
+    status: "placeholder",
+  },
+  {
+    id: "home-rate-superior-suites",
+    page: "home",
+    subject: "Superior Suite — the separate lounge area, bedroom beyond",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "A Superior Suite's separate lounge area with a sofa, and the bedroom beyond",
+    status: "placeholder",
+  },
+
+  // The six estate tiles. 16:9 rather than the rate cards' 3:2 — six tiles
+  // stack into two rows, and a taller crop would push the section's second row
+  // most of a screen further down for no gain at this width.
+  //
+  // `home-feature-spa` and `home-feature-story` are stand-ins: no spa
+  // photography exists at all, and no portrait of Emin Pasha is confirmed as
+  // delivered or rights-cleared (TODO(EMIN-Q44) below). Both are listed in
+  // `stretchedAssignments`, so `yarn check:photos` reports them as owed frames.
+  {
+    id: "home-feature-rooms",
+    page: "home",
+    subject: "Stay tile — a suite's walled private terrace",
+    kind: "image",
+    width: 1600,
+    height: 900,
+    priority: "normal",
+    altText: "A suite's walled private terrace with striped seating",
+    status: "placeholder",
+  },
+  {
+    id: "home-feature-dining",
+    page: "home",
+    subject: "Dine tile — the Hakki Pasha dining room",
+    kind: "image",
+    width: 1600,
+    height: 900,
+    priority: "normal",
+    altText: "The Hakki Pasha dining room laid for service under rattan pendant lights",
+    status: "placeholder",
+  },
+  {
+    id: "home-feature-spa",
+    page: "home",
+    subject: "Unwind tile — spa and hydrothermal treatment rooms",
+    kind: "image",
+    width: 1600,
+    height: 900,
+    priority: "normal",
+    altText: "A bathroom with slate tiling and a deep tub",
+    status: "placeholder",
+  },
+  {
+    id: "home-feature-pool",
+    page: "home",
+    subject: "Swim tile — the pool lit at night",
+    kind: "image",
+    width: 1600,
+    height: 900,
+    priority: "normal",
+    altText: "The 300ft pool lit from within at night, seen from above",
+    status: "placeholder",
+  },
+  {
+    id: "home-feature-events",
+    page: "home",
+    subject: "Celebrate tile — an evening banquet in the gardens",
+    kind: "image",
+    width: 1600,
+    height: 900,
+    priority: "normal",
+    altText: "An evening banquet under festoon lights, chairs dressed with gold sashes",
+    status: "placeholder",
+  },
+  {
+    id: "home-feature-story",
+    page: "home",
+    subject: "Discover tile — the hotel's colonial-era facade",
+    kind: "image",
+    width: 1600,
+    height: 900,
+    priority: "normal",
+    altText: "The hotel's ochre colonial facade beneath mature trees",
+    status: "placeholder",
+  },
+
   {
     id: "room-superior-room",
     page: "accommodation/superior-room",

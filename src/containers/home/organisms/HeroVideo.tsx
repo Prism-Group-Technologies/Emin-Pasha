@@ -60,6 +60,19 @@ const VISUALLY_HIDDEN = {
  * switching it remains the one-character edit in `content/site.ts` that
  * `containers/home/constants.ts` describes.
  *
+ * Only one darkening layer sits over the footage: the `HERO_SCRIM` gradient,
+ * which runs 0.68 at the top to fully transparent at the bottom. A flat 35%
+ * black wash used to sit on top of that as well and has been removed — it was
+ * the layer muting the video everywhere at once, and the scrim alone already
+ * does the job the scrim is for. Note what this means for the booking panel:
+ * the scrim is *zero* by the time it reaches the bottom of the hero, so
+ * nothing but the panel's own translucency separates those controls from the
+ * video. `bookingFieldSx` carries the measurement that keeps them legible.
+ *
+ * The header is unaffected. It paints its own copy of `HERO_SCRIM` onto the
+ * AppBar while transparent, so the nav keeps its backing independently of
+ * anything this section does.
+ *
  * CLS: the section is `100svh` with both layers `fill`-ing it, so the hero
  * occupies its final size before any image or video byte arrives. `svh`
  * rather than `vh` deliberately — on mobile `100vh` is taller than the
@@ -111,7 +124,6 @@ export function HeroVideo() {
         sx={{
           position: "absolute",
           inset: 0,
-          bgcolor: "rgba(11,11,10,0.35)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "flex-end",

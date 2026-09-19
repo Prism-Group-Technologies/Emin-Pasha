@@ -34,6 +34,7 @@ import { type PhotoKey, photos } from "@/content/photography";
 export const stretchedAssignments = new Set<string>([
   // No spa or gym photography exists at all.
   "spa-treatment-room",
+  "home-feature-spa",
   "spa-gym",
   "wellness-pillar-spa",
   "wellness-pillar-gym",
@@ -56,6 +57,7 @@ export const stretchedAssignments = new Set<string>([
   "gallery-lens-spa",
   // Portraits — no photograph of any member of staff or guest exists.
   "story-emin-pasha-portrait",
+  "home-feature-story",
   "story-gm-photo",
   "contact-team-1",
   "contact-team-2",
@@ -113,6 +115,31 @@ export const photoAssignments: Record<string, PhotoKey> = {
   // ── Home ──────────────────────────────────────────────────────────────
   "home-hero-poster": "estateDusk",
   "home-og-image": "estateAerial",
+
+  // Intro carousel. Deliberately reuses the delivered accommodation frames
+  // rather than duplicating masters: `src/assets/images/Home/hero/` holds
+  // unoptimised copies of photographs already registered under
+  // `general/`, `dining/`, `meetings/`, `wellness/` and `accommodation/`.
+  "home-intro-room-1": "superiorRoomOne",
+  "home-intro-room-2": "deluxeRoomOne",
+  "home-intro-room-3": "superiorSuiteTeal",
+  "home-intro-room-4": "deluxeSuiteOne",
+  "home-intro-room-5": "deluxeRoomGardenDoors",
+
+  // Rate cards. Different frames from the carousel above, same four
+  // categories — see the note on `home-rate-*` in `./assets.ts`.
+  "home-rate-superior-room": "superiorRoomTwo",
+  "home-rate-deluxe-room": "deluxeRoomBright",
+  "home-rate-deluxe-suites": "deluxeSuiteFour",
+  "home-rate-superior-suites": "suiteLivingOne",
+
+  // Estate tiles. One per `site.homepage.featureTiles` id.
+  "home-feature-rooms": "suiteTerrace",
+  "home-feature-dining": "hakkiPashaDiningRoom",
+  "home-feature-spa": "bathroomTub", // STRETCH: no spa photography exists
+  "home-feature-pool": "poolNight",
+  "home-feature-events": "celebrationNight",
+  "home-feature-story": "estateFacadeDay", // STRETCH: no portrait of Emin Pasha
 
   // ── Accommodation ─────────────────────────────────────────────────────
   "room-superior-room": "superiorRoomOne",

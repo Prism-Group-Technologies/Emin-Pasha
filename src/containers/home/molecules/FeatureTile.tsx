@@ -1,8 +1,10 @@
+import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Icon, type IconName } from "@/components/atoms/Icon";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
-import { cardSurface } from "@/components/templates/sectionShellStyles";
+import { cardMedia, cardSurface } from "@/components/templates/sectionShellStyles";
+import type { AssetRef } from "@/schemas/content/assetRef";
 
 export interface FeatureTileProps {
   ordinal: number;
@@ -11,6 +13,14 @@ export interface FeatureTileProps {
   supportingLine: string;
   ctaLabel: string;
   href: string;
+  /**
+   * The tile's photograph, resolved by the caller. Optional so a tile without
+   * a registered slot degrades to the original icon-led tile rather than to a
+   * labelled placeholder.
+   */
+  image?: AssetRef;
+  /** Passed through to `AssetImage`; the tile cannot know the grid it is in. */
+  imageSizes?: string;
 }
 
 const headlineSx = {
@@ -47,6 +57,11 @@ const ctaSx = {
  * `aria-hidden` — it restates the headline directly beneath it, and announcing
  * "bed" before "Stay" adds nothing for a screen reader.
  *
+ * The photograph sits above that row rather than replacing it. A one-word
+ * headline like "Swim" needs the image to say which pool; the icon and the
+ * ordinal are what keep six photographs reading as one indexed set rather than
+ * as six unrelated pictures, so both still earn their place.
+ *
  * The whole block is one link, not a card with a separate anchor: one tab stop
  * per tile, and the entire surface is the target rather than two words of it.
  */
@@ -57,6 +72,8 @@ export function FeatureTile({
   supportingLine,
   ctaLabel,
   href,
+  image,
+  imageSizes = "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw",
 }: FeatureTileProps) {
   return (
     <Link
@@ -72,6 +89,14 @@ export function FeatureTile({
         },
       ]}
     >
+      {image && (
+        // `mb: 0` because this tile, unlike the rate card, is a flex column
+        // with its own `gap` — keeping `cardMedia`'s margin would double it.
+        <Box sx={[cardMedia(), { mb: 0 }]}>
+          <AssetImage asset={image} sizes={imageSizes} />
+        </Box>
+      )}
+
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 1 }}>
         <Icon
           name={icon}

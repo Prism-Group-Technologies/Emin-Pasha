@@ -15,7 +15,7 @@ import { theme } from "./index";
 export function ThemeRegistry({ children }: { children: React.ReactNode }) {
   return (
     <AppRouterCacheProvider options={{ key: "mui" }}>
-      <ThemeProvider theme={theme} defaultMode="system">
+      <ThemeProvider theme={theme} defaultMode="light">
         <CssBaseline />
         {children}
       </ThemeProvider>

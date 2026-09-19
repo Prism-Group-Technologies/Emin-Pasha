@@ -4,8 +4,21 @@ import { SectionShell } from "@/components/templates/SectionShell";
 import { FEATURE_TILE_HREFS, FEATURE_TILE_ICONS } from "@/containers/home/constants";
 import { featureSection } from "@/containers/home/copy";
 import { FeatureTile } from "@/containers/home/molecules/FeatureTile";
+import { assets } from "@/content/assets";
 import { site } from "@/content/site";
 import type { RevealDirection } from "@/theme/motion";
+
+/**
+ * Each tile's photograph, keyed by the `content/site.ts` tile id — the same key
+ * `FEATURE_TILE_ICONS` and `FEATURE_TILE_HREFS` use. Built once at module load
+ * and resolved here in the Server Component.
+ */
+const tileImages = new Map(
+  site.homepage.featureTiles.map((tile) => [
+    tile.id,
+    assets.find((asset) => asset.id === `home-feature-${tile.id}`),
+  ]),
+);
 
 /**
  * The six estate tiles, as a uniform three-across grid.
@@ -49,6 +62,7 @@ export function FeatureTiles({ motion = "up" }: { motion?: RevealDirection }) {
               supportingLine={tile.supportingLine}
               ctaLabel={tile.ctaLabel}
               href={FEATURE_TILE_HREFS[tile.id] ?? "/"}
+              image={tileImages.get(tile.id)}
             />
           </Reveal>
         ))}

@@ -1,9 +1,11 @@
+import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Icon } from "@/components/atoms/Icon";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
-import { cardSurface } from "@/components/templates/sectionShellStyles";
+import { cardMedia, cardSurface } from "@/components/templates/sectionShellStyles";
 import { roomsSection } from "@/containers/home/copy";
+import type { AssetRef } from "@/schemas/content/assetRef";
 import { formatUgx } from "@/utils/currency";
 
 const rateSx = {
@@ -28,6 +30,14 @@ export interface RoomRateCardProps {
   sellTo: string;
   tagline?: string;
   href: string;
+  /**
+   * The room's photograph, resolved by the caller. Optional so a category
+   * without a registered slot degrades to the original all-type card rather
+   * than to a labelled placeholder in a 300px-wide box.
+   */
+  image?: AssetRef;
+  /** Passed through to `AssetImage`; the card cannot know the grid it is in. */
+  imageSizes?: string;
 }
 
 /**
@@ -43,6 +53,11 @@ export interface RoomRateCardProps {
  * content layer as sales guidance and nothing displayed it, and it is the one
  * line that tells a visitor whether *this* of the four rooms is theirs — which
  * is also what gives four short cards enough body to sit level in a row.
+ *
+ * The photograph leads, because a rate is only meaningful next to what it buys:
+ * four price figures in a row invite a comparison on price alone, and the image
+ * is what makes the gap between UGX 250,000 and UGX 350,000 legible as a
+ * difference in room rather than as a surcharge.
  */
 export function RoomRateCard({
   name,
@@ -51,6 +66,8 @@ export function RoomRateCard({
   sellTo,
   tagline,
   href,
+  image,
+  imageSizes = "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw",
 }: RoomRateCardProps) {
   return (
     <Link
@@ -64,6 +81,11 @@ export function RoomRateCard({
         },
       ]}
     >
+      {image && (
+        <Box sx={cardMedia()}>
+          <AssetImage asset={image} sizes={imageSizes} />
+        </Box>
+      )}
       <Text
         variant="overline"
         component="p"

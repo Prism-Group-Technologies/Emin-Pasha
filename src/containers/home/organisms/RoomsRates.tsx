@@ -5,8 +5,19 @@ import { SectionShell } from "@/components/templates/SectionShell";
 import { ROOM_HREFS } from "@/containers/home/constants";
 import { roomsSection } from "@/containers/home/copy";
 import { RoomRateCard } from "@/containers/home/molecules/RoomRateCard";
+import { assets } from "@/content/assets";
 import { rooms } from "@/content/rooms";
 import type { RevealDirection } from "@/theme/motion";
+
+/**
+ * Each category's card photograph, keyed by the same room id the rate card
+ * uses. Built once at module load rather than searched per card, and resolved
+ * here in the Server Component — the slot ids live in `content/assets.ts`, so
+ * a reshoot never touches this file.
+ */
+const roomImages = new Map(
+  rooms.map((room) => [room.id, assets.find((asset) => asset.id === `home-rate-${room.id}`)]),
+);
 
 /**
  * The rate card, on the homepage.
@@ -54,6 +65,7 @@ export function RoomsRates({ motion = "up" }: { motion?: RevealDirection }) {
               sellTo={room.sellTo}
               tagline={roomsSection.taglines[room.id]}
               href={ROOM_HREFS[room.id] ?? "/accommodation"}
+              image={roomImages.get(room.id)}
             />
           </Reveal>
         ))}

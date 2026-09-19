@@ -7,7 +7,7 @@ import NextLink from "next/link";
 import MuiButton, { type ButtonProps as MuiButtonProps } from "@mui/material/Button";
 import CircularProgress from "@mui/material/CircularProgress";
 
-export type ButtonVariant = "primary" | "secondary" | "ghost" | "link";
+export type ButtonVariant = "primary" | "secondary" | "danger" | "ghost" | "link";
 
 export interface ButtonProps extends Omit<
   MuiButtonProps,
@@ -25,6 +25,7 @@ export interface ButtonProps extends Omit<
 const VARIANT_MAP: Record<ButtonVariant, Pick<MuiButtonProps, "variant" | "color">> = {
   primary: { variant: "contained", color: "primary" },
   secondary: { variant: "contained", color: "secondary" },
+  danger: { variant: "contained", color: "error" },
   ghost: { variant: "outlined", color: "primary" },
   link: { variant: "text", color: "primary" },
 };
