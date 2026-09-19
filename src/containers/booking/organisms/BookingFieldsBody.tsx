@@ -4,6 +4,7 @@ import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
 import type { useBookingForm } from "@/containers/booking/hooks/useBookingForm";
 import { GuestStepper } from "@/containers/booking/molecules/GuestStepper";
+import { GuestsField } from "@/containers/booking/molecules/GuestsField";
 import { StayDatesField } from "@/containers/booking/molecules/StayDatesField";
 import type { BookingWidgetData } from "@/containers/booking/types";
 
@@ -20,6 +21,14 @@ export interface BookingFieldsBodyProps {
    * guest stepper, as it does in the sticky panel.
    */
   align?: "start" | "end";
+  /**
+   * Collapses adults/children/rooms into a single popover field instead of an
+   * always-open stepper column. Opt-in, and only the hero asks for it: the
+   * sticky panel and the mobile sheet are already *in* a disclosure, so
+   * nesting a second one inside them would cost a click to reach a control
+   * the guest has just deliberately opened.
+   */
+  collapseGuests?: boolean;
 }
 
 /**
@@ -35,13 +44,14 @@ export interface BookingFieldsBodyProps {
  */
 export function BookingFieldsBody(props: BookingFieldsBodyProps) {
   const { data, booking, layout, months = 2, datesAlwaysOpen, align = "end" } = props;
+  const { collapseGuests } = props;
   const isRow = layout === "row";
   const values = booking.form.getValues();
 
   return (
     <Stack
       direction={isRow ? { xs: "column", md: "row" } : "column"}
-      spacing={4}
+      spacing={collapseGuests ? 2 : 4}
       sx={{
         flex: 1,
         minWidth: 0,
@@ -59,18 +69,28 @@ export function BookingFieldsBody(props: BookingFieldsBodyProps) {
         alwaysOpen={datesAlwaysOpen}
       />
 
-      <Stack spacing={2} sx={{ flexShrink: 0 }}>
-        <Text variant="overline" component="p" sx={{ opacity: 0.7 }}>
-          {data.copy.fields.guests}
-        </Text>
-        <GuestStepper
+      {collapseGuests ? (
+        <GuestsField
           data={data}
           adults={values.adults}
           childGuests={values.children}
           rooms={values.rooms}
           onChange={booking.setGuests}
         />
-      </Stack>
+      ) : (
+        <Stack spacing={2} sx={{ flexShrink: 0 }}>
+          <Text variant="overline" component="p" sx={{ opacity: 0.7 }}>
+            {data.copy.fields.guests}
+          </Text>
+          <GuestStepper
+            data={data}
+            adults={values.adults}
+            childGuests={values.children}
+            rooms={values.rooms}
+            onChange={booking.setGuests}
+          />
+        </Stack>
+      )}
     </Stack>
   );
 }

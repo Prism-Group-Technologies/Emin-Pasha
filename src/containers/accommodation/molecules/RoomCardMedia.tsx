@@ -44,14 +44,26 @@ export function RoomCardMedia({ asset, capacity, popular = false }: RoomCardMedi
       {popular && (
         <Text
           component="span"
-          sx={{ ...chipBase, top: 12, right: 12, bgcolor: "primary.main", color: "primary.contrastText" }}
+          sx={{
+            ...chipBase,
+            top: 12,
+            right: 12,
+            bgcolor: "primary.main",
+            color: "primary.contrastText",
+          }}
         >
           Most requested
         </Text>
       )}
       <Text
         component="span"
-        sx={{ ...chipBase, bottom: 12, left: 12, bgcolor: "rgba(11,11,10,0.72)", color: "common.white" }}
+        sx={{
+          ...chipBase,
+          bottom: 12,
+          left: 12,
+          bgcolor: "rgba(11,11,10,0.72)",
+          color: "common.white",
+        }}
       >
         {capacity}
       </Text>

@@ -13,13 +13,13 @@ export const roomSlugs = rooms.map((room) => room.id);
  * comparison. Traceable to its own strapline in `copy/rooms.ts` — "The one
  * guests ask for by name" — not an invented popularity claim.
  */
-export const ROOM_POPULAR_ID = "garden-room";
+export const ROOM_POPULAR_ID = "deluxe-room";
 
 /** Per-category hero/gallery assets, by the ids already in content/assets.ts. */
 export const ROOM_ASSET_IDS: Record<string, string> = {
   "superior-room": "room-superior-room",
-  "garden-room": "room-garden-room",
-  "garden-suites": "room-garden-suites",
+  "deluxe-room": "room-deluxe-room",
+  "deluxe-suites": "room-deluxe-suites",
   "superior-suites": "room-superior-suites",
 };
 
@@ -38,3 +38,38 @@ export const COMPARISON_ANCHOR_ID = "compare";
 
 /** Internal cross-sell out of Accommodation — labels resolve from `navigation`. */
 export const CROSS_SELL_HREFS = ["/spa", "/dining", "/offers"];
+
+/** In-page anchor for the room gallery, linked from the room hero. */
+export const GALLERY_ANCHOR_ID = "gallery";
+
+/**
+ * Every angle delivered per category, lead shot first. The lead is the same
+ * id as `ROOM_ASSET_IDS`, so the mosaic opens on the photograph the card and
+ * the hero already showed. A category absent here falls back to its lead
+ * alone rather than repeating a frame to pad the grid — `roomMosaic` has a
+ * closing layout for a single photograph too.
+ */
+export const ROOM_GALLERY_IDS: Record<string, string[]> = {
+  "superior-room": ["room-superior-room", "room-superior-room-2", "room-superior-room-3"],
+  "deluxe-room": [
+    "room-deluxe-room",
+    "room-deluxe-room-2",
+    "room-deluxe-room-3",
+    "room-deluxe-room-4",
+    "room-deluxe-room-5",
+  ],
+  "deluxe-suites": [
+    "room-deluxe-suites",
+    "room-deluxe-suites-2",
+    "room-deluxe-suites-3",
+    "room-deluxe-suites-4",
+  ],
+  "superior-suites": [
+    "room-superior-suites",
+    "room-superior-suites-2",
+    "room-superior-suites-3",
+    "room-superior-suites-4",
+    "room-superior-suites-5",
+    "room-superior-suites-6",
+  ],
+};

@@ -11,7 +11,7 @@ const WellnessEnquiryForm = dynamic(
     import("@/containers/wellness/organisms/WellnessEnquiryForm").then(
       (m) => m.WellnessEnquiryForm,
     ),
-  { ssr: false, loading: () => <Box sx={{ minHeight: 560 }} /> },
+  { ssr: false, loading: () => <Box sx={{ minHeight: 620 }} /> },
 );
 
 export function DeferredWellnessEnquiryForm({ interest }: { interest: WellnessInterest }) {

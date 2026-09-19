@@ -32,17 +32,31 @@ const NewsletterForm = dynamic(
  * 'use client' justification: owns the hydration decision and the
  * `next/dynamic` call, which is a client-only API.
  */
-export function NewsletterFormMount({ copy }: { copy: FooterData["newsletter"] }) {
+export function NewsletterFormMount({
+  copy,
+  idPrefix,
+}: {
+  copy: FooterData["newsletter"];
+  /** Field-id prefix, for a second newsletter on the same page. */
+  idPrefix?: string;
+}) {
   const { hydrated, restoreFocus, carriedValue, placeholderRef, triggerProps } =
     useDeferredHydration();
 
   if (hydrated) {
-    return <NewsletterForm copy={copy} defaultEmail={carriedValue} autoFocusEmail={restoreFocus} />;
+    return (
+      <NewsletterForm
+        copy={copy}
+        defaultEmail={carriedValue}
+        autoFocusEmail={restoreFocus}
+        idPrefix={idPrefix}
+      />
+    );
   }
 
   return (
     <Box ref={placeholderRef} {...triggerProps}>
-      <NewsletterFields copy={copy} />
+      <NewsletterFields copy={copy} idPrefix={idPrefix} />
     </Box>
   );
 }

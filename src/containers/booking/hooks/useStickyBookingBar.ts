@@ -35,11 +35,20 @@ export function useStickyBookingBar(
   const [expanded, setExpanded] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
 
-  // Where a full widget exists — the hero on the homepage, the in-page one on
-  // a room page — the bar waits for it to leave. On a page with none, and in
-  // the frame or two before an observer has reported, there is nothing to hand
-  // over from, so the header's own condense threshold is the right cue.
-  const shown = presence === "none" ? condensed : presence === "hidden";
+  // Two conditions, both required. `condensed` is the floor: the bar is a
+  // scroll affordance, so it may never appear over an un-scrolled page. That
+  // alone was missing, and it is why the accommodation index and the room
+  // pages opened with the bar already on screen — their in-page widget sits
+  // below the fold, so the observer reported "hidden" on mount and the bar
+  // took over at scroll 0, wedged under a still-expanded header (the bar is
+  // offset by `HEADER_HEIGHT_CONDENSED`, which only matches once condensed).
+  //
+  // The presence check is then about handover, not timing: where a full
+  // widget exists — the hero on the homepage, the in-page one on a room page
+  // — the bar stays away while it is on screen, so the two are never in view
+  // together. With no widget on the page, the condense threshold is the whole
+  // cue.
+  const shown = condensed && presence !== "visible";
 
   const collapse = useCallback(() => setExpanded(false), []);
   const toggle = useCallback(() => setExpanded((open) => !open), []);

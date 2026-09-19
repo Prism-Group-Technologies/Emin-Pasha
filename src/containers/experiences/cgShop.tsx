@@ -14,6 +14,7 @@ import { cgShop, cgShopPageIntro } from "@/content/experiences";
 export function CgShopContainer() {
   return (
     <ExperiencePage
+      heroKey="cg-shop"
       eyebrow="§ ART & CULTURE"
       heading={cgShop.name}
       intro={cgShopPageIntro}

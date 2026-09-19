@@ -1,7 +1,24 @@
 import { diningOutlets } from "@/content/dining";
 import { spaces } from "@/content/spaces";
 
+export {
+  MENUS_ANCHOR_ID,
+  OUTLETS_ANCHOR_ID,
+  OUTLET_ID,
+  OUTLET_ORDER,
+  type OutletId,
+  RESERVE_ANCHOR_ID,
+} from "@/containers/dining/anchors";
+
 export const outletSlugs = diningOutlets.map((outlet) => outlet.id);
+
+/** Internal cross-sell out of Dining — labels resolve from `navigation`. */
+export const DINING_RELATED_HREFS = [
+  "/accommodation",
+  "/meetings-and-events",
+  "/offers",
+  "/lounges-and-spaces",
+];
 
 /** Per-outlet and per-space imagery, by the ids already in content/assets.ts. */
 export const OUTLET_ASSET_IDS: Record<string, string> = {

@@ -15,6 +15,19 @@ const INBOX: Record<EnquiryKind, string> = {
   booking: identity.reservationsEmail,
   rfp: identity.email,
   spa: identity.email,
+  // Table reservations are handled by the reservations desk, the same team
+  // that fields room bookings — no separate dining@ address exists (§1).
+  dining: identity.reservationsEmail,
+  // "Stay in the story" enquiries are room-booking leads — same desk, same
+  // reasoning as dining. No separate address exists (§1).
+  story: identity.reservationsEmail,
+  // Transfers are arranged by reservations — the approved §8 copy says so
+  // ("Arrange transfers at reservations@eminpasha.com").
+  transfer: identity.reservationsEmail,
+  // Lounge tables, experiences and photoshoots go to reservations by default;
+  // the spaces route overrides `to` for private hire, which the events team
+  // on the general inbox handles (the same split as `rfp`).
+  spaces: identity.reservationsEmail,
   contact: identity.email,
   newsletter: identity.email,
 };

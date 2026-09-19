@@ -1,5 +1,3 @@
-import { Box } from "@/components/atoms/Box";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
 import { accommodationSectionMotion as m } from "@/containers/accommodation/motion";
 import { AccommodationHero } from "@/containers/accommodation/organisms/AccommodationHero";
 import { AmenitiesSection } from "@/containers/accommodation/organisms/AmenitiesSection";
@@ -41,9 +39,6 @@ export function AccommodationContainer() {
   return (
     <>
       <AccommodationHero lede={accommodationPageIntro} />
-      <Box sx={{ maxWidth: 1280, mx: "auto", px: { xs: 5, md: 8 }, pt: { xs: 6, md: 7 } }}>
-        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Accommodation" }]} />
-      </Box>
       <RoomsSection motion={m.rooms} />
       <AmenitiesSection motion={m.amenities} />
       <ComparisonSection motion={m.comparison} />

@@ -1,73 +1,55 @@
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
 import { SectionShell } from "@/components/templates/SectionShell";
-import { GalleryGrid } from "@/containers/gallery/organisms/GalleryGrid";
-import { assets } from "@/content/assets";
-import { alternatingDirection } from "@/theme/motion";
+import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
+import { galleryItems } from "@/containers/gallery/catalogue";
+import { sections } from "@/containers/gallery/copy/sections";
+import { gallerySectionMotion as m } from "@/containers/gallery/motion";
+import { CollectionsSection } from "@/containers/gallery/organisms/CollectionsSection";
+import { FilmSection } from "@/containers/gallery/organisms/FilmSection";
+import { GalleryClosingSection } from "@/containers/gallery/organisms/GalleryClosingSection";
+import { GalleryFaqSection } from "@/containers/gallery/organisms/GalleryFaqSection";
+import { GalleryHero } from "@/containers/gallery/organisms/GalleryHero";
+import { GalleryStatsSection } from "@/containers/gallery/organisms/GalleryStatsSection";
+import { GuestLensSection } from "@/containers/gallery/organisms/GuestLensSection";
+import { PhotosSection } from "@/containers/gallery/organisms/PhotosSection";
+import { StickyGalleryCta } from "@/containers/gallery/organisms/StickyGalleryCta";
+import { StoriesSection } from "@/containers/gallery/organisms/StoriesSection";
 
 /**
- * Categories are derived from the asset manifest's own `page` field rather
- * than hand-listed, so every image the manifest gains appears here
- * automatically and nothing can drift out of sync with
- * docs/ASSET_MANIFEST.md.
+ * The Gallery, rebuilt as a conversion funnel — the same shape as the Spaces,
+ * Offers and Transfer redesigns. A Server Component that only composes
+ * section organisms; the client islands are the collection explorer, the
+ * photo wall + lightbox, the film chapter picker, the FAQ and the sticky bar.
+ * WhatsApp is the only lead channel.
  *
- * Video, Open Graph and floor-plan assets are excluded: they are not
- * photographs of the property and do not belong in a visitor-facing gallery.
+ *   hero         — the pitch, a figure rail, "explore the collections" + WhatsApp
+ *   collections  — six bookable mood collections, each also /gallery/<slug>
+ *   stories      — first light, golden hour, lantern light
+ *   photos       — the filterable wall; every photograph opens a "book this view" lightbox
+ *   film         — estate film chapters + 360° tour card on the dark band
+ *   stats        — the estate in four figures
+ *   lens         — #EminPashaMoments guest wall + guest notes
+ *   faq · closing · related · sticky bar
  */
-const EXCLUDED = ["home-og-image", "meetings-kudara-floorplan", "contact-static-map"];
-
-const CATEGORY_ORDER: { id: string; label: string; match: (page: string) => boolean }[] = [
-  { id: "rooms", label: "Rooms & Suites", match: (page) => page.startsWith("accommodation") },
-  { id: "dining", label: "Dining", match: (page) => page.startsWith("dining") },
-  { id: "spaces", label: "Lounges & Gardens", match: (page) => page.startsWith("lounges") },
-  { id: "wellness", label: "Spa, Gym & Pool", match: (page) => page.startsWith("spa") },
-  {
-    id: "events",
-    label: "Events & Weddings",
-    match: (page) => page.startsWith("meetings") || page.startsWith("weddings"),
-  },
-  {
-    id: "estate",
-    label: "The Estate",
-    match: (page) =>
-      page.startsWith("gallery") ||
-      page.startsWith("home") ||
-      page.startsWith("story") ||
-      page.startsWith("experiences"),
-  },
-];
-
-const photographs = assets.filter(
-  (asset) => asset.kind === "image" && !EXCLUDED.includes(asset.id),
-);
-
-const categories = CATEGORY_ORDER.map((category) => ({
-  id: category.id,
-  label: category.label,
-  assets: photographs.filter((asset) => category.match(asset.page)),
-})).filter((category) => category.assets.length > 0);
-
 export function GalleryContainer() {
   return (
     <>
+      <GalleryHero />
+      <CollectionsSection motion={m.collections} />
+      <StoriesSection motion={m.stories} />
+      <PhotosSection items={galleryItems} motion={m.photos} />
+      <FilmSection motion={m.film} />
+      <GalleryStatsSection motion={m.stats} />
+      <GuestLensSection motion={m.lens} />
+      <GalleryFaqSection motion={m.faq} />
+      <GalleryClosingSection motion={m.closing} />
       <SectionShell
-        motion={alternatingDirection(0)}
-        eyebrow="§ GALLERY"
-        heading="Gallery"
-        headingLevel="h1"
+        motion={m.related}
+        eyebrow={sections.related.eyebrow}
+        heading={sections.related.heading}
       >
-        <Stack spacing={5}>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Gallery" }]} />
-          <Text variant="subtitle1" sx={{ maxWidth: "68ch" }}>
-            The rooms, the gardens, the tables and the water — the estate as it is.
-          </Text>
-        </Stack>
+        <RelatedLinks hrefs={["/accommodation", "/dining", "/spa-and-wellness", "/weddings"]} />
       </SectionShell>
-
-      <SectionShell motion={alternatingDirection(1)}>
-        <GalleryGrid categories={categories} />
-      </SectionShell>
+      <StickyGalleryCta />
     </>
   );
 }

@@ -1,113 +1,63 @@
-import { Box } from "@/components/atoms/Box";
-import { Button } from "@/components/atoms/Button";
-import { Reveal } from "@/components/atoms/Reveal";
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
-import { PendingInfoNotice } from "@/components/molecules/PendingInfoNotice";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { ctas } from "@/content/ctas";
-import { offers, offersPageIntro } from "@/content/offers";
-import { alternatingDirection } from "@/theme/motion";
-import { formatUgx } from "@/utils/currency";
-
-const reserve = ctas.find((cta) => cta.id === "dining-reserve");
+import { sections } from "@/containers/offers/copy";
+import { offersSectionMotion as m } from "@/containers/offers/motion";
+import { BookDirectPerksSection } from "@/containers/offers/organisms/BookDirectPerksSection";
+import { FeaturedOfferSection } from "@/containers/offers/organisms/FeaturedOfferSection";
+import { OfferAlertsSection } from "@/containers/offers/organisms/OfferAlertsSection";
+import { OffersClosingSection } from "@/containers/offers/organisms/OffersClosingSection";
+import { OffersFaqSection } from "@/containers/offers/organisms/OffersFaqSection";
+import { OffersGridSection } from "@/containers/offers/organisms/OffersGridSection";
+import { OffersHero } from "@/containers/offers/organisms/OffersHero";
+import { SeasonalCalendarSection } from "@/containers/offers/organisms/SeasonalCalendarSection";
+import { StickyClaimCta } from "@/containers/offers/organisms/StickyClaimCta";
 
 /**
- * Offers, driven entirely by `content/offers.ts`.
+ * Offers, rebuilt as a conversion funnel — the same shape as the Contact,
+ * Story, Wellness and Events redesigns. A Server Component that composes the
+ * section organisms and holds no logic of its own; the client islands are the
+ * category filter, the newsletter form, the FAQ accordion and the sticky bar.
  *
- * Two deliberate omissions, both unresolved:
- * - **Happy Hour days.** The source gives conflicting day ranges
- *   (TODO(EMIN-Q07)) and no DECISIONS.md entry resolves them, so only the
- *   confirmed time window renders. No "Mon–Fri" is synthesised.
- * - **Reopening packages.** Flagged in the source as possibly stale and never
- *   confirmed as a current campaign (TODO(EMIN-Q08)), so the offer does not
- *   exist here at all. Publishing a dead campaign is worse than publishing
- *   nothing.
+ * Every offer is claimed on WhatsApp, with a pre-written message naming it.
+ * The order follows a visitor who arrives curious and leaves with a plan:
  *
- * Validity is rendered only where an offer actually carries a schedule; no
- * offer has an approved expiry date, so none is invented.
+ *   hero      — the promise, browse + WhatsApp CTAs, book-direct figures
+ *   featured  — one spotlight package with its full inclusions and saving
+ *   grid      — every offer, filterable by category, #offers
+ *   perks     — what booking direct adds, beside the price-match promise
+ *   calendar  — the seasonal year ahead; open = claim, soon = notify me
+ *   alerts    — the newsletter as offer alerts for the not-yet-ready, #alerts
+ *   faq       — pre-claim questions beside a plain-language terms card
+ *   closing   — dark band, claim on WhatsApp or call
+ *   related   — cross-sell into rooms, dining, spa and events
+ *
+ * Grounds alternate default / raised down the page, with the dark band
+ * reserved for the closing ask. The two approved offers render verbatim from
+ * `content/offers.ts` (via `catalogue.ts`); everything invented lives in
+ * `containers/offers/copy`, labelled and outside the governed content layer.
  */
 export function OffersContainer() {
   return (
     <>
+      <OffersHero />
+      <FeaturedOfferSection motion={m.featured} />
+      <OffersGridSection motion={m.grid} />
+      <BookDirectPerksSection motion={m.perks} />
+      <SeasonalCalendarSection motion={m.calendar} />
+      <OfferAlertsSection motion={m.alerts} />
+      <OffersFaqSection motion={m.faq} />
+      <OffersClosingSection motion={m.closing} />
       <SectionShell
-        motion={alternatingDirection(0)}
-        eyebrow="§ WHAT IS ON"
-        heading="Offers"
-        headingLevel="h1"
+        motion={m.related}
+        eyebrow={sections.related.eyebrow}
+        heading={sections.related.heading}
       >
-        <Stack spacing={5}>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Offers" }]} />
-          <Text variant="subtitle1" sx={{ maxWidth: "68ch" }}>
-            {offersPageIntro}
-          </Text>
-        </Stack>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(1)}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(2, minmax(0, 1fr))" },
-            gap: { xs: 6, md: 6 },
-          }}
-        >
-          {offers.map((offer, index) => (
-            <Reveal key={offer.id} index={index}>
-              <Stack
-                component="article"
-                spacing={3}
-                sx={{ height: "100%", p: 5, borderTop: "1px solid", borderColor: "primary.main" }}
-              >
-                <Text variant="h3" component="h2">
-                  {offer.name}
-                </Text>
-                <Text variant="body1" color="text.secondary">
-                  {offer.description}
-                </Text>
-                <Stack direction="row" spacing={4} sx={{ flexWrap: "wrap", pt: 2 }}>
-                  {offer.priceUgx !== undefined && (
-                    <Text variant="overline" component="p">
-                      {formatUgx(offer.priceUgx)}
-                    </Text>
-                  )}
-                  {offer.schedule && (
-                    <Text variant="overline" component="p" color="text.secondary">
-                      {offer.schedule}
-                    </Text>
-                  )}
-                </Stack>
-                {!offer.schedule && (
-                  <Text variant="body2" color="text.secondary">
-                    Days and times are confirmed when you book.
-                  </Text>
-                )}
-                {reserve?.href && (
-                  <Box sx={{ mt: "auto", pt: 3 }}>
-                    <Button href={reserve.href} variant="ghost">
-                      {reserve.label}
-                    </Button>
-                  </Box>
-                )}
-              </Stack>
-            </Reveal>
-          ))}
-        </Box>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(2)} heading="Terms" variant="raised">
-        <PendingInfoNotice
-          subject="Offer terms and validity dates"
-          todoId="EMIN-Q08"
-          action="Full terms and validity dates for each offer are confirmed at the time of booking. Ask us and we will send them through."
+        <RelatedLinks
+          hrefs={["/accommodation", "/dining", "/spa-and-wellness", "/meetings-and-events"]}
         />
       </SectionShell>
 
-      <SectionShell motion={alternatingDirection(3)} heading="Also here">
-        <RelatedLinks hrefs={["/dining", "/accommodation", "/spa-and-wellness"]} />
-      </SectionShell>
+      <StickyClaimCta />
     </>
   );
 }

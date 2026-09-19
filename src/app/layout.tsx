@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import { PageShell } from "@/components/templates/PageShell";
+import { appIcons } from "@/config/icons";
 import { site } from "@/config/site";
 import { getBookingWidgetData } from "@/containers/booking";
 import {
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
   // this. Also gives OG/Twitter image URLs an absolute base.
   metadataBase: new URL(site.url),
   title: site.name,
+  // Declared rather than left to the `app/icon.*` file conventions — see
+  // `@/config/icons` for why declaring this at all makes it mandatory.
+  icons: appIcons,
   openGraph: { type: "website", siteName: site.name, locale: "en_UG" },
   twitter: { card: "summary_large_image" },
 };

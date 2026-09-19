@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { manifestIcons } from "@/config/icons";
 import { identity } from "@/content/identity";
 import { colorTokens } from "@/theme/tokens";
 
@@ -23,10 +24,6 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     background_color: colorTokens.sand[50],
     theme_color: colorTokens.gold[500],
-    icons: [
-      { src: "/icon.svg", sizes: "any", type: "image/svg+xml", purpose: "any" },
-      { src: "/icon.png", sizes: "32x32", type: "image/png" },
-      { src: "/apple-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    icons: manifestIcons,
   };
 }

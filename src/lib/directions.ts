@@ -55,3 +55,94 @@ export const whatsappUrl = whatsappChatUrl(whatsappOpenings.general);
  * making them retype it is friction with no purpose.
  */
 export const whatsappBookingUrl = whatsappChatUrl(whatsappOpenings.booking);
+
+/**
+ * The Spa & Wellness hand-off — the wellness hub's sticky bar and every
+ * "book a treatment / a session / a swim" CTA on the spa, gym and pool
+ * pages. The guest picked that button over the on-page enquiry form, so the
+ * opening line names the intent; it still promises nothing.
+ */
+export const whatsappWellnessUrl = whatsappChatUrl(whatsappOpenings.wellness);
+
+/**
+ * The Meetings & Events hand-off — the events funnel's sticky bar and every
+ * "talk to the events team" CTA on the hub and venue pages. The organiser
+ * picked that button over the RFP form, so the opening line names the intent;
+ * it still promises nothing.
+ */
+export const whatsappEventsUrl = whatsappChatUrl(whatsappOpenings.events);
+
+/**
+ * The Offers hand-off where no single offer is named — the offers hero, the
+ * sticky bar and the closing band.
+ */
+export const whatsappOffersUrl = whatsappChatUrl(whatsappOpenings.offers);
+
+/**
+ * The Airport Transfer hand-off — the transfer page's hero, sticky bar, fleet
+ * cards and closing band. The traveller picked that button over the booking
+ * form, so the opening line names the intent; it still promises nothing.
+ */
+export const whatsappTransferUrl = whatsappChatUrl(whatsappOpenings.transfer);
+
+/**
+ * The Lounges & Spaces hand-off — the page's hero, sticky bar, spotlights and
+ * closing band. The guest chose WhatsApp over the reservation form, so the
+ * opening line names a lounge table or the gardens; it promises nothing.
+ */
+export const whatsappLoungesUrl = whatsappChatUrl(whatsappOpenings.lounges);
+
+/**
+ * The per-offer "claim" hand-off. The only parameterised opening: the offer
+ * title fills the reviewed `offerClaim` template, and callers pass titles from
+ * the Offers page catalogue only — never user input — so the set of messages
+ * the property can receive stays closed.
+ */
+export function whatsappOfferClaimUrl(offerTitle: string): string {
+  return whatsappChatUrl(whatsappOpenings.offerClaim.replace("{offer}", offerTitle));
+}
+
+/**
+ * The Gallery hand-off where no single view is named — the gallery hero,
+ * sticky bar and closing band.
+ */
+export const whatsappGalleryUrl = whatsappChatUrl(whatsappOpenings.gallery);
+
+/**
+ * The per-photo / per-collection "ask about this" hand-off. Callers pass
+ * captions and collection titles from the gallery catalogue only — never user
+ * input — so the set of messages the property can receive stays closed.
+ */
+export function whatsappGalleryViewUrl(viewTitle: string): string {
+  return whatsappChatUrl(whatsappOpenings.galleryView.replace("{view}", viewTitle));
+}
+
+/**
+ * The FAQ hand-off where no topic is named — the FAQ hero, the "can't find
+ * your answer" card, the sticky bar and the closing band.
+ */
+export const whatsappFaqUrl = whatsappChatUrl(whatsappOpenings.faq);
+
+/**
+ * The per-topic "ask about this" hand-off under each FAQ answer. Callers pass
+ * a phrase from the FAQ page's fixed topic list only — never the visitor's
+ * search text — so the set of messages the property can receive stays closed.
+ */
+export function whatsappFaqTopicUrl(topicPhrase: string): string {
+  return whatsappChatUrl(whatsappOpenings.faqTopic.replace("{topic}", topicPhrase));
+}
+
+/**
+ * The legal pages' hand-off where no policy topic is named — the heroes,
+ * sticky bars and closing bands on Privacy, Cookies, Terms and Accessibility.
+ */
+export const whatsappLegalUrl = whatsappChatUrl(whatsappOpenings.legal);
+
+/**
+ * The per-topic legal hand-off — "ask about this section" and each data-rights
+ * request card. Callers pass a phrase from `containers/legal/anchors.ts` only,
+ * never visitor input, so the set of messages stays closed.
+ */
+export function whatsappLegalTopicUrl(topicPhrase: string): string {
+  return whatsappChatUrl(whatsappOpenings.legalTopic.replace("{topic}", topicPhrase));
+}

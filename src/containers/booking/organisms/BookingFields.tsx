@@ -14,6 +14,8 @@ export interface BookingFieldsProps {
   layout: "row" | "column";
   months?: 1 | 2;
   datesAlwaysOpen?: boolean;
+  /** See `BookingFieldsBody` — collapses the guest steppers into a popover. */
+  collapseGuests?: boolean;
 }
 
 /**
@@ -27,6 +29,7 @@ export function BookingFields({
   layout,
   months = 2,
   datesAlwaysOpen,
+  collapseGuests,
 }: BookingFieldsProps) {
   const { copy } = data;
   const isRow = layout === "row";
@@ -35,8 +38,8 @@ export function BookingFields({
     <Box component="form" onSubmit={booking.onSubmit} noValidate>
       <Stack
         direction={isRow ? { xs: "column", md: "row" } : "column"}
-        spacing={4}
-        sx={{ alignItems: isRow ? { md: "flex-end" } : "stretch" }}
+        spacing={collapseGuests ? 2 : 4}
+        sx={{ alignItems: isRow ? { md: collapseGuests ? "flex-start" : "flex-end" } : "stretch" }}
       >
         <BookingFieldsBody
           data={data}
@@ -44,19 +47,27 @@ export function BookingFields({
           layout={layout}
           months={months}
           datesAlwaysOpen={datesAlwaysOpen}
+          collapseGuests={collapseGuests}
+          align={collapseGuests ? "start" : "end"}
         />
 
-        <Button type="submit" loading={booking.status === "submitting"} size="large">
+        <Button
+          type="submit"
+          loading={booking.status === "submitting"}
+          size="large"
+          sx={collapseGuests ? { flexShrink: 0, minHeight: 56, px: 5 } : undefined}
+        >
           {booking.status === "submitting" ? copy.actions.submitting : copy.actions.submit}
         </Button>
       </Stack>
 
-      <Box sx={{ mt: 3 }}>
+      <Box sx={{ mt: collapseGuests ? 0 : 3 }}>
         <StayStatus
           data={data}
           status={booking.status}
           message={booking.message}
           fallbackHref={booking.fallbackHref}
+          dense={collapseGuests}
         />
       </Box>
     </Box>

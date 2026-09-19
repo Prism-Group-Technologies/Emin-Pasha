@@ -1,21 +1,22 @@
 import { Box } from "@/components/atoms/Box";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
-import { CookieSettingsButton } from "@/components/organisms/Footer/CookieSettingsButton";
 import { FOOTER_BAND_DIVIDER } from "@/components/organisms/Footer/constants";
 import type { FooterData } from "@/components/organisms/Footer/footerData";
 import { quietLinkSx } from "@/theme/linkStyles";
 
 /**
- * Legal links, the cookie reopener and the copyright.
+ * Legal links and the copyright.
  *
- * The four legal routes land in a later step (PLAN.md §6, step 15) and until
- * then resolve to the branded 404 — listed rather than hidden so the
- * obligation stays visible in the UI instead of being forgotten
- * (TODO(EMIN-Q40): the pages need a lawyer's text, not this build's).
+ * All five links — Privacy, Cookie policy, Terms, Accessibility and Cookie
+ * settings — are real routes (`containers/legal`). "Cookie settings" used to
+ * be a `<button>` that opened the consent dialog; it is now a link to the
+ * full `/cookie-settings` page, which drives the same consent store, so the
+ * whole bar is server-rendered with no client island. The consent banner's
+ * "Manage preferences" still opens the quick dialog.
  *
  * The copyright pushes right from `md` up and wraps underneath below it,
- * where a single flex row of four links plus a year would otherwise break
+ * where a single flex row of links plus a year would otherwise break
  * mid-item. The year is computed per render in `footerData`, not at module
  * load — see the note there.
  */
@@ -37,7 +38,6 @@ export function FooterLegalBar({ legal }: { legal: FooterData["legal"] }) {
             {link.label}
           </Link>
         ))}
-        <CookieSettingsButton label={legal.cookieLabel} />
       </Box>
       <Text variant="body2" color="text.secondary" sx={{ ml: { md: "auto" } }}>
         {legal.copyright}

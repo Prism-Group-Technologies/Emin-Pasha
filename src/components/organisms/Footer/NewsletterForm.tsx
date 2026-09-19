@@ -9,6 +9,7 @@ export interface NewsletterFormProps {
   /** Carried over from the pre-hydration pass so keystrokes are not dropped. */
   defaultEmail?: string;
   autoFocusEmail?: boolean;
+  idPrefix?: string;
 }
 
 /**
@@ -19,7 +20,12 @@ export interface NewsletterFormProps {
  *
  * 'use client' justification: form state and submission.
  */
-export function NewsletterForm({ copy, defaultEmail, autoFocusEmail }: NewsletterFormProps) {
+export function NewsletterForm({
+  copy,
+  defaultEmail,
+  autoFocusEmail,
+  idPrefix,
+}: NewsletterFormProps) {
   const { form, onSubmit, result, submitting } = useNewsletterForm(defaultEmail);
   const { errors } = form.formState;
 
@@ -35,6 +41,7 @@ export function NewsletterForm({ copy, defaultEmail, autoFocusEmail }: Newslette
       submitting={submitting}
       result={result}
       onSubmit={onSubmit}
+      idPrefix={idPrefix}
     />
   );
 }

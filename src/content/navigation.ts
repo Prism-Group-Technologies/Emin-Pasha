@@ -10,8 +10,8 @@ const raw: NavItem[] = [
     href: "/accommodation",
     children: [
       { label: "Superior Room", href: "/accommodation/superior-room" },
-      { label: "Garden Room", href: "/accommodation/garden-room" },
-      { label: "Garden Suites", href: "/accommodation/garden-suites" },
+      { label: "Deluxe Room", href: "/accommodation/deluxe-room" },
+      { label: "Deluxe Suites", href: "/accommodation/deluxe-suites" },
       { label: "Superior Suites", href: "/accommodation/superior-suites" },
     ],
   },

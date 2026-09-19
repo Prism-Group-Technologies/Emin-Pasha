@@ -20,6 +20,26 @@ import { type WhatsAppOpenings, whatsappOpeningsSchema } from "@/schemas/content
 const raw: WhatsAppOpenings = {
   general: "Hello Emin Pasha — I'd like to ask about a stay.",
   booking: "Hello Emin Pasha — I'd like to book direct. Could you help me with dates?",
+  wellness:
+    "Hello Emin Pasha — I'd like to book a spa, gym or pool visit. Could you help me with what's available?",
+  events:
+    "Hello Emin Pasha — I'm planning a meeting or event and would like to speak with the events team.",
+  offers: "Hello Emin Pasha — I'd like to ask about your current offers.",
+  transfer:
+    "Hello Emin Pasha — I'd like to arrange an airport transfer. Could you help me with the details?",
+  lounges:
+    "Hello Emin Pasha — I'd like to reserve a table in one of your lounges or ask about the gardens.",
+  offerClaim:
+    "Hello Emin Pasha — I'd like to claim the “{offer}” offer. Could you check availability for my dates?",
+  gallery:
+    "Hello Emin Pasha — I've been looking through your gallery and would like to plan a visit.",
+  galleryView:
+    "Hello Emin Pasha — I saw “{view}” in your gallery and would like to plan something like it. Could you help?",
+  faq: "Hello Emin Pasha — I have a question that isn't on your FAQ page.",
+  faqTopic: "Hello Emin Pasha — I have a question about {topic}.",
+  legal:
+    "Hello Emin Pasha — I have a question about your privacy, cookie, terms or accessibility policies.",
+  legalTopic: "Hello Emin Pasha — I have a question about {topic}.",
 };
 
 export const whatsappOpenings = whatsappOpeningsSchema.parse(raw);

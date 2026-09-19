@@ -1,11 +1,14 @@
 /**
- * Stand-in media, used by every asset slot whose master has not been
- * delivered (TODO(EMIN-Q43) video, TODO(EMIN-Q44) photography).
+ * The stand-in used by any asset slot that has no photograph assigned to it
+ * in `@/content/photoAssignments`.
  *
- * One image covers all ~30 image slots: it is rendered through `fill` +
- * `object-fit: cover` inside a box that already holds the slot's real aspect
- * ratio, so a delivered photograph drops into the same box without moving
- * anything (CLS stays at 0 through the swap).
+ * Nearly every slot on the site now resolves to a delivered photograph, so
+ * this is a safety net rather than the default: it catches a slot added
+ * without an assignment, which `src/content/photoAssignments.test.ts` also
+ * fails the build over. It is rendered through `fill` + `object-fit: cover`
+ * inside a box that already holds the slot's real aspect ratio, so a
+ * photograph drops into the same box without moving anything (CLS stays at 0
+ * through the swap).
  *
  * The artwork is deliberately **not** a neutral grey box and deliberately
  * **not** a stock photograph: it is brand-coloured, carries the Equatorial
@@ -21,14 +24,3 @@
 export const placeholderImageSrc = "/images/placeholder.jpg";
 
 export const placeholderImageSize = { width: 1920, height: 1080 } as const;
-
-/**
- * An 8-second silent loop rendered from the same artwork with a slow
- * Ken-Burns drift, in both codecs CLAUDE.md §8 asks for. 317 KB / 160 KB —
- * far under the 6 MB ceiling, but the real footage will not be, so Step 8
- * still has to do the `preload="none"` + poster-first work properly.
- */
-export const placeholderVideoSources = [
-  { src: "/video/placeholder-hero.webm", type: "video/webm" },
-  { src: "/video/placeholder-hero.mp4", type: "video/mp4" },
-] as const;

@@ -8,6 +8,9 @@ import { radiusTokens } from "@/theme/tokens";
 
 const ICON_BY_HREF: Record<string, IconName> = {
   "/spa": "spa",
+  "/gym": "fitness-center",
+  "/swimming-pool": "pool",
+  "/spa-etiquette": "info",
   "/dining": "restaurant",
   "/offers": "celebration",
   "/experiences/airport-transfer": "directions",
@@ -17,8 +20,14 @@ const ICON_BY_HREF: Record<string, IconName> = {
  * Internal links out of Accommodation, as a row of cards. Labels resolve
  * from `navigation` by href, so a section renamed anywhere is renamed here
  * too (CLAUDE.md §5.4). Shared by the location band and the room detail page.
+ *
+ * The desktop column count is derived from how many links there are, so the
+ * last row is always full: four links render 2×2 rather than 3 + 1 with two
+ * empty cells trailing off to the right. Three or six keep the 3-up rhythm.
  */
 export function RelatedLinks({ hrefs }: { hrefs: string[] }) {
+  const desktopColumns = hrefs.length === 4 ? 2 : Math.min(hrefs.length, 3);
+
   return (
     <Box
       component="ul"
@@ -29,8 +38,8 @@ export function RelatedLinks({ hrefs }: { hrefs: string[] }) {
         display: "grid",
         gridTemplateColumns: {
           xs: "1fr",
-          sm: "repeat(2, minmax(0, 1fr))",
-          md: "repeat(3, minmax(0, 1fr))",
+          sm: hrefs.length > 1 ? "repeat(2, minmax(0, 1fr))" : "1fr",
+          md: `repeat(${desktopColumns}, minmax(0, 1fr))`,
         },
         gap: 3,
       }}

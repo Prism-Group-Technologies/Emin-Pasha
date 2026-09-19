@@ -8,6 +8,24 @@ import type { BookingCopy } from "@/schemas/content/booking";
 const plural = (template: { one: string; many: string }, count: number) =>
   (count === 1 ? template.one : template.many).replace("{count}", String(count));
 
+/**
+ * `2 guests · 1 room`. Exported because the hero's collapsed guests field
+ * shows the same phrase without having any dates to summarise — and the
+ * pluralisation rules are supposed to sit in one testable place, which a
+ * second copy in that component would quietly undo.
+ */
+export function formatGuests(
+  copy: BookingCopy,
+  adults: number,
+  children: number,
+  rooms: number,
+): string {
+  const { summary } = copy;
+  return [plural(summary.guests, adults + children), plural(summary.rooms, rooms)].join(
+    summary.partSeparator,
+  );
+}
+
 export interface BookingSummaryValues {
   checkIn: string;
   checkOut: string;
@@ -41,10 +59,7 @@ export function useBookingSummary(values: BookingSummaryValues, copy: BookingCop
     .join(summary.dateSeparator);
 
   const nights = plural(nightsCopy, values.nights);
-  const guests = [
-    plural(summary.guests, values.adults + values.children),
-    plural(summary.rooms, values.rooms),
-  ].join(summary.partSeparator);
+  const guests = formatGuests(copy, values.adults, values.children, values.rooms);
 
   return { dates, nights, guests, spoken: [dates, nights, guests].join(summary.partSeparator) };
 }

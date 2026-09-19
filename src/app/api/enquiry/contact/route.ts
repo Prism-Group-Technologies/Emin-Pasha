@@ -1,5 +1,7 @@
+import { formCopy } from "@/containers/contact/copy/form";
 import { contactCopy } from "@/content/contact-copy";
 import { handleEnquiry } from "@/lib/api/envelope";
+import { contactFields, contactInbox, contactSubject } from "@/lib/mail/contactEnquiry";
 import { contactSchema } from "@/schemas/contact";
 
 export const dynamic = "force-dynamic";
@@ -8,18 +10,13 @@ export function POST(request: Request) {
   return handleEnquiry(request, {
     kind: "contact",
     schema: contactSchema,
-    subject: "Website contact form",
+    subject: contactSubject,
+    to: contactInbox,
     replyTo: (values) => values.email,
-    toFields: (values) => [
-      { label: "Subject", value: values.subject },
-      { label: "Name", value: values.name },
-      { label: "Email", value: values.email },
-      { label: "Phone", value: values.phone ?? "—" },
-      { label: "Message", value: values.message },
-    ],
+    toFields: contactFields,
     messages: {
-      success: contactCopy.messages.success,
-      failure: contactCopy.messages.failure,
+      success: formCopy.messages.success,
+      failure: formCopy.messages.failed,
       rateLimited: contactCopy.messages.rateLimited,
     },
   });

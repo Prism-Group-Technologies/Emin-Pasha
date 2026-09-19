@@ -144,7 +144,6 @@ export function getFooterData() {
     legal: {
       navLabel: shell.footer.legalNavLabel,
       links: shell.footer.legalLinks,
-      cookieLabel: shell.consent.reopenLabel,
       copyright: `© ${new Date().getFullYear()} ${identity.name}. ${shell.footer.copyrightSuffix}`,
     },
   };

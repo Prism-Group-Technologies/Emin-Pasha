@@ -55,8 +55,8 @@ export const FEATURE_TILE_ICONS: Record<string, IconName> = {
 /** Where each room category's detail page lives, keyed by `content/rooms.ts` id. */
 export const ROOM_HREFS: Record<string, string> = {
   "superior-room": "/accommodation/superior-room",
-  "garden-room": "/accommodation/garden-room",
-  "garden-suites": "/accommodation/garden-suites",
+  "deluxe-room": "/accommodation/deluxe-room",
+  "deluxe-suites": "/accommodation/deluxe-suites",
   "superior-suites": "/accommodation/superior-suites",
 };
 

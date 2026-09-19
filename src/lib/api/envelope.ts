@@ -19,7 +19,14 @@ export interface ApiEnvelope {
 export interface HandlerConfig<Schema extends z.ZodType> {
   kind: EnquiryKind;
   schema: Schema;
-  subject: string;
+  /** A fixed subject, or one derived from the input (e.g. the chosen intent). */
+  subject: string | ((values: z.output<Schema>) => string);
+  /**
+   * Optional per-message inbox. Omitted, the kind's default from
+   * `lib/mail` applies — so every existing route is unchanged. The Contact
+   * route uses it to send each intent to the desk that owns it.
+   */
+  to?: (values: z.output<Schema>) => string;
   /** Turns validated input into the ordered field list for the message. */
   toFields: (values: z.output<Schema>) => { label: string; value: string }[];
   replyTo?: (values: z.output<Schema>) => string | undefined;
@@ -41,6 +48,23 @@ async function readBody(request: Request): Promise<Record<string, unknown> | nul
 
 const isHoneypotFilled = (record: Record<string, unknown>) =>
   typeof record.website === "string" && record.website.length > 0;
+
+/**
+ * Validated input → the outbound message. Kept out of `handleEnquiry` so the
+ * optional inbox / subject resolution costs that function no branches.
+ */
+function buildMessage<Schema extends z.ZodType>(
+  config: HandlerConfig<Schema>,
+  values: z.output<Schema>,
+): MailMessage {
+  return {
+    kind: config.kind,
+    to: config.to ? config.to(values) : inboxFor(config.kind),
+    replyTo: config.replyTo?.(values),
+    subject: typeof config.subject === "function" ? config.subject(values) : config.subject,
+    fields: config.toFields(values),
+  };
+}
 
 /**
  * The shared pipeline behind every enquiry route: **rate limit → honeypot →
@@ -87,16 +111,7 @@ export async function handleEnquiry<Schema extends z.ZodType>(
     return json({ ok: false, message: config.messages.failure }, 403);
   }
 
-  const values = parsed.data as z.output<Schema>;
-  const message: MailMessage = {
-    kind: config.kind,
-    to: inboxFor(config.kind),
-    replyTo: config.replyTo?.(values),
-    subject: config.subject,
-    fields: config.toFields(values),
-  };
-
-  const result = await sendEnquiry(message);
+  const result = await sendEnquiry(buildMessage(config, parsed.data as z.output<Schema>));
   if (result.status === "failed") {
     console.error(
       JSON.stringify({ event: "enquiry.failed", kind: config.kind, reason: result.reason }),

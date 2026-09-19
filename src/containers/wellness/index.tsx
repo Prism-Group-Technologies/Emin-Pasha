@@ -1,80 +1,66 @@
-import { Box } from "@/components/atoms/Box";
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { OutletCard } from "@/containers/dining/molecules/OutletCard";
-import { gym, pool, poolPageIntro, spa, spaPageIntro } from "@/content/wellness";
-import { alternatingDirection } from "@/theme/motion";
+import { sections } from "@/containers/wellness/copy";
+import { wellnessSectionMotion as m } from "@/containers/wellness/motion";
+import { JourneySection } from "@/containers/wellness/organisms/JourneySection";
+import { MembershipSection } from "@/containers/wellness/organisms/MembershipSection";
+import { PillarsSection } from "@/containers/wellness/organisms/PillarsSection";
+import { SignatureTreatmentsSection } from "@/containers/wellness/organisms/SignatureTreatmentsSection";
+import { StickyEnquireCta } from "@/containers/wellness/organisms/StickyEnquireCta";
+import { WellnessClosingCtaSection } from "@/containers/wellness/organisms/WellnessClosingCtaSection";
+import { WellnessEnquirySection } from "@/containers/wellness/organisms/WellnessEnquirySection";
+import { WellnessFaqSection } from "@/containers/wellness/organisms/WellnessFaqSection";
+import { WellnessHero } from "@/containers/wellness/organisms/WellnessHero";
+import { WellnessPackagesSection } from "@/containers/wellness/organisms/WellnessPackagesSection";
+import { WellnessVoicesSection } from "@/containers/wellness/organisms/WellnessVoicesSection";
 
 /**
- * Spa & Wellness hub. The three facilities each get their own route because
- * each has genuinely distinct, searchable intent — "best spa in Kampala",
- * "gym membership Nakasero" and "swimming pool open to public Kampala" are
- * three different searches by three different people.
+ * The Spa & Wellness hub. A Server Component that composes the section
+ * organisms and holds no logic of its own — the client islands are the
+ * treatment filter (`TreatmentGrid`), the FAQ accordion, the deferred
+ * enquiry form and the sticky "book" bar. Scroll motion is entirely CSS.
+ *
+ * The order is a funnel, not a brochure:
+ *
+ *   hero          — the pitch, the approved figures, and the two CTAs
+ *   pillars       — spa / gym / pool, the first choice to make
+ *   treatments    — the signature menu with indicative prices, filterable
+ *   packages      — three bundled wellness days
+ *   journey       — what a first visit actually looks like
+ *   membership    — gym tiers + a sample class timetable
+ *   enquiry       — the on-page form + three channels: the conversion surface
+ *   voices        — three visitor notes (placeholder attributions)
+ *   faq           — the questions the wellness desk fields most
+ *   closing       — the last exit, WhatsApp plus all three channels
+ *   related       — cross-sell into the rest of the estate
+ *
+ * Every price, duration, membership rate and class time is invented and
+ * labelled "indicative" — see `containers/wellness/copy`. The spa (7am–9pm)
+ * and gym (6am–9pm) hours, the pool's public access and the gym's
+ * non-resident membership are the approved §6 facts the page is built on.
  */
 export function WellnessContainer() {
   return (
     <>
+      <WellnessHero />
+      <PillarsSection motion={m.pillars} />
+      <SignatureTreatmentsSection motion={m.treatments} />
+      <WellnessPackagesSection motion={m.packages} />
+      <JourneySection motion={m.journey} />
+      <MembershipSection motion={m.membership} />
+      <WellnessEnquirySection motion={m.enquiry} />
+      <WellnessVoicesSection motion={m.voices} />
+      <WellnessFaqSection motion={m.faq} />
+      <WellnessClosingCtaSection motion={m.closing} />
       <SectionShell
-        motion={alternatingDirection(0)}
-        eyebrow="§ SPA & WELLNESS"
-        heading="Spa & Wellness"
-        headingLevel="h1"
+        motion={m.related}
+        eyebrow={sections.related.eyebrow}
+        heading={sections.related.heading}
       >
-        <Stack spacing={5}>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Spa & Wellness" }]} />
-          <Text variant="subtitle1" sx={{ maxWidth: "70ch" }}>
-            {spaPageIntro}
-          </Text>
-        </Stack>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(1)}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "repeat(3, minmax(0, 1fr))" },
-            gap: { xs: 6, md: 5 },
-          }}
-        >
-          <OutletCard
-            id="swanky-spa"
-            name={spa.name}
-            description={spa.description}
-            href="/spa"
-            kicker={spa.hours}
-          />
-          <OutletCard
-            id="emin-pasha-gym"
-            name={gym.name}
-            description={gym.description}
-            href="/gym"
-            kicker={gym.hours}
-          />
-          <OutletCard
-            id="swimming-pool"
-            name={pool.name}
-            description={poolPageIntro}
-            href="/swimming-pool"
-          />
-        </Box>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(2)} heading="Before you visit" variant="raised">
-        <Text variant="body1" color="text.secondary" sx={{ maxWidth: "70ch" }}>
-          Please read our spa etiquette — it covers arrival times, health disclosure, minimum ages
-          and pool safety.
-        </Text>
-        <Box sx={{ mt: 5 }}>
-          <RelatedLinks hrefs={["/spa-etiquette"]} />
-        </Box>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(3)} heading="Also here">
         <RelatedLinks hrefs={["/accommodation", "/dining", "/offers"]} />
       </SectionShell>
+
+      <StickyEnquireCta />
     </>
   );
 }

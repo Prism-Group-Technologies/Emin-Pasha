@@ -20,7 +20,15 @@ export function useWellnessEnquiry(defaultInterest: WellnessInterest) {
   const form = useForm<WellnessEnquiry>({
     resolver: zodResolver(wellnessEnquirySchema),
     mode: "onTouched",
-    defaultValues: { name: "", email: "", interest: defaultInterest, consent: false, message: "" },
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      interest: defaultInterest,
+      preferredDate: "",
+      message: "",
+      consent: false,
+    },
   });
 
   const onSubmit = form.handleSubmit(async (values) => {

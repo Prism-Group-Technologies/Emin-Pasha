@@ -1,84 +1,74 @@
-import { AssetImage } from "@/components/atoms/AssetImage";
-import { Box } from "@/components/atoms/Box";
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
-import { PendingInfoNotice } from "@/components/molecules/PendingInfoNotice";
+import { PageHero } from "@/components/organisms/PageHero";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { FactList } from "@/containers/wellness/molecules/FactList";
-import { HoursBadge } from "@/containers/wellness/molecules/HoursBadge";
-import { DeferredWellnessEnquiryForm } from "@/containers/wellness/organisms/DeferredWellnessEnquiryForm";
-import { assets } from "@/content/assets";
-import { gym, gymOfferings } from "@/content/wellness";
-import { wellnessCopy } from "@/content/wellness-copy";
-import { alternatingDirection } from "@/theme/motion";
+import { MEMBERSHIP_ANCHOR_ID } from "@/containers/wellness/anchors";
+import { GymOnTheFloorSection } from "@/containers/wellness/organisms/GymOnTheFloorSection";
+import { MembershipSection } from "@/containers/wellness/organisms/MembershipSection";
+import { SeasonalOffersSection } from "@/containers/wellness/organisms/SeasonalOffersSection";
+import { SignatureTreatmentsSection } from "@/containers/wellness/organisms/SignatureTreatmentsSection";
+import { StickyEnquireCta } from "@/containers/wellness/organisms/StickyEnquireCta";
+import { WellnessAssuranceSection } from "@/containers/wellness/organisms/WellnessAssuranceSection";
+import { WellnessClosingCtaSection } from "@/containers/wellness/organisms/WellnessClosingCtaSection";
+import { WellnessEnquirySection } from "@/containers/wellness/organisms/WellnessEnquirySection";
+import { WellnessFaqSection } from "@/containers/wellness/organisms/WellnessFaqSection";
+import { WellnessVoicesSection } from "@/containers/wellness/organisms/WellnessVoicesSection";
+import { pageHeroImage } from "@/content/pageHeroes";
+import { gym } from "@/content/wellness";
+import { whatsappWellnessUrl } from "@/lib/directions";
+import { alternatingDirection as d } from "@/theme/motion";
 
-const asset = assets.find((item) => item.id === "spa-gym");
+const HERO_STATS = [
+  { value: "6am–9pm", label: "open every day" },
+  { value: "Public", label: "membership open" },
+  { value: "Certified", label: "personal trainers" },
+  { value: "Renovated", label: "cutting-edge kit" },
+];
 
 /**
  * Emin Pasha Gym. Targets "gym membership Nakasero" — the approved §6 copy
- * already states that membership is open to non-residents, which is the
- * fact that search is actually looking for.
+ * already states that membership is open to non-residents.
  *
- * Membership tiers and rates do not exist in the source and are forbidden to
- * invent (§0.7), so the page states that membership is available, says the
- * rates are not published yet, and captures the enquiry.
+ * A Server Component that only composes section organisms, in funnel order:
+ * credibility → what's on the floor → membership tiers + a sample timetable →
+ * gym sessions with indicative prices → seasonal intakes → the enquiry form →
+ * voices → FAQ → closing. Rates and class times are invented and flagged
+ * "indicative"; the 6am–9pm hours and the non-resident membership are the
+ * approved facts.
  */
 export function GymContainer() {
   return (
     <>
-      <SectionShell
-        motion={alternatingDirection(0)}
+      <PageHero
+        image={pageHeroImage("gym")}
         eyebrow="§ THE GYM"
-        heading={gym.name}
-        headingLevel="h1"
-      >
-        <Stack spacing={5}>
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Spa & Wellness", href: "/spa-and-wellness" },
-              { label: gym.name },
-            ]}
-          />
-          <HoursBadge hours={gym.hours} />
-          <Text variant="subtitle1" sx={{ maxWidth: "70ch" }}>
-            {gym.description}
-          </Text>
-        </Stack>
-      </SectionShell>
+        headline={gym.name}
+        lede={gym.description}
+        label={gym.name}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Spa & Wellness", href: "/spa-and-wellness" },
+          { label: gym.name },
+        ]}
+        primaryCta={{ label: "Book on WhatsApp", href: whatsappWellnessUrl }}
+        secondaryCta={{ label: "See membership", href: `#${MEMBERSHIP_ANCHOR_ID}` }}
+        stats={HERO_STATS}
+      />
 
-      {asset && (
-        <SectionShell motion={alternatingDirection(1)} variant="bleed">
-          <AssetImage asset={asset} sizes="100vw" priority />
-        </SectionShell>
-      )}
+      <WellnessAssuranceSection motion={d(1)} facility="gym" />
+      <GymOnTheFloorSection motion={d(2)} />
+      <MembershipSection motion={d(3)} />
+      <SignatureTreatmentsSection motion={d(4)} facility="gym" />
+      <SeasonalOffersSection motion={d(5)} facility="gym" />
+      <WellnessEnquirySection motion={d(6)} interest="gym" />
+      <WellnessVoicesSection motion={d(7)} />
+      <WellnessFaqSection motion={d(8)} />
+      <WellnessClosingCtaSection motion={d(9)} />
 
-      <SectionShell motion={alternatingDirection(2)}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1fr) minmax(0, 1fr)" },
-            gap: { xs: 6, md: 8 },
-            alignItems: "start",
-          }}
-        >
-          <Stack spacing={6}>
-            <FactList heading="In the gym" items={gymOfferings} />
-            <PendingInfoNotice
-              subject="Membership options and rates"
-              todoId="EMIN-Q11"
-              action={wellnessCopy.pending.gym}
-            />
-          </Stack>
-          <DeferredWellnessEnquiryForm interest="gym" />
-        </Box>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(3)} heading="Also here" variant="raised">
+      <SectionShell motion={d(10)} heading="Also here">
         <RelatedLinks hrefs={["/spa", "/swimming-pool", "/spa-etiquette", "/accommodation"]} />
       </SectionShell>
+
+      <StickyEnquireCta />
     </>
   );
 }

@@ -43,3 +43,10 @@ export {
 export { estateAmenities, inRoomAmenities, type AmenityCopy } from "./amenities";
 export { stayPackages, packagesDisclaimer, type StayPackageCopy } from "./packages";
 export { roomTaglines, roomDescriptions } from "./rooms";
+export {
+  roomGallerySection,
+  roomInclusionsSection,
+  roomPoliciesSection,
+  otherRoomsSection,
+  bookingCardCopy,
+} from "./detail";

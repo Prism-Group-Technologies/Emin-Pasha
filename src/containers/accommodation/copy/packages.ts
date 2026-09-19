@@ -40,7 +40,7 @@ export const stayPackages: StayPackageCopy[] = [
     fromUgx: 250_000,
     forGuests: "Couples & leisure guests",
     includes: [
-      "Garden Room or Garden Suite opening onto the landscaped grounds",
+      "Deluxe Room or Deluxe Suite opening onto the landscaped grounds",
       "À la carte breakfast for two",
       "A spa treatment booking held for your dates (adults 16+)",
       "A reserved table at Friday Band Night",
@@ -62,13 +62,13 @@ export const stayPackages: StayPackageCopy[] = [
     ctaLabel: "Talk to reservations",
   },
   {
-    id: "family-garden-suite",
-    name: "The Family Garden Suite",
+    id: "family-deluxe-suite",
+    name: "The Family Deluxe Suite",
     tagline: "One suite, a separate living room, and the pool through the gardens.",
     fromUgx: 250_000,
     forGuests: "Families & small groups, up to 3",
     includes: [
-      "Garden Suite with separate living and sleeping areas",
+      "Deluxe Suite with separate living and sleeping areas",
       "Children stay free using existing bedding",
       "Pool access for children with a parent or adult",
       "À la carte breakfast and an in-room safe",

@@ -3,34 +3,25 @@
 import { Box } from "@/components/atoms/Box";
 import { Button } from "@/components/atoms/Button";
 import { Text } from "@/components/atoms/Text";
-import { Checkbox } from "@/components/molecules/Checkbox";
-import { SelectField } from "@/components/molecules/SelectField";
-import { TextInput } from "@/components/molecules/TextInput";
-import { Textarea } from "@/components/molecules/Textarea";
 import { useWellnessEnquiry } from "@/containers/wellness/hooks/useWellnessEnquiry";
+import { WellnessEnquiryFields } from "@/containers/wellness/molecules/WellnessEnquiryFields";
 import { wellnessCopy } from "@/content/wellness-copy";
 import type { WellnessInterest } from "@/schemas/wellnessEnquiry";
 
 const copy = wellnessCopy.enquiry;
 
-const OPTIONS: { value: WellnessInterest; label: string }[] = [
-  { value: "spa", label: copy.options.spa },
-  { value: "gym", label: copy.options.gym },
-  { value: "pool", label: copy.options.pool },
-];
-
 /**
- * Lead capture in place of a price list. There is no treatment menu, no
- * membership tier and no day-pass rate in the source, and inventing any of
- * them is forbidden (§0.7) — so the page asks rather than guesses.
+ * Lead capture in place of a booking engine — there is no online wellness
+ * booking on the published site, so the form asks and a person confirms.
+ * Presentational: all state and submission live in `useWellnessEnquiry`, and
+ * every input lives in `WellnessEnquiryFields`.
  *
- * 'use client' justification: react-hook-form state and submission.
- * The result line is `aria-live` with a reserved height, so the message
- * arriving cannot move the form (CLAUDE.md §10, and CLS stays at 0).
+ * 'use client' justification: react-hook-form state and submission. The
+ * result line is `aria-live` with a reserved height, so the message arriving
+ * cannot move the form (CLS stays at 0).
  */
 export function WellnessEnquiryForm({ interest }: { interest: WellnessInterest }) {
   const { form, onSubmit, result, submitting } = useWellnessEnquiry(interest);
-  const { errors } = form.formState;
 
   return (
     <Box
@@ -45,45 +36,9 @@ export function WellnessEnquiryForm({ interest }: { interest: WellnessInterest }
       <Text variant="body2" color="text.secondary">
         {copy.lead}
       </Text>
-      <TextInput
-        {...form.register("name")}
-        id="wellness-name"
-        label={copy.name}
-        error={Boolean(errors.name)}
-        helperText={errors.name?.message}
-        autoComplete="name"
-        fullWidth
-      />
-      <TextInput
-        {...form.register("email")}
-        id="wellness-email"
-        type="email"
-        label={copy.email}
-        error={Boolean(errors.email)}
-        helperText={errors.email?.message}
-        autoComplete="email"
-        fullWidth
-      />
-      <SelectField
-        {...form.register("interest")}
-        id="wellness-interest"
-        label={copy.interest}
-        options={OPTIONS}
-        fullWidth
-      />
-      <Textarea
-        {...form.register("message")}
-        id="wellness-message"
-        label={copy.message}
-        minRows={3}
-        fullWidth
-      />
-      <Checkbox
-        {...form.register("consent")}
-        id="wellness-consent"
-        label={copy.consent}
-        error={errors.consent?.message}
-      />
+
+      <WellnessEnquiryFields form={form} />
+
       <Button type="submit" loading={submitting} sx={{ justifySelf: "start" }}>
         {submitting ? copy.submitting : copy.submit}
       </Button>

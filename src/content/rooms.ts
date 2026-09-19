@@ -25,16 +25,16 @@ const raw: RoomCategory[] = [
     inclusions: commonInclusions,
   },
   {
-    id: "garden-room",
-    name: "Garden Room",
+    id: "deluxe-room",
+    name: "Deluxe Room",
     rateUgx: 250_000,
     capacity: "1–2 guests",
     sellTo: "Couples, leisure, first-time guests, value-conscious corporate",
     inclusions: commonInclusions,
   },
   {
-    id: "garden-suites",
-    name: "Garden Suites",
+    id: "deluxe-suites",
+    name: "Deluxe Suites",
     rateUgx: 250_000,
     capacity: "2–3 guests",
     sellTo: "Families, extended stay, small groups",
@@ -103,10 +103,10 @@ void LEGACY_ROOMS_DO_NOT_PUBLISH;
 const ROOM_DESCRIPTIONS_DRAFT_UNVERIFIED = {
   "superior-room":
     "Our most generously appointed room. Superior Rooms pair the hotel's signature heritage detailing with the comforts of a thoroughly modern stay: a plush king bed, a spacious ensuite, a dedicated work area with fibre connectivity, and windows that open onto the quiet of Nakasero. Ideal for the business traveller who does not want to feel like one.",
-  "garden-room":
-    "Set closest to the landscaped grounds, Garden Rooms open onto greenery. Wake to birdsong rather than traffic, step out into the gardens before breakfast, and return to a calm, characterful interior at the end of the day. Our best-value entry into the Emin Pasha experience.",
-  "garden-suites":
-    "A suite with the gardens at its doorstep. Separate living and sleeping areas give couples, small families and extended-stay guests room to spread out, while the garden setting keeps the city at a comfortable distance. Accommodates up to three guests.",
+  "deluxe-room":
+    "Deluxe Rooms pair a calm, characterful interior with the hotel's signature heritage detailing and the quiet of Nakasero beyond the window. Comfortable for couples, leisure guests and first-time visitors, and our best-value entry into the Emin Pasha experience.",
+  "deluxe-suites":
+    "Separate living and sleeping areas give couples, small families and extended-stay guests room to spread out, with the quiet of Nakasero keeping the city at a comfortable distance. Accommodates up to three guests.",
   "superior-suites":
     "Space, quiet and the hotel's most characterful interiors. A separate lounge area makes the Superior Suite equally suited to a long stay, a small private meeting or an evening in with room service and the In-Room Dining Menu. Accommodates up to three guests.",
 } as const;

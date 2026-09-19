@@ -37,7 +37,11 @@ function VisitPanel() {
       }}
     >
       <IconBadge name="location" tone="garden" />
-      <Text variant="h4" component="p" sx={{ fontFamily: "var(--font-display)", textWrap: "balance" }}>
+      <Text
+        variant="h4"
+        component="p"
+        sx={{ fontFamily: "var(--font-display)", textWrap: "balance" }}
+      >
         {identity.address}
       </Text>
       <Box

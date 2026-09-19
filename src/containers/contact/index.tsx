@@ -1,89 +1,64 @@
-import { Box } from "@/components/atoms/Box";
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
-import { HoursBlock } from "@/components/organisms/Footer/HoursBlock";
-import { SocialLinks } from "@/components/organisms/Footer/SocialLinks";
-import { getFooterData } from "@/components/organisms/Footer/footerData";
 import { SectionShell } from "@/components/templates/SectionShell";
-import { ContactDetails } from "@/containers/contact/organisms/ContactDetails";
-import { DeferredContactForm } from "@/containers/contact/organisms/DeferredContactForm";
-import { MapEmbed } from "@/containers/home/molecules/MapEmbed";
-import { assets } from "@/content/assets";
-import { contactCopy } from "@/content/contact-copy";
-import { identity } from "@/content/identity";
-import { alternatingDirection } from "@/theme/motion";
-
-const mapAsset = assets.find((asset) => asset.id === "contact-static-map");
-const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(identity.address)}&output=embed`;
+import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
+import { sections } from "@/containers/contact/copy";
+import { contactSectionMotion as m } from "@/containers/contact/motion";
+import { ArrivalSection } from "@/containers/contact/organisms/ArrivalSection";
+import { ChannelsSection } from "@/containers/contact/organisms/ChannelsSection";
+import { ContactClosingSection } from "@/containers/contact/organisms/ContactClosingSection";
+import { ContactFaqSection } from "@/containers/contact/organisms/ContactFaqSection";
+import { ContactHero } from "@/containers/contact/organisms/ContactHero";
+import { EnquirySection } from "@/containers/contact/organisms/EnquirySection";
+import { GettingHereSection } from "@/containers/contact/organisms/GettingHereSection";
+import { StickyEnquireCta } from "@/containers/contact/organisms/StickyEnquireCta";
+import { TeamSection } from "@/containers/contact/organisms/TeamSection";
+import { VoicesSection } from "@/containers/contact/organisms/VoicesSection";
 
 /**
- * Contact. The NAP, the two email addresses and the WhatsApp number all come
- * from `content/identity.ts` — the same object the footer and every JSON-LD
- * node read, so the NAP is byte-identical sitewide (CLAUDE.md §9).
+ * Contact, rebuilt as a conversion funnel — the same shape as the Story,
+ * Dining, Wellness and Events redesigns. A Server Component that composes the
+ * section organisms and holds no logic of its own; the client islands are the
+ * deferred enquiry form, the live map, the FAQ accordion and the sticky bar.
  *
- * `HoursBlock` is reused from the footer rather than re-listed: it already
- * renders only the four approved hour facts and says plainly that restaurant
- * hours vary (§0.7 forbids inventing them).
+ * The order follows how a visitor arrives here — already wanting to talk:
  *
- * Department routing shows the two channels §9 actually lists. No `events@`
- * or `spa@` address is invented — those enquiries route to the general inbox,
- * which is what the source supports.
+ *   hero         — the promise, "enquire" + WhatsApp CTAs, service figures
+ *   channels     — WhatsApp / call / email / visit cards + reply promises
+ *   enquiry      — the adaptive two-step form beside what-happens-next, #enquire
+ *   getting here — live map, NAP, directions and drive times
+ *   arrival      — transfers, parking, late arrival, step-free help
+ *   team         — the desk as people (placeholders)
+ *   voices       — three placeholder notes about the pre-stay conversation
+ *   faq          — pre-contact questions + an "ask us" card
+ *   closing      — dark band, book-direct on WhatsApp or call
+ *   related      — cross-sell into rooms, events, spa and dining
+ *
+ * Every channel, address and inbox renders from `content/identity.ts` and
+ * `content/contact.ts`. Everything invented lives in `containers/contact/copy`,
+ * labelled and outside the governed content layer.
  */
 export function ContactContainer() {
-  // The two reused footer blocks are presentational now, so their content
-  // comes from the same assembled object the footer itself renders from —
-  // still one source for the hours and the social URLs, just passed in
-  // rather than reached for.
-  const footer = getFooterData();
-
   return (
     <>
+      <ContactHero />
+      <ChannelsSection motion={m.channels} />
+      <EnquirySection motion={m.enquiry} />
+      <GettingHereSection motion={m.gettingHere} />
+      <ArrivalSection motion={m.arrival} />
+      <TeamSection motion={m.team} />
+      <VoicesSection motion={m.voices} />
+      <ContactFaqSection motion={m.faq} />
+      <ContactClosingSection motion={m.closing} />
       <SectionShell
-        motion={alternatingDirection(0)}
-        eyebrow="§ CONTACT"
-        heading="Contact"
-        headingLevel="h1"
+        motion={m.related}
+        eyebrow={sections.related.eyebrow}
+        heading={sections.related.heading}
       >
-        <Stack spacing={5}>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
-          <Text variant="subtitle1" sx={{ maxWidth: "68ch" }}>
-            {contactCopy.intro}
-          </Text>
-        </Stack>
+        <RelatedLinks
+          hrefs={["/accommodation", "/meetings-and-events", "/spa-and-wellness", "/dining"]}
+        />
       </SectionShell>
 
-      <SectionShell motion={alternatingDirection(1)}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1fr) minmax(0, 1fr)" },
-            gap: { xs: 7, md: 8 },
-            alignItems: "start",
-          }}
-        >
-          <Stack spacing={7}>
-            <ContactDetails />
-            <HoursBlock hours={footer.hours} />
-            <SocialLinks social={footer.social} />
-          </Stack>
-
-          <Stack spacing={7}>
-            <DeferredContactForm />
-            <Box>
-              <Text variant="h3" component="h2" sx={{ mb: 4 }}>
-                {contactCopy.mapTitle}
-              </Text>
-              <MapEmbed
-                asset={mapAsset}
-                mapUrl={embedUrl}
-                label={identity.address}
-                loadLabel={contactCopy.mapLoad}
-              />
-            </Box>
-          </Stack>
-        </Box>
-      </SectionShell>
+      <StickyEnquireCta />
     </>
   );
 }

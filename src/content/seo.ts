@@ -12,7 +12,7 @@ const raw: SeoMeta[] = [
     page: "accommodation",
     title: "Rooms & Suites | Emin Pasha Hotel Kampala",
     description:
-      "Superior Rooms, Garden Rooms and Suites from UGX 250,000 per night. Fibre internet, 24/7 room service and à la carte breakfast included.",
+      "Superior Rooms, Deluxe Rooms and Suites from UGX 250,000 per night. Fibre internet, 24/7 room service and à la carte breakfast included.",
   },
   {
     page: "dining",

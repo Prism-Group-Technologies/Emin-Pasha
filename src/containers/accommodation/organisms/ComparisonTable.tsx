@@ -9,7 +9,12 @@ import { formatUgx } from "@/utils/currency";
 
 const HEADINGS = ["Category", "Sleeps", "From", "Suits"] as const;
 
-const cell = { py: 4, px: { xs: 4, md: 6 }, borderBottom: "1px solid", borderColor: "divider" } as const;
+const cell = {
+  py: 4,
+  px: { xs: 4, md: 6 },
+  borderBottom: "1px solid",
+  borderColor: "divider",
+} as const;
 
 function ComparisonRow({ room }: { room: RoomCategory }) {
   const popular = room.id === ROOM_POPULAR_ID;

@@ -71,10 +71,13 @@ const raw: ShellContent = {
       "Restaurant and bar hours vary — call or message us and we will confirm the day you are coming.",
     socialTitle: "Follow the estate",
     legalLinks: [
-      { label: "Privacy policy", href: "/legal/privacy-policy" },
-      { label: "Cookie policy", href: "/legal/cookie-policy" },
-      { label: "Terms", href: "/legal/terms" },
-      { label: "Accessibility", href: "/legal/accessibility-statement" },
+      { label: "Privacy policy", href: "/privacy-policy" },
+      { label: "Cookie policy", href: "/cookie-policy" },
+      { label: "Terms", href: "/terms" },
+      { label: "Accessibility", href: "/accessibility" },
+      // A real page now (/cookie-settings), so the footer links to it; the
+      // banner's "Manage preferences" still opens the quick dialog.
+      { label: "Cookie settings", href: "/cookie-settings" },
     ],
     legalNavLabel: "Legal",
     copyrightSuffix: "All rights reserved.",

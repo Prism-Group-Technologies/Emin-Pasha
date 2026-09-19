@@ -15,7 +15,7 @@ import { Textarea } from "@/components/molecules/Textarea";
 /** Form controls — default, error and disabled states, in real controlled use. */
 export function FormsSection() {
   const [guests, setGuests] = useState(2);
-  const [radioValue, setRadioValue] = useState("garden-room");
+  const [radioValue, setRadioValue] = useState("deluxe-room");
 
   return (
     <Stack spacing={2} sx={{ maxWidth: 480 }}>
@@ -26,11 +26,11 @@ export function FormsSection() {
       <Textarea label="Message" placeholder="Tell us about your stay…" />
       <SelectField
         label="Room category"
-        defaultValue="garden-room"
+        defaultValue="deluxe-room"
         options={[
           { value: "superior-room", label: "Superior Room" },
-          { value: "garden-room", label: "Garden Room" },
-          { value: "garden-suites", label: "Garden Suites" },
+          { value: "deluxe-room", label: "Deluxe Room" },
+          { value: "deluxe-suites", label: "Deluxe Suites" },
           { value: "superior-suites", label: "Superior Suites" },
         ]}
       />
@@ -42,7 +42,7 @@ export function FormsSection() {
         value={radioValue}
         onChange={(event) => setRadioValue(event.target.value)}
         options={[
-          { value: "garden-room", label: "Garden Room" },
+          { value: "deluxe-room", label: "Deluxe Room" },
           { value: "superior-room", label: "Superior Room" },
         ]}
       />

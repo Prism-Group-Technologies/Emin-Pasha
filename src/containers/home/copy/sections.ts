@@ -71,8 +71,8 @@ export const roomsSection = {
   /** Per-room one-liners, keyed to `content/rooms.ts` ids. */
   taglines: {
     "superior-room": "Our largest standard room — the corporate and diplomatic default.",
-    "garden-room": "Doors onto the landscaped grounds. The one guests ask for again.",
-    "garden-suites": "A separate living space, for families and stays measured in weeks.",
+    "deluxe-room": "Our value-led way in — for couples, leisure and first-time guests.",
+    "deluxe-suites": "A separate living space, for families and stays measured in weeks.",
     "superior-suites": "A private lounge area for executives who work where they sleep.",
   } as Record<string, string>,
   rateNote: "per night",

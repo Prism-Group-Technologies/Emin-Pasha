@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -25,6 +25,7 @@ const STEP_FIELDS: (keyof RfpValues)[][] = [
 export function useRfpForm() {
   const draft = useRfpStore((state) => state.draft);
   const step = useRfpStore((state) => state.step);
+  const seedNonce = useRfpStore((state) => state.seedNonce);
   const setDraft = useRfpStore((state) => state.setDraft);
   const setStep = useRfpStore((state) => state.setStep);
   const clear = useRfpStore((state) => state.clear);
@@ -48,6 +49,21 @@ export function useRfpForm() {
 
   /** Persist on blur rather than on every keystroke — fewer writes, same safety. */
   const persist = useCallback(() => setDraft(form.getValues()), [form, setDraft]);
+
+  /**
+   * A deep-link seed (the Kudara Hall estimator hand-off) lands in the store
+   * after the form has mounted, so its defaults have already been read. Reset
+   * the form onto the seeded draft when the nonce changes — never on a plain
+   * `setDraft`, which is the on-blur persist and must not wipe field state.
+   */
+  const lastSeed = useRef(seedNonce);
+  useEffect(() => {
+    if (seedNonce === lastSeed.current) {
+      return;
+    }
+    lastSeed.current = seedNonce;
+    form.reset({ ...form.getValues(), ...useRfpStore.getState().draft });
+  }, [seedNonce, form]);
 
   const next = useCallback(async () => {
     const fields = STEP_FIELDS[step] ?? [];

@@ -1,1 +1,1 @@
-Static assets only — images, video posters, icons, `llms.txt`/`llms-full.txt`. Every image referenced here must be listed in `docs/ASSET_MANIFEST.md` before use.
+Static assets only — the fallback placeholder image, icons, styleguide artwork and `llms.txt`/`llms-full.txt`. Photography lives in `src/assets/images` and is imported statically so the bundler can fingerprint and resize it; see `src/content/photography.ts`.

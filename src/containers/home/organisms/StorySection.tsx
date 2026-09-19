@@ -1,3 +1,4 @@
+import logoMark from "@/assets/images/logo-mark.png";
 import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Button } from "@/components/atoms/Button";
@@ -11,7 +12,15 @@ import { identity } from "@/content/identity";
 import { story } from "@/content/story";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 
-const portrait = assets.find((asset) => asset.id === "story-emin-pasha-portrait");
+const portraitSlot = assets.find((asset) => asset.id === "story-emin-pasha-portrait");
+
+/**
+ * The namesake slot renders the brand mark rather than the photograph the
+ * assignment table would resolve for it. Only `image` is overridden, so the
+ * slot keeps its approved `altText` and its declared aspect ratio — the box
+ * is the same size either way and nothing on the page moves (CLS stays at 0).
+ */
+const portrait = portraitSlot && { ...portraitSlot, image: logoMark, status: "delivered" as const };
 const readHistory = ctas.find((cta) => cta.id === "story-read");
 
 /**

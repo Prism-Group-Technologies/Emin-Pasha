@@ -9,45 +9,64 @@ export interface AssetImageProps {
   asset: AssetRef;
   sizes: string;
   priority?: boolean;
+  /**
+   * `fill` drops the asset's own ratio box and stretches to the nearest
+   * positioned ancestor instead — for a mosaic cell whose geometry the grid
+   * decides rather than the photograph.
+   *
+   * The CLS guarantee moves with it: the ancestor must reserve a
+   * deterministic height of its own (`roomMosaic` does this by fixing the
+   * whole block's aspect ratio up front). Default stays `asset`, so every
+   * existing call site is unchanged.
+   */
+  ratio?: "asset" | "fill";
 }
 
 /**
- * Renders a content asset. Until its master is delivered (TODO(EMIN-Q43)
- * video, TODO(EMIN-Q44) photography) the slot shows the shared placeholder
- * artwork, overlaid with this slot's own asset id and required dimensions —
- * the "named, dimension-labelled placeholder" CLAUDE.md §6.6 asks for, which
- * doubles as the shooting brief for the hotel.
+ * Renders a content asset.
  *
- * Either way the box holds the asset's exact aspect ratio, so swapping the
- * real file in later cannot move anything on the page (CLS stays at 0).
+ * A slot with a photograph assigned in `@/content/photoAssignments` renders
+ * it through `next/image`, which resizes and re-encodes per request and uses
+ * the bundler's blur placeholder while the bytes arrive. A slot without one
+ * still shows the shared stand-in overlaid with its own asset id and required
+ * dimensions — the "named, dimension-labelled placeholder" CLAUDE.md §6.6
+ * asks for, which doubles as the shooting brief for the hotel.
+ *
+ * Either way the box holds the asset's declared aspect ratio, not the
+ * photograph's, so a reshoot at a different crop cannot move anything on the
+ * page (CLS stays at 0).
  *
  * The label is `aria-hidden`: the accessible name is the asset's real
  * `altText`, so assistive tech hears what the finished page will describe,
  * not build scaffolding. Decorative assets get no name at all.
  */
-export function AssetImage({ asset, sizes, priority = false }: AssetImageProps) {
-  const delivered = asset.status === "delivered" && Boolean(asset.filename);
-  const src = delivered && asset.filename ? asset.filename : placeholderImageSrc;
+const FRAME = {
+  asset: { position: "relative", width: "100%" },
+  fill: { position: "absolute", inset: 0 },
+} as const;
+
+export function AssetImage({ asset, sizes, priority = false, ratio = "asset" }: AssetImageProps) {
+  const { image } = asset;
 
   return (
     <Box
       sx={{
-        position: "relative",
-        width: "100%",
-        aspectRatio: `${asset.width} / ${asset.height}`,
+        ...FRAME[ratio],
+        ...(ratio === "asset" && { aspectRatio: `${asset.width} / ${asset.height}` }),
         overflow: "hidden",
         bgcolor: "action.hover",
       }}
     >
       <Image
-        src={src}
+        src={image?.src ?? placeholderImageSrc}
         alt={asset.decorative ? "" : asset.altText}
         fill
         sizes={sizes}
         priority={priority}
+        blurDataURL={image?.blurDataURL}
         style={{ objectFit: "cover" }}
       />
-      {!delivered && (
+      {!image && (
         <Box
           aria-hidden
           sx={{

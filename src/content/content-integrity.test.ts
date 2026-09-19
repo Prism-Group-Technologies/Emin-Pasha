@@ -47,7 +47,13 @@ describe("forbidden content (Step 4 rules)", () => {
 
   it("never ships a legacy USD room category", () => {
     const haystack = JSON.stringify({ rooms, offers });
-    for (const banned of ["Two-bedroom Apartment", "Deluxe Suite", "Superior Suite USD"]) {
+    // "Deluxe Suite" was a legacy USD 145 category (rooms.ts
+    // LEGACY_ROOMS_DO_NOT_PUBLISH). Since the Garden -> Deluxe rename it is an
+    // approved name on the UGX rate card, exactly as "Superior Suite" already
+    // was, so the name alone is no longer the signal. What must never ship is
+    // the legacy *pricing* — guarded by the UGX-integer assertion above and by
+    // the "USD" entry in check-content.ts's FORBIDDEN_SUBSTRINGS.
+    for (const banned of ["Two-bedroom Apartment", "Superior Suite USD"]) {
       expect(haystack).not.toContain(banned);
     }
   });

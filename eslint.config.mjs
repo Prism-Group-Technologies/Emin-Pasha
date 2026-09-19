@@ -74,6 +74,16 @@ const eslintConfig = defineConfig([
       "max-lines-per-function": "off",
     },
   },
+
+  // `.cjs` files are CommonJS because they have to be: the image-resolution
+  // hook is loaded through `node --require` before any TypeScript or ESM
+  // transform exists to load it any other way (see scripts/imageMeta.cjs).
+  {
+    files: ["**/*.cjs"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+    },
+  },
 ]);
 
 export default eslintConfig;

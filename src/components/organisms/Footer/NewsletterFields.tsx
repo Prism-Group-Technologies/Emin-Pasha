@@ -30,6 +30,11 @@ export interface NewsletterFieldsProps {
   submitting?: boolean;
   result?: string | null;
   onSubmit?: FormEventHandler<HTMLFormElement>;
+  /**
+   * Prefix for the field ids. Defaults to the footer's; a second instance on
+   * the same page (the Offers alerts band) passes its own so ids stay unique.
+   */
+  idPrefix?: string;
 }
 
 /**
@@ -58,12 +63,13 @@ export function NewsletterFields({
   submitting = false,
   result = null,
   onSubmit,
+  idPrefix = "newsletter",
 }: NewsletterFieldsProps) {
   return (
     <Box component="form" onSubmit={onSubmit} noValidate sx={{ display: "grid", gap: 3 }}>
       <TextInput
         {...emailField}
-        id="newsletter-email"
+        id={`${idPrefix}-email`}
         name={emailField?.name ?? "email"}
         type="email"
         size="small"
@@ -77,7 +83,7 @@ export function NewsletterFields({
       />
       <Checkbox
         {...consentField}
-        id="newsletter-consent"
+        id={`${idPrefix}-consent`}
         name={consentField?.name ?? "consent"}
         label={copy.consentLabel}
         error={consentError}

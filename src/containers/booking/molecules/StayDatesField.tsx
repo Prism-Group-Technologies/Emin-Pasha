@@ -10,6 +10,7 @@ import { Box } from "@/components/atoms/Box";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
 import { DISPLAY_DATE_FORMAT } from "@/config/booking";
+import { bookingFieldSx } from "@/containers/booking/fieldSx";
 import type { BookingWidgetData } from "@/containers/booking/types";
 
 /**
@@ -51,20 +52,7 @@ export function StayDatesField(props: StayDatesFieldProps) {
     String(nights),
   );
 
-  const fieldSx = {
-    flex: 1,
-    textAlign: "left" as const,
-    minHeight: 56,
-    px: 4,
-    py: 2,
-    border: "1px solid",
-    borderColor: error ? "error.main" : "divider",
-    borderRadius: 0.5,
-    background: "none",
-    color: "inherit",
-    cursor: "pointer",
-    font: "inherit",
-  };
+  const fieldSx = bookingFieldSx(Boolean(error));
 
   return (
     <Stack spacing={2} sx={{ flex: 1 }}>

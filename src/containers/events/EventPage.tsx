@@ -1,106 +1,103 @@
 import type { ReactNode } from "react";
 
-import { AssetImage } from "@/components/atoms/AssetImage";
-import { Box } from "@/components/atoms/Box";
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
+import { PageHero } from "@/components/organisms/PageHero";
+import { type HeroStatItem } from "@/components/organisms/PageHero/HeroStatRail";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { GroupTerms } from "@/containers/events/molecules/GroupTerms";
-import { DeferredRfpForm } from "@/containers/events/organisms/DeferredRfpForm";
-import { assets } from "@/content/assets";
+import { ENQUIRE_ANCHOR_ID } from "@/containers/events/anchors";
+import { sections, venues } from "@/containers/events/copy";
+import { DifferentiatorsSection } from "@/containers/events/organisms/DifferentiatorsSection";
+import { EventVoicesSection } from "@/containers/events/organisms/EventVoicesSection";
+import { EventsClosingCtaSection } from "@/containers/events/organisms/EventsClosingCtaSection";
+import { EventsFaqSection } from "@/containers/events/organisms/EventsFaqSection";
+import { PackagesSection } from "@/containers/events/organisms/PackagesSection";
+import { ProcessSection } from "@/containers/events/organisms/ProcessSection";
+import { RfpSection } from "@/containers/events/organisms/RfpSection";
+import { StickyEnquireCta } from "@/containers/events/organisms/StickyEnquireCta";
+import { VenueIntroSection } from "@/containers/events/organisms/VenueIntroSection";
+import { pageHeroImage } from "@/content/pageHeroes";
 import { alternatingDirection } from "@/theme/motion";
 
 export interface EventPageProps {
+  /** Route key for the hero photograph — see `@/content/pageHeroes`. */
+  heroKey: string;
   eyebrow: string;
   heading: string;
   intro: string;
   breadcrumb: string;
-  assetId?: string;
-  /** Verified inclusions, rendered as a plain list. */
+  /** Two to four traceable figures on the hero rail. */
+  stats?: HeroStatItem[];
+  /** Verified inclusions, rendered as a checked list. */
   inclusions?: string[];
-  /** Capacity table, or anything else the specific page adds. */
+  /** Copy-layer venue ids whose indicative capacity table this page shows. */
+  venueIds?: string[];
+  /**
+   * Page-specific full-width sections, rendered between the inclusions block
+   * and the shared funnel. Each child is expected to bring its own
+   * `SectionShell`, so it is a sibling of the intro shell, not nested inside it.
+   */
   children?: ReactNode;
   relatedHrefs: string[];
   showGroupTerms?: boolean;
 }
 
 /**
- * The shared shape of all five Meetings & Events pages: intro, image,
- * verified inclusions, page-specific content, group terms, then the RFP form.
+ * The shared shape of the four venue pages under Meetings & Events (Kudara
+ * Hall, Meeting Rooms, Business Centre, Weddings).
  *
- * The form sits on **every** page rather than only the hub. An organiser who
- * has just read about Kudara Hall should not have to navigate back to enquire
- * — that navigation is where event leads are lost.
+ * Each keeps its own hero, inclusions and indicative capacity table, then
+ * inherits the same conversion funnel the hub uses — process, packages,
+ * differentiators, planner voices, the RFP form, FAQ and the closing band —
+ * so an organiser who lands deep on one venue is never sent back to the hub
+ * to enquire. That navigation is where event leads are lost.
  */
 export function EventPage(props: EventPageProps) {
-  const asset = props.assetId ? assets.find((item) => item.id === props.assetId) : undefined;
+  const pageVenues = venues.filter((venue) => props.venueIds?.includes(venue.id));
+  const m = (index: number) => alternatingDirection(index);
 
   return (
     <>
-      <SectionShell
-        motion={alternatingDirection(0)}
+      <PageHero
+        image={pageHeroImage(props.heroKey)}
         eyebrow={props.eyebrow}
-        heading={props.heading}
-        headingLevel="h1"
+        headline={props.heading}
+        lede={props.intro}
+        label={props.heading}
+        stats={props.stats}
+        primaryCta={{ label: "Request a proposal", href: `#${ENQUIRE_ANCHOR_ID}` }}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Meetings & Events", href: "/meetings-and-events" },
+          ...(props.breadcrumb ? [{ label: props.breadcrumb }] : []),
+        ]}
+      />
+
+      <VenueIntroSection
+        motion={m(0)}
+        inclusions={props.inclusions}
+        venues={pageVenues}
+        showGroupTerms={props.showGroupTerms !== false}
+      />
+
+      {props.children}
+
+      <ProcessSection motion={m(1)} variant="raised" />
+      <PackagesSection motion={m(2)} />
+      <DifferentiatorsSection motion={m(3)} />
+      <EventVoicesSection motion={m(4)} />
+      <RfpSection motion={m(5)} />
+      <EventsFaqSection motion={m(6)} />
+      <EventsClosingCtaSection motion={m(7)} />
+
+      <SectionShell
+        motion={m(8)}
+        eyebrow={sections.related.eyebrow}
+        heading={sections.related.heading}
       >
-        <Stack spacing={5}>
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Meetings & Events", href: "/meetings-and-events" },
-              ...(props.breadcrumb ? [{ label: props.breadcrumb }] : []),
-            ]}
-          />
-          <Text variant="subtitle1" sx={{ maxWidth: "70ch" }}>
-            {props.intro}
-          </Text>
-        </Stack>
-      </SectionShell>
-
-      {asset && (
-        <SectionShell motion={alternatingDirection(1)} variant="bleed">
-          <AssetImage asset={asset} sizes="100vw" priority />
-        </SectionShell>
-      )}
-
-      <SectionShell motion={alternatingDirection(2)}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "minmax(0, 1fr) minmax(0, 1fr)" },
-            gap: { xs: 6, md: 8 },
-            alignItems: "start",
-          }}
-        >
-          <Stack spacing={6}>
-            {props.inclusions && props.inclusions.length > 0 && (
-              <Stack spacing={3}>
-                <Text variant="h3" component="h2">
-                  What you get
-                </Text>
-                <Box component="ul" sx={{ m: 0, pl: 5, display: "grid", gap: 2 }}>
-                  {props.inclusions.map((item) => (
-                    <Text key={item} component="li" variant="body1" color="text.secondary">
-                      {item}
-                    </Text>
-                  ))}
-                </Box>
-              </Stack>
-            )}
-            {props.children}
-            {props.showGroupTerms !== false && <GroupTerms />}
-          </Stack>
-          <Box id="enquire">
-            <DeferredRfpForm />
-          </Box>
-        </Box>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(3)} heading="Also here" variant="raised">
         <RelatedLinks hrefs={props.relatedHrefs} />
       </SectionShell>
+
+      <StickyEnquireCta />
     </>
   );
 }

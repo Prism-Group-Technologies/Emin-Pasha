@@ -1,80 +1,49 @@
 "use client";
 
-import { useState } from "react";
-
-import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
-import { Button } from "@/components/atoms/Button";
 import { Stack } from "@/components/atoms/Stack";
-import { useLightbox } from "@/containers/gallery/hooks/useLightbox";
+import { VisuallyHidden } from "@/components/atoms/VisuallyHidden";
+import { useGalleryFilter } from "@/containers/gallery/hooks/useGalleryFilter";
+import { GalleryFilterChips } from "@/containers/gallery/molecules/GalleryFilterChips";
+import { PhotoWall } from "@/containers/gallery/molecules/PhotoWall";
 import { GalleryLightbox } from "@/containers/gallery/organisms/GalleryLightbox";
-import type { AssetRef } from "@/schemas/content/assetRef";
+import type { GalleryItem } from "@/containers/gallery/types";
+import { useLightbox } from "@/hooks/useLightbox";
 
 export interface GalleryGridProps {
-  categories: { id: string; label: string; assets: AssetRef[] }[];
+  items: GalleryItem[];
+  filterLabel: string;
+  openLabel: string;
 }
 
 /**
  * 'use client' justification: category filter and lightbox state.
  *
- * Thumbnails are `next/image` throughout via `AssetImage`, lazy by default —
- * only the lightbox image is eager, and only once opened. Each thumbnail is a
- * real `<button>`, so the whole grid is keyboard-operable before the lightbox
- * is even involved.
+ * A thin composition — the filter rule lives in `useGalleryFilter`, the
+ * navigation in `useLightbox`, the layout in `PhotoWall`. The items arrive as
+ * plain data from `catalogue.ts`, so no content layer crosses the boundary.
+ * The chip row is hidden when there is only one category to show (a
+ * single-category collection route), where it would be noise.
  */
-export function GalleryGrid({ categories }: GalleryGridProps) {
-  const [active, setActive] = useState(categories[0]?.id ?? "");
-  const current = categories.find((category) => category.id === active) ?? categories[0];
-  const items = current?.assets ?? [];
-  const lightbox = useLightbox(items.length);
+export function GalleryGrid({ items, filterLabel, openLabel }: GalleryGridProps) {
+  const { filter, setFilter, options, shown, statusText } = useGalleryFilter(items);
+  const lightbox = useLightbox(shown.length);
 
   return (
-    <Stack spacing={6}>
-      <Stack
-        direction="row"
-        spacing={3}
-        sx={{ flexWrap: "wrap" }}
-        role="group"
-        aria-label="Filter by category"
-      >
-        {categories.map((category) => (
-          <Button
-            key={category.id}
-            variant={category.id === active ? "primary" : "ghost"}
-            size="small"
-            aria-pressed={category.id === active}
-            onClick={() => setActive(category.id)}
-          >
-            {category.label}
-          </Button>
-        ))}
-      </Stack>
-
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", lg: "repeat(3, 1fr)" },
-          gap: 4,
-        }}
-      >
-        {items.map((asset, index) => (
-          <Box
-            key={asset.id}
-            component="button"
-            type="button"
-            onClick={() => lightbox.openAt(index)}
-            aria-label={`Open ${asset.altText || asset.subject}`}
-            sx={{ p: 0, border: 0, background: "none", cursor: "pointer", display: "block" }}
-          >
-            <AssetImage
-              asset={asset}
-              sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
-          </Box>
-        ))}
+    <Stack spacing={{ xs: 4, md: 5 }}>
+      {options.length > 2 && (
+        <GalleryFilterChips
+          options={options}
+          value={filter}
+          onChange={setFilter}
+          label={filterLabel}
+        />
+      )}
+      <Box role="status" aria-live="polite">
+        <VisuallyHidden>{statusText}</VisuallyHidden>
       </Box>
-
-      <GalleryLightbox items={items} lightbox={lightbox} />
+      <PhotoWall items={shown} onOpen={lightbox.openAt} openLabel={openLabel} />
+      <GalleryLightbox items={shown} lightbox={lightbox} />
     </Stack>
   );
 }

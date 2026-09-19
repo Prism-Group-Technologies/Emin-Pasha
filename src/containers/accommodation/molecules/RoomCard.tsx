@@ -18,7 +18,7 @@ const INCLUSIONS_SHOWN = 3;
 
 /**
  * One approved category as an image-forward card: an inset rounded photo with
- * the capacity and (for the Garden Room) a "Most requested" chip, then the
+ * the capacity and (for the Deluxe Room) a "Most requested" chip, then the
  * name, the unverified strapline (`copy/rooms.ts`), the `from` rate in the
  * display face, a short inclusions list and the two CTAs on a shared
  * baseline. A Server Component — it reads `content/*` and never runs on the

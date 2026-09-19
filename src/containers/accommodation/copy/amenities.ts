@@ -11,37 +11,42 @@ export interface AmenityCopy {
  * The four common inclusions from `content/rooms.ts`, plus the two facts the
  * approved intro line and `site.setting` already state about every room — the
  * garden outlook and the quiet. Framed, not invented.
+ *
+ * Each carries its own glyph rather than six copies of the same tick. A grid
+ * of identical checks is a bulleted list that has been made harder to scan:
+ * the icon column costs the same space either way, so it may as well be the
+ * thing that tells wifi from breakfast at a glance.
  */
 export const inRoomAmenities: AmenityCopy[] = [
   {
-    icon: "check-circle",
+    icon: "wifi",
     title: "Fast unlimited fibre",
     description:
       "A secure cabled and Wi-Fi network in every room — no caps, no vouchers, no daily fee.",
   },
   {
-    icon: "check-circle",
+    icon: "support-agent",
     title: "24/7 room service",
     description: "Round-the-clock, from a Special-Select In-Room Dining Menu.",
   },
   {
-    icon: "check-circle",
+    icon: "breakfast",
     title: "À la carte breakfast",
     description:
       "Cooked to order with a bespoke service offering — the way you like it, not a buffet tray.",
   },
   {
-    icon: "check-circle",
+    icon: "key",
     title: "In-room safe",
     description: "For a laptop, a passport and anything else you would rather not carry.",
   },
   {
-    icon: "check-circle",
+    icon: "garden",
     title: "A window onto the gardens",
     description: "The landscaped grounds outside the glass, and birdsong instead of traffic.",
   },
   {
-    icon: "check-circle",
+    icon: "bedtime",
     title: "The quiet of Nakasero",
     description:
       "The greenest, calmest of Kampala's central hills — a genuine buffer from the city.",

@@ -1,19 +1,8 @@
 import { SectionShell } from "@/components/templates/SectionShell";
 import { faqSection } from "@/containers/accommodation/copy";
 import { FaqBlock } from "@/containers/accommodation/organisms/FaqBlock";
-import { faqItems } from "@/content/faq";
+import { roomFaqs } from "@/containers/accommodation/roomFaqs";
 import type { RevealDirection } from "@/theme/motion";
-
-/** The subset of the approved §15 FAQ that a room booker actually asks. */
-const ROOM_FAQ_IDS = [
-  "check-in-check-out-times",
-  "breakfast-included",
-  "wifi",
-  "children-welcome",
-  "cancellation-policy",
-];
-
-const roomFaqs = faqItems.filter((item) => ROOM_FAQ_IDS.includes(item.id));
 
 /**
  * The five questions reservations answer most, drawn from the governed FAQ

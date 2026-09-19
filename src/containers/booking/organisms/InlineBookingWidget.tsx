@@ -27,7 +27,7 @@ export interface InlineBookingWidgetProps {
  * horizontal because it sits inside a content column, not across the viewport.
  *
  * Pre-filling `roomTypeId` is the point of this variant: a guest reading the
- * Garden Suite page should not have to find it again in a room list after the
+ * Deluxe Suite page should not have to find it again in a room list after the
  * handoff.
  */
 export function InlineBookingWidget({ data, roomTypeId, heading }: InlineBookingWidgetProps) {

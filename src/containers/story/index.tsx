@@ -1,69 +1,88 @@
-import { Box } from "@/components/atoms/Box";
-import { Stack } from "@/components/atoms/Stack";
-import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { StoryArticle } from "@/containers/story/organisms/StoryArticle";
-import { StoryToc } from "@/containers/story/organisms/StoryToc";
-import { story } from "@/content/story";
-import { alternatingDirection } from "@/theme/motion";
+import { sections } from "@/containers/story/copy";
+import { storySectionMotion as m } from "@/containers/story/motion";
+import { FullStorySection } from "@/containers/story/organisms/FullStorySection";
+import { GmWelcomeSection } from "@/containers/story/organisms/GmWelcomeSection";
+import { HotelTodaySection } from "@/containers/story/organisms/HotelTodaySection";
+import { JourneyMapSection } from "@/containers/story/organisms/JourneyMapSection";
+import { NamedAfterSection } from "@/containers/story/organisms/NamedAfterSection";
+import { NamesakeSection } from "@/containers/story/organisms/NamesakeSection";
+import { PressSection } from "@/containers/story/organisms/PressSection";
+import { StickyEnquireCta } from "@/containers/story/organisms/StickyEnquireCta";
+import { StoryChaptersSection } from "@/containers/story/organisms/StoryChaptersSection";
+import { StoryClosingSection } from "@/containers/story/organisms/StoryClosingSection";
+import { StoryEnquirySection } from "@/containers/story/organisms/StoryEnquirySection";
+import { StoryFaqSection } from "@/containers/story/organisms/StoryFaqSection";
+import { StoryHero } from "@/containers/story/organisms/StoryHero";
+import { StoryVoicesSection } from "@/containers/story/organisms/StoryVoicesSection";
+import { ValuesSection } from "@/containers/story/organisms/ValuesSection";
 
 /**
- * The pillar page. Every section is an `<h2>` with a stable `id` and
- * `scroll-margin`, so each answers one question on its own and can be cited
- * without the rest — which is what CLAUDE.md §9 means by "extractable form".
+ * The Our Story pillar page, rebuilt as a conversion funnel — the same shape
+ * as the Dining, Wellness and Events redesigns. A Server Component that
+ * composes the section organisms and holds no logic of its own; the client
+ * islands are the FAQ accordion, the deferred enquiry form and the sticky
+ * bar. Scroll motion is entirely CSS.
  *
- * All narrative is the approved §12.5 copy verbatim. No date, place or
- * historical claim is added: the one thing that would destroy this page's
- * value is a fact the hotel cannot stand behind.
+ * The order is a funnel, not a brochure:
+ *
+ *   hero        — the pitch, the traceable figures, and the two in-page CTAs
+ *   namesake    — a portrait teaser + a verbatim pull quote, into the account
+ *   journey     — the seven chapters as a horizontal "Equatorial Line" map
+ *   full story  — the PRESERVED pillar: sticky ToC + verbatim StoryArticle
+ *   values      — the four verbatim principles of `whatWeTakeFromIt`
+ *   hotel today — the bridge from the man to the heritage house, into rooms
+ *   named after — the internal-linking spine as a card band
+ *   gm          — the General Manager's welcome, verbatim, unattributed
+ *   voices      — three placeholder guest notes about the sense of place
+ *   press       — a placeholder recognition strip
+ *   enquiry     — the "Stay in the story" form + three channels, #stay
+ *   faq         — five questions about the name and the building
+ *   closing     — the last exit, book-direct on WhatsApp + all three channels
+ *   related     — cross-sell into the rest of the estate
+ *
+ * The history is untouched: every date, place and claim renders verbatim from
+ * `content/story.ts`. Everything invented lives in `containers/story/copy`,
+ * labelled and outside the governed content layer.
  */
 export function StoryContainer() {
   return (
     <>
+      <StoryHero />
+      <NamesakeSection motion={m.namesake} />
+      <JourneyMapSection motion={m.journey} />
+      <FullStorySection motion={m.fullStory} />
+      <ValuesSection motion={m.values} />
+      <HotelTodaySection motion={m.hotelToday} />
+      <NamedAfterSection motion={m.namedAfter} />
+      <StoryChaptersSection
+        eyebrow={sections.chapters.eyebrow}
+        heading={sections.chapters.heading}
+        motion={m.namedAfter}
+      />
+      <GmWelcomeSection motion={m.gm} />
+      <StoryVoicesSection motion={m.voices} />
+      <PressSection motion={m.press} />
+      <StoryEnquirySection motion={m.enquiry} />
+      <StoryFaqSection motion={m.faq} />
+      <StoryClosingSection motion={m.closing} />
       <SectionShell
-        motion={alternatingDirection(0)}
-        eyebrow="§ OUR NAMESAKE"
-        heading="Who was Emin Pasha?"
-        headingLevel="h1"
-      >
-        <Stack spacing={5}>
-          <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Our Story" }]} />
-          <Text variant="subtitle1" sx={{ maxWidth: "68ch" }}>
-            {story.lifeIntro}
-          </Text>
-        </Stack>
-      </SectionShell>
-
-      <SectionShell motion={alternatingDirection(1)}>
-        <Box
-          sx={{
-            display: "grid",
-            gridTemplateColumns: { xs: "1fr", md: "minmax(0, 240px) minmax(0, 1fr)" },
-            gap: { xs: 6, md: 8 },
-            alignItems: "start",
-          }}
-        >
-          <StoryToc />
-
-          <StoryArticle />
-        </Box>
-      </SectionShell>
-
-      <SectionShell
-        motion={alternatingDirection(2)}
-        heading="Named from this story"
-        variant="raised"
+        motion={m.related}
+        eyebrow={sections.related.eyebrow}
+        heading={sections.related.heading}
       >
         <RelatedLinks
           hrefs={[
+            "/accommodation",
             "/dining/hakki-pasha-restaurant-bar",
             "/dining/sir-samuel-baker-fine-dining",
             "/lounges-and-spaces",
-            "/accommodation",
           ]}
         />
       </SectionShell>
+
+      <StickyEnquireCta />
     </>
   );
 }

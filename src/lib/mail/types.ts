@@ -7,7 +7,8 @@
  * and one line in `lib/mail/index.ts`. No route handler, schema or form
  * changes.
  */
-export type EnquiryKind = "booking" | "rfp" | "spa" | "contact" | "newsletter";
+export type EnquiryKind =
+  "booking" | "rfp" | "spa" | "dining" | "story" | "transfer" | "spaces" | "contact" | "newsletter";
 
 export interface MailMessage {
   kind: EnquiryKind;

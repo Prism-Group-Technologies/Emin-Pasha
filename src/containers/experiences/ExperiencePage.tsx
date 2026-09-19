@@ -1,17 +1,18 @@
 import type { ReactNode } from "react";
 
-import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Button } from "@/components/atoms/Button";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
-import { Breadcrumbs } from "@/components/molecules/Breadcrumbs";
+import { PageHero } from "@/components/organisms/PageHero";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
-import { assets } from "@/content/assets";
+import { pageHeroImage } from "@/content/pageHeroes";
 import { alternatingDirection } from "@/theme/motion";
 
 export interface ExperiencePageProps {
+  /** Route key for the hero photograph — see `@/content/pageHeroes`. */
+  heroKey: string;
   eyebrow: string;
   heading: string;
   intro: string;
@@ -22,37 +23,24 @@ export interface ExperiencePageProps {
   relatedHrefs: string[];
 }
 
-/** Shared shape for the two Experiences pages. */
+/** Shared shape for the two Experiences pages — the shared `PageHero`, a prose
+ * body with an optional CTA, then the cross-sell row. */
 export function ExperiencePage(props: ExperiencePageProps) {
-  const asset = assets.find((item) => item.id === props.assetId);
-
   return (
     <>
-      <SectionShell
-        motion={alternatingDirection(0)}
+      <PageHero
+        image={pageHeroImage(props.heroKey)}
         eyebrow={props.eyebrow}
-        heading={props.heading}
-        headingLevel="h1"
-      >
-        <Stack spacing={5}>
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Experiences" },
-              { label: props.heading },
-            ]}
-          />
-          <Text variant="subtitle1" sx={{ maxWidth: "68ch" }}>
-            {props.intro}
-          </Text>
-        </Stack>
-      </SectionShell>
-
-      {asset && (
-        <SectionShell motion={alternatingDirection(1)} variant="bleed">
-          <AssetImage asset={asset} sizes="100vw" priority />
-        </SectionShell>
-      )}
+        headline={props.heading}
+        lede={props.intro}
+        label={props.heading}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Experiences" },
+          { label: props.heading },
+        ]}
+        primaryCta={props.cta}
+      />
 
       <SectionShell motion={alternatingDirection(2)}>
         <Box

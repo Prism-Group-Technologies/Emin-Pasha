@@ -16,7 +16,7 @@ export const amenitiesSection = {
   eyebrow: "§ WHAT'S INCLUDED",
   heading: "The same standard in every room",
   description:
-    "No resort fees, no tiers on the essentials. What follows is in every category, from the Garden Room up — and then there is the rest of the estate, a few steps from your door.",
+    "No resort fees, no tiers on the essentials. What follows is in every category, from the Deluxe Room up — and then there is the rest of the estate, a few steps from your door.",
   inRoomTitle: "In every room",
   estateTitle: "Across the estate",
 };

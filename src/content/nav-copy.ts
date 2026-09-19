@@ -13,10 +13,10 @@ import { type NavPanelCopy, navPanelCopySchema } from "@/schemas/content/navCopy
  * room descriptions in the source are `[DRAFT — VERIFY]` and may not publish
  * without a DECISIONS.md entry (TODO(EMIN-Q15)). So the four room lines below
  * claim nothing measurable. Each leans only on an attribute already approved
- * elsewhere — the Garden Room's outlook onto the grounds is the approved
- * `subject` of asset `room-garden-room`; the Superior Suite's private lounge
- * area is in that room's approved `sellTo`. Nothing here invents a feature,
- * a size, a rate or a view.
+ * elsewhere — the Deluxe Room and Deluxe Suites lines reframe only those
+ * rooms' approved `capacity` and `sellTo`; the Superior Suite's private
+ * lounge area is in that room's approved `sellTo`. Nothing here invents a
+ * feature, a size, a rate or a view.
  *
  * Status: TODO(EMIN-Q70) — pending client sign-off. Removing a section from
  * this map is safe: its panel falls back to labels alone.
@@ -28,14 +28,14 @@ const raw: Record<string, NavPanelCopy> = {
     viewAllLabel: "View all rooms & suites",
     descriptions: {
       "/accommodation/superior-room": "A room for working and resting in equal measure.",
-      "/accommodation/garden-room": "Wake to the gardens, and step straight into them.",
-      "/accommodation/garden-suites": "More room to spread out, gardens still at the door.",
+      "/accommodation/deluxe-room": "For couples and first-time guests, at our entry rate.",
+      "/accommodation/deluxe-suites": "More room to spread out, for families and longer stays.",
       "/accommodation/superior-suites": "A private lounge to receive, to work, to unwind.",
     },
     assetIds: {
       "/accommodation/superior-room": "room-superior-room",
-      "/accommodation/garden-room": "room-garden-room",
-      "/accommodation/garden-suites": "room-garden-suites",
+      "/accommodation/deluxe-room": "room-deluxe-room",
+      "/accommodation/deluxe-suites": "room-deluxe-suites",
       "/accommodation/superior-suites": "room-superior-suites",
     },
   },

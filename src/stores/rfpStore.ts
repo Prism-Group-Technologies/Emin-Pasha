@@ -6,7 +6,15 @@ import type { RfpInput } from "@/schemas/rfp";
 interface RfpState {
   draft: Partial<RfpInput>;
   step: number;
+  /**
+   * Bumped whenever an outside surface seeds the draft (the Kudara Hall
+   * estimator's "add to my request" hand-off). `useRfpForm` watches it and
+   * resets the live form to the seeded values — a plain `setDraft` cannot,
+   * because react-hook-form has already taken its defaults by then.
+   */
+  seedNonce: number;
   setDraft: (patch: Partial<RfpInput>) => void;
+  seedDraft: (patch: Partial<RfpInput>) => void;
   setStep: (step: number) => void;
   clear: () => void;
 }
@@ -29,7 +37,13 @@ export const useRfpStore = create<RfpState>()(
     (set) => ({
       draft: {},
       step: 0,
+      seedNonce: 0,
       setDraft: (patch) => set((state) => ({ draft: { ...state.draft, ...patch } })),
+      seedDraft: (patch) =>
+        set((state) => ({
+          draft: { ...state.draft, ...patch },
+          seedNonce: state.seedNonce + 1,
+        })),
       setStep: (step) => set({ step }),
       clear: () => set({ draft: {}, step: 0 }),
     }),
