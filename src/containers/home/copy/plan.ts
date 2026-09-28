@@ -22,6 +22,7 @@
  * TODO(EMIN-COPY): client sign-off, then migrate approved items into
  * `src/content/site.ts` under `homepage`.
  */
+import { BOOKING_ENGINE_URL } from "@/config/bookingEngine";
 
 export interface PlanPathCopy {
   id: "stay" | "celebrate" | "in-the-city";
@@ -55,7 +56,10 @@ export const planPaths: PlanPathCopy[] = [
       "Unlimited fibre on a secure cabled and Wi-Fi network",
       "24/7 room service and airport transfer on request",
     ],
-    primary: { label: "Check Availability", href: "/contact" },
+    // The only one of the three paths LetsBook can serve — it sells rooms.
+    // "Request a Proposal" and "Book a Treatment" below stay on the enquiry
+    // route, where a person picks them up.
+    primary: { label: "Check Availability", href: BOOKING_ENGINE_URL },
     secondary: { label: "View Rooms & Rates", href: "/accommodation" },
   },
   {

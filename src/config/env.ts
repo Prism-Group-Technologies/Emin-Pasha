@@ -40,9 +40,12 @@ const envSchema = z.object({
   /** Key for the `kioskconnectivity` / `pms_connectivity.php` types. TODO(EMIN-Q50). */
   YCS_AUTH_CODE: blankAsUnset(z.string().min(1)),
   /**
-   * The hotel's live booking-engine entry point — destination of the v1
-   * deep-link handoff. TODO(EMIN-Q49): must be the real "Book Now" URL copied
-   * from the hotel's own site, never a constructed one.
+   * Optional **override** for the booking-engine entry point. The live URL is
+   * public, not a credential, and now lives in `config/bookingEngine.ts` where
+   * the content layer and client components can read it (Q49 resolved). Set
+   * this only to point an environment somewhere else — a staging engine, or a
+   * replacement property URL — without a deploy of the content layer. Blank is
+   * the normal state: `getBookingWidgetData` falls back to the public constant.
    */
   YCS_BOOKING_URL: blankAsUnset(z.url()),
   /**

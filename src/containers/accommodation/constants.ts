@@ -1,3 +1,4 @@
+import { BOOKING_ENGINE_URL } from "@/config/bookingEngine";
 import { rooms } from "@/content/rooms";
 
 /**
@@ -24,11 +25,12 @@ export const ROOM_ASSET_IDS: Record<string, string> = {
 };
 
 /**
- * Where a stay-package CTA points. TODO(EMIN-Q49): the enquiry form is the
- * confirmed fallback until the real booking-engine deep link is captured, so
- * every package routes to Contact — the same default as `content/ctas.ts`.
+ * Where a stay-package CTA points (Q49 resolved): LetsBook, with no query
+ * string. A package card knows the guest's *intent* but not their dates, and
+ * the packages themselves are configured in the engine — so the engine's own
+ * picker is the next step, not a pre-filled search built from a guess.
  */
-export const PACKAGE_CTA_HREF = "/contact";
+export const PACKAGE_CTA_HREF = BOOKING_ENGINE_URL;
 
 /** In-page anchor for the booking widget, shared by every "check availability" CTA. */
 export const BOOKING_ANCHOR_ID = "book";

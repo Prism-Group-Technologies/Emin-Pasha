@@ -33,7 +33,6 @@ export function BookingFields({
 }: BookingFieldsProps) {
   const { copy } = data;
   const isRow = layout === "row";
-
   return (
     <Box component="form" onSubmit={booking.onSubmit} noValidate>
       <Stack
