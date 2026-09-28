@@ -8,8 +8,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
 import type { BookingWidgetData } from "@/containers/booking/types";
-import { track, trackThenNavigate } from "@/lib/analytics/events";
+import { track } from "@/lib/analytics/events";
 import { submitBooking } from "@/lib/booking";
+import { openHandoff } from "@/lib/booking/openHandoff";
 import { collectUtm } from "@/lib/booking/ycsDeepLink";
 import { type BookingSearch, bookingSearchSchema } from "@/schemas/booking";
 import { useBookingStore } from "@/stores/bookingStore";
@@ -76,12 +77,14 @@ export function useBookingForm({ data, roomTypeId }: UseBookingFormOptions) {
 
     if (outcome.kind === "redirect") {
       setStatus("handoff");
-      // Same tab, and the conversion event leaves before the navigation does.
-      await trackThenNavigate(
-        "availability_submitted",
-        { outcome: "redirect", nights: dates.nights },
-        () => window.location.assign(outcome.url),
-      );
+      // New tab, so this page — and the guest's search — survives an abandoned
+      // booking. That also removes the reason `trackThenNavigate` exists: its
+      // 150ms pause is there to let a beacon escape a same-tab unload, and
+      // nothing unloads here. Skipping it keeps the click inside the browser's
+      // transient-activation window, which is what stops the popup blocker
+      // treating the handoff as an unsolicited pop-up.
+      const target = openHandoff(outcome.url);
+      track("availability_submitted", { outcome: "redirect", nights: dates.nights, target });
       return;
     }
 

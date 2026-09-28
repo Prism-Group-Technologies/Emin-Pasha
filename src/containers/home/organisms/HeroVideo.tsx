@@ -119,7 +119,7 @@ export function HeroVideo() {
           <source key={source.type} src={source.src} type={source.type} />
         ))}
       </Box>
-      <Box sx={{ position: "absolute", inset: 0, backgroundImage: HERO_SCRIM }} />
+      {/* <Box sx={{ position: "absolute", inset: 0, backgroundImage: HERO_SCRIM }} /> */}
       <Box
         sx={{
           position: "absolute",

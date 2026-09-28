@@ -1,3 +1,4 @@
+import { BOOKING_ENGINE_URL } from "@/config/bookingEngine";
 import { type NavItem, navItemSchema } from "@/schemas/content/navItem";
 
 /**
@@ -151,11 +152,21 @@ export function findNavItem(href: string): NavItem | undefined {
   return undefined;
 }
 
-// TODO(EMIN-Q49): points at the enquiry-form fallback until the real YCS
-// booking-engine deep link is captured — CLAUDE.md's confirmed decision is
-// "enquiry fallback always present," so this is a working default, not a gap.
+/**
+ * The persistent sitewide CTA — header utility row, mobile drawer foot, mobile
+ * action bar, and the two home-page conversion blocks.
+ *
+ * Points straight at LetsBook with **no query string** (Q49 resolved). None of
+ * those surfaces has dates: the header button is as likely to be pressed on
+ * the FAQ page as on a room page. Sending `checkin=today` to make the engine
+ * return a priced page would put dates in front of the guest that they never
+ * chose, and a guest who does not notice books the wrong night. The engine's
+ * own date picker is the right thing to land on, and every surface that *does*
+ * know the dates — the hero widget, the inline widget, the sticky bar, the
+ * mobile sheet — goes through `lib/booking` and carries them across.
+ */
 export const bookNowCta: NavItem = navItemSchema.parse({
   label: "Book Now",
-  href: "/contact",
+  href: BOOKING_ENGINE_URL,
   isPersistentCta: true,
 });
