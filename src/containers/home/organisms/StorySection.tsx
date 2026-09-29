@@ -1,31 +1,19 @@
-import logoMark from "@/assets/images/logo-mark.png";
-import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
+import { BrandMark } from "@/components/atoms/BrandMark";
 import { Button } from "@/components/atoms/Button";
 import { Reveal } from "@/components/atoms/Reveal";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
 import { SectionShell } from "@/components/templates/SectionShell";
-import { assets } from "@/content/assets";
 import { ctas } from "@/content/ctas";
 import { identity } from "@/content/identity";
 import { story } from "@/content/story";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 
-const portraitSlot = assets.find((asset) => asset.id === "story-emin-pasha-portrait");
-
-/**
- * The namesake slot renders the brand mark rather than the photograph the
- * assignment table would resolve for it. Only `image` is overridden, so the
- * slot keeps its approved `altText` and its declared aspect ratio — the box
- * is the same size either way and nothing on the page moves (CLS stays at 0).
- */
-const portrait = portraitSlot && { ...portraitSlot, image: logoMark, status: "delivered" as const };
 const readHistory = ctas.find((cta) => cta.id === "story-read");
 
 /**
- * The namesake teaser, and the second of the two places a photograph earns
- * its keep.
+ * The namesake teaser.
  *
  * "Who was Emin Pasha" is a real search with weak commercial competition, so
  * the pillar page it links to is this site's intended link magnet — this block
@@ -33,7 +21,7 @@ const readHistory = ctas.find((cta) => cta.id === "story-read");
  * a pull quote in the display face rather than as body copy, because the
  * sentence is the hook and burying it in a paragraph wastes it.
  *
- * The portrait leads the grid here, so it takes the section's own direction and
+ * The lock-up leads the grid here, so it takes the section's own direction and
  * the copy comes back against it — the mirror of `IntroBlock`, where the copy
  * leads.
  */
@@ -48,11 +36,33 @@ export function StorySection({ motion = "up" }: { motion?: RevealDirection }) {
           alignItems: "center",
         }}
       >
-        {portrait && (
-          <Reveal direction={motion} media>
-            <AssetImage asset={portrait} sizes="(max-width: 900px) 100vw, 35vw" />
-          </Reveal>
-        )}
+        <Reveal direction={motion} media>
+          {/* The brand lock-up, not the photograph the assignment table
+              would resolve for `story-emin-pasha-portrait`. No portrait of
+              the namesake is confirmed as delivered or cleared for use
+              (TODO(EMIN-Q44), assets.ts), and the line-art lock-up *is* a
+              portrait of him — so this is the one honest image for the slot
+              until the client supplies one.
+
+              Rendered through `BrandMark` rather than `AssetImage` on
+              purpose. `AssetImage` is built for photographs: it crops with
+              `objectFit: cover` and paints `action.hover` behind the frame,
+              which on artwork with a transparent ground would both clip the
+              lock-up and put a grey plate behind it. `BrandMark` reserves the
+              artwork's own ratio and contains it, so CLS stays at 0 here too.
+
+              Capped and centred instead of filling the column: at 2.56:1 a
+              full-width lock-up would read as a stretched band across the
+              track on wide viewports, which is the opposite of what a
+              lock-up is for. */}
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <BrandMark
+              width={{ xs: 260, md: 340 }}
+              sizes="(max-width: 899px) 260px, 340px"
+              alt={identity.name}
+            />
+          </Box>
+        </Reveal>
         <Reveal index={1} direction={oppositeOf(motion)}>
           <Stack spacing={5}>
             <Text

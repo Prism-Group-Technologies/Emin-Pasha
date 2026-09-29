@@ -22,7 +22,8 @@
     "optimize:images": "tsx scripts/optimize-images.ts",
     "prebuild": "yarn generate:llms",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "derive:logo": "tsx scripts/derive-logo.ts"
   },
   "dependencies": {
     "@emotion/cache": "11.14.0",

@@ -44,6 +44,14 @@ export interface HeaderPanel {
 
 export interface HeaderData {
   labels: (typeof shell)["header"];
+  /**
+   * The full approved name form, and the accessible name of the lock-up that
+   * links home. It lives here rather than in `config/brand.ts` for the reason
+   * this whole module exists: the lock-up renders inside the client island,
+   * and re-typing the string next to the sizing tokens would be a second copy
+   * of approved §1 content (CLAUDE.md §5.4, zero data duplication).
+   */
+  brandName: string;
   /** Full tree for the mobile drawer; six-entry subset for the desktop bar. */
   navigation: NavItem[];
   headerNavigation: NavItem[];
@@ -109,6 +117,7 @@ function buildPanels(): Record<string, HeaderPanel> {
 
 export const headerData: HeaderData = {
   labels: shell.header,
+  brandName: identity.name,
   navigation,
   headerNavigation,
   panels: buildPanels(),

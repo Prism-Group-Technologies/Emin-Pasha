@@ -5,44 +5,40 @@ import { Text } from "@/components/atoms/Text";
 import type { FooterData } from "@/components/organisms/Footer/footerData";
 
 /**
- * The footer's lock-up: the portrait mark, the wordmark as live text, a short
- * gold rule and one line of voice.
+ * The footer's identity plate: the brand lock-up, a short gold rule and one
+ * line of voice.
+ *
+ * The lock-up used to be a cropped portrait mark with "Emin Pasha" and
+ * "Hotel & Spa" re-set beside it as live text, because the old artwork's
+ * baked wordmark was unreadable at that size. The delivered lock-up is drawn
+ * horizontally and holds up, so it replaces both — which is also why the
+ * name now reaches assistive tech through `alt` rather than through the text
+ * that is no longer there. `NapBlock` still states the full name as real
+ * text in the band below, so the footer has not lost a crawlable name.
  *
  * Deliberately *not* the header's `Logo`. That component is a client
  * boundary (it hands `NextLink` to an MUI element) and animates between an
  * expanded and a condensed state driven by scroll — none of which a static
- * footer mark needs. Reusing it would have pulled a client component and its
+ * footer plate needs. Reusing it would have pulled a client component and its
  * lock-up hook into a subtree that is otherwise entirely server-rendered.
  *
- * The mark is `alt=""` inside `BrandMark`, and the wordmark beside it is real
- * text, so the hotel's name is announced exactly once.
+ * Wider here than in the header (220px against 200px) and not condensing: the
+ * footer rail is a ~350px grid track with no nav competing for the row, so
+ * the constraint that sets the header's width simply does not apply.
+ *
+ * The `dark` variant is the terracotta artwork, which is correct on
+ * `background.paper` in both colour schemes — it is line art with its own
+ * margin and carries enough contrast on `sand.100` and on `ink.900` alike.
+ * The reverse file exists for the hero scrim, which the footer never sits on.
  */
 export function FooterBrand({ brand }: { brand: FooterData["brand"] }) {
   return (
     <Box>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 3 }}>
-        <BrandMark height={{ xs: 44, md: 52 }} sizes="52px" />
-        <Box sx={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
-          <Text
-            component="span"
-            sx={{
-              fontFamily: "var(--font-display)",
-              fontSize: { xs: "1.25rem", md: "1.5625rem" },
-              lineHeight: 1.1,
-              letterSpacing: "0.02em",
-            }}
-          >
-            {brand.shortName}
-          </Text>
-          <Text
-            component="span"
-            variant="overline"
-            sx={{ fontSize: "0.625rem", lineHeight: 1.4, color: "text.secondary" }}
-          >
-            {brand.suffix}
-          </Text>
-        </Box>
-      </Box>
+      <BrandMark
+        width={{ xs: 180, md: 220 }}
+        sizes="(max-width: 899px) 180px, 220px"
+        alt={brand.name}
+      />
       <Box sx={{ mt: 5, mb: 4, width: 48 }}>
         <Rule orientation="horizontal" />
       </Box>

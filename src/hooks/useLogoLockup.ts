@@ -1,60 +1,48 @@
 import { useMemo } from "react";
 
-import { brandMarkHeight, brandMarkSizes } from "@/config/brand";
+import { brandLockupSizes, brandLockupWidth } from "@/config/brand";
 import { easingTokens, motionTokens } from "@/theme/tokens";
 
 export interface UseLogoLockupArgs {
-  /** The light lock-up sits over the hero video; the dark one over the page. */
-  variant: "light" | "dark";
   condensed: boolean;
 }
 
 /** Plain values only — no MUI types, so the hook stays outside the boundary. */
 export interface LogoLockup {
-  markHeight: { xs: number; md: number };
-  markSizes: string;
-  nameColor: string;
-  suffixColor: string;
-  nameSize: { xs: string; md: string };
-  suffixHidden: boolean;
+  width: { xs: number; md: number };
+  sizes: string;
   transition: string;
 }
 
 /**
  * Every derived value the brand lock-up renders from, in one place.
  *
- * `Logo`, `BrandMark` and `LogoWordmark` are presentational — props in, JSX
- * out (CLAUDE.md §5.4) — so the two axes the lock-up actually varies on
- * (`variant`: over the hero video or over the page; `condensed`: the header's
- * scrolled state) are resolved here instead of being re-derived with
- * ternaries at three separate call sites.
+ * `Logo` and `BrandMark` are presentational — props in, JSX out (CLAUDE.md
+ * §5.4) — so the header's scrolled state is resolved to measurements here
+ * instead of being re-derived with ternaries at each call site.
  *
- * Colours are returned as MUI palette *paths*, not hex. On the `dark`
- * variant `text.primary`/`text.secondary` resolve through the CSS-variables
- * theme, so the wordmark answers the light/dark colour scheme on its own with
- * no JS and no hydration mismatch (theme/index.ts, `cssVariables`). The
- * `light` variant is pinned to `common.white` in both schemes because it sits
- * on `HERO_SCRIM`, which is dark regardless of the scheme.
- *
- * The mark itself is unfiltered in every context: it is a warm sepia
- * portrait on transparency and reads on both `sand/50` and `ink/900`, and the
- * wordmark that needed a colour is live text, not pixels (DECISIONS.md D76).
+ * This used to take a `variant` and return four colour and type values with
+ * it. Those existed for the live-text wordmark, which resolved MUI palette
+ * *paths* so it could answer the light/dark colour scheme with no JS. The
+ * delivered lock-up carries its wordmark as artwork, so that job moved into
+ * the asset — `variant` now picks between two derived files inside
+ * `BrandMark` (see `scripts/derive-logo.ts`) rather than between two palette
+ * paths, and there is nothing left for this hook to derive from it.
  */
-export function useLogoLockup({ variant, condensed }: UseLogoLockupArgs): LogoLockup {
-  return useMemo(() => {
-    const light = variant === "light";
-    return {
-      markHeight: condensed ? brandMarkHeight.condensed : brandMarkHeight.expanded,
-      markSizes: brandMarkSizes,
-      nameColor: light ? "common.white" : "text.primary",
-      suffixColor: light ? "common.white" : "text.secondary",
-      nameSize: condensed ? { xs: "1rem", md: "1.125rem" } : { xs: "1.0625rem", md: "1.375rem" },
-      suffixHidden: condensed,
-      // Matches the header's own condense timing so the mark, the wordmark
-      // and the bar resize as one movement rather than three.
-      transition: ["height", "width", "font-size", "opacity", "color"]
+export function useLogoLockup({ condensed }: UseLogoLockupArgs): LogoLockup {
+  return useMemo(
+    () => ({
+      width: condensed ? brandLockupWidth.condensed : brandLockupWidth.expanded,
+      sizes: brandLockupSizes,
+      // Matches the header's own condense timing so the lock-up and the bar
+      // resize as one movement rather than two. `width`/`height` only now —
+      // `font-size`, `opacity` and `color` animated the wordmark that is no
+      // longer text, and a transition naming properties nothing changes is a
+      // lie the next reader has to disprove.
+      transition: ["width", "height"]
         .map((prop) => `${prop} ${motionTokens.navFade}ms ${easingTokens.emin}`)
         .join(", "),
-    };
-  }, [variant, condensed]);
+    }),
+    [condensed],
+  );
 }

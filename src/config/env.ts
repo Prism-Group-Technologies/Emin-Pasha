@@ -29,9 +29,21 @@ function blankAsUnset<T extends z.ZodType>(schema: T) {
 
 const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
-  // TODO(EMIN-Q38): replace the localhost default with the confirmed production
-  // domain once decided.
-  NEXT_PUBLIC_SITE_URL: z.url().default("http://localhost:3000"),
+  /**
+   * The canonical origin every absolute URL is built from: `sitemap.xml`,
+   * `robots.txt`'s `host` and `sitemap` lines, `metadataBase` and therefore
+   * every page's canonical and OG image (EMIN-Q38, resolved 2026-09-28).
+   *
+   * The default is production, not localhost. A missing var used to fall back
+   * to `http://localhost:3000`, which builds and deploys perfectly happily and
+   * then publishes a sitemap of localhost URLs — a failure nothing in CI
+   * catches and Search Console reports days later. Local development overrides
+   * it in `.env`, where being wrong costs nothing.
+   *
+   * `www` is the canonical host; the apex must redirect to it, or the two
+   * hosts split ranking signals.
+   */
+  NEXT_PUBLIC_SITE_URL: z.url().default("https://www.eminpasha.com"),
 
   /** eZee/YCS property identifier. TODO(EMIN-Q50). */
   YCS_HOTEL_CODE: blankAsUnset(z.string().min(1)),

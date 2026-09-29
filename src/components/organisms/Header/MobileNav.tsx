@@ -47,7 +47,11 @@ export function MobileNav({ open, expandedHref, onClose, onToggleSection, data }
       slotProps={{ paper: { sx: drawerPaperSx } }}
       sx={{ display: { xs: "block", md: "none" } }}
     >
-      <MobileNavBar closeLabel={data.labels.closeMenuLabel} onClose={onClose} />
+      <MobileNavBar
+        brandName={data.brandName}
+        closeLabel={data.labels.closeMenuLabel}
+        onClose={onClose}
+      />
 
       <Box
         component="nav"

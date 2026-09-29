@@ -84,7 +84,7 @@ export function Header({ data }: { data: HeaderData }) {
       >
         <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ minHeight: 0, gap: 4, justifyContent: "space-between" }}>
-            <Logo variant={variant} condensed={condensed} />
+            <Logo variant={variant} name={data.brandName} condensed={condensed} />
             <DesktopNav variant={variant} data={data} menu={menu} />
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <UtilityRow variant={variant} data={data} />

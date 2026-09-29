@@ -33,6 +33,16 @@ const MAX_EDGE = 2560;
 const MAX_LOGO_EDGE = 640;
 const WEBP_QUALITY = 78;
 /**
+ * Logos are re-encoded near-lossless rather than at `WEBP_QUALITY`.
+ *
+ * The brand lock-up is flat-colour line art on transparency — large empty
+ * areas separated by hairline strokes, which is the worst case for a
+ * perceptual codec tuned on photographs. At q78 the strokes pick up ringing
+ * that is invisible in a photograph and obvious on a 1px rule. The file is a
+ * few KB either way, so there is nothing to win by pushing it.
+ */
+const LOGO_WEBP = { nearLossless: true, quality: 90, effort: 6 } as const;
+/**
  * Bytes per pixel above which a file is considered un-optimized. A q78 WebP
  * photograph lands around 0.04–0.08; 0.12 leaves headroom for genuinely busy
  * frames without letting a raw export through.
@@ -43,6 +53,15 @@ const ROOT = path.join(process.cwd(), "src/assets/images");
 /** Hashes of files this script has already re-encoded. Committed with them. */
 const MANIFEST = path.join(ROOT, ".optimized.json");
 const EXTENSIONS = new Set([".webp", ".png", ".jpg", ".jpeg"]);
+/**
+ * App icons are chrome, not photography, and are already export-optimized by
+ * the tool that cut them. Running the photographic path over them would
+ * palette-quantize a 16x16 and a 32x32 — where the budget below is meaningless
+ * (a 32x32 gets 123 bytes) and every re-encode is visible at the size the mark
+ * is actually seen. `src/config/icons.ts` owns this directory; the optimizer
+ * leaves it alone.
+ */
+const SKIP_DIRS = new Set(["favicon"]);
 
 const dryRun = process.argv.includes("--dry");
 
@@ -51,7 +70,7 @@ async function walk(dir: string): Promise<string[]> {
   const files = await Promise.all(
     entries.map((entry) => {
       const full = path.join(dir, entry.name);
-      if (entry.isDirectory()) return walk(full);
+      if (entry.isDirectory()) return SKIP_DIRS.has(entry.name) ? [] : walk(full);
       return EXTENSIONS.has(path.extname(entry.name).toLowerCase()) ? [full] : [];
     }),
   );
@@ -86,7 +105,15 @@ async function optimize(file: string, done: Record<string, string>) {
 
   const { width = 0, height = 0 } = await sharp(source).metadata();
   const longEdge = Math.max(width, height);
-  const withinBudget = before / (width * height) <= BYTES_PER_PIXEL_BUDGET;
+  // Logos are exempt from the byte budget, and deliberately so: the budget
+  // asks "is this bytes-per-pixel typical of an already-compressed
+  // photograph?", which is a meaningless question to put to flat artwork.
+  // Line art on transparency spends its bytes on sharp edges rather than on
+  // texture and reads as un-optimized at any quality, so the budget alone
+  // would re-encode `logo*.webp` on every single run and compound the loss a
+  // little each time — exactly the failure `.optimized.json` exists to stop.
+  // Their long edge is still capped below; that is the part worth enforcing.
+  const withinBudget = isLogo || before / (width * height) <= BYTES_PER_PIXEL_BUDGET;
 
   if (longEdge <= maxEdge && withinBudget) {
     return { file, key, before, after: before, skipped: true, digest: hash(source) };
@@ -106,7 +133,7 @@ async function optimize(file: string, done: Record<string, string>) {
   const buffer =
     path.extname(file).toLowerCase() === ".png"
       ? await pipeline.png({ compressionLevel: 9, palette: true }).toBuffer()
-      : await pipeline.webp({ quality: WEBP_QUALITY, effort: 6 }).toBuffer();
+      : await pipeline.webp(isLogo ? LOGO_WEBP : { quality: WEBP_QUALITY, effort: 6 }).toBuffer();
 
   // Never let a re-encode make a file bigger than it already was.
   if (buffer.byteLength >= before) {

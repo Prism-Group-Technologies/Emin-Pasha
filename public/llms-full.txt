@@ -15,7 +15,7 @@
 - **WhatsApp:** +256 764 042 543 (https://wa.me/256764042543)
 - **Check-in / check-out:** 14:00 / 10:00
 - **Currency:** UGX
-- **Website:** http://localhost:3000
+- **Website:** https://www.eminpasha.com
 
 ## About
 
@@ -181,47 +181,47 @@ Online booking URL is not yet published; book by phone, WhatsApp or email.
 
 ## Pages
 
-- http://localhost:3000 — boutique hotel Kampala · luxury hotel Kampala · hotels in Nakasero
-- http://localhost:3000/accommodation — hotels in Kampala · rooms Kampala
-- http://localhost:3000/accommodation/superior-room — hotel room Nakasero · corporate hotel Kampala
-- http://localhost:3000/accommodation/deluxe-room — deluxe room Kampala · best value hotel Nakasero
-- http://localhost:3000/accommodation/deluxe-suites — family suite Kampala
-- http://localhost:3000/accommodation/superior-suites — long-stay hotel Kampala
-- http://localhost:3000/dining — restaurants Kampala · fine dining Kampala
-- http://localhost:3000/dining/hakki-pasha-restaurant-bar — restaurant Nakasero
-- http://localhost:3000/dining/sir-samuel-baker-fine-dining — fine dining Kampala
-- http://localhost:3000/dining/rooftop-terrace — rooftop bar Kampala
-- http://localhost:3000/dining/manutea-wine-whisky-lounge — whisky bar Kampala
-- http://localhost:3000/dining/in-room-dining — room service hotel Kampala
-- http://localhost:3000/lounges-and-spaces — lounge Nakasero · garden lounge Kampala · hotel with gardens in Kampala
-- http://localhost:3000/spa-and-wellness — spa hotel Kampala
-- http://localhost:3000/spa — best spa in Kampala · Turkish bath Kampala
-- http://localhost:3000/gym — gym membership Nakasero
-- http://localhost:3000/swimming-pool — swimming pool open to public Kampala
-- http://localhost:3000/spa-etiquette — spa policies Kampala
-- http://localhost:3000/meetings-and-events — conference venue Kampala
-- http://localhost:3000/kudara-hall — conference venue Kampala · event hall Kampala
-- http://localhost:3000/meeting-rooms — meeting room Kampala
-- http://localhost:3000/business-centre — business centre with meeting rooms Kampala
-- http://localhost:3000/weddings — wedding venue Kampala · wedding venue Uganda
-- http://localhost:3000/experiences/airport-transfer — hotel near Entebbe airport transfer
-- http://localhost:3000/experiences/cg-shop — art shop Kampala
-- http://localhost:3000/offers — Friday Band Night Kampala · happy hour Kampala
-- http://localhost:3000/our-story — who was Emin Pasha · Emin Pasha Uganda
-- http://localhost:3000/our-story/emin-pasha — Emin Pasha history · Emin Pasha Relief Expedition
-- http://localhost:3000/our-story/the-hotel — heritage hotel Kampala · historic hotel Nakasero
-- http://localhost:3000/our-story/message-from-the-general-manager — Emin Pasha Hotel general manager welcome
-- http://localhost:3000/gallery — hotel photos Nakasero
-- http://localhost:3000/gallery/romance-and-honeymoons — honeymoon hotel Kampala
-- http://localhost:3000/gallery/business-in-nakasero — business hotel photos Nakasero
-- http://localhost:3000/gallery/spa-weekend — spa weekend Kampala
-- http://localhost:3000/gallery/garden-weddings — garden wedding photos Kampala
-- http://localhost:3000/gallery/family-escapes — family hotel with pool Kampala
-- http://localhost:3000/gallery/after-dark — evening dining and cocktails Kampala
-- http://localhost:3000/faq — Emin Pasha hotel questions
-- http://localhost:3000/contact — contact Emin Pasha Hotel · hotel Nakasero address
-- http://localhost:3000/privacy-policy — Emin Pasha Hotel privacy policy
-- http://localhost:3000/cookie-policy — Emin Pasha Hotel cookie policy
-- http://localhost:3000/cookie-settings — manage cookie preferences
-- http://localhost:3000/terms — Emin Pasha Hotel booking terms and conditions
-- http://localhost:3000/accessibility — accessible hotel Kampala
+- https://www.eminpasha.com — boutique hotel Kampala · luxury hotel Kampala · hotels in Nakasero
+- https://www.eminpasha.com/accommodation — hotels in Kampala · rooms Kampala
+- https://www.eminpasha.com/accommodation/superior-room — hotel room Nakasero · corporate hotel Kampala
+- https://www.eminpasha.com/accommodation/deluxe-room — deluxe room Kampala · best value hotel Nakasero
+- https://www.eminpasha.com/accommodation/deluxe-suites — family suite Kampala
+- https://www.eminpasha.com/accommodation/superior-suites — long-stay hotel Kampala
+- https://www.eminpasha.com/dining — restaurants Kampala · fine dining Kampala
+- https://www.eminpasha.com/dining/hakki-pasha-restaurant-bar — restaurant Nakasero
+- https://www.eminpasha.com/dining/sir-samuel-baker-fine-dining — fine dining Kampala
+- https://www.eminpasha.com/dining/rooftop-terrace — rooftop bar Kampala
+- https://www.eminpasha.com/dining/manutea-wine-whisky-lounge — whisky bar Kampala
+- https://www.eminpasha.com/dining/in-room-dining — room service hotel Kampala
+- https://www.eminpasha.com/lounges-and-spaces — lounge Nakasero · garden lounge Kampala · hotel with gardens in Kampala
+- https://www.eminpasha.com/spa-and-wellness — spa hotel Kampala
+- https://www.eminpasha.com/spa — best spa in Kampala · Turkish bath Kampala
+- https://www.eminpasha.com/gym — gym membership Nakasero
+- https://www.eminpasha.com/swimming-pool — swimming pool open to public Kampala
+- https://www.eminpasha.com/spa-etiquette — spa policies Kampala
+- https://www.eminpasha.com/meetings-and-events — conference venue Kampala
+- https://www.eminpasha.com/kudara-hall — conference venue Kampala · event hall Kampala
+- https://www.eminpasha.com/meeting-rooms — meeting room Kampala
+- https://www.eminpasha.com/business-centre — business centre with meeting rooms Kampala
+- https://www.eminpasha.com/weddings — wedding venue Kampala · wedding venue Uganda
+- https://www.eminpasha.com/experiences/airport-transfer — hotel near Entebbe airport transfer
+- https://www.eminpasha.com/experiences/cg-shop — art shop Kampala
+- https://www.eminpasha.com/offers — Friday Band Night Kampala · happy hour Kampala
+- https://www.eminpasha.com/our-story — who was Emin Pasha · Emin Pasha Uganda
+- https://www.eminpasha.com/our-story/emin-pasha — Emin Pasha history · Emin Pasha Relief Expedition
+- https://www.eminpasha.com/our-story/the-hotel — heritage hotel Kampala · historic hotel Nakasero
+- https://www.eminpasha.com/our-story/message-from-the-general-manager — Emin Pasha Hotel general manager welcome
+- https://www.eminpasha.com/gallery — hotel photos Nakasero
+- https://www.eminpasha.com/gallery/romance-and-honeymoons — honeymoon hotel Kampala
+- https://www.eminpasha.com/gallery/business-in-nakasero — business hotel photos Nakasero
+- https://www.eminpasha.com/gallery/spa-weekend — spa weekend Kampala
+- https://www.eminpasha.com/gallery/garden-weddings — garden wedding photos Kampala
+- https://www.eminpasha.com/gallery/family-escapes — family hotel with pool Kampala
+- https://www.eminpasha.com/gallery/after-dark — evening dining and cocktails Kampala
+- https://www.eminpasha.com/faq — Emin Pasha hotel questions
+- https://www.eminpasha.com/contact — contact Emin Pasha Hotel · hotel Nakasero address
+- https://www.eminpasha.com/privacy-policy — Emin Pasha Hotel privacy policy
+- https://www.eminpasha.com/cookie-policy — Emin Pasha Hotel cookie policy
+- https://www.eminpasha.com/cookie-settings — manage cookie preferences
+- https://www.eminpasha.com/terms — Emin Pasha Hotel booking terms and conditions
+- https://www.eminpasha.com/accessibility — accessible hotel Kampala
