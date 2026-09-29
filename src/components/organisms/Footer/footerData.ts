@@ -124,9 +124,11 @@ const submitLabel =
 export function getFooterData() {
   return {
     brand: {
+      // `shortName`/`suffix` were the footer's live-text wordmark. The
+      // delivered lock-up carries both as artwork, so the strings are no
+      // longer assembled here — `shell.header.wordmarkSuffix` still backs the
+      // header's own copy deck.
       name: identity.name,
-      shortName: identity.shortName,
-      suffix: shell.header.wordmarkSuffix,
       statement: shell.footer.brandStatement,
     },
     linkColumns: buildColumns(),

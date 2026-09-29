@@ -11,7 +11,7 @@ import { faviconSrc } from "@/config/icons";
  * 404 there is what this route exists to prevent.
  *
  * It is a redirect rather than a second copy of the file. The master lives at
- * `src/assets/images/favicon.ico` and reaches the browser content-hashed via
+ * `src/assets/images/favicon/favicon.ico` and reaches the browser content-hashed via
  * `@/config/icons`; serving these bytes again from a fixed path would put a
  * duplicate back into the repo — exactly what this route's own existence is
  * meant to make unnecessary.

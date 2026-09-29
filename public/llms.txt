@@ -15,7 +15,7 @@
 - **WhatsApp:** +256 764 042 543 (https://wa.me/256764042543)
 - **Check-in / check-out:** 14:00 / 10:00
 - **Currency:** UGX
-- **Website:** http://localhost:3000
+- **Website:** https://www.eminpasha.com
 
 ## Summary
 
@@ -48,4 +48,4 @@ Rates are quoted in Ugandan Shillings (UGX). No USD rate is published.
 
 Online booking URL is not yet published; book by phone, WhatsApp or email.
 
-Full fact sheet: http://localhost:3000/llms-full.txt
+Full fact sheet: https://www.eminpasha.com/llms-full.txt

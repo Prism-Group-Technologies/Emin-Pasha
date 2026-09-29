@@ -10,44 +10,47 @@ import { useLogoLockup } from "@/hooks/useLogoLockup";
 export interface LogoProps {
   /** The light lock-up sits over the hero video; the dark one over the page. */
   variant: "light" | "dark";
+  /**
+   * The home link's accessible name. Handed down from `headerData` rather
+   * than read here: this is a client component, and the content layer is
+   * Zod-validated at module scope (DECISIONS.md D25).
+   */
+  name: string;
   condensed?: boolean;
 }
 
 /**
- * The brand lock-up: the supplied portrait mark (`BrandMark`) beside the
- * wordmark set as live text (`LogoWordmark`), with every derived value coming
- * from `useLogoLockup`.
+ * The brand lock-up as the link home.
  *
- * Supersedes DECISIONS.md D30, which made the wordmark the whole mark while
- * artwork was outstanding. The artwork arrived as a single near-square PNG
- * with the wordmark baked into its lower quarter — unreadable at a 30–52px
- * header height — so the mark is cropped out of it and the wordmark stays
- * live text. That also keeps the accessible name real, keeps it responsive,
- * and keeps it answering the colour scheme (DECISIONS.md D76).
+ * It used to be two elements — a cropped portrait mark beside a wordmark set
+ * as live text — because the old artwork's baked wordmark was unreadable at
+ * header size. The delivered lock-up is drawn horizontally and stays legible
+ * at 132–200px wide, so it is one element again and `LogoWordmark` is gone.
+ *
+ * That makes `name` load-bearing rather than decorative. With the wordmark as
+ * live text, the mark carried `alt=""` and the text supplied the link's
+ * accessible name; with the wordmark as pixels, `alt=""` would have left this
+ * link unnamed. `name` is the approved `identity.name` and is the only thing
+ * naming it now.
  *
  * 'use client' justification: unchanged from before — passes `NextLink` as
  * the `component` prop of an MUI element, the Server/Client boundary
  * constraint recorded as DECISIONS.md D22.
  */
-export function Logo({ variant, condensed = false }: LogoProps) {
-  const lockup = useLogoLockup({ variant, condensed });
+export function Logo({ variant, name, condensed = false }: LogoProps) {
+  const lockup = useLogoLockup({ condensed });
 
   return (
     <Box
       component={NextLink}
       href="/"
-      sx={{
-        display: "flex",
-        alignItems: "center",
-        gap: { xs: 1.5, md: 2 },
-        textDecoration: "none",
-        color: "inherit",
-        minWidth: 0,
-      }}
+      sx={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: 0 }}
     >
       <BrandMark
-        height={lockup.markHeight}
-        sizes={lockup.markSizes}
+        width={lockup.width}
+        sizes={lockup.sizes}
+        variant={variant}
+        alt={name}
         transition={lockup.transition}
       />
     </Box>

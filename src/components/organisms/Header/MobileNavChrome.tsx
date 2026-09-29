@@ -8,12 +8,13 @@ import { Icon } from "@/components/atoms/Icon";
 import { Logo } from "@/components/organisms/Header/Logo";
 
 export interface MobileNavBarProps {
+  brandName: string;
   closeLabel: string;
   onClose: () => void;
 }
 
 /** The drawer's fixed top bar: brand lock-up and the close control. */
-export function MobileNavBar({ closeLabel, onClose }: MobileNavBarProps) {
+export function MobileNavBar({ brandName, closeLabel, onClose }: MobileNavBarProps) {
   return (
     <Box
       sx={{
@@ -27,7 +28,7 @@ export function MobileNavBar({ closeLabel, onClose }: MobileNavBarProps) {
         borderColor: "divider",
       }}
     >
-      <Logo variant="dark" condensed />
+      <Logo variant="dark" name={brandName} condensed />
       <MuiIconButton onClick={onClose} aria-label={closeLabel} sx={{ width: 44, height: 44 }}>
         <Icon name="close" />
       </MuiIconButton>
