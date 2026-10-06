@@ -22,7 +22,7 @@ export const DINING_RELATED_HREFS = [
 
 /** Per-outlet and per-space imagery, by the ids already in content/assets.ts. */
 export const OUTLET_ASSET_IDS: Record<string, string> = {
-  "hakki-pasha-restaurant-bar": "dining-hakki-pasha",
+  "equatoria-restaurant-bar": "dining-equatoria",
   "sir-samuel-baker-fine-dining": "dining-sir-samuel-baker",
   "rooftop-terrace": "dining-rooftop-terrace",
   "manutea-wine-whisky-lounge": "dining-manutea",

@@ -40,8 +40,7 @@ Rates are quoted in Ugandan Shillings (UGX). No USD rate is published.
 
 Savour exceptional cuisine inspired by Uganda's rich flavours, served in elegant settings steeped in history. Three uniquely distinct restaurants and two bars, celebrated for their cuisine, their service and their organic ambience. Our dining rooms feature a modern dumbwaiter, so that the culinary artistry on display becomes part of the experience. The menu draws on Asian, European and African influences — classic favourites alongside creative dishes worth travelling for.
 
-- **Hakki Pasha Restaurant & Bar** (restaurant) — The premium dining establishment: a delectable fusion of international and local flavours expertly crafted by the culinary team; exquisite dishes and handcrafted cocktails in a vibrant, elegant setting.
-- **Sir Samuel Baker Fine Dining** (restaurant) — A sophisticated fine-dining restaurant; a culinary journey showcasing the finest ingredients and meticulous attention to detail.
+- **Equatoria** (restaurant) — A contemporary dining room inspired by Uganda's place at the heart of Equatoria, where regional flavours meet an international table. Enjoy thoughtfully prepared local and global dishes alongside handcrafted cocktails in a warm, lively setting.
 - **The Rooftop Terrace** (bar) — Breathtaking panoramic views of the city; a serene atmosphere, refreshing beverages and scenic beauty.
 - **Manutea Wine & Whisky Lounge** (bar) — A sophisticated ambience with a carefully curated selection of fine wines and whiskies from around the world.
 - **In-Room Dining** (in-room) — 24/7 across every room category, with a Special-Select In-Room Dining Menu.
@@ -61,7 +60,6 @@ Spa treatment prices, gym membership rates and pool day-pass rates are not publi
 
 - **Kudara Hall** — A state-of-the-art facility, ideal for corporate events, meetings and conferences, with modern amenities and personalised service.
 - **Private Meeting Rooms** — Newly designed, equipped with cutting-edge technology and a dedicated F&B support team.
-- **The Business Centre** — Full office amenities, bookable by individuals and companies; fully equipped for virtual sessions including waiting-room functionality. Equipment includes, but is not limited to: Bluetooth speakerphones, conference bars, collaboration displays, projectors. Provided as standard: internet, bottled water, projectors and notebooks. Dedicated staff are assigned to business centre guests.
 - **Acropole Lounge** — An oasis of elegance nestled within the heart of the hotel; modern design merged with timeless charm; soft lighting over plush furnishings; a harmonious blend of contemporary elements and classic accents. Retrofitted to exude a collage of vintage rustic and modern contemporary experiences, with seating for every mood: by the fireplace (sumptuous armchairs and cosy couches, intimate conversation, a glass of fine wine, the astounding fountain); at the bar (skilled mixologists, artisanal cocktails); in the alcoves (secluded, for solitude or discreet business discussion).
 - **Mehmed Pasha Lounge** — Spectacularly located, with a scenic view directly onto the lustrous gardens and their diverse flora; the ultimate destination for the individual who wants to close out clutter and be in sync with their mind and thoughts; outdoor and indoor seating.
 - **Equatorial Gardens** — Lush greenery, a haven of tranquillity amidst the bustling city; picturesque landscapes, fresh air, inner peace; the perfect outdoor event space — and the best outdoor picture spot in the city.
@@ -188,7 +186,7 @@ Online booking URL is not yet published; book by phone, WhatsApp or email.
 - https://www.eminpasha.com/accommodation/deluxe-suites — family suite Kampala
 - https://www.eminpasha.com/accommodation/superior-suites — long-stay hotel Kampala
 - https://www.eminpasha.com/dining — restaurants Kampala · fine dining Kampala
-- https://www.eminpasha.com/dining/hakki-pasha-restaurant-bar — restaurant Nakasero
+- https://www.eminpasha.com/dining/equatoria-restaurant-bar — restaurant Nakasero
 - https://www.eminpasha.com/dining/sir-samuel-baker-fine-dining — fine dining Kampala
 - https://www.eminpasha.com/dining/rooftop-terrace — rooftop bar Kampala
 - https://www.eminpasha.com/dining/manutea-wine-whisky-lounge — whisky bar Kampala
@@ -202,7 +200,6 @@ Online booking URL is not yet published; book by phone, WhatsApp or email.
 - https://www.eminpasha.com/meetings-and-events — conference venue Kampala
 - https://www.eminpasha.com/kudara-hall — conference venue Kampala · event hall Kampala
 - https://www.eminpasha.com/meeting-rooms — meeting room Kampala
-- https://www.eminpasha.com/business-centre — business centre with meeting rooms Kampala
 - https://www.eminpasha.com/weddings — wedding venue Kampala · wedding venue Uganda
 - https://www.eminpasha.com/experiences/airport-transfer — hotel near Entebbe airport transfer
 - https://www.eminpasha.com/experiences/cg-shop — art shop Kampala

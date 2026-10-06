@@ -12,7 +12,7 @@ import { OUTLET_ID } from "@/containers/dining/anchors";
  */
 export const outletOptions = [
   { value: "any", label: "Any outlet / not sure yet" },
-  { value: OUTLET_ID.hakkiPasha, label: "Hakki Pasha Restaurant & Bar" },
+  { value: OUTLET_ID.equatoria, label: "Equatoria" },
   { value: OUTLET_ID.sirSamuelBaker, label: "Sir Samuel Baker Fine Dining" },
   { value: OUTLET_ID.rooftopTerrace, label: "The Rooftop Terrace" },
   { value: OUTLET_ID.manutea, label: "Manutea Wine & Whisky Lounge" },

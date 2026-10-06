@@ -25,7 +25,7 @@ export interface OutletIntro {
  * sample hours in `./hours.ts` and are invented (TODO(EMIN-Q12)).
  */
 export const outletIntros = {
-  [OUTLET_ID.hakkiPasha]: {
+  [OUTLET_ID.equatoria]: {
     paragraphs: [
       "It is the room the hotel wakes up in. Coffee and a full breakfast from half past six, a lunch crowd that spills onto the terrace, and by evening a bar working through handcrafted cocktails while the dining room fills behind it — one space that changes character four times a day without ever closing.",
       "The kitchen's fusion of international and local flavours is at its most legible here: the menu runs longest, the specials board moves fastest, and the modern dumbwaiter carries plates up in full view of the room.",

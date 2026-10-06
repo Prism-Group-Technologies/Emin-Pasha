@@ -48,16 +48,6 @@ export const venues: VenueEntry[] = [
     capacities: { theatre: 60, classroom: 36, uShape: 28, banquet: 40, cabaret: 32 },
   },
   {
-    id: "business-centre",
-    name: "The Business Centre",
-    assetId: "meetings-business-centre",
-    href: "/business-centre",
-    blurb: "Bookable office space and small meeting pods with dedicated staff.",
-    feature: "Waiting-room video control",
-    suits: [meeting],
-    capacities: { uShape: 12, banquet: 14, theatre: 20 },
-  },
-  {
     id: "equatorial-gardens",
     name: "Equatorial Gardens",
     assetId: "weddings-equatorial-gardens",

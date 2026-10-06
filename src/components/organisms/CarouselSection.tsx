@@ -3,7 +3,7 @@ import Stack from "@mui/material/Stack";
 import { Text } from "@/components/atoms/Text";
 import { Carousel } from "@/components/molecules/Carousel";
 
-const items = ["Hakki Pasha", "Sir Samuel Baker", "The Rooftop Terrace", "Manutea"].map((name) => ({
+const items = ["Equatoria", "Sir Samuel Baker", "The Rooftop Terrace", "Manutea"].map((name) => ({
   id: name,
   content: (
     <Stack

@@ -18,7 +18,6 @@ import { VenuesSection } from "@/containers/events/organisms/VenuesSection";
 const EVENTS_RELATED_HREFS = [
   "/kudara-hall",
   "/meeting-rooms",
-  "/business-centre",
   "/weddings",
   "/accommodation",
   "/dining",
@@ -34,7 +33,7 @@ const EVENTS_RELATED_HREFS = [
  *
  *   hero            — the "one address" pitch, the figures, two in-page CTAs
  *   event types     — the first choice: conference / meeting / wedding / …
- *   venues          — the five spaces, filterable, + indicative capacities
+ *   venues          — the four spaces, filterable, + indicative capacities
  *   process         — brief → proposal → site visit → confirm
  *   packages        — day-delegate, residential, board dinner, wedding
  *   differentiators — why organisers rebook

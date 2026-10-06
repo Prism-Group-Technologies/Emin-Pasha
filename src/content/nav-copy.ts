@@ -45,8 +45,8 @@ const raw: Record<string, NavPanelCopy> = {
     intro: "Three restaurants and two bars, across the estate.",
     viewAllLabel: "View all restaurants & bars",
     descriptions: {
-      "/dining/hakki-pasha-restaurant-bar":
-        "International and local flavours, vibrant and elegant.",
+      "/dining/equatoria-restaurant-bar":
+        "Local and global flavours in a warm, contemporary dining room.",
       "/dining/sir-samuel-baker-fine-dining":
         "The finest ingredients, meticulous attention to detail.",
       "/dining/rooftop-terrace": "Panoramic city views, and the calm to take them in.",
@@ -54,7 +54,7 @@ const raw: Record<string, NavPanelCopy> = {
       "/dining/in-room-dining": "Around the clock, in every room category.",
     },
     assetIds: {
-      "/dining/hakki-pasha-restaurant-bar": "dining-hakki-pasha",
+      "/dining/equatoria-restaurant-bar": "dining-equatoria",
       "/dining/sir-samuel-baker-fine-dining": "dining-sir-samuel-baker",
       "/dining/rooftop-terrace": "dining-rooftop-terrace",
       "/dining/manutea-wine-whisky-lounge": "dining-manutea",
@@ -86,13 +86,11 @@ const raw: Record<string, NavPanelCopy> = {
     descriptions: {
       "/kudara-hall": "A state-of-the-art hall for conferences and events.",
       "/meeting-rooms": "Cutting-edge technology, dedicated F&B support.",
-      "/business-centre": "Full office amenities for individuals and companies.",
       "/weddings": "The gardens for the ceremony, the estate for after.",
     },
     assetIds: {
       "/kudara-hall": "meetings-kudara-hall",
       "/meeting-rooms": "meetings-private-rooms",
-      "/business-centre": "meetings-business-centre",
       "/weddings": "weddings-equatorial-gardens",
     },
   },

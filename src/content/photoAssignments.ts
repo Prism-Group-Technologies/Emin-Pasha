@@ -80,9 +80,9 @@ export const stretchedAssignments = new Set<string>([
   "transfer-fleet-van",
   "transfer-fleet-coach",
   // Plated food — only room-service trays and drinks were delivered.
-  "dining-hakki-pasha-dish-mezze",
-  "dining-hakki-pasha-dish-charcoal-chicken",
-  "dining-hakki-pasha-dish-nile-perch",
+  "dining-equatoria-dish-mezze",
+  "dining-equatoria-dish-charcoal-chicken",
+  "dining-equatoria-dish-nile-perch",
   "dining-sir-samuel-baker-dish-scallop",
   "dining-sir-samuel-baker-dish-short-rib",
   "dining-sir-samuel-baker-dish-chocolate",
@@ -135,7 +135,7 @@ export const photoAssignments: Record<string, PhotoKey> = {
 
   // Estate tiles. One per `site.homepage.featureTiles` id.
   "home-feature-rooms": "suiteTerrace",
-  "home-feature-dining": "hakkiPashaDiningRoom",
+  "home-feature-dining": "equatoriaDiningRoom",
   "home-feature-spa": "bathroomTub", // STRETCH: no spa photography exists
   "home-feature-pool": "poolNight",
   "home-feature-events": "celebrationNight",
@@ -164,7 +164,7 @@ export const photoAssignments: Record<string, PhotoKey> = {
   "room-superior-suites-6": "suiteCourtyard",
 
   // ── Dining outlets ────────────────────────────────────────────────────
-  "dining-hakki-pasha": "hakkiPashaDiningRoom",
+  "dining-equatoria": "equatoriaDiningRoom",
   "dining-sir-samuel-baker": "sirBakerDiningRoom",
   "dining-rooftop-terrace": "terraceDiningNight",
   "dining-manutea": "manuteaLounge",
@@ -183,7 +183,6 @@ export const photoAssignments: Record<string, PhotoKey> = {
   // ── Meetings and events ───────────────────────────────────────────────
   "meetings-kudara-hall": "kudaraBoardroom",
   "meetings-private-rooms": "boardroomProjector",
-  "meetings-business-centre": "boardroomGarden",
   "meetings-kudara-floorplan": "banquetHall", // STRETCH: a photo where a diagram belongs
   "meetings-poolside-lawn": "poolNight",
   "weddings-equatorial-gardens": "celebrationNight",
@@ -337,9 +336,9 @@ export const photoAssignments: Record<string, PhotoKey> = {
   "kudara-banquet": "banquetLongTable",
 
   // ── Signature dishes (no plated-dish photography delivered) ───────────
-  "dining-hakki-pasha-dish-mezze": "tableSetting", // STRETCH
-  "dining-hakki-pasha-dish-charcoal-chicken": "hakkiPashaGardenRoom", // STRETCH
-  "dining-hakki-pasha-dish-nile-perch": "gardenVerandaDining", // STRETCH
+  "dining-equatoria-dish-mezze": "tableSetting", // STRETCH
+  "dining-equatoria-dish-charcoal-chicken": "equatoriaGardenRoom", // STRETCH
+  "dining-equatoria-dish-nile-perch": "gardenVerandaDining", // STRETCH
   "dining-sir-samuel-baker-dish-scallop": "sirBakerHall", // STRETCH
   "dining-sir-samuel-baker-dish-short-rib": "sirBakerPrivateTable", // STRETCH
   "dining-sir-samuel-baker-dish-chocolate": "coffeeCappuccino", // STRETCH

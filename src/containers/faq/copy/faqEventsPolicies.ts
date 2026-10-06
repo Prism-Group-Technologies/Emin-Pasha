@@ -26,7 +26,7 @@ export const eventsPoliciesFaqs: InventedFaq[] = [
     topic: "events",
     question: "Is audio-visual equipment available for meetings?",
     answer:
-      "Yes — projection, screens, sound and a fast fibre connection can be set up for your meeting, with the business centre on hand for printing and support. List what you need when you enquire.",
+      "Yes — projection, screens, sound and a fast fibre connection can be set up for your meeting. List what you need when you enquire.",
   },
   {
     id: "event-guest-rooms",

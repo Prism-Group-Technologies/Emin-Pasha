@@ -29,7 +29,7 @@ const raw: SocialLink[] = [
     // TODO(EMIN-Q67): LinkedIn URL not in the §1 NAP table — url left undefined.
     platform: "linkedin",
     bioText:
-      "The Emin Pasha Hotel & Spa is one of Kampala's most distinguished boutique hotels — a garden estate in Nakasero offering elegant accommodation, three restaurants, a full spa and wellness centre, a state-of-the-art business centre and Kudara Hall for conferences and corporate events. Independent, characterful and built for guests who want more than a room.",
+      "The Emin Pasha Hotel & Spa is one of Kampala's most distinguished boutique hotels — a garden estate in Nakasero offering elegant accommodation, three restaurants, a full spa and wellness centre, and Kudara Hall for conferences and corporate events. Independent, characterful and built for guests who want more than a room.",
   },
 ];
 

@@ -51,7 +51,7 @@ const raw: ShellContent = {
       {
         id: "gather",
         title: "Gather",
-        hrefs: ["/meetings-and-events", "/weddings", "/business-centre"],
+        hrefs: ["/meetings-and-events", "/weddings"],
       },
       {
         id: "discover",

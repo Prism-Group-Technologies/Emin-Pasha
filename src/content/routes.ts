@@ -79,7 +79,7 @@ export const routes: RouteEntry[] = [
     cluster: "restaurants Kampala · fine dining Kampala",
     priority: 0.9,
     linksTo: [
-      "/dining/hakki-pasha-restaurant-bar",
+      "/dining/equatoria-restaurant-bar",
       "/dining/sir-samuel-baker-fine-dining",
       "/dining/rooftop-terrace",
       "/dining/manutea-wine-whisky-lounge",
@@ -91,7 +91,7 @@ export const routes: RouteEntry[] = [
     ],
   },
   {
-    path: "/dining/hakki-pasha-restaurant-bar",
+    path: "/dining/equatoria-restaurant-bar",
     cluster: "restaurant Nakasero",
     priority: 0.7,
     linksTo: ["/accommodation", "/meetings-and-events", "/offers"],
@@ -163,7 +163,6 @@ export const routes: RouteEntry[] = [
     linksTo: [
       "/kudara-hall",
       "/meeting-rooms",
-      "/business-centre",
       "/weddings",
       "/accommodation",
       "/dining",
@@ -173,19 +172,13 @@ export const routes: RouteEntry[] = [
     path: "/kudara-hall",
     cluster: "conference venue Kampala · event hall Kampala",
     priority: 0.8,
-    linksTo: ["/meeting-rooms", "/business-centre", "/weddings", "/accommodation"],
+    linksTo: ["/meeting-rooms", "/weddings", "/accommodation"],
   },
   {
     path: "/meeting-rooms",
     cluster: "meeting room Kampala",
     priority: 0.7,
-    linksTo: ["/kudara-hall", "/business-centre", "/accommodation", "/dining"],
-  },
-  {
-    path: "/business-centre",
-    cluster: "business centre with meeting rooms Kampala",
-    priority: 0.7,
-    linksTo: ["/meeting-rooms", "/kudara-hall", "/accommodation"],
+    linksTo: ["/kudara-hall", "/accommodation", "/dining"],
   },
   {
     path: "/weddings",
@@ -219,7 +212,7 @@ export const routes: RouteEntry[] = [
       "/our-story/emin-pasha",
       "/our-story/the-hotel",
       "/our-story/message-from-the-general-manager",
-      "/dining/hakki-pasha-restaurant-bar",
+      "/dining/equatoria-restaurant-bar",
       "/dining/sir-samuel-baker-fine-dining",
       "/lounges-and-spaces",
       "/accommodation",
@@ -233,7 +226,7 @@ export const routes: RouteEntry[] = [
       "/our-story",
       "/our-story/the-hotel",
       "/our-story/message-from-the-general-manager",
-      "/dining/hakki-pasha-restaurant-bar",
+      "/dining/equatoria-restaurant-bar",
       "/dining/sir-samuel-baker-fine-dining",
       "/lounges-and-spaces",
       "/accommodation",
@@ -300,7 +293,6 @@ export const routes: RouteEntry[] = [
     linksTo: [
       "/gallery",
       "/accommodation/superior-room",
-      "/business-centre",
       "/gallery/after-dark",
     ],
   },

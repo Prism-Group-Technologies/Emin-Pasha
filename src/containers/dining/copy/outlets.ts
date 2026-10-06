@@ -20,7 +20,7 @@ export interface OutletMeta {
  * are invented positioning; the fact grid is defined in `./facts.ts`.
  */
 export const outletMeta = {
-  [OUTLET_ID.hakkiPasha]: {
+  [OUTLET_ID.equatoria]: {
     kicker: "All-day restaurant & bar",
     cuisine: "International & local fusion",
     setting: "Dining room, bar and garden terrace",
@@ -31,7 +31,7 @@ export const outletMeta = {
       { value: "Garden", label: "terrace seating" },
       { value: "Walk-ins", label: "welcome when there's space" },
     ],
-    facts: outletFacts[OUTLET_ID.hakkiPasha],
+    facts: outletFacts[OUTLET_ID.equatoria],
   },
   [OUTLET_ID.sirSamuelBaker]: {
     kicker: "Fine dining",

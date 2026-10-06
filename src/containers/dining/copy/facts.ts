@@ -18,7 +18,7 @@ export interface OutletFact {
  * file stays within the container-copy line ceiling.
  */
 export const outletFacts: Record<OutletId, OutletFact[]> = {
-  [OUTLET_ID.hakkiPasha]: [
+  [OUTLET_ID.equatoria]: [
     {
       label: "All day, one room",
       detail: "Breakfast, lunch, dinner and a full bar in one room",

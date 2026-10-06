@@ -11,7 +11,7 @@ import { outletMenus } from "@/containers/dining/copy/menus";
 import { MenuCourse } from "@/containers/dining/molecules/MenuCourse";
 
 const SHORT_LABEL: Record<OutletId, string> = {
-  [OUTLET_ID.hakkiPasha]: "Hakki Pasha",
+  [OUTLET_ID.equatoria]: "Equatoria",
   [OUTLET_ID.sirSamuelBaker]: "Sir Samuel Baker",
   [OUTLET_ID.rooftopTerrace]: "Rooftop",
   [OUTLET_ID.manutea]: "Manutea",
@@ -24,7 +24,7 @@ const SHORT_LABEL: Record<OutletId, string> = {
  * or Zod crosses the boundary.
  */
 export function MenuTabs() {
-  const [value, setValue] = useState<string>(OUTLET_ID.hakkiPasha);
+  const [value, setValue] = useState<string>(OUTLET_ID.equatoria);
 
   const items = OUTLET_ORDER.map((id) => {
     const menu = outletMenus[id];

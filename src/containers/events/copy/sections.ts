@@ -15,9 +15,9 @@ export const sections = {
   },
   venues: {
     eyebrow: "§ THE VENUES",
-    heading: "Five spaces, one estate",
+    heading: "Four spaces, one estate",
     description:
-      "A pillar-free hall, private meeting rooms, a business centre, the Equatorial Gardens and the poolside lawn. Filter by the kind of event you are running; indicative capacities are shown per layout.",
+      "A pillar-free hall, private meeting rooms, the Equatorial Gardens and the poolside lawn. Filter by the kind of event you are running; indicative capacities are shown per layout.",
   },
   process: {
     eyebrow: "§ HOW IT WORKS",

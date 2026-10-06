@@ -41,11 +41,6 @@ const SEEDS: MediaSeed[] = [
     altText: "A private meeting room at The Emin Pasha Hotel & Spa",
   },
   {
-    id: "meetings-business-centre",
-    subject: "The business centre — a small meeting pod with collaboration display",
-    altText: "The business centre at The Emin Pasha Hotel & Spa",
-  },
-  {
     id: "weddings-equatorial-gardens",
     subject: "The Equatorial Gardens set for a wedding ceremony — aisle, chairs, arch",
     altText: "The Equatorial Gardens set for a wedding ceremony",

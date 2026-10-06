@@ -31,7 +31,7 @@ export function MeetingRoomsContainer() {
         "Private dinner in a restaurant to close the day",
         "Accommodation on site for out-of-town attendees",
       ]}
-      relatedHrefs={["/kudara-hall", "/business-centre", "/accommodation", "/dining"]}
+      relatedHrefs={["/kudara-hall", "/accommodation", "/dining"]}
     />
   );
 }

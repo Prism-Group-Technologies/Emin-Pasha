@@ -50,7 +50,6 @@ export const stayCollections: CollectionCopy[] = [
     assetIds: [
       "gallery-room-desk-morning",
       "room-superior-room",
-      "meetings-business-centre",
       "gallery-lounge-alcove-meeting",
       "meetings-private-rooms",
       "gallery-meeting-boardroom-break",

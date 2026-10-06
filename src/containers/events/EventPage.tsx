@@ -43,7 +43,7 @@ export interface EventPageProps {
 
 /**
  * The shared shape of the four venue pages under Meetings & Events (Kudara
- * Hall, Meeting Rooms, Business Centre, Weddings).
+ * Hall, Meeting Rooms, Weddings).
  *
  * Each keeps its own hero, inclusions and indicative capacity table, then
  * inherits the same conversion funnel the hub uses — process, packages,

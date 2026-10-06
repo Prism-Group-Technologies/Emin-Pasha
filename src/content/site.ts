@@ -20,7 +20,7 @@ export const site = siteConfigSchema.parse({
     {
       name: "History",
       description:
-        "architecture and interiors that journey through time, tasteful décor infused with Uganda's heritage, outlets named for the people and places in the story (Hakki Pasha, Sir Samuel Baker, Mehmed Pasha, Acropole).",
+        "architecture and interiors that journey through time, tasteful décor infused with Uganda's heritage, outlets named for the people and places in the story (Equatoria, Sir Samuel Baker, Mehmed Pasha, Acropole).",
       cues: [
         "heritage",
         "journey through time",
@@ -63,7 +63,6 @@ export const site = siteConfigSchema.parse({
         "embassy staff, NGO and development-agency personnel, multinational executives, government contractors, consultants.",
       leadWith: [
         "Superior Room",
-        "Business Centre",
         "airport transfer",
         "fibre",
         "security",
@@ -91,7 +90,6 @@ export const site = siteConfigSchema.parse({
       leadWith: [
         "Equatorial Gardens",
         "photography",
-        "Sir Samuel Baker fine dining",
         "suite blocks",
       ],
     },

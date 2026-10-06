@@ -69,7 +69,7 @@ export function NamesakePageContainer() {
       >
         <RelatedLinks
           hrefs={[
-            "/dining/hakki-pasha-restaurant-bar",
+            "/dining/equatoria-restaurant-bar",
             "/dining/sir-samuel-baker-fine-dining",
             "/lounges-and-spaces",
             "/accommodation",

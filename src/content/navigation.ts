@@ -20,8 +20,7 @@ const raw: NavItem[] = [
     label: "Dining",
     href: "/dining",
     children: [
-      { label: "Hakki Pasha Restaurant & Bar", href: "/dining/hakki-pasha-restaurant-bar" },
-      { label: "Sir Samuel Baker Fine Dining", href: "/dining/sir-samuel-baker-fine-dining" },
+      { label: "Equatoria", href: "/dining/equatoria-restaurant-bar" },
       { label: "The Rooftop Terrace", href: "/dining/rooftop-terrace" },
       { label: "Manutea Wine & Whisky Lounge", href: "/dining/manutea-wine-whisky-lounge" },
       { label: "In-Room Dining", href: "/dining/in-room-dining" },
@@ -61,7 +60,6 @@ const raw: NavItem[] = [
     children: [
       { label: "Kudara Hall", href: "/kudara-hall" },
       { label: "Private Meeting Rooms", href: "/meeting-rooms" },
-      { label: "Business Centre", href: "/business-centre" },
       { label: "Weddings & Celebrations", href: "/weddings" },
     ],
   },

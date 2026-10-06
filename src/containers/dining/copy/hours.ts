@@ -17,8 +17,8 @@ export interface OutletHours {
  * plausible placeholders, always shown with a "confirmed on reservation" note.
  */
 export const outletHours = {
-  [OUTLET_ID.hakkiPasha]: {
-    label: "Hakki Pasha Restaurant & Bar",
+  [OUTLET_ID.equatoria]: {
+    label: "Equatoria",
     rows: [
       { label: "Breakfast", time: "06:30 – 10:30" },
       { label: "Lunch", time: "12:30 – 15:00" },

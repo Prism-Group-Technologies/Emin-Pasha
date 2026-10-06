@@ -75,7 +75,7 @@ export function StoryContainer() {
         <RelatedLinks
           hrefs={[
             "/accommodation",
-            "/dining/hakki-pasha-restaurant-bar",
+            "/dining/equatoria-restaurant-bar",
             "/dining/sir-samuel-baker-fine-dining",
             "/lounges-and-spaces",
           ]}

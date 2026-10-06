@@ -87,7 +87,6 @@ export const keywordClusters = {
     "gym membership Kampala Nakasero",
     "swimming pool open to public Kampala",
     "outdoor event space Kampala",
-    "business centre with meeting rooms Kampala",
     "hotel for embassy staff Kampala",
   ],
   brandAndStory: [
