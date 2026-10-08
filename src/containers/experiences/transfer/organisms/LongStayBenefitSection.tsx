@@ -62,7 +62,7 @@ export function LongStayBenefitSection({ motion = "up" }: { motion?: RevealDirec
             <Button
               href="/accommodation"
               variant="ghost"
-              sx={{ color: ink.contrastCopy, borderColor: "rgba(251,250,247,0.6)" }}
+              sx={{ color: ink.contrastCopy, borderColor: "rgba(250,248,246,0.6)" }}
             >
               {benefit.secondaryCtaLabel}
             </Button>

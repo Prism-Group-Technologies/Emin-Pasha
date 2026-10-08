@@ -17,8 +17,8 @@
  * into `src/content` after sign-off.
  *
  * Traceability. Every structural claim ties back to already-approved content:
- * Kudara Hall, the private meeting rooms, the business centre and the
- * Equatorial Gardens are approved §5/§7 spaces; "three restaurants for
+ * Kudara Hall, the private meeting rooms and the Equatorial Gardens are
+ * approved §5/§7 spaces; "three restaurants for
  * catering", "secure parking", "accommodation on site" and the dedicated F&B
  * team are approved §7 amenities; the §14 group booking terms (14-day
  * confirmation, rooming lists 7 days out, 50% deposit above 10 rooms) are

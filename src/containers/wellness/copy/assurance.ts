@@ -26,13 +26,6 @@ export const assuranceItems: Record<FacilityId, AssuranceItem[]> = {
     { icon: "auto-awesome", label: "Skin-tested products", detail: "Allergen-safe, patch-tested." },
     { icon: "whatsapp", label: "Same-day reply", detail: "A person, usually within hours." },
   ],
-  [FACILITY_ID.gym]: [
-    { icon: "verified", label: "Certified trainers", detail: "Every membership starts with one." },
-    { icon: "auto-awesome", label: "Newly renovated", detail: "Cutting-edge cardio and strength." },
-    { icon: "check-circle", label: "Open to neighbours", detail: "Not only hotel guests." },
-    { icon: "pool", label: "Pool included", detail: "Every tier covers pool and gardens." },
-    { icon: "whatsapp", label: "No joining fee", detail: "Month to month, cancel anytime." },
-  ],
   [FACILITY_ID.pool]: [
     { icon: "check-circle", label: "Open to the public", detail: "Day passes for non-residents." },
     { icon: "info", label: "Max depth 1.60m", detail: "Shallow enough for the family." },

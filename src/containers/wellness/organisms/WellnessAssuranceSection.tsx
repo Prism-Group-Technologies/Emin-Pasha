@@ -8,7 +8,7 @@ import type { RevealDirection } from "@/theme/motion";
 /**
  * The credibility strip that sits directly under a facility hero — certified
  * staff, hygiene, access and age rules in plain terms. `facility` picks the
- * right set from `assuranceItems`; the copy is shared across spa, gym and
+ * right set from `assuranceItems`; the copy is shared across spa and
  * pool so the three pages open with the same reassurance. `variant` lets a
  * page choose the tonal step it needs to keep bands alternating.
  */

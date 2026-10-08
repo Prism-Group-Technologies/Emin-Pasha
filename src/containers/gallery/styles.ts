@@ -44,7 +44,7 @@ export const photoBadgeSx = {
   px: 2,
   py: 0.75,
   borderRadius: `${radiusTokens.pill}px`,
-  bgcolor: "rgba(11,11,10,0.62)",
+  bgcolor: "rgba(8,5,3,0.62)",
   color: colorTokens.ink.contrastCopy,
   backdropFilter: "blur(6px)",
 } as const;

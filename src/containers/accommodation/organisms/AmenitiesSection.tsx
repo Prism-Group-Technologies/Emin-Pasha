@@ -1,4 +1,5 @@
 import { Box } from "@/components/atoms/Box";
+import type { IconBadgeTone } from "@/components/atoms/IconBadge";
 import { Reveal } from "@/components/atoms/Reveal";
 import { Text } from "@/components/atoms/Text";
 import { SectionShell } from "@/components/templates/SectionShell";
@@ -28,7 +29,7 @@ function AmenityGroup({
 }: {
   title: string;
   items: AmenityCopy[];
-  tone: "gold" | "garden";
+  tone: IconBadgeTone;
 }) {
   return (
     <Box>
@@ -67,7 +68,7 @@ export function AmenitiesSection({ motion = "up" }: { motion?: RevealDirection }
     >
       <Box sx={{ display: "grid", gap: { xs: 8, md: 9 } }}>
         <AmenityGroup title={amenitiesSection.inRoomTitle} items={inRoomAmenities} tone="gold" />
-        <AmenityGroup title={amenitiesSection.estateTitle} items={estateAmenities} tone="garden" />
+        <AmenityGroup title={amenitiesSection.estateTitle} items={estateAmenities} tone="gold" />
       </Box>
     </SectionShell>
   );

@@ -45,8 +45,8 @@ export function ReelChapterChips({ chapters, active, onSelect }: ReelChapterChip
               cursor: "pointer",
               borderRadius: `${radiusTokens.pill}px`,
               border: "1px solid",
-              borderColor: selected ? gold[500] : "rgba(251,250,247,0.24)",
-              bgcolor: selected ? "rgba(212,188,94,0.14)" : "transparent",
+              borderColor: selected ? gold[300] : "rgba(250,248,246,0.24)",
+              bgcolor: selected ? "rgba(208,171,66,0.14)" : "transparent",
               color: ink.contrastCopy,
               "&:hover": { borderColor: gold[300] },
               "&:focus-visible": {

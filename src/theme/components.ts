@@ -70,17 +70,56 @@ export const components: Components<Theme> = {
     styleOverrides: {
       root: { borderRadius: radiusTokens.md, transition: hoverTransition },
       contained: { "&:hover": { boxShadow: shadowTokens.hover } },
-      // White (ink.contrastCopy #FBFAF7) label on the gold fill. White fails AA
-      // on gold.500 (2.2:1), so the contained-primary fill drops to gold.800
-      // (6.6:1) with gold.900 on hover (10.2:1) — see the note in tokens.ts.
-      // The `contained` boxShadow-on-hover above still applies: Emotion merges
-      // the two `&:hover` blocks. `containedSecondary` already puts sand.50 on
-      // garden.500 (6.9:1) through the palette, so it needs nothing here.
-      containedPrimary: {
-        backgroundColor: colorTokens.gold[800],
+      /**
+       * The contained buttons are the one place the brand hex cannot simply be
+       * used as-is, and the two schemes fail it in opposite directions — so
+       * each gets its own fill.
+       *
+       * **Light.** White on the brand copper is 3.69:1, under the 4.5:1 AA
+       * floor, so the fill drops to `copper.700` (7.03:1), hover `copper.800`
+       * (9.73:1). Same hue, lower value: it still reads as copper.
+       *
+       * **Dark.** Here the problem is the opposite one. A dark fill on a
+       * near-black page satisfies its label easily but leaves the control with
+       * no findable *edge* — `copper.700` is 2.73:1 against the ground, under
+       * the 3:1 WCAG 1.4.11 floor. So the fill steps up, to the one stop that
+       * satisfies the label and the boundary at the same time: white on
+       * `copper.600` is 4.97:1, past AA, and `copper.600` is 3.86:1 against
+       * `ink.900`, past 1.4.11. The label stays white in both schemes, which
+       * is the point — the brand's button reads the same either way, and the
+       * exact brand `copper.500` could not carry white (3.64:1).
+       *
+       * Dark hover is `copper.700` (white 7.03:1), darkening like the light
+       * scheme rather than lightening. Its own 2.73:1 against the ground is
+       * under 1.4.11, which is acceptable only for *hover*: the pointer is on
+       * the control, so the fill is no longer what identifies it. The resting
+       * state, which is the one 1.4.11 is about, passes.
+       *
+       * `containedSecondary` needs only its hover: the palette already supplies
+       * a scheme-correct `secondary.main` + `contrastText` pair, but MUI's
+       * default contained hover reaches for `secondary.dark`, which on the
+       * dark scheme would move the fill *away* from the ground and undo the
+       * boundary. Light hover is `maroon.900` (13.00:1); dark hover lightens
+       * to `maroon.400` (7.13:1 under ink), matching the primary's direction.
+       *
+       * The `contained` boxShadow-on-hover above still applies throughout:
+       * Emotion merges the two `&:hover` blocks.
+       */
+      containedPrimary: ({ theme }) => ({
+        backgroundColor: colorTokens.copper[700],
         color: colorTokens.ink.contrastCopy,
-        "&:hover": { backgroundColor: colorTokens.gold[900] },
-      },
+        "&:hover": { backgroundColor: colorTokens.copper[800] },
+        ...theme.applyStyles("dark", {
+          backgroundColor: colorTokens.copper[600],
+          "&:hover": { backgroundColor: colorTokens.copper[700] },
+        }),
+      }),
+      containedSecondary: ({ theme }) => ({
+        "&:hover": { backgroundColor: colorTokens.maroon[900] },
+        ...theme.applyStyles("dark", {
+          "&:hover": { backgroundColor: colorTokens.maroon[400] },
+        }),
+      }),
     },
   },
   MuiTextField: {
@@ -123,9 +162,11 @@ export const components: Components<Theme> = {
     },
   },
   MuiLink: {
-    // Default Link `color` is 'primary' (gold) in stock MUI — that fails AA on
-    // light surfaces (DESIGN_DIRECTION.md §B.2). Force text-primary instead;
-    // gold is reserved for fills/icons/dark-surface text, never inline link text.
+    // Default Link `color` is 'primary' in stock MUI, which here is the brand
+    // copper — 3.64:1 on light surfaces, short of AA for normal text. Force
+    // text-primary instead. Where a link should read as copper it uses
+    // `copper.700` (7.03:1); the brand hex itself is reserved for fills, rules,
+    // glyphs and large type, never inline link text.
     defaultProps: { underline: "hover", color: "textPrimary" },
   },
 };

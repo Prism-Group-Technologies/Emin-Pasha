@@ -4,8 +4,8 @@ import type { OfferItem } from "@/containers/offers/copy/offerTypes";
 
 /**
  * Invented spa, corporate and seasonal packages. The spa services (tailored
- * massage, Turkish bath, pool), Kudara Hall and the business centre are all
- * approved facilities; every price, saving and date is a placeholder.
+ * massage, Turkish bath, pool) and Kudara Hall are approved facilities;
+ * every price, saving and date is a placeholder.
  */
 export const wellnessOffers: OfferItem[] = [
   {
@@ -64,13 +64,12 @@ export const corporateOffers: OfferItem[] = [
     inclusions: [
       "20% off the best available room rate",
       "Express check-in and 2pm late check-out",
-      "Business centre credit on every stay",
     ],
     priceUgx: 360_000,
     wasPriceUgx: 450_000,
     priceUnit: "per night, from",
     bookBy: "Company agreements for 2027 open now",
-    assetId: "meetings-business-centre",
+    assetId: "meetings-private-rooms",
   },
 ];
 

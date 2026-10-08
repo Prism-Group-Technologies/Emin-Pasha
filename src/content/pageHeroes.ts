@@ -6,7 +6,7 @@
  * nearest: the whole set is visible here, which is what stops three
  * consecutive pages opening on the same garden.
  *
- * Detail routes key on the entity's own id (`hakki-pasha-restaurant-bar`,
+ * Detail routes key on the entity's own id (`equatoria-restaurant-bar`,
  * `superior-suites`), so a new room or outlet gets the fallback rather than a
  * missing image, and shows up as a one-line fix.
  *
@@ -27,8 +27,8 @@ const HEROES: Record<string, PhotoKey> = {
   "superior-suites": "suiteLivingOne",
 
   // Dining
-  dining: "hakkiPashaGardenRoom",
-  "hakki-pasha-restaurant-bar": "hakkiPashaDiningRoom",
+  dining: "equatoriaGardenRoom",
+  "equatoria-restaurant-bar": "equatoriaDiningRoom",
   "sir-samuel-baker-fine-dining": "sirBakerHall",
   "rooftop-terrace": "terraceDiningNight",
   "manutea-wine-whisky-lounge": "manuteaLoungeSeating",
@@ -38,13 +38,11 @@ const HEROES: Record<string, PhotoKey> = {
   events: "kudaraBoardroom",
   "kudara-hall": "banquetHall",
   "meeting-rooms": "boardroomGarden",
-  "business-centre": "boardroomProjector",
   weddings: "celebrationNight",
 
   // Wellness
   wellness: "poolDusk",
   spa: "bathroomTub",
-  gym: "poolLoungers",
   pool: "poolNight",
   "spa-etiquette": "poolAerial",
 

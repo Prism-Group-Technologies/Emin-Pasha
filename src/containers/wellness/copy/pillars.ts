@@ -22,11 +22,10 @@ export interface WellnessPillar {
 }
 
 /**
- * The three facilities as pillar cards on the hub. Every `kicker`, and the
- * public-access and non-resident-membership points, are approved §6 facts;
- * the treatment and equipment lines restate approved §6 offerings. Times and
- * prices are not asserted here — those live in the treatments and membership
- * bands, flagged as indicative.
+ * The two facilities as pillar cards on the hub. Every `kicker`, and the
+ * public-access points, are approved §6 facts; the treatment lines restate
+ * approved §6 offerings. Times and prices are not asserted here — those live
+ * in the treatments and passes bands, flagged as indicative.
  */
 export const wellnessPillars: WellnessPillar[] = [
   {
@@ -45,23 +44,6 @@ export const wellnessPillars: WellnessPillar[] = [
     ],
     assetId: "wellness-pillar-spa",
     kicker: "Daily · 7:00am – 9:00pm",
-  },
-  {
-    id: FACILITY_ID.gym,
-    href: "/gym",
-    icon: "fitness-center",
-    name: "Emin Pasha Gym",
-    tagline: "The daily one",
-    blurb:
-      "Newly renovated, with cutting-edge equipment, group classes and certified trainers. Membership is open to residents of the neighbourhood, not only hotel guests.",
-    points: [
-      "Cutting-edge cardio & strength kit",
-      "Group fitness classes",
-      "Certified personal trainers",
-      "Membership for non-residents",
-    ],
-    assetId: "wellness-pillar-gym",
-    kicker: "Daily · 6:00am – 9:00pm",
   },
   {
     id: FACILITY_ID.pool,

@@ -17,21 +17,13 @@ export interface OutletHours {
  * plausible placeholders, always shown with a "confirmed on reservation" note.
  */
 export const outletHours = {
-  [OUTLET_ID.hakkiPasha]: {
-    label: "Hakki Pasha Restaurant & Bar",
+  [OUTLET_ID.equatoria]: {
+    label: "Equatoria",
     rows: [
       { label: "Breakfast", time: "06:30 – 10:30" },
       { label: "Lunch", time: "12:30 – 15:00" },
       { label: "Dinner", time: "18:30 – 22:30" },
       { label: "Bar", time: "12:00 – late" },
-    ],
-  },
-  [OUTLET_ID.sirSamuelBaker]: {
-    label: "Sir Samuel Baker Fine Dining",
-    rows: [
-      { label: "Dinner, Tue–Sat", time: "19:00 – 22:00" },
-      { label: "Last seating", time: "20:30" },
-      { label: "Sun–Mon", time: "Private bookings only" },
     ],
   },
   [OUTLET_ID.rooftopTerrace]: {

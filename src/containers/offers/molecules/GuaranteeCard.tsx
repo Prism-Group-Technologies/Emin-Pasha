@@ -5,7 +5,7 @@ import { guaranteeCopy } from "@/containers/offers/copy";
 import { ClaimOnWhatsApp } from "@/containers/offers/molecules/ClaimOnWhatsApp";
 import { colorTokens, radiusTokens } from "@/theme/tokens";
 
-const { gold } = colorTokens;
+const { copper } = colorTokens;
 
 /**
  * The price-match promise as a warm, gold-edged panel beside the perks — the
@@ -28,8 +28,8 @@ export function GuaranteeCard({ whatsappHref }: { whatsappHref: string }) {
         p: { xs: 5, md: 7 },
         borderRadius: `${radiusTokens.xl}px`,
         border: "1px solid",
-        borderColor: gold[500],
-        bgcolor: "rgba(196,168,50,0.12)",
+        borderColor: copper[500],
+        bgcolor: "rgba(190,110,41,0.10)",
       }}
     >
       <IconBadge name="verified" size={56} />

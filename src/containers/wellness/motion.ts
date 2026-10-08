@@ -18,7 +18,6 @@ const SCROLL_ORDER = [
   "treatments",
   "packages",
   "journey",
-  "membership",
   "enquiry",
   "voices",
   "faq",

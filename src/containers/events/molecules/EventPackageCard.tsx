@@ -36,7 +36,7 @@ export function EventPackageCard({ pkg }: { pkg: EventPackage }) {
       <Box sx={{ display: "flex", flexDirection: "column", p: { xs: 4, md: 5 }, flex: 1 }}>
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, mb: 3 }}>
           <Chip label={pkg.forWhom} size="small" />
-          {pkg.featured && <Chip label="Most booked" size="small" color="primary" />}
+          {pkg.featured && <Chip label="Most booked" size="small" color="primary" sx={{ color: "white" }} />}
         </Box>
 
         <Text variant="h3" component="h3" sx={{ mb: 2 }}>

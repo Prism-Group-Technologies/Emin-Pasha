@@ -11,7 +11,7 @@ import { placeholderImageSrc } from "@/config/assets";
  * wherever the content column sits.
  */
 const SCRIM =
-  "linear-gradient(180deg, rgba(11,11,10,0.16) 0%, rgba(11,11,10,0.52) 52%, rgba(11,11,10,0.82) 100%)";
+  "linear-gradient(180deg, rgba(8,5,3,0.16) 0%, rgba(8,5,3,0.52) 52%, rgba(8,5,3,0.82) 100%)";
 
 /**
  * The full-bleed photograph, in the shape a static image import produces.

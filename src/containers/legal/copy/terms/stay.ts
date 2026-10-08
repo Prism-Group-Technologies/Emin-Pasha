@@ -21,8 +21,8 @@ export const termsSectionsStay: LegalSection[] = [
     ],
   },
   {
-    id: "spa-pool-and-gym",
-    title: "Spa, pool and gym",
+    id: "spa-and-pool",
+    title: "Spa and pool",
     blocks: [
       {
         kind: "p",

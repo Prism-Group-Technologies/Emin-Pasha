@@ -29,13 +29,13 @@ export const diningFaq: DiningFaqItem[] = [
     id: "children",
     question: "Are children welcome?",
     answer:
-      "Children are welcome at Hakki Pasha and, earlier in the evening, on the Rooftop Terrace, with a children's menu and high chairs available. Sir Samuel Baker's tasting menu is better suited to older children and adults.",
+      "Children are welcome at Equatoria and, earlier in the evening, on the Rooftop Terrace, with a children's menu and high chairs available. Sir Samuel Baker's tasting menu is better suited to older children and adults.",
   },
   {
     id: "walk-ins",
     question: "Do you take walk-ins, or do I need to book?",
     answer:
-      "Walk-ins are welcome at Hakki Pasha and the Rooftop Terrace when there is space, but sunset tables and weekend evenings fill quickly — a reservation is the safe bet. Sir Samuel Baker is by reservation only.",
+      "Walk-ins are welcome at Equatoria and the Rooftop Terrace when there is space, but sunset tables and weekend evenings fill quickly — a reservation is the safe bet. Sir Samuel Baker is by reservation only.",
   },
   {
     id: "corkage",

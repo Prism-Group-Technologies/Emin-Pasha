@@ -50,7 +50,7 @@ function VisitPanel() {
         borderRadius: `${radiusTokens.lg}px`,
       }}
     >
-      <IconBadge name="location" tone="garden" />
+      <IconBadge name="location" tone="gold" />
 
       <Text variant="body1" color="text.secondary" sx={{ textWrap: "pretty" }}>
         {location.body}

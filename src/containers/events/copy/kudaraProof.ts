@@ -109,7 +109,7 @@ export const kudaraFactSheet: KudaraFactSheetPoint[] = [
     label: "Access",
     value: "Ground-level get-in, secure parking, separate event entrance, green room",
   },
-  { label: "On site", value: "Delegate room block, late checkout, gym, pool and gardens" },
+  { label: "On site", value: "Delegate room block, late checkout, pool and gardens" },
 ];
 
 export const kudaraPlannerNote =

@@ -19,7 +19,6 @@ import ErrorOutline from "@mui/icons-material/ErrorOutline";
 import EventOutlined from "@mui/icons-material/EventOutlined";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import Facebook from "@mui/icons-material/Facebook";
-import FitnessCenterOutlined from "@mui/icons-material/FitnessCenterOutlined";
 import FlightLandOutlined from "@mui/icons-material/FlightLandOutlined";
 import FlightTakeoffOutlined from "@mui/icons-material/FlightTakeoffOutlined";
 import GroupsOutlined from "@mui/icons-material/GroupsOutlined";
@@ -78,7 +77,6 @@ const ICONS = {
   facebook: Facebook,
   flight: FlightLandOutlined,
   "flight-takeoff": FlightTakeoffOutlined,
-  "fitness-center": FitnessCenterOutlined,
   groups: GroupsOutlined,
   info: InfoOutlined,
   instagram: Instagram,

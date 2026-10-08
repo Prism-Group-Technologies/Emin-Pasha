@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * General-purpose facility/guest-service shape — gym, pool, CG Shop, airport
+ * General-purpose facility/guest-service shape — pool, CG Shop, airport
  * transfer — docs/02_CONTENT_SOURCE_OF_TRUTH.md §6, §8, §9.
  */
 export const facilitySchema = z.object({

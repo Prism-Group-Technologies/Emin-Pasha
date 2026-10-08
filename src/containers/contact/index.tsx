@@ -10,8 +10,6 @@ import { ContactHero } from "@/containers/contact/organisms/ContactHero";
 import { EnquirySection } from "@/containers/contact/organisms/EnquirySection";
 import { GettingHereSection } from "@/containers/contact/organisms/GettingHereSection";
 import { StickyEnquireCta } from "@/containers/contact/organisms/StickyEnquireCta";
-import { TeamSection } from "@/containers/contact/organisms/TeamSection";
-import { VoicesSection } from "@/containers/contact/organisms/VoicesSection";
 
 /**
  * Contact, rebuilt as a conversion funnel — the same shape as the Story,
@@ -44,8 +42,8 @@ export function ContactContainer() {
       <EnquirySection motion={m.enquiry} />
       <GettingHereSection motion={m.gettingHere} />
       <ArrivalSection motion={m.arrival} />
-      <TeamSection motion={m.team} />
-      <VoicesSection motion={m.voices} />
+      {/* <TeamSection motion={m.team} />
+      <VoicesSection motion={m.voices} /> */}
       <ContactFaqSection motion={m.faq} />
       <ContactClosingSection motion={m.closing} />
       <SectionShell

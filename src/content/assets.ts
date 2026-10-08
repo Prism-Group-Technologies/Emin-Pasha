@@ -7,7 +7,7 @@ import { type AssetRef, type AssetRefInput, assetRefSchema } from "@/schemas/con
  * `image` here are derived, never authored.
  *
  * Subjects the delivered shoot does not cover (every human portrait, plated
- * dishes, the gym and spa interiors, vehicles, the two diagram slots) are
+ * dishes, the spa interiors, vehicles, the two diagram slots) are
  * filled with the nearest tonal stand-in and listed by `yarn check:photos` —
  * that list is the outstanding shooting brief. See docs/ASSET_MANIFEST.md for
  * the human-readable version of this same list.
@@ -171,12 +171,12 @@ const raw: AssetRefInput[] = [
   {
     id: "home-feature-dining",
     page: "home",
-    subject: "Dine tile — the Hakki Pasha dining room",
+    subject: "Dine tile — the Equatoria dining room",
     kind: "image",
     width: 1600,
     height: 900,
     priority: "normal",
-    altText: "The Hakki Pasha dining room laid for service under rattan pendant lights",
+    altText: "The Equatoria dining room laid for service under rattan pendant lights",
     status: "placeholder",
   },
   {
@@ -425,25 +425,14 @@ const raw: AssetRefInput[] = [
   },
 
   {
-    id: "dining-hakki-pasha",
-    page: "dining/hakki-pasha-restaurant-bar",
-    subject: "Hakki Pasha Restaurant & Bar dining room and bar",
+    id: "dining-equatoria",
+    page: "dining/equatoria-restaurant-bar",
+    subject: "Equatoria dining room and bar",
     kind: "image",
     width: 1600,
     height: 1067,
     priority: "high",
-    altText: "Hakki Pasha Restaurant & Bar",
-    status: "placeholder",
-  },
-  {
-    id: "dining-sir-samuel-baker",
-    page: "dining/sir-samuel-baker-fine-dining",
-    subject: "Sir Samuel Baker Fine Dining room",
-    kind: "image",
-    width: 1600,
-    height: 1067,
-    priority: "high",
-    altText: "Sir Samuel Baker Fine Dining",
+    altText: "Equatoria",
     status: "placeholder",
   },
   {
@@ -526,17 +515,6 @@ const raw: AssetRefInput[] = [
     status: "placeholder",
   },
   {
-    id: "spa-gym",
-    page: "spa/gym",
-    subject: "Emin Pasha Gym equipment floor",
-    kind: "image",
-    width: 1600,
-    height: 1067,
-    priority: "high",
-    altText: "Emin Pasha Gym",
-    status: "placeholder",
-  },
-  {
     id: "spa-pool",
     page: "spa/pool",
     subject: "The swimming pool and poolside gardens",
@@ -568,17 +546,6 @@ const raw: AssetRefInput[] = [
     height: 1067,
     priority: "normal",
     altText: "Private meeting room at The Emin Pasha Hotel & Spa",
-    status: "placeholder",
-  },
-  {
-    id: "meetings-business-centre",
-    page: "meetings-events/business-centre",
-    subject: "The Business Centre workstation/meeting setup",
-    kind: "image",
-    width: 1600,
-    height: 1067,
-    priority: "normal",
-    altText: "The Business Centre at The Emin Pasha Hotel & Spa",
     status: "placeholder",
   },
   {

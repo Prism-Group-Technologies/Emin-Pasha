@@ -60,7 +60,7 @@ export function CollectionTabs({ items, active, onSelect, label, panelId }: Coll
               border: "1px solid",
               borderColor: selected ? "primary.main" : "divider",
               borderRadius: `${radiusTokens.md}px`,
-              boxShadow: selected ? `inset 0 3px 0 ${colorTokens.gold[500]}` : "none",
+              boxShadow: selected ? `inset 0 3px 0 ${colorTokens.copper[500]}` : "none",
               transition: "border-color 160ms ease, background-color 160ms ease",
               "&:hover": { borderColor: "primary.main" },
               "&:focus-visible": {

@@ -46,14 +46,14 @@ import superiorSuiteArmchair from "@/assets/images/accommodation/superior-suites
 import superiorSuiteDoorway from "@/assets/images/accommodation/superior-suites/superior-suite5.webp";
 import superiorSuitePassage from "@/assets/images/accommodation/superior-suites/superior-suite7.webp";
 import superiorSuiteTeal from "@/assets/images/accommodation/superior-suites/superior-suite.webp";
-import hakkiPashaDiningRoom from "@/assets/images/dining/all-day-restaurant-3.webp";
+import equatoriaDiningRoom from "@/assets/images/dining/all-day-restaurant-3.webp";
 import cocktailsGarden from "@/assets/images/dining/cocktail-2.webp";
 import cottageTerrace from "@/assets/images/dining/cottage1.webp";
 import cottageLounge from "@/assets/images/dining/cottage.webp";
 import inRoomTray from "@/assets/images/dining/cutlery1.webp";
 import inRoomTrayDetail from "@/assets/images/dining/cutlery2.webp";
 import sirBakerDiningRoom from "@/assets/images/dining/dsc_0296.webp";
-import hakkiPashaGardenRoom from "@/assets/images/dining/dsc_0297.webp";
+import equatoriaGardenRoom from "@/assets/images/dining/dsc_0297.webp";
 import hotDrinksBar from "@/assets/images/dining/dsc_0478.webp";
 import coffeeCappuccino from "@/assets/images/dining/dsc_0517.webp";
 import coffeeService from "@/assets/images/dining/dsc_0527.webp";
@@ -148,8 +148,8 @@ export const photos = {
   coffeeCappuccino, // A branded cappuccino cup on dark timber
   coffeeService, // Cappuccino and sugar pot, spoon on the saucer
   gardenVerandaDining, // Garden veranda laid with white-linen tables
-  hakkiPashaDiningRoom, // Hakki Pasha dining room under rattan pendants
-  hakkiPashaGardenRoom, // Hakki Pasha garden room, planting along the windows
+  equatoriaDiningRoom, // Equatoria dining room under rattan pendants
+  equatoriaGardenRoom, // Equatoria garden room, planting along the windows
   hotDrinksBar, // Two hot drinks on a green tray at the lit bar
   inRoomTray, // In-room tray set on the desk, bed behind
   inRoomTrayDetail, // In-room tray close up: press pot, glasses, water

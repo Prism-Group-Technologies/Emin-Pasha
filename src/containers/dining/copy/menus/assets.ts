@@ -25,38 +25,21 @@ interface DishAssetSeed {
 }
 
 const DISHES: Record<OutletId, DishAssetSeed[]> = {
-  [OUTLET_ID.hakkiPasha]: [
+  [OUTLET_ID.equatoria]: [
     {
       key: "mezze",
       subject: "Signature dish — the Ottoman mezze board with warm flatbread",
-      altText: "The Ottoman mezze board at Hakki Pasha Restaurant & Bar",
+      altText: "The Ottoman mezze board at Equatoria",
     },
     {
       key: "charcoal-chicken",
       subject: "Signature dish — charcoal chicken with matoke two ways, plated",
-      altText: "Charcoal chicken with matoke two ways at Hakki Pasha Restaurant & Bar",
+      altText: "Charcoal chicken with matoke two ways at Equatoria",
     },
     {
       key: "nile-perch",
       subject: "Signature dish — Nile perch in a coconut and lemongrass broth, plated",
-      altText: "Nile perch with coconut and lemongrass at Hakki Pasha Restaurant & Bar",
-    },
-  ],
-  [OUTLET_ID.sirSamuelBaker]: [
-    {
-      key: "scallop",
-      subject: "Tasting course — seared diver scallop with brown butter, plated",
-      altText: "Seared scallop course at Sir Samuel Baker Fine Dining",
-    },
-    {
-      key: "short-rib",
-      subject: "Tasting course — 72-hour braised short rib with celeriac, plated",
-      altText: "Braised short rib course at Sir Samuel Baker Fine Dining",
-    },
-    {
-      key: "chocolate",
-      subject: "Tasting course — dark chocolate, coffee and cardamom dessert, plated",
-      altText: "Dark chocolate, coffee and cardamom dessert at Sir Samuel Baker Fine Dining",
+      altText: "Nile perch with coconut and lemongrass at Equatoria",
     },
   ],
   [OUTLET_ID.rooftopTerrace]: [

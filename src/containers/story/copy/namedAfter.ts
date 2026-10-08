@@ -14,24 +14,16 @@ export interface NamedAfterLink {
 /**
  * The internal-linking spine, as a card band. The names and the "from"
  * attributions come straight from `content/story.ts` and the existing
- * `containers/story/constants.ts` `TIMELINE_LINKS` map — Ismail Hakki Pasha
- * (the Albania chapter), the name "Mehemet Emin" taken in Khartoum, and
- * Equatoria itself. Only `blurb` is invented, and it promises nothing.
+ * `containers/story/constants.ts` `TIMELINE_LINKS` map. Only `blurb` is
+ * invented, and it promises nothing.
  */
 export const namedAfter: NamedAfterLink[] = [
   {
-    id: "hakki-pasha",
-    name: "Hakki Pasha Restaurant & Bar",
-    href: "/dining/hakki-pasha-restaurant-bar",
-    from: "Ismail Hakki Pasha, whom Emin served in northern Albania",
-    blurb: "The all-day room — breakfast to a nightcap, with the bar the locals actually use.",
-  },
-  {
-    id: "sir-samuel-baker",
-    name: "Sir Samuel Baker Fine Dining",
-    href: "/dining/sir-samuel-baker-fine-dining",
-    from: "the explorer whose path through Equatoria preceded Emin's",
-    blurb: "The tasting room — a set menu, low light, and the kitchen at its most deliberate.",
+    id: "equatoria",
+    name: "Equatoria",
+    href: "/dining/equatoria-restaurant-bar",
+    from: "the historic province Emin served and later governed",
+    blurb: "A contemporary table inspired by Uganda's place in the wider Equatorial region.",
   },
   {
     id: "mehmed-pasha-lounge",

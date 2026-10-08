@@ -45,7 +45,7 @@ export function OffersClosingSection({ motion = "up" }: { motion?: RevealDirecti
               size="large"
               variant="ghost"
               startIcon={<Icon name="phone" />}
-              sx={{ color: "common.white", borderColor: "rgba(251,250,247,0.6)" }}
+              sx={{ color: "common.white", borderColor: "rgba(250,248,246,0.6)" }}
             >
               {`${closing.call} ${identity.telephone}`}
             </Button>

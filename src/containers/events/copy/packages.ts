@@ -56,7 +56,7 @@ export const eventPackages: EventPackage[] = [
       "En-suite room, single occupancy, on site",
       "Three-course dinner in a private dining room",
       "Full breakfast and late checkout",
-      "Evening use of the gym, pool and gardens",
+      "Evening use of the pool and gardens",
     ],
     priceUgx: 520000,
     unit: "per delegate",

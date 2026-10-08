@@ -22,7 +22,7 @@ export function DayMomentCard({ moment }: { moment: DayMoment }) {
           height: 12,
           borderRadius: "50%",
           bgcolor: "primary.main",
-          boxShadow: "0 0 0 4px rgba(196,168,50,0.2)",
+          boxShadow: "0 0 0 4px rgba(208,171,66,0.2)",
         }}
       />
       <Box component="article" sx={[cardSurface(), { gap: 2, height: "100%" }]}>

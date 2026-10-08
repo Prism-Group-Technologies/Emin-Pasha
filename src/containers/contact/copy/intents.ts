@@ -59,7 +59,7 @@ export const contactIntents = [
   {
     value: "wellness",
     label: "Spa & wellness",
-    blurb: "Treatments, gym, pool passes",
+    blurb: "Treatments, pool passes",
     icon: "spa",
     dates: "single",
     dateLabel: "Preferred date",

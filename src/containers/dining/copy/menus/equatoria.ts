@@ -1,8 +1,8 @@
 /** ⚠️ INVENTED MARKETING COPY — NOT YET CLIENT-APPROVED. See ../index.ts. */
 import type { OutletMenu } from "@/containers/dining/copy/menus/types";
 
-export const hakkiPashaMenu: OutletMenu = {
-  label: "Hakki Pasha Restaurant & Bar",
+export const equatoriaMenu: OutletMenu = {
+  label: "Equatoria",
   summary:
     "The all-day room: a fusion of international and local plates with handcrafted cocktails, from breakfast through to a late table.",
   courses: [
@@ -23,10 +23,10 @@ export const hakkiPashaMenu: OutletMenu = {
         {
           name: "Ottoman mezze board",
           description:
-            "Hummus, muhammara, smoked aubergine, warm flatbread — a nod to Hakki Pasha's Albania",
+            "Hummus, muhammara, smoked aubergine and warm flatbread, served as a generous start to the table",
           priceUgx: 38_000,
           signature: true,
-          assetId: "dining-hakki-pasha-dish-mezze",
+          assetId: "dining-equatoria-dish-mezze",
         },
       ],
     },
@@ -38,14 +38,14 @@ export const hakkiPashaMenu: OutletMenu = {
           description: "Marinated overnight, steamed and crushed matoke, greens, gravy",
           priceUgx: 52_000,
           signature: true,
-          assetId: "dining-hakki-pasha-dish-charcoal-chicken",
+          assetId: "dining-equatoria-dish-charcoal-chicken",
         },
         {
           name: "Nile perch, coconut & lemongrass",
           description: "Line-caught perch, lemongrass broth, jasmine rice, pak choi",
           priceUgx: 61_000,
           signature: true,
-          assetId: "dining-hakki-pasha-dish-nile-perch",
+          assetId: "dining-equatoria-dish-nile-perch",
         },
         {
           name: "Dry-aged beef fillet",

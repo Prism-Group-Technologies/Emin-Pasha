@@ -36,10 +36,10 @@ export function PillarCard({ ordinal, name, description, cues }: PillarCardProps
         gap: { xs: 4, md: 5 },
         p: { xs: 5, md: 6 },
         border: "1px solid",
-        borderColor: gold[700],
+        borderColor: gold[600],
         bgcolor: "rgba(255,255,255,0.02)",
         transition: "border-color 200ms, background-color 200ms",
-        "&:hover": { borderColor: gold[500], bgcolor: "rgba(196,168,50,0.06)" },
+        "&:hover": { borderColor: gold[300], bgcolor: "rgba(208,171,66,0.06)" },
         "@media (prefers-reduced-motion: reduce)": { transition: "none" },
       }}
     >
@@ -50,7 +50,7 @@ export function PillarCard({ ordinal, name, description, cues }: PillarCardProps
           fontFamily: "var(--font-display)",
           fontSize: { xs: "2.25rem", md: "3rem" },
           lineHeight: 0.9,
-          color: gold[500],
+          color: gold[300],
           opacity: 0.85,
         }}
       >
@@ -76,7 +76,7 @@ export function PillarCard({ ordinal, name, description, cues }: PillarCardProps
                 px: 3,
                 py: 1,
                 border: "1px solid",
-                borderColor: gold[700],
+                borderColor: gold[600],
                 color: gold[300],
                 fontFamily: "var(--font-cartographic)",
                 fontSize: "0.6875rem",

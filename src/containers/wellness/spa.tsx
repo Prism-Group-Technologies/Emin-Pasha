@@ -82,7 +82,7 @@ export function SpaContainer() {
       <WellnessClosingCtaSection motion={d(16)} />
 
       <SectionShell motion={d(17)} heading="Before you visit">
-        <RelatedLinks hrefs={["/spa-etiquette", "/swimming-pool", "/gym", "/accommodation"]} />
+        <RelatedLinks hrefs={["/spa-etiquette", "/swimming-pool", "/accommodation"]} />
       </SectionShell>
 
       <StickyEnquireCta />

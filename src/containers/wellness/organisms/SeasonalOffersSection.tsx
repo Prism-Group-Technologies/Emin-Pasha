@@ -9,7 +9,7 @@ import type { RevealDirection } from "@/theme/motion";
 
 /**
  * Time-boxed treatments each facility runs for a few weeks — the urgency
- * band. `facility` picks the set from `seasonalOffers`; shared so gym and
+ * band. `facility` picks the set from `seasonalOffers`; shared so spa and
  * pool get the same surface. Every price is flagged indicative on the card.
  */
 export function SeasonalOffersSection({

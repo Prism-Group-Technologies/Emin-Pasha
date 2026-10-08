@@ -35,7 +35,6 @@ const raw: Cta[] = [
   { id: "dining-menu", context: "Dining", label: "View the Menu" },
   { id: "spa-treatment", context: "Spa", label: "Book a Treatment", href: "/contact" },
   { id: "spa-day", context: "Spa", label: "Plan Your Spa Day", href: "/contact" },
-  { id: "gym-membership", context: "Gym", label: "Enquire About Membership", href: "/contact" },
   { id: "events-proposal", context: "Events", label: "Request a Proposal", href: "/contact" },
   { id: "events-plan", context: "Events", label: "Plan Your Event", href: "/contact" },
   {

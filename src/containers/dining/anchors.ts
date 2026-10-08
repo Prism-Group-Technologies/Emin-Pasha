@@ -22,8 +22,7 @@ export const OUTLETS_ANCHOR_ID = "outlets";
  * match `content/dining.ts` exactly.
  */
 export const OUTLET_ID = {
-  hakkiPasha: "hakki-pasha-restaurant-bar",
-  sirSamuelBaker: "sir-samuel-baker-fine-dining",
+  equatoria: "equatoria-restaurant-bar",
   rooftopTerrace: "rooftop-terrace",
   manutea: "manutea-wine-whisky-lounge",
   inRoom: "in-room-dining",
@@ -33,8 +32,7 @@ export type OutletId = (typeof OUTLET_ID)[keyof typeof OUTLET_ID];
 
 /** Scroll order to the outlet list, so cross-links stay in sync. */
 export const OUTLET_ORDER: OutletId[] = [
-  OUTLET_ID.hakkiPasha,
-  OUTLET_ID.sirSamuelBaker,
+  OUTLET_ID.equatoria,
   OUTLET_ID.rooftopTerrace,
   OUTLET_ID.manutea,
   OUTLET_ID.inRoom,

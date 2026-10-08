@@ -10,9 +10,9 @@ export interface WellnessVoice {
 }
 
 /**
- * Three placeholder visitor notes. The approved testimonials in
+ * Placeholder visitor notes. The approved testimonials in
  * `content/testimonials.ts` are about the hotel as a whole; these stand in
- * until spa, gym and pool reviews are collected and signed off, at which
+ * until spa and pool reviews are collected and signed off, at which
  * point they move into the content layer and this file goes. Nothing is
  * attributed to a real, named person.
  */
@@ -25,15 +25,6 @@ export const wellnessVoices: WellnessVoice[] = [
     author: "Spa guest — placeholder",
     location: "Kampala, Uganda",
     date: "Visit, placeholder date",
-  },
-  {
-    id: "placeholder-gym",
-    heading: "Joined as a neighbour",
-    quote:
-      "Live five minutes away and train here four mornings a week. Never a queue for a rack, the trainers actually coach you, and the pool after a session is the whole point.",
-    author: "Gym member — placeholder",
-    location: "Nakasero, Kampala",
-    date: "Member, placeholder date",
   },
   {
     id: "placeholder-pool",

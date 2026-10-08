@@ -33,7 +33,7 @@ describe("diningReservationSchema", () => {
 
   it("accepts each real outlet id", () => {
     for (const outlet of [
-      "hakki-pasha-restaurant-bar",
+      "equatoria-restaurant-bar",
       "sir-samuel-baker-fine-dining",
       "rooftop-terrace",
       "manutea-wine-whisky-lounge",

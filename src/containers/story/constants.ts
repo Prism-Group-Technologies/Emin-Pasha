@@ -8,14 +8,13 @@ import { story } from "@/content/story";
  */
 export const TIMELINE_LINKS: Record<string, { label: string; href: string }[]> = {
   "germany-and-albania": [
-    { label: "Hakki Pasha Restaurant & Bar", href: "/dining/hakki-pasha-restaurant-bar" },
+    { label: "Equatoria", href: "/dining/equatoria-restaurant-bar" },
   ],
   "cairo-and-khartoum": [
     { label: "Mehmed Pasha Lounge", href: "/lounges-and-spaces#mehmed-pasha-lounge" },
   ],
   equatoria: [
     { label: "Equatorial Gardens", href: "/lounges-and-spaces#equatorial-gardens" },
-    { label: "Sir Samuel Baker Fine Dining", href: "/dining/sir-samuel-baker-fine-dining" },
   ],
 };
 

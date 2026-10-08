@@ -69,7 +69,7 @@ export const ambiences: Ambience[] = [
     icon: "spa",
     title: "In the garden",
     description:
-      "Hakki Pasha spills onto a terrace under the trees — the all-day room for breakfast meetings and long lunches alike.",
-    assetId: "dining-hakki-pasha",
+      "Equatoria opens onto a terrace under the trees — an inviting setting for breakfast meetings and long lunches.",
+    assetId: "dining-equatoria",
   },
 ];

@@ -21,7 +21,7 @@ const raw: WhatsAppOpenings = {
   general: "Hello Emin Pasha — I'd like to ask about a stay.",
   booking: "Hello Emin Pasha — I'd like to book direct. Could you help me with dates?",
   wellness:
-    "Hello Emin Pasha — I'd like to book a spa, gym or pool visit. Could you help me with what's available?",
+    "Hello Emin Pasha — I'd like to book a spa or pool visit. Could you help me with what's available?",
   events:
     "Hello Emin Pasha — I'm planning a meeting or event and would like to speak with the events team.",
   offers: "Hello Emin Pasha — I'd like to ask about your current offers.",

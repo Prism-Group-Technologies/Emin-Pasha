@@ -55,7 +55,7 @@ export function SpacesCompareTable({ rows }: { rows: CompareRow[] }) {
     >
       <Box component="table" sx={{ width: "100%", minWidth: 720, borderCollapse: "collapse" }}>
         <Box component="thead">
-          <Box component="tr" sx={{ bgcolor: "rgba(196,168,50,0.08)" }}>
+          <Box component="tr" sx={{ bgcolor: "rgba(208,171,66,0.08)" }}>
             {HEADINGS.map((heading) => (
               <Box key={heading} component="th" scope="col" sx={{ ...cell, textAlign: "left" }}>
                 <Text variant="overline" color="text.secondary">

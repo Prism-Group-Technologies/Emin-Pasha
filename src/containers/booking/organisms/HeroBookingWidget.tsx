@@ -66,9 +66,9 @@ export function HeroBookingWidget({ data }: { data: BookingWidgetData }) {
         mx: "auto",
         p: { xs: 3, md: 4 },
         color: "common.white",
-        bgcolor: "rgba(11,11,10,0.58)",
+        bgcolor: "rgba(8,5,3,0.58)",
         backdropFilter: "blur(14px)",
-        border: "1px solid rgba(196,168,50,0.45)",
+        border: "1px solid rgba(208,171,66,0.45)",
         borderRadius: 0.5,
       }}
     >

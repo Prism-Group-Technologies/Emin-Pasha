@@ -32,7 +32,7 @@ export const GALLERY_CATEGORY_LABEL: Record<GalleryCategory, string> = {
   rooms: "Rooms & Suites",
   dining: "Dining",
   spaces: "Lounges & Gardens",
-  wellness: "Spa, Gym & Pool",
+  wellness: "Spa & Pool",
   events: "Events & Weddings",
   estate: "The Estate",
 };

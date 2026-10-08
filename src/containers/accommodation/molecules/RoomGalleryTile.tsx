@@ -74,7 +74,7 @@ export function RoomGalleryTile({ asset, cell, index, onOpen, remaining }: RoomG
             inset: 0,
             display: "grid",
             placeItems: "center",
-            bgcolor: "rgba(11,11,10,0.55)",
+            bgcolor: "rgba(8,5,3,0.55)",
           }}
         >
           <Text variant="h3" component="span" sx={{ color: "common.white" }}>

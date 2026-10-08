@@ -24,14 +24,6 @@ export const spaServices: SpaService[] = rawServices.map((service) =>
   spaServiceSchema.parse(service),
 );
 
-export const gym: Facility = facilitySchema.parse({
-  id: "emin-pasha-gym",
-  name: "Emin Pasha Gym",
-  description:
-    "Newly renovated, state-of-the-art facility with cutting-edge equipment, personalised fitness programmes, group fitness classes and certified trainers. Membership available to non-resident members as well as hotel guests.",
-  hours: "Daily, 6:00am – 9:00pm",
-});
-
 export const pool: Facility = facilitySchema.parse({
   id: "swimming-pool",
   name: "Swimming Pool",
@@ -61,11 +53,3 @@ export const pool: Facility = facilitySchema.parse({
  */
 export const poolPageIntro =
   "An ultra-modern pool, accessorised with stone finishing and grating, set within serene poolside gardens — a lush tropical escape. Open to both hotel guests and the general public, for a regular swim or as a venue for poolside parties and events.";
-
-/** docs/02_CONTENT_SOURCE_OF_TRUTH.md §6 — the four approved spa offerings. */
-export const gymOfferings = [
-  "Cutting-edge equipment",
-  "Personalised fitness programmes",
-  "Group fitness classes",
-  "Certified trainers",
-];

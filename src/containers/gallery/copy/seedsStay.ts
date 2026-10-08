@@ -42,7 +42,7 @@ export const staySeeds: GallerySeed[] = [
     id: "gallery-dining-candlelit-two",
     category: "dining",
     title: "A candlelit table for two",
-    altText: "A table for two set with candles at Sir Samuel Baker Fine Dining",
+    altText: "A table for two set with candles at Equatoria restaurant",
     shape: "landscape",
   },
   {
@@ -63,7 +63,7 @@ export const staySeeds: GallerySeed[] = [
     id: "gallery-dining-cocktail-pour",
     category: "dining",
     title: "A signature cocktail, poured",
-    altText: "A bartender pouring a signature cocktail at Hakki Pasha bar",
+    altText: "A bartender pouring a signature cocktail at Equatoria",
     shape: "square",
   },
   {

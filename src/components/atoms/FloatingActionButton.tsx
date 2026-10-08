@@ -22,19 +22,24 @@ export type FloatingActionTone = "brand" | "whatsapp";
  * tones are fixed hexes that read identically in light and dark, so nothing
  * here needs to repaint between schemes.
  *
- * `brand` fills with `gold.800` and puts `ink.contrastCopy` (#FBFAF7 — the
- * same white the contained `Button` now uses) on top: 6.6:1, an AA pass, and
- * identical in both schemes. Hover deepens the fill to `gold.900` (10.2:1).
- * The `gold.700` hairline is kept as a decorative edge only — the darker fill
- * already clears 3:1 against a light page on its own, so it is no longer
- * load-bearing for WCAG 1.4.11.
+ * `brand` fills with `copper.700` and puts `ink.contrastCopy` on top: 7.03:1,
+ * an AA pass, and identical in both schemes. Hover deepens the fill to
+ * `copper.800` (9.73:1).
+ *
+ * The `copper.500` hairline **is** load-bearing here, unlike elsewhere. This
+ * button keeps one fill in both schemes, so its edge has to survive both
+ * grounds, and the fill alone does not: `copper.700` is 7.03:1 against a light
+ * page but only 2.73:1 against the dark one, under the 3:1 WCAG 1.4.11 floor
+ * for identifying a control. The brand copper as a rule clears it on each —
+ * 3.64:1 light, 5.28:1 dark — so the boundary is the border's job, not the
+ * fill's.
  */
 const TONE_STYLES: Record<FloatingActionTone, Record<string, unknown>> = {
   brand: {
-    bgcolor: colorTokens.gold[800],
+    bgcolor: colorTokens.copper[700],
     color: colorTokens.ink.contrastCopy,
-    border: `1px solid ${colorTokens.gold[700]}`,
-    "&:hover": { bgcolor: colorTokens.gold[900] },
+    border: `1px solid ${colorTokens.copper[500]}`,
+    "&:hover": { bgcolor: colorTokens.copper[800] },
   },
   whatsapp: {
     bgcolor: brandColorTokens.whatsapp.main,

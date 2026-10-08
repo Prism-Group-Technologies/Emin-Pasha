@@ -21,7 +21,7 @@ export const wellnessJourney: JourneyStep[] = [
     step: 1,
     title: "Tell us what you need",
     description:
-      "Message or call the wellness desk. We match you to a therapist or trainer and hold the time — no deposit at this step.",
+      "Message or call the wellness desk. We match you to a therapist and hold the time — no deposit at this step.",
     icon: "whatsapp",
   },
   {

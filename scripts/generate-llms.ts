@@ -25,7 +25,7 @@ import { routes } from "@/content/routes";
 import { site } from "@/content/site";
 import { socialLinks } from "@/content/social";
 import { spaces } from "@/content/spaces";
-import { gym, pool, spa, spaServices } from "@/content/wellness";
+import { pool, spa, spaServices } from "@/content/wellness";
 
 const base = env.NEXT_PUBLIC_SITE_URL;
 const ugx = (n: number) => `${identity.currency} ${n.toLocaleString("en-UG")}`;
@@ -76,14 +76,13 @@ const diningBlock = [
 ];
 
 const facilitiesBlock = [
-  "## Spa, gym and pool",
+  "## Spa and pool",
   "",
   `- **${spa.name}** — ${spa.hours ?? ""}. ${spa.description}`,
   `  Treatments offered: ${spaServices.map((service) => service.name).join("; ")}.`,
-  `- **${gym.name}** — ${gym.hours ?? ""}. ${gym.description}`,
   `- **${pool.name}** — open to hotel guests and the general public. ${pool.rules?.join("; ") ?? ""}.`,
   "",
-  "Spa treatment prices, gym membership rates and pool day-pass rates are not published; contact the hotel.",
+  "Spa treatment prices and pool day-pass rates are not published; contact the hotel.",
 ];
 
 const eventsBlock = [

@@ -19,7 +19,6 @@ export interface TreatmentFilterResult {
 const LABEL: Record<TreatmentFilterValue, string> = {
   all: "treatments & sessions",
   spa: "spa treatments",
-  gym: "gym sessions",
   pool: "pool sessions",
 };
 

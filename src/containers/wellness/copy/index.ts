@@ -6,9 +6,8 @@
  * `yarn check:content`. Nothing in this folder is from that source: it was
  * written to give the Spa & Wellness pages the conversion surfaces the
  * approved copy deck never supplied — a hero pitch, a signature-treatment
- * menu with indicative prices, wellness packages, a visit journey, gym
- * membership tiers and a class timetable, visitor voices, section ledes and
- * an FAQ.
+ * menu with indicative prices, wellness packages, a visit journey,
+ * repeat-visit passes, visitor voices, section ledes and an FAQ.
  *
  * It lives here — colocated with the container, outside `src/content` — on
  * purpose, exactly as `containers/dining/copy` and `containers/accommodation/copy`
@@ -18,11 +17,9 @@
  *
  * Traceability. Every structural claim ties back to already-approved content:
  * tailored massage, facials, deep sea-salt treatments and the Turkish bath
- * are in `content/wellness.ts`; the gym's equipment, classes, trainers and
- * non-resident membership are in `content/wellness.ts`; the pool's public
- * access and poolside gardens are in `content/wellness.ts`; the spa (7am–9pm)
- * and gym (6am–9pm) hours are the two the source approves. The **prices,
- * durations, membership rates and class times are invented** —
+ * are in `content/wellness.ts`; the pool's public access and poolside gardens
+ * are in `content/wellness.ts`; the spa's 7am–9pm hours are approved by the
+ * source. The **prices, durations and pass rates are invented** —
  * TODO(EMIN-Q11) — and are labelled "indicative" wherever they render.
  *
  * TODO(EMIN-COPY): client sign-off, then migrate approved items into
@@ -35,13 +32,7 @@ export { wellnessPillars, type WellnessPillar } from "./pillars";
 export { signatureTreatments, type Treatment } from "./treatments";
 export { wellnessPackages, packagesNote, type WellnessPackage } from "./packages";
 export { wellnessJourney, type JourneyStep } from "./journey";
-export {
-  membershipTiers,
-  membershipNote,
-  classTimetable,
-  type MembershipTier,
-  type ClassSlot,
-} from "./membership";
+export { type MembershipTier } from "./passTier";
 export { wellnessVoices, type WellnessVoice } from "./voices";
 export { wellnessFaq, type WellnessFaqItem } from "./faq";
 export { wellnessAssets, wellnessAsset } from "./media";

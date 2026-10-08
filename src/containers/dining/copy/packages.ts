@@ -69,7 +69,7 @@ export const diningPackages: DiningPackage[] = [
     id: "corporate-lunch",
     title: "Working Lunch & Dinner",
     description:
-      "A fast, quiet table at Hakki Pasha for a client lunch, or a longer one at Sir Samuel Baker to close the deal.",
+      "A fast, quiet table at Equatoria for a client lunch, or a longer one at Sir Samuel Baker to close the deal.",
     forWhom: "4–16 guests",
     includes: [
       "A reserved table away from the main floor",

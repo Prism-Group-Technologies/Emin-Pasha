@@ -62,9 +62,9 @@ export const diningOffers: OfferItem[] = [
     assetId: "dining-rooftop-terrace",
   },
   {
-    id: "hakki-pasha-chefs-table",
+    id: "equatoria-chefs-table",
     category: OFFER_CATEGORY.dining,
-    title: "The Chef's Table at Hakki Pasha",
+    title: "The Chef's Table at Equatoria",
     summary: "Five courses of Turkish and East African cooking, served by the chef who made them.",
     inclusions: [
       "Five-course tasting menu",
@@ -76,6 +76,6 @@ export const diningOffers: OfferItem[] = [
     priceUnit: "per guest",
     schedule: "Thursdays, 7:30pm",
     urgency: "12 seats a night",
-    assetId: "dining-hakki-pasha",
+    assetId: "dining-equatoria",
   },
 ];

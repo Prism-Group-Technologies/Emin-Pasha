@@ -6,15 +6,15 @@ import { MAX_SIGNATURE_DISHES, getOutletMenuView } from "@/containers/dining/men
 
 describe("getOutletMenuView", () => {
   it("passes the summary and every course straight through", () => {
-    const menu = outletMenus[OUTLET_ID.hakkiPasha];
-    const view = getOutletMenuView(OUTLET_ID.hakkiPasha);
+    const menu = outletMenus[OUTLET_ID.equatoria];
+    const view = getOutletMenuView(OUTLET_ID.equatoria);
 
     expect(view.summary).toBe(menu.summary);
     expect(view.courses).toEqual(menu.courses);
   });
 
   it("lifts the flagged dishes into the signature strip, in menu order", () => {
-    const view = getOutletMenuView(OUTLET_ID.hakkiPasha);
+    const view = getOutletMenuView(OUTLET_ID.equatoria);
 
     expect(view.signatureDishes.map((dish) => dish.name)).toEqual([
       "Ottoman mezze board",
@@ -24,7 +24,7 @@ describe("getOutletMenuView", () => {
   });
 
   it("tags each signature dish with the course it came from", () => {
-    const view = getOutletMenuView(OUTLET_ID.hakkiPasha);
+    const view = getOutletMenuView(OUTLET_ID.equatoria);
     const byName = new Map(view.signatureDishes.map((dish) => [dish.name, dish.course]));
 
     expect(byName.get("Ottoman mezze board")).toBe("To begin");
@@ -32,7 +32,7 @@ describe("getOutletMenuView", () => {
   });
 
   it("resolves each signature dish's photo", () => {
-    const view = getOutletMenuView(OUTLET_ID.hakkiPasha);
+    const view = getOutletMenuView(OUTLET_ID.equatoria);
 
     for (const dish of view.signatureDishes) {
       expect(dish.asset).toBeDefined();
@@ -50,12 +50,5 @@ describe("getOutletMenuView", () => {
         MAX_SIGNATURE_DISHES,
       );
     }
-  });
-
-  it("keeps a zero-price tasting course as a strip card with no price", () => {
-    const view = getOutletMenuView(OUTLET_ID.sirSamuelBaker);
-
-    expect(view.signatureDishes.length).toBeGreaterThan(0);
-    expect(view.signatureDishes.every((dish) => dish.priceUgx === 0)).toBe(true);
   });
 });

@@ -58,7 +58,7 @@ export const whatsappBookingUrl = whatsappChatUrl(whatsappOpenings.booking);
 
 /**
  * The Spa & Wellness hand-off — the wellness hub's sticky bar and every
- * "book a treatment / a session / a swim" CTA on the spa, gym and pool
+ * "book a treatment / a swim" CTA on the spa and pool
  * pages. The guest picked that button over the on-page enquiry form, so the
  * opening line names the intent; it still promises nothing.
  */

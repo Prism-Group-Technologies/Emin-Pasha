@@ -39,10 +39,10 @@ export const HEADER_TRANSITION = [
  */
 export const HERO_SCRIM = [
   "linear-gradient(180deg,",
-  "rgba(11,11,10,0.68) 0%,",
-  "rgba(11,11,10,0.62) 55%,",
-  "rgba(11,11,10,0.30) 85%,",
-  "rgba(11,11,10,0) 100%)",
+  "rgba(8,5,3,0.68) 0%,",
+  "rgba(8,5,3,0.62) 55%,",
+  "rgba(8,5,3,0.30) 85%,",
+  "rgba(8,5,3,0) 100%)",
 ].join(" ");
 
 /**

@@ -54,7 +54,7 @@ export default function OpengraphImage() {
       </div>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-        <div style={{ display: "flex", height: 1, background: colorTokens.gold[500] }} />
+        <div style={{ display: "flex", height: 1, background: colorTokens.gold[300] }} />
         <div
           style={{ display: "flex", fontSize: 30, color: colorTokens.sand[400], lineHeight: 1.3 }}
         >

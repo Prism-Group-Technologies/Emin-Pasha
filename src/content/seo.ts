@@ -84,10 +84,8 @@ export const keywordClusters = {
     "best boutique hotel in Kampala Uganda",
     "hotel with gardens in Kampala",
     "Turkish bath Kampala",
-    "gym membership Kampala Nakasero",
     "swimming pool open to public Kampala",
     "outdoor event space Kampala",
-    "business centre with meeting rooms Kampala",
     "hotel for embassy staff Kampala",
   ],
   brandAndStory: [

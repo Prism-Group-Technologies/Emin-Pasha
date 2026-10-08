@@ -13,7 +13,7 @@ import type { ArrivalNote } from "@/containers/contact/copy";
 export function ArrivalNoteCard({ note }: { note: ArrivalNote }) {
   return (
     <Box component="article" sx={[cardSurface(false), { gap: 3 }]}>
-      <IconBadge name={note.icon} tone="garden" size={48} />
+      <IconBadge name={note.icon} tone="gold" size={48} />
       <Text variant="h5" component="h3">
         {note.title}
       </Text>

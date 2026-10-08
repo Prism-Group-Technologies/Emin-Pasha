@@ -8,7 +8,6 @@ import { radiusTokens } from "@/theme/tokens";
 
 const ICON_BY_HREF: Record<string, IconName> = {
   "/spa": "spa",
-  "/gym": "fitness-center",
   "/swimming-pool": "pool",
   "/spa-etiquette": "info",
   "/dining": "restaurant",

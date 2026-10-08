@@ -36,7 +36,7 @@ function VisitPanel() {
         borderRadius: `${radiusTokens.lg}px`,
       }}
     >
-      <IconBadge name="location" tone="garden" />
+      <IconBadge name="location" tone="gold" />
       <Text
         variant="h4"
         component="p"

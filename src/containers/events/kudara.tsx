@@ -55,7 +55,7 @@ export function KudaraHallContainer() {
         "Secure parking and a separate event entrance",
         "Delegate room block and late checkout on site",
       ]}
-      relatedHrefs={["/meeting-rooms", "/business-centre", "/weddings", "/accommodation"]}
+      relatedHrefs={["/meeting-rooms", "/weddings", "/accommodation"]}
     >
       <KudaraShowcaseSection motion={m(0)} />
       <KudaraLayoutsSection motion={m(1)} />

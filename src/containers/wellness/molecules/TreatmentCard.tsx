@@ -10,7 +10,6 @@ import { formatUgx } from "@/utils/currency";
 
 const FACILITY_LABEL: Record<Treatment["facility"], string> = {
   spa: "Spa",
-  gym: "Gym",
   pool: "Pool",
 };
 

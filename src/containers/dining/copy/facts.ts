@@ -18,7 +18,7 @@ export interface OutletFact {
  * file stays within the container-copy line ceiling.
  */
 export const outletFacts: Record<OutletId, OutletFact[]> = {
-  [OUTLET_ID.hakkiPasha]: [
+  [OUTLET_ID.equatoria]: [
     {
       label: "All day, one room",
       detail: "Breakfast, lunch, dinner and a full bar in one room",
@@ -37,28 +37,6 @@ export const outletFacts: Record<OutletId, OutletFact[]> = {
     {
       label: "Meetings welcome",
       detail: "The default room for breakfast meetings and long lunches",
-      icon: "event",
-    },
-  ],
-  [OUTLET_ID.sirSamuelBaker]: [
-    {
-      label: "One tasting menu",
-      detail: "A single five-course tasting menu, the whole table together",
-      icon: "restaurant",
-    },
-    {
-      label: "Wine pairing",
-      detail: "Optional wine pairing poured through the evening",
-      icon: "auto-awesome",
-    },
-    {
-      label: "Dietary notice",
-      detail: "Dietary versions with 24 hours' notice",
-      icon: "info",
-    },
-    {
-      label: "By reservation",
-      detail: "Reservation only; Sundays and Mondays for private bookings",
       icon: "event",
     },
   ],

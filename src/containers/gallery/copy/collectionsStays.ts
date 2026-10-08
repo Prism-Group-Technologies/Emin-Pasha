@@ -35,9 +35,9 @@ export const stayCollections: CollectionCopy[] = [
     slug: "business-in-nakasero",
     title: "Business in Nakasero",
     mood: "Quiet, connected, minutes from everything",
-    summary: "A calm room to work from, alcoves for meetings and a gym before the city wakes.",
+    summary: "A calm room to work from, alcoves for meetings and a swim before the city wakes.",
     story:
-      "Stay in the diplomatic quarter without the noise of it. Take the first call from a desk facing the gardens, meet a client in a discreet lounge alcove, and borrow a private meeting room for the afternoon. The pool and gym are open early, and the car to Entebbe is one message away.",
+      "Stay in the diplomatic quarter without the noise of it. Take the first call from a desk facing the gardens, meet a client in a discreet lounge alcove, and borrow a private meeting room for the afternoon. The pool is open early, and the car to Entebbe is one message away.",
     highlights: [
       "Superior Room with work desk and fast Wi-Fi",
       "Two hours in a private meeting room",
@@ -50,15 +50,14 @@ export const stayCollections: CollectionCopy[] = [
     assetIds: [
       "gallery-room-desk-morning",
       "room-superior-room",
-      "meetings-business-centre",
       "gallery-lounge-alcove-meeting",
       "meetings-private-rooms",
       "gallery-meeting-boardroom-break",
-      "gallery-gym-sunrise",
+      "gallery-pool-morning-laps",
       "gallery-dining-breakfast-terrace",
     ],
     metaDescription:
-      "Business travel at The Emin Pasha, Nakasero — quiet rooms, meeting spaces and early gym and pool, pictured for planners.",
+      "Business travel at The Emin Pasha, Nakasero — quiet rooms, meeting spaces and an early pool, pictured for planners.",
   },
   {
     slug: "spa-weekend",
@@ -70,7 +69,7 @@ export const stayCollections: CollectionCopy[] = [
     highlights: [
       "Turkish bath ritual with scrub",
       "90-minute signature treatment",
-      "Unlimited pool and gym access",
+      "Unlimited pool access",
       "Superior Suite with breakfast",
     ],
     bestFor: "Solo resets, friends and couples",
@@ -84,7 +83,6 @@ export const stayCollections: CollectionCopy[] = [
       "spa-pool",
       "gallery-spa-couples-suite",
       "room-superior-suites",
-      "spa-gym",
     ],
     metaDescription:
       "A spa weekend at The Emin Pasha, Kampala — Turkish bath rituals, poolside afternoons and suites, pictured before you book.",

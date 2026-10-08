@@ -50,7 +50,7 @@ export function FaqPanelFooter({ entry, vote, onVote, askHref }: FaqPanelFooterP
             size="small"
             icon={<Icon name="auto-awesome" fontSize="small" />}
             label={questions.popularBadge}
-            sx={{ bgcolor: "rgba(196,168,50,0.16)", color: "text.primary" }}
+            sx={{ bgcolor: "rgba(208,171,66,0.16)", color: "text.primary" }}
           />
         )}
       </Box>

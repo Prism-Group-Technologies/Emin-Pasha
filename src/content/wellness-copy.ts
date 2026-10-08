@@ -10,7 +10,6 @@ import { z } from "zod";
 const schema = z.object({
   pending: z.object({
     spa: z.string().min(1),
-    gym: z.string().min(1),
     pool: z.string().min(1),
   }),
   enquiry: z.object({
@@ -28,7 +27,6 @@ const schema = z.object({
     options: z.object({
       any: z.string().min(1),
       spa: z.string().min(1),
-      gym: z.string().min(1),
       pool: z.string().min(1),
     }),
     errors: z.object({
@@ -43,7 +41,6 @@ const schema = z.object({
 export const wellnessCopy = schema.parse({
   pending: {
     spa: "Our treatment menu, with durations and prices, is not published online yet. Tell us what you are after and we will send it to you with our recommendations.",
-    gym: "Membership options and rates are not published online yet. Tell us how you would like to use the gym and we will come back with what fits.",
     pool: "Day-pass rates for non-resident swimmers are not published online yet. Send us a note and we will confirm them.",
   },
   enquiry: {
@@ -61,7 +58,6 @@ export const wellnessCopy = schema.parse({
     options: {
       any: "Not sure yet — help me choose",
       spa: "Spa treatments",
-      gym: "Gym membership",
       pool: "Swimming pool",
     },
     errors: {

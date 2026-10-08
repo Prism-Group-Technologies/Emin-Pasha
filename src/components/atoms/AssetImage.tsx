@@ -4,6 +4,7 @@ import Typography from "@mui/material/Typography";
 import { Image } from "@/components/atoms/Image";
 import { placeholderImageSrc } from "@/config/assets";
 import type { AssetRef } from "@/schemas/content/assetRef";
+import { colorTokens } from "@/theme/tokens";
 
 export interface AssetImageProps {
   asset: AssetRef;
@@ -76,7 +77,7 @@ export function AssetImage({ asset, sizes, priority = false, ratio = "asset" }: 
             top: 0,
             px: 3,
             py: 2,
-            bgcolor: "rgba(11,11,10,0.72)",
+            bgcolor: "rgba(8,5,3,0.72)",
             borderBottom: "1px solid",
             borderColor: "primary.main",
           }}
@@ -86,7 +87,7 @@ export function AssetImage({ asset, sizes, priority = false, ratio = "asset" }: 
               fontFamily: "var(--font-cartographic)",
               fontSize: "0.6875rem",
               lineHeight: 1.3,
-              color: "#D4BC5E",
+              color: colorTokens.gold[300],
               wordBreak: "break-word",
             }}
           >

@@ -10,7 +10,7 @@ import type { RevealDirection } from "@/theme/motion";
  * Repeat-visit pricing for the spa — a single visit, the Monthly Spa Club
  * and the Annual. Reuses `MembershipTierCard` unchanged (the tiers are in the
  * same `MembershipTier` shape), so the card, the "Most popular" flag and the
- * WhatsApp CTA all render exactly as the gym's do. Rates flagged indicative.
+ * WhatsApp CTA all render from the shared card. Rates flagged indicative.
  */
 export function SpaPassesSection({ motion = "up" }: { motion?: RevealDirection }) {
   return (

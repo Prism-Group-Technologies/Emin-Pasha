@@ -2,7 +2,7 @@ import { Box } from "@/components/atoms/Box";
 import type { HeroStatCopy } from "@/containers/accommodation/copy";
 import { RoomStat } from "@/containers/accommodation/molecules/RoomStat";
 
-const HAIRLINE = "1px solid rgba(251,250,247,0.24)";
+const HAIRLINE = "1px solid rgba(250,248,246,0.24)";
 
 /**
  * The hero's figure rail: the traceable stats from `copy/hero.ts`, each in

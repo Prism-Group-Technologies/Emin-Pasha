@@ -19,7 +19,7 @@ const HIGHLIGHTS = [
   "Built-in stage & in-house AV",
   "Three kitchens · no outside caterer",
   "Ground-floor get-in · secure parking",
-  "Rooms, gym & pool on site",
+  "Rooms, pool & gardens on site",
 ];
 
 /**
