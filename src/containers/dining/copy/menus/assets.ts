@@ -42,23 +42,6 @@ const DISHES: Record<OutletId, DishAssetSeed[]> = {
       altText: "Nile perch with coconut and lemongrass at Equatoria",
     },
   ],
-  [OUTLET_ID.sirSamuelBaker]: [
-    {
-      key: "scallop",
-      subject: "Tasting course — seared diver scallop with brown butter, plated",
-      altText: "Seared scallop course at Sir Samuel Baker Fine Dining",
-    },
-    {
-      key: "short-rib",
-      subject: "Tasting course — 72-hour braised short rib with celeriac, plated",
-      altText: "Braised short rib course at Sir Samuel Baker Fine Dining",
-    },
-    {
-      key: "chocolate",
-      subject: "Tasting course — dark chocolate, coffee and cardamom dessert, plated",
-      altText: "Dark chocolate, coffee and cardamom dessert at Sir Samuel Baker Fine Dining",
-    },
-  ],
   [OUTLET_ID.rooftopTerrace]: [
     {
       key: "corn-ribs",

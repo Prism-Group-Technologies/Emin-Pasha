@@ -51,11 +51,4 @@ describe("getOutletMenuView", () => {
       );
     }
   });
-
-  it("keeps a zero-price tasting course as a strip card with no price", () => {
-    const view = getOutletMenuView(OUTLET_ID.sirSamuelBaker);
-
-    expect(view.signatureDishes.length).toBeGreaterThan(0);
-    expect(view.signatureDishes.every((dish) => dish.priceUgx === 0)).toBe(true);
-  });
 });

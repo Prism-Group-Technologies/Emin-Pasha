@@ -26,14 +26,6 @@ export const outletHours = {
       { label: "Bar", time: "12:00 – late" },
     ],
   },
-  [OUTLET_ID.sirSamuelBaker]: {
-    label: "Sir Samuel Baker Fine Dining",
-    rows: [
-      { label: "Dinner, Tue–Sat", time: "19:00 – 22:00" },
-      { label: "Last seating", time: "20:30" },
-      { label: "Sun–Mon", time: "Private bookings only" },
-    ],
-  },
   [OUTLET_ID.rooftopTerrace]: {
     label: "The Rooftop Terrace",
     rows: [

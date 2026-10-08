@@ -40,28 +40,6 @@ export const outletFacts: Record<OutletId, OutletFact[]> = {
       icon: "event",
     },
   ],
-  [OUTLET_ID.sirSamuelBaker]: [
-    {
-      label: "One tasting menu",
-      detail: "A single five-course tasting menu, the whole table together",
-      icon: "restaurant",
-    },
-    {
-      label: "Wine pairing",
-      detail: "Optional wine pairing poured through the evening",
-      icon: "auto-awesome",
-    },
-    {
-      label: "Dietary notice",
-      detail: "Dietary versions with 24 hours' notice",
-      icon: "info",
-    },
-    {
-      label: "By reservation",
-      detail: "Reservation only; Sundays and Mondays for private bookings",
-      icon: "event",
-    },
-  ],
   [OUTLET_ID.rooftopTerrace]: [
     {
       label: "City views",

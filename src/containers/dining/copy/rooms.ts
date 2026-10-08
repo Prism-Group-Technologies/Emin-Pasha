@@ -36,17 +36,6 @@ export const outletIntros = {
       "A full bar in the same room, so dinner can turn into a nightcap without moving.",
     ],
   },
-  [OUTLET_ID.sirSamuelBaker]: {
-    paragraphs: [
-      "One room, one menu, one seating. Five courses arrive in sequence for the whole table at once, so the evening has a shape — it begins when you sit down and ends when the last plate is cleared, somewhere past two hours later.",
-      "The kitchen writes this menu for a small dining room and cooks it for twenty-odd covers a night, which is what buys the meticulous attention to detail the room is known for. Dietary versions are cooked to the same sequence with a day's notice.",
-    ],
-    whyCome: [
-      "The room for the evening that is the reason for the trip, not an interlude in it.",
-      "An optional wine flight poured course by course rather than ordered by the bottle.",
-      "Reservation only, which means the kitchen knows you are coming.",
-    ],
-  },
   [OUTLET_ID.rooftopTerrace]: {
     paragraphs: [
       "Open air, above the treeline, with Nakasero falling away on one side and the city lights coming up on the other. The terrace opens at four, and the hour before sunset is the one everybody asks for — the light goes through the whole spectrum and the room goes quiet for it.",

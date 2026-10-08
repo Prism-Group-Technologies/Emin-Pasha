@@ -33,19 +33,6 @@ export const outletMeta = {
     ],
     facts: outletFacts[OUTLET_ID.equatoria],
   },
-  [OUTLET_ID.sirSamuelBaker]: {
-    kicker: "Fine dining",
-    cuisine: "Modern tasting menu",
-    setting: "Intimate evening dining room",
-    dress: "Smart — collared shirt or equivalent",
-    stats: [
-      { value: "5 courses", label: "set tasting menu" },
-      { value: "Tue–Sat", label: "dinner service" },
-      { value: "20:30", label: "last seating" },
-      { value: "Pairing", label: "wine flight on request" },
-    ],
-    facts: outletFacts[OUTLET_ID.sirSamuelBaker],
-  },
   [OUTLET_ID.rooftopTerrace]: {
     kicker: "Rooftop bar",
     cuisine: "Small plates & cocktails",
