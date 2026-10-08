@@ -30,8 +30,8 @@ export function CalendarEntryCard(props: CalendarEntryCardProps) {
   return (
     <Box component="article" sx={[cardSurface(open), { gap: 3 }]}>
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 3 }}>
-        <IconBadge name={entry.icon} tone={open ? "gold" : "garden"} size={44} />
-        <OfferPill tone={open ? "gold" : "garden"}>{entry.statusLabel}</OfferPill>
+        <IconBadge name={entry.icon} tone={open ? "gold" : "maroon"} size={44} />
+        <OfferPill tone={open ? "gold" : "maroon"}>{entry.statusLabel}</OfferPill>
       </Box>
       <Text
         variant="overline"

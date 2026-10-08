@@ -29,7 +29,7 @@ import { easingTokens, motionTokens } from "./tokens";
  *
  * `width: fit-content` with a 44px `min-width` keeps the hover region on the
  * words instead of spanning the whole column, while still guaranteeing
- * 44×44 on touch for a label as short as "Gym".
+ * 44×44 on touch for a label as short as "Spa".
  */
 export const quietLinkSx: SystemStyleObject<Theme> = {
   position: "relative",

@@ -2,7 +2,7 @@ import { site } from "@/config/site";
 import { identity } from "@/content/identity";
 import { rooms } from "@/content/rooms";
 import { socialLinks } from "@/content/social";
-import { gym, spa } from "@/content/wellness";
+import { spa } from "@/content/wellness";
 
 const address = {
   "@type": "PostalAddress",
@@ -43,9 +43,11 @@ export function hotelJsonLd() {
     priceRange: `${identity.currency} ${lowestRate.toLocaleString("en-UG")}+`,
     checkinTime: identity.checkInTime,
     checkoutTime: identity.checkOutTime,
-    amenityFeature: [spa.name, gym.name, "Swimming pool", "Free Wi-Fi", "Secure parking"].map(
-      (name) => ({ "@type": "LocationFeatureSpecification", name, value: true }),
-    ),
+    amenityFeature: [spa.name, "Swimming pool", "Free Wi-Fi", "Secure parking"].map((name) => ({
+      "@type": "LocationFeatureSpecification",
+      name,
+      value: true,
+    })),
     makesOffer: rooms.map((room) => ({
       "@type": "Offer",
       name: room.name,

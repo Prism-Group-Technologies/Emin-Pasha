@@ -49,14 +49,14 @@ export function EtiquetteContainer() {
       <SectionShell
         motion={d(3)}
         heading="Ready to book?"
-        description="Pick the facility you are after and message the wellness desk — we will hold a therapist, a trainer or a lane for you, usually the same day."
+        description="Pick the facility you are after and message the wellness desk — we will hold a therapist or a lane for you, usually the same day."
         action={<WhatsAppCta label="Book on WhatsApp" size="large" />}
       >
         <Stack spacing={4}>
           <Text variant="overline" component="p" color="text.secondary">
             Spa &amp; Wellness
           </Text>
-          <RelatedLinks hrefs={["/spa", "/gym", "/swimming-pool"]} />
+          <RelatedLinks hrefs={["/spa", "/swimming-pool", "/accommodation"]} />
         </Stack>
       </SectionShell>
 

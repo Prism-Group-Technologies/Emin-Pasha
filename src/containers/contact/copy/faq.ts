@@ -40,7 +40,7 @@ export const contactFaq: ContactFaqItem[] = [
     id: "visitors",
     question: "Can I visit the restaurants or spa without staying?",
     answer:
-      "Of course. The restaurants, terrace, spa, gym and pool all welcome visitors. For a table or a treatment, reserve ahead so we can hold the time for you.",
+      "Of course. The restaurants, terrace, spa and pool all welcome visitors. For a table or a treatment, reserve ahead so we can hold the time for you.",
   },
   {
     id: "site-visit",

@@ -59,11 +59,4 @@ export const leisureSeeds: GallerySeed[] = [
     altText: "Children playing in the shallow end of the pool on a sunny afternoon",
     shape: "landscape",
   },
-  {
-    id: "gallery-gym-sunrise",
-    category: "wellness",
-    title: "A sunrise session in the gym",
-    altText: "Treadmills facing windows at sunrise in the hotel gym",
-    shape: "landscape",
-  },
 ];

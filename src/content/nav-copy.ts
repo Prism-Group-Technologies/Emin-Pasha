@@ -64,17 +64,15 @@ const raw: Record<string, NavPanelCopy> = {
 
   "/spa-and-wellness": {
     eyebrow: "Spa & Wellness",
-    intro: "Spa, gym and pool — the estate's quieter hours.",
+    intro: "Spa and pool — the estate's quieter hours.",
     viewAllLabel: "View spa & wellness",
     descriptions: {
       "/spa": "Signature treatments that restore balance and calm.",
-      "/gym": "Cutting-edge equipment and certified trainers.",
       "/swimming-pool": "An ultra-modern pool set in poolside gardens.",
       "/spa-etiquette": "How to make the most of your visit.",
     },
     assetIds: {
       "/spa": "spa-treatment-room",
-      "/gym": "spa-gym",
       "/swimming-pool": "spa-pool",
     },
   },

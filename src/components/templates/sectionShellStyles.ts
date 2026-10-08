@@ -55,7 +55,7 @@ export const sectionRoot = (
     color: ink.contrastCopy,
     borderTop: "1px solid",
     borderBottom: "1px solid",
-    borderColor: gold[700],
+    borderColor: gold[600],
   }),
   ...(topRule && { borderTop: "1px solid", borderColor: "primary.main" }),
 });

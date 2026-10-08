@@ -6,7 +6,7 @@ import { Icon } from "@/components/atoms/Icon";
 import { IconButton } from "@/components/atoms/IconButton";
 import type { GalleryItem } from "@/containers/gallery/types";
 import { useSwipe } from "@/hooks/useSwipe";
-import { radiusTokens } from "@/theme/tokens";
+import { colorTokens, radiusTokens } from "@/theme/tokens";
 
 export interface LightboxStageProps {
   item: GalleryItem;
@@ -18,9 +18,9 @@ const navSx = {
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
-  bgcolor: "rgba(11,11,10,0.55)",
-  color: "#FBFAF7",
-  "&:hover, &:focus-visible": { bgcolor: "rgba(11,11,10,0.8)" },
+  bgcolor: "rgba(8,5,3,0.55)",
+  color: colorTokens.ink.contrastCopy,
+  "&:hover, &:focus-visible": { bgcolor: "rgba(8,5,3,0.8)" },
 } as const;
 
 /**

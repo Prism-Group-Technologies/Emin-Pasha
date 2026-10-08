@@ -14,7 +14,7 @@ export const approvedFaqTopics: Record<string, FaqPlacement> = {
   "breakfast-included": { topic: "dining", popular: true },
   wifi: { topic: "stay" },
   parking: { topic: "arrival" },
-  "non-guests-pool-spa-gym": { topic: "wellness", popular: true },
+  "non-guests-pool-spa": { topic: "wellness", popular: true },
   "children-welcome": { topic: "stay" },
   "pool-lifeguard": { topic: "wellness" },
   "weddings-and-conferences": { topic: "events" },

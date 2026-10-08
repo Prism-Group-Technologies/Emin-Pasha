@@ -8,7 +8,6 @@ export const dynamic = "force-dynamic";
 const INTEREST_LABEL: Record<string, string> = {
   any: "Not sure yet — help me choose",
   spa: "Spa treatments",
-  gym: "Gym membership",
   pool: "Swimming pool",
 };
 
@@ -16,7 +15,7 @@ export function POST(request: Request) {
   return handleEnquiry(request, {
     kind: "spa",
     schema: wellnessEnquirySchema,
-    subject: "Spa / gym / pool enquiry",
+    subject: "Spa / pool enquiry",
     replyTo: (values) => values.email,
     toFields: (values) => [
       { label: "Interested in", value: INTEREST_LABEL[values.interest] ?? values.interest },

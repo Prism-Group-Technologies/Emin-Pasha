@@ -11,7 +11,7 @@ const STEPS = [
 /**
  * "What happens next" beside the enquiry form — three plain steps with a
  * cartographic-face number, so a visitor knows the form reaches a person and
- * commits them to nothing. Static copy; shared by the spa, gym and pool
+ * commits them to nothing. Static copy; shared by the spa and pool
  * enquiry sections.
  */
 export function EnquiryNextSteps() {

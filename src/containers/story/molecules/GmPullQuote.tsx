@@ -21,7 +21,7 @@ export function GmPullQuote() {
         px: { xs: 3.5, md: 5.5 },
         pt: { xs: 5, md: 6.5 },
         pb: { xs: 3.5, md: 5 },
-        bgcolor: "rgba(196,168,50,0.09)",
+        bgcolor: "rgba(208,171,66,0.09)",
         border: "1px solid",
         borderColor: "divider",
         borderLeftWidth: "3px",

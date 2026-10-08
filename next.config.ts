@@ -8,6 +8,14 @@ const baseConfig: NextConfig = {
         destination: "/dining/equatoria-restaurant-bar",
         permanent: true,
       },
+      // The hotel has no gym. /gym was indexed for "gym membership
+      // Nakasero", so the route is retired with a permanent redirect to the
+      // wellness hub rather than left to 404 on inbound links.
+      {
+        source: "/gym",
+        destination: "/spa-and-wellness",
+        permanent: true,
+      },
     ];
   },
 };

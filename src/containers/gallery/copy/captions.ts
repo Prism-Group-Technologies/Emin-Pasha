@@ -20,7 +20,6 @@ export const manifestCaptions: Record<string, string> = {
   "lounge-mehmed-pasha": "The Mehmed Pasha Lounge",
   "lounge-equatorial-gardens": "The Equatorial Gardens",
   "spa-treatment-room": "A treatment room at the spa",
-  "spa-gym": "The gym floor",
   "spa-pool": "The pool beneath the trees",
   "meetings-kudara-hall": "Kudara Hall, set for a conference",
   "meetings-private-rooms": "A private meeting room",

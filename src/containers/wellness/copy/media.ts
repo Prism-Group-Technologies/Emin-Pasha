@@ -41,11 +41,6 @@ const SEEDS: MediaSeed[] = [
     altText: "A treatment room at the Swanky Spa & Wellness Centre",
   },
   {
-    id: "wellness-pillar-gym",
-    subject: "The gym — the strength floor with racks and natural light",
-    altText: "The strength floor at the Emin Pasha Gym",
-  },
-  {
     id: "wellness-pillar-pool",
     subject: "The pool — the outdoor pool framed by the poolside gardens",
     altText: "The swimming pool set within the poolside gardens",
@@ -75,12 +70,6 @@ const SEEDS: MediaSeed[] = [
     shape: "portrait",
   },
   {
-    id: "wellness-treatment-pt",
-    subject: "Treatment — a personal-training session on the gym floor, trainer coaching",
-    altText: "A personal-training session at the Emin Pasha Gym",
-    shape: "portrait",
-  },
-  {
     id: "wellness-journey",
     subject: "Journey — a guest in a robe walking the garden path to the spa",
     altText: "The walk through the gardens to the Swanky Spa",
@@ -98,7 +87,7 @@ const SEEDS: MediaSeed[] = [
   {
     id: "wellness-package-corporate",
     subject: "Package — a small group in a wellness workshop, mats and water bottles",
-    altText: "The corporate wellness day at the Emin Pasha Gym and Spa",
+    altText: "The corporate wellness day at the Swanky Spa",
   },
 ];
 

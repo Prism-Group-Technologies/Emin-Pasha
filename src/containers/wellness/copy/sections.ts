@@ -8,16 +8,16 @@
  */
 export const sections = {
   pillars: {
-    eyebrow: "§ THREE FACILITIES",
+    eyebrow: "§ TWO FACILITIES",
     heading: "Choose where to start",
     description:
-      "The spa for the deep reset, the gym for the daily one, the pool for the easy one. Each has its own page — and its own front desk that will talk you through it.",
+      "The spa for the deep reset, the pool for the easy one. Each has its own page — and its own front desk that will talk you through it.",
   },
   treatments: {
     eyebrow: "§ THE MENU",
     heading: "Signature treatments & sessions",
     description:
-      "A working snapshot of what our therapists and trainers book most, with indicative times and prices. Filter by facility. The full menu is confirmed when you book — bodies, and diaries, differ.",
+      "A working snapshot of what our therapists book most, with indicative times and prices. Filter by facility. The full menu is confirmed when you book — bodies, and diaries, differ.",
   },
   packages: {
     eyebrow: "§ MAKE A DAY OF IT",
@@ -31,22 +31,16 @@ export const sections = {
     description:
       "First time in? Here is how a treatment day runs, so nothing about it is a surprise.",
   },
-  membership: {
-    eyebrow: "§ TRAIN HERE",
-    heading: "Gym membership & classes",
-    description:
-      "Month to month or a full year, for residents of Nakasero and hotel guests alike. Indicative rates below; the current price list and joining terms come from the fitness desk.",
-  },
   enquiry: {
     eyebrow: "§ ASK US",
     heading: "Tell us what you are after",
     description:
-      "Not sure which treatment, which tier or whether the pool is open to you? Send this and a member of the wellness team replies personally — usually the same day.",
+      "Not sure which treatment, which pass or whether the pool is open to you? Send this and a member of the wellness team replies personally — usually the same day.",
   },
   voices: {
     eyebrow: "§ AFTERWARDS",
     heading: "What guests say on the way out",
-    description: "Unedited notes from recent visitors to the spa, the gym and the pool.",
+    description: "Unedited notes from recent visitors to the spa and the pool.",
   },
   faq: {
     eyebrow: "§ GOOD TO KNOW",
@@ -58,7 +52,7 @@ export const sections = {
     eyebrow: "§ THE LAST STEP",
     heading: "Book the hour in now",
     supporting:
-      "Message the wellness desk on WhatsApp and we will hold a therapist, a trainer or a lane for you. Prefer to talk? All three lines reach a person.",
+      "Message the wellness desk on WhatsApp and we will hold a therapist or a lane for you. Prefer to talk? All three lines reach a person.",
     ctaLabel: "Book on WhatsApp",
     callLabel: "Call the wellness desk",
     whatsappLabel: "Message on WhatsApp",

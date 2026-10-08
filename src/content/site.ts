@@ -61,13 +61,7 @@ export const site = siteConfigSchema.parse({
       name: "Corporate & diplomatic (primary, highest value)",
       description:
         "embassy staff, NGO and development-agency personnel, multinational executives, government contractors, consultants.",
-      leadWith: [
-        "Superior Room",
-        "airport transfer",
-        "fibre",
-        "security",
-        "LPO billing",
-      ],
+      leadWith: ["Superior Room", "airport transfer", "fibre", "security", "LPO billing"],
       notes: "Watch for long-stay and repeat bookings.",
     },
     {
@@ -87,11 +81,7 @@ export const site = siteConfigSchema.parse({
       name: "Weddings & private celebrations",
       description:
         "Kampala and diaspora couples, milestone birthdays, anniversaries, private dinners.",
-      leadWith: [
-        "Equatorial Gardens",
-        "photography",
-        "suite blocks",
-      ],
+      leadWith: ["Equatorial Gardens", "photography", "suite blocks"],
     },
     {
       id: "leisure-heritage-travellers",
@@ -110,16 +100,8 @@ export const site = siteConfigSchema.parse({
     {
       id: "kampala-local-market",
       name: "The Kampala local market (underused)",
-      description:
-        "residents using the pool, gym, spa, restaurants, lounges and Friday Band Night.",
-      leadWith: [
-        "Band Night",
-        "Happy Hour",
-        "gym membership",
-        "public pool",
-        "Manutea",
-        "The Rooftop Terrace",
-      ],
+      description: "residents using the pool, spa, restaurants, lounges and Friday Band Night.",
+      leadWith: ["Band Night", "Happy Hour", "public pool", "Manutea", "The Rooftop Terrace"],
     },
   ],
   usps: [

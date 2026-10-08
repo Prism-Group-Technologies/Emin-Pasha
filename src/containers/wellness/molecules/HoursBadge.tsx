@@ -1,7 +1,7 @@
 import { Text } from "@/components/atoms/Text";
 
 /**
- * Opening hours. Only ever passed the spa's or the gym's — the two the source
+ * Opening hours. Only ever passed the spa's — the one set the source
  * approves (§6). No other facility on the site gets one, because no other
  * facility has verified hours (§0.7).
  */

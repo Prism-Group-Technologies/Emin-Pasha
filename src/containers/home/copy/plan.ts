@@ -81,7 +81,7 @@ export const planPaths: PlanPathCopy[] = [
     tab: "Spend the day",
     eyebrow: "§ FOR KAMPALA",
     headline: "You don't have to check in to spend the day here",
-    body: "The pool, the spa, the gym, the restaurants and Friday Band Night are open to the city — a standing invitation to the quietest garden on Nakasero hill.",
+    body: "The pool, the spa, the restaurants and Friday Band Night are open to the city — a standing invitation to the quietest garden on Nakasero hill.",
     points: [
       "300ft pool and gardens, open to the public",
       "Turkish bath, tailored massage and sea-salt treatments daily",

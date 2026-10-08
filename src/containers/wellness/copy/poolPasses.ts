@@ -1,10 +1,10 @@
 /** ⚠️ INVENTED MARKETING COPY — NOT YET CLIENT-APPROVED. See ./index.ts. */
-import type { MembershipTier } from "@/containers/wellness/copy/membership";
+import type { MembershipTier } from "@/containers/wellness/copy/passTier";
 
 /**
- * Repeat-visit pricing for the pool, in the same `MembershipTier` shape the
- * gym uses so `MembershipTierCard` renders it unchanged — the card, the
- * "Most popular" flag and the WhatsApp CTA all come for free. Rates are
+ * Repeat-visit pricing for the pool, in the shared `MembershipTier` shape so
+ * `MembershipTierCard` renders it unchanged — the card, the "Most popular"
+ * flag and the WhatsApp CTA all come for free. Rates are
  * invented placeholders (TODO(EMIN-Q11)); the section copy says the wellness
  * desk confirms. Each tier only bundles approved §6 access — the pool, the
  * poolside gardens and accompanied children.

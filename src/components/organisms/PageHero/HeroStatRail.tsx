@@ -1,7 +1,7 @@
 import { Box } from "@/components/atoms/Box";
 import { HeroStat, type HeroStatProps } from "@/components/organisms/PageHero/HeroStat";
 
-const HAIRLINE = "1px solid rgba(251,250,247,0.24)";
+const HAIRLINE = "1px solid rgba(250,248,246,0.24)";
 
 export type HeroStatItem = Pick<HeroStatProps, "value" | "label">;
 

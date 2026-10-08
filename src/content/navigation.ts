@@ -40,14 +40,12 @@ const raw: NavItem[] = [
   },
   {
     // Routes per the Step 11 brief: a hub at /spa-and-wellness with the
-    // three facilities as top-level slugs, each carrying its own search
-    // intent ("best spa in Kampala", "gym membership Nakasero", "swimming
-    // pool open to public Kampala").
+    // facilities as top-level slugs, each carrying its own search intent
+    // ("best spa in Kampala", "swimming pool open to public Kampala").
     label: "Spa & Wellness",
     href: "/spa-and-wellness",
     children: [
       { label: "Swanky Spa", href: "/spa" },
-      { label: "Emin Pasha Gym", href: "/gym" },
       { label: "Swimming Pool", href: "/swimming-pool" },
       { label: "Spa Etiquette", href: "/spa-etiquette" },
     ],

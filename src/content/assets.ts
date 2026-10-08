@@ -7,7 +7,7 @@ import { type AssetRef, type AssetRefInput, assetRefSchema } from "@/schemas/con
  * `image` here are derived, never authored.
  *
  * Subjects the delivered shoot does not cover (every human portrait, plated
- * dishes, the gym and spa interiors, vehicles, the two diagram slots) are
+ * dishes, the spa interiors, vehicles, the two diagram slots) are
  * filled with the nearest tonal stand-in and listed by `yarn check:photos` —
  * that list is the outstanding shooting brief. See docs/ASSET_MANIFEST.md for
  * the human-readable version of this same list.
@@ -512,17 +512,6 @@ const raw: AssetRefInput[] = [
     height: 1067,
     priority: "high",
     altText: "Swanky Spa & Wellness Centre",
-    status: "placeholder",
-  },
-  {
-    id: "spa-gym",
-    page: "spa/gym",
-    subject: "Emin Pasha Gym equipment floor",
-    kind: "image",
-    width: 1600,
-    height: 1067,
-    priority: "high",
-    altText: "Emin Pasha Gym",
     status: "placeholder",
   },
   {

@@ -54,7 +54,7 @@ export const contactCopy = schema.parse({
       { value: "general", label: "General enquiry" },
       { value: "reservations", label: "Reservations" },
       { value: "events", label: "Events, weddings or conferences" },
-      { value: "spa", label: "Spa, gym or pool" },
+      { value: "spa", label: "Spa or pool" },
       { value: "other", label: "Something else" },
     ],
     errors: {

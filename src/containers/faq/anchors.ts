@@ -47,7 +47,7 @@ export const FAQ_TOPIC_PHRASE: Record<FaqTopicId, string> = {
   stay: "my stay",
   arrival: "getting to the hotel",
   dining: "dining",
-  wellness: "the spa, pool or gym",
+  wellness: "the spa or pool",
   events: "meetings and events",
   policies: "payments and policies",
 };

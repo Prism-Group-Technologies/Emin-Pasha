@@ -8,23 +8,22 @@ export interface WellnessFaqItem {
 
 /**
  * The questions the wellness desk fields most. Answers stay inside what the
- * source supports — public pool and gym access, non-resident membership, the
- * spa etiquette policy's arrival and age lines (§14) — and flag anything not
- * yet confirmed (exact prices, the live class timetable) rather than
- * inventing a policy.
+ * source supports — public pool access, non-resident spa bookings, the spa
+ * etiquette policy's arrival and age lines (§14) — and flag anything not yet
+ * confirmed (exact prices) rather than inventing a policy.
  */
 export const wellnessFaq: WellnessFaqItem[] = [
   {
     id: "non-guest",
-    question: "Can I use the spa, gym or pool if I am not staying at the hotel?",
+    question: "Can I use the spa or pool if I am not staying at the hotel?",
     answer:
-      "Yes. The pool is open to the general public, gym membership is available to non-residents of the neighbourhood, and the spa takes external bookings alongside hotel guests. Message the wellness desk and we will sort access.",
+      "Yes. The pool is open to the general public, and the spa takes external bookings alongside hotel guests. Message the wellness desk and we will sort access.",
   },
   {
     id: "prices",
     question: "Are the prices on this page final?",
     answer:
-      "They are indicative, so you can plan. Treatment, membership and day-pass prices are confirmed by the wellness desk when you book — they can shift with the season, the length of the treatment and any package you add.",
+      "They are indicative, so you can plan. Treatment, pass and day-pass prices are confirmed by the wellness desk when you book — they can shift with the season, the length of the treatment and any package you add.",
   },
   {
     id: "arrival",
@@ -42,12 +41,12 @@ export const wellnessFaq: WellnessFaqItem[] = [
     id: "bring",
     question: "What do I need to bring?",
     answer:
-      "For the spa, nothing — robe, slippers and towels are provided. For the gym and pool, bring training kit and swimwear; towels and lockers are available. Leave valuables in your room or at reception.",
+      "For the spa, nothing — robe, slippers and towels are provided. For the pool, bring swimwear; towels and lockers are available. Leave valuables in your room or at reception.",
   },
   {
     id: "cancellation",
     question: "What is the cancellation policy?",
     answer:
-      "Let the wellness desk know at least 24 hours ahead and there is no charge. Inside 24 hours, or a no-show, may be charged in full — the therapist's or trainer's time was held for you. The exact terms are confirmed when you book.",
+      "Let the wellness desk know at least 24 hours ahead and there is no charge. Inside 24 hours, or a no-show, may be charged in full — the therapist's time was held for you. The exact terms are confirmed when you book.",
   },
 ];

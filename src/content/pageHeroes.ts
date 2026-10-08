@@ -43,7 +43,6 @@ const HEROES: Record<string, PhotoKey> = {
   // Wellness
   wellness: "poolDusk",
   spa: "bathroomTub",
-  gym: "poolLoungers",
   pool: "poolNight",
   "spa-etiquette": "poolAerial",
 

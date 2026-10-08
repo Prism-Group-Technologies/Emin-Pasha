@@ -25,7 +25,7 @@ export function VoucherCard({ voucher }: { voucher: GiftVoucher }) {
         cardSurface(),
         { gap: 3 },
         voucher.featured
-          ? { bgcolor: "rgba(196,168,50,0.10)", borderTopColor: colorTokens.gold[700] }
+          ? { bgcolor: "rgba(190,110,41,0.10)", borderTopColor: colorTokens.copper[500] }
           : {},
       ]}
     >

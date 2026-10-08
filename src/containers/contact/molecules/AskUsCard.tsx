@@ -32,7 +32,7 @@ export function AskUsCard(props: AskUsCardProps) {
         borderColor: "divider",
         borderLeft: "3px solid",
         borderLeftColor: "primary.main",
-        bgcolor: "rgba(196,168,50,0.09)",
+        bgcolor: "rgba(208,171,66,0.09)",
       }}
     >
       <Icon name="chat" sx={{ color: "primary.main", fontSize: 32 }} aria-hidden />

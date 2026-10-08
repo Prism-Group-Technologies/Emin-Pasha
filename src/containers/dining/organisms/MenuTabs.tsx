@@ -12,7 +12,6 @@ import { MenuCourse } from "@/containers/dining/molecules/MenuCourse";
 
 const SHORT_LABEL: Record<OutletId, string> = {
   [OUTLET_ID.equatoria]: "Equatoria",
-  [OUTLET_ID.sirSamuelBaker]: "Sir Samuel Baker",
   [OUTLET_ID.rooftopTerrace]: "Rooftop",
   [OUTLET_ID.manutea]: "Manutea",
   [OUTLET_ID.inRoom]: "In-Room",

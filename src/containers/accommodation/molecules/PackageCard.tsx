@@ -3,6 +3,7 @@ import { Button } from "@/components/atoms/Button";
 import { Icon } from "@/components/atoms/Icon";
 import { Text } from "@/components/atoms/Text";
 import { cardSurface } from "@/components/templates/sectionShellStyles";
+import { colorTokens } from "@/theme/tokens";
 import { formatUgx } from "@/utils/currency";
 
 export interface PackageCardProps {
@@ -43,8 +44,20 @@ export function PackageCard({
             px: 3,
             py: 1,
             borderRadius: 999,
-            bgcolor: "primary.main",
-            color: "primary.contrastText",
+            /*
+             * White on the darkened copper — the pair `OfferPill`'s `copper`
+             * tone documents at 7.03:1, and the same fill the contained button
+             * takes. It cannot be the brand `copper.500` this pill used to
+             * fill with: white on that is 3.64:1, and the label underneath was
+             * `copper.300` on `copper.500` — 1.72:1, a light copper on a
+             * copper ground, which is nothing like legible at overline size.
+             *
+             * Fixed in both schemes, like every pill that carries its own
+             * ground: `primary.dark` is `copper.700` either way, so the ratio
+             * holds without a scheme switch.
+             */
+            bgcolor: "primary.dark",
+            color: colorTokens.ink.contrastCopy,
             fontFamily: "var(--font-cartographic)",
           }}
         >

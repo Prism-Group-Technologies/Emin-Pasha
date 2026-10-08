@@ -14,8 +14,8 @@ const { passes } = poolSections;
 /**
  * Repeat-visit pricing for the pool — a ten-swim card, a monthly Swim Season
  * and a Family Year. Reuses `MembershipTierCard` unchanged (the tiers are in
- * the gym's `MembershipTier` shape), so the "Most popular" flag and the
- * WhatsApp CTA render exactly as the gym's do. Rates flagged indicative.
+ * the shared `MembershipTier` shape), so the "Most popular" flag and the
+ * WhatsApp CTA render from the shared card. Rates flagged indicative.
  */
 export function PoolPassesSection({
   motion = "up",

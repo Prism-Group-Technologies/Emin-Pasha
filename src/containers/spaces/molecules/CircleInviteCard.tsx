@@ -20,7 +20,7 @@ export function CircleInviteCard() {
         borderRadius: `${radiusTokens.lg}px`,
         backgroundImage: `linear-gradient(135deg, ${colorTokens.ink[900]} 0%, ${colorTokens.ink[800]} 100%)`,
         border: "1px solid",
-        borderColor: colorTokens.gold[700],
+        borderColor: colorTokens.gold[600],
         color: colorTokens.ink.contrastCopy,
       }}
     >

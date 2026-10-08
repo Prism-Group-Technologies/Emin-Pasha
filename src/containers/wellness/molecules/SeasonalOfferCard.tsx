@@ -27,8 +27,8 @@ export function SeasonalOfferCard({ offer }: { offer: SeasonalOffer }) {
           px: 3,
           py: 1,
           borderRadius: 999,
-          bgcolor: "rgba(196,168,50,0.12)",
-          color: colorTokens.gold[800],
+          bgcolor: "rgba(190,110,41,0.10)",
+          color: colorTokens.copper[700],
           fontFamily: "var(--font-cartographic)",
         }}
       >

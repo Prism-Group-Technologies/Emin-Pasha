@@ -63,7 +63,7 @@ const SEEDS: MediaSeed[] = [
   {
     id: "spa-group-corporate",
     subject: "Group — a small team in a mobility class on mats in the poolside gardens",
-    altText: "An executive reset day at the Emin Pasha Spa and Gym",
+    altText: "An executive reset day at the Swanky Spa",
   },
 ];
 

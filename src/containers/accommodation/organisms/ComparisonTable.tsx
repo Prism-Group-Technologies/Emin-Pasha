@@ -24,11 +24,11 @@ function ComparisonRow({ room }: { room: RoomCategory }) {
       sx={
         popular
           ? {
-              // gold.500 at low alpha: a warm tint on the light ground, a warm
-              // glow on the dark one — theme-aware where a fixed gold.50 fill
+              // copper.500 at low alpha: a warm tint on the light ground, a warm
+              // glow on the dark one — theme-aware where a fixed copper.50 fill
               // would strand light text on a near-white row in dark mode.
-              bgcolor: "rgba(196,168,50,0.10)",
-              "& th": { boxShadow: `inset 3px 0 0 ${colorTokens.gold[700]}` },
+              bgcolor: "rgba(190,110,41,0.10)",
+              "& th": { boxShadow: `inset 3px 0 0 ${colorTokens.copper[500]}` },
             }
           : undefined
       }

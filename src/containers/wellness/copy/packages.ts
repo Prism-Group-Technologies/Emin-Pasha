@@ -61,11 +61,11 @@ export const wellnessPackages: WellnessPackage[] = [
     title: "The Team Reset",
     forWhom: "6–20 people",
     description:
-      "Half a day out of the office — a mobility class, short treatments on rotation, and lunch in the gardens.",
+      "Half a day out of the office — guided relaxation, short treatments on rotation, and lunch in the gardens.",
     includes: [
-      "A 45-minute group mobility or conditioning class",
+      "A 45-minute guided relaxation and breathing session",
       "15-minute chair or express treatments on rotation",
-      "Use of the gym and the pool",
+      "Use of the pool and the poolside gardens",
       "Working lunch in the poolside gardens",
       "A quiet room for anyone who needs to dial in",
     ],

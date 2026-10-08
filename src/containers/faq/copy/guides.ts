@@ -38,11 +38,11 @@ export const faqGuides: FaqGuide[] = [
   {
     id: "wellness",
     eyebrow: "Unwind",
-    title: "Spa, pool & gym",
-    body: "Book a treatment, swim in the garden pool or keep up your routine — as a hotel guest or a day visitor.",
+    title: "Spa & pool",
+    body: "Book a treatment or swim in the garden pool — as a hotel guest or a day visitor.",
     href: "/spa-and-wellness",
     cta: "Discover wellness",
-    questionIds: ["non-guests-pool-spa-gym", "spa-booking-lead-time", "spa-what-to-bring"],
+    questionIds: ["non-guests-pool-spa", "spa-booking-lead-time", "spa-what-to-bring"],
   },
   {
     id: "events",

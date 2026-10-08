@@ -4,7 +4,7 @@ import { findNavItem } from "@/content/navigation";
 import { offers } from "@/content/offers";
 import { shell } from "@/content/shell";
 import { socialLinks } from "@/content/social";
-import { gym, spa } from "@/content/wellness";
+import { spa } from "@/content/wellness";
 import { directionsUrl, emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
 
 export interface FooterLinkItem {
@@ -50,7 +50,7 @@ const happyHour = offers.find((offer) => offer.id === "equatorial-sunset-happy-h
 
 /**
  * Only the four hour facts the source approves: check-in/check-out (§1), the
- * spa and the gym (§6), and the happy-hour window (§10). Restaurant and bar
+ * spa (§6), and the happy-hour window (§10). Restaurant and bar
  * hours are explicitly forbidden to invent (§0.7) and remain TODO(EMIN-Q12),
  * so `hoursPendingNote` carries an honest "call us" line instead of a
  * fabricated schedule. Happy-hour *days* are TODO(EMIN-Q07) — only the
@@ -60,7 +60,6 @@ const hourRows: FooterDetailRow[] = [
   { id: "check-in", label: "Check-in", value: identity.checkInTime },
   { id: "check-out", label: "Check-out", value: identity.checkOutTime },
   { id: spa.id, label: spa.name, value: spa.hours },
-  { id: gym.id, label: gym.name, value: gym.hours },
   happyHour && { id: happyHour.id, label: happyHour.name, value: happyHour.schedule },
   // `hours` and `schedule` are optional on their own schemas — a facility with
   // no approved hours drops out rather than rendering an empty right column.

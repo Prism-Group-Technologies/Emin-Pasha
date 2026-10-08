@@ -71,7 +71,7 @@ export function PoolContainer() {
       <WellnessClosingCtaSection motion={d(10)} />
 
       <SectionShell motion={d(11)} eyebrow={related.eyebrow} heading={related.heading}>
-        <RelatedLinks hrefs={["/spa", "/gym", "/spa-etiquette", "/accommodation"]} />
+        <RelatedLinks hrefs={["/spa", "/spa-etiquette", "/accommodation"]} />
       </SectionShell>
 
       <StickyEnquireCta />

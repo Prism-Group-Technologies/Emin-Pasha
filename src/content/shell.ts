@@ -10,7 +10,7 @@ import { type ShellContent, shellContentSchema } from "@/schemas/content/shell";
  * rates, capacities, distances, awards or superlatives.
  *
  * Status: TODO(EMIN-Q68) — needs client sign-off (DECISIONS.md D24).
- * Facts referenced by the shell (NAP, spa/gym hours, happy-hour schedule,
+ * Facts referenced by the shell (NAP, spa hours, happy-hour schedule,
  * social URLs, CTA labels, nav labels) are **read from their own content
  * modules**, never restated here.
  */
@@ -46,7 +46,7 @@ const raw: ShellContent = {
       {
         id: "unwind",
         title: "Unwind",
-        hrefs: ["/spa-and-wellness", "/gym", "/swimming-pool"],
+        hrefs: ["/spa-and-wellness", "/spa", "/swimming-pool"],
       },
       {
         id: "gather",

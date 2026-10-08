@@ -21,7 +21,7 @@ const FORM_COPY = { ...shell.newsletter, submitLabel: alertsCopy.submitLabel };
 
 /**
  * The capture for visitors not ready to claim: the pitch and three list
- * benefits beside the sitewide newsletter form, in one gold-edged panel. The
+ * benefits beside the sitewide newsletter form, in one copper-edged panel. The
  * form keeps its deferred-hydration mount and takes its own id prefix, so it
  * can share a page with the footer's copy without duplicate ids.
  */
@@ -38,7 +38,7 @@ export function OfferAlertsSection({ motion = "up" }: { motion?: RevealDirection
             p: { xs: 5, sm: 7, md: 8 },
             borderRadius: `${radiusTokens.xl}px`,
             border: "1px solid",
-            borderColor: colorTokens.gold[500],
+            borderColor: colorTokens.copper[500],
             bgcolor: "background.paper",
             boxShadow: shadowTokens.md,
           }}

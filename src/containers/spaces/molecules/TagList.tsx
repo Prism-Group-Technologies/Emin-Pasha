@@ -24,7 +24,7 @@ export function TagList({ label, tags }: { label: string; tags: readonly string[
             border: "1px solid",
             borderColor: "primary.main",
             color: "text.primary",
-            bgcolor: "rgba(196,168,50,0.08)",
+            bgcolor: "rgba(208,171,66,0.08)",
           }}
         >
           {tag}

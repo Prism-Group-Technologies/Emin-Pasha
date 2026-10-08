@@ -3,7 +3,6 @@ import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks"
 import { sections } from "@/containers/wellness/copy";
 import { wellnessSectionMotion as m } from "@/containers/wellness/motion";
 import { JourneySection } from "@/containers/wellness/organisms/JourneySection";
-import { MembershipSection } from "@/containers/wellness/organisms/MembershipSection";
 import { PillarsSection } from "@/containers/wellness/organisms/PillarsSection";
 import { SignatureTreatmentsSection } from "@/containers/wellness/organisms/SignatureTreatmentsSection";
 import { StickyEnquireCta } from "@/containers/wellness/organisms/StickyEnquireCta";
@@ -23,21 +22,20 @@ import { WellnessVoicesSection } from "@/containers/wellness/organisms/WellnessV
  * The order is a funnel, not a brochure:
  *
  *   hero          — the pitch, the approved figures, and the two CTAs
- *   pillars       — spa / gym / pool, the first choice to make
+ *   pillars       — spa / pool, the first choice to make
  *   treatments    — the signature menu with indicative prices, filterable
  *   packages      — three bundled wellness days
  *   journey       — what a first visit actually looks like
- *   membership    — gym tiers + a sample class timetable
  *   enquiry       — the on-page form + three channels: the conversion surface
- *   voices        — three visitor notes (placeholder attributions)
+ *   voices        — visitor notes (placeholder attributions)
  *   faq           — the questions the wellness desk fields most
  *   closing       — the last exit, WhatsApp plus all three channels
  *   related       — cross-sell into the rest of the estate
  *
- * Every price, duration, membership rate and class time is invented and
- * labelled "indicative" — see `containers/wellness/copy`. The spa (7am–9pm)
- * and gym (6am–9pm) hours, the pool's public access and the gym's
- * non-resident membership are the approved §6 facts the page is built on.
+ * Every price and duration is invented and labelled "indicative" — see
+ * `containers/wellness/copy`. The spa's 7am–9pm hours and the pool's public
+ * access are the approved §6 facts the page is built on. The per-facility
+ * pass tiers live on `/spa` and `/swimming-pool`, not here.
  */
 export function WellnessContainer() {
   return (
@@ -47,7 +45,6 @@ export function WellnessContainer() {
       <SignatureTreatmentsSection motion={m.treatments} />
       <WellnessPackagesSection motion={m.packages} />
       <JourneySection motion={m.journey} />
-      <MembershipSection motion={m.membership} />
       <WellnessEnquirySection motion={m.enquiry} />
       <WellnessVoicesSection motion={m.voices} />
       <WellnessFaqSection motion={m.faq} />

@@ -60,7 +60,7 @@ export function OfferPrice({
               <VisuallyHidden>Was </VisuallyHidden>
               {formatUgx(wasPriceUgx)}
             </Text>
-            <OfferPill tone="garden">{`${savingPrefix} ${savingPercent}%`}</OfferPill>
+            <OfferPill tone="maroon">{`${savingPrefix} ${savingPercent}%`}</OfferPill>
           </>
         )}
       </Box>

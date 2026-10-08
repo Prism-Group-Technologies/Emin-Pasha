@@ -50,13 +50,6 @@ export const arrivalWellnessFaqs: InventedFaq[] = [
       "Just yourself. Robes, towels and slippers are provided. Please arrive 15 minutes before your treatment to settle in, and remember the spa is for guests aged 16 and over.",
   },
   {
-    id: "gym-for-guests",
-    topic: "wellness",
-    question: "Can hotel guests use the gym?",
-    answer:
-      "Yes — hotel guests can use the gym throughout their stay. Visitors who are not staying can buy a gym membership, which includes the facility and its professional trainers.",
-  },
-  {
     id: "pool-towels",
     topic: "wellness",
     question: "Are towels provided at the pool?",

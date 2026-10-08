@@ -28,7 +28,7 @@ export function HeroActions({ primary, secondary }: { primary?: HeroCta; seconda
           href={secondary.href}
           variant="ghost"
           size="large"
-          sx={{ color: "common.white", borderColor: "rgba(251,250,247,0.6)" }}
+          sx={{ color: "common.white", borderColor: "rgba(250,248,246,0.6)" }}
         >
           {secondary.label}
         </Button>

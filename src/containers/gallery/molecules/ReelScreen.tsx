@@ -54,7 +54,7 @@ export function ReelScreen({ poster, chapter, labels }: ReelScreenProps) {
           display: "grid",
           placeItems: "center",
           borderRadius: "50%",
-          bgcolor: colorTokens.gold[500],
+          bgcolor: colorTokens.gold[300],
           color: colorTokens.ink[900],
           boxShadow: "0 12px 32px rgba(0,0,0,0.35)",
         }}

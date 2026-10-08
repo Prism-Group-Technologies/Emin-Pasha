@@ -24,7 +24,7 @@ export function GmWelcomeLetter() {
         m: 0,
         px: { xs: 4, md: 6 },
         py: { xs: 4, md: 6 },
-        bgcolor: "rgba(196,168,50,0.06)",
+        bgcolor: "rgba(208,171,66,0.06)",
         border: "1px solid",
         borderColor: "divider",
         borderLeftWidth: "3px",

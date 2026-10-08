@@ -1,10 +1,9 @@
 /** ⚠️ INVENTED MARKETING COPY — NOT YET CLIENT-APPROVED. See ./index.ts. */
-import type { MembershipTier } from "@/containers/wellness/copy/membership";
+import type { MembershipTier } from "@/containers/wellness/copy/passTier";
 
 /**
- * Repeat-visit pricing for the spa, in the same `MembershipTier` shape the
- * gym uses so the card renders identically. Rates are **invented
- * placeholders** (TODO(EMIN-Q11)) — the source sets no spa price at all
+ * Repeat-visit pricing for the spa, in the shared `MembershipTier` shape so
+ * the card renders it unchanged. Rates are **invented placeholders** (TODO(EMIN-Q11)) — the source sets no spa price at all
  * (§0.7) — and the section copy says the wellness desk confirms. Each tier
  * only bundles approved §6 offerings (massage, facial, the Turkish bath, the
  * pool) plus the relaxation lounge.

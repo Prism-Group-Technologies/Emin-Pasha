@@ -18,9 +18,9 @@ import type { BoxProps } from "@/components/atoms/Box";
  *
  * It used to be, and that failed WCAG 1.4.11 in *both* schemes — the boundary
  * of an interactive control needs 3:1, and `divider` is a hairline token for
- * separating content, not for drawing a control. Measured: `sand.200`
- * (#E4DFD3) on `sand.50` is **1.27:1**; `ink.600` (#2A2823) on `ink.900` is
- * **1.34:1**. That is why the fields over the hero video read as floating
+ * separating content, not for drawing a control. Measured: `sand.300`
+ * (#DCD2C9) on `sand.50` is **1.41:1**; `ink.600` (#312A24) on `ink.900` is
+ * **1.44:1**. That is why the fields over the hero video read as floating
  * text with no box around them at all.
  *
  * `text.primaryChannel` at 50% is the fix, and it is scheme-aware for free:

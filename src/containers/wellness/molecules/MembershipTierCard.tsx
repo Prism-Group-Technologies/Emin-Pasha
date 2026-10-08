@@ -8,7 +8,7 @@ import { colorTokens } from "@/theme/tokens";
 import { formatUgx } from "@/utils/currency";
 
 /**
- * One gym membership tier: name, an indicative price with its cadence, a
+ * One repeat-visit pass tier: name, an indicative price with its cadence, a
  * one-line "best for", a checked list of perks, and the WhatsApp CTA on the
  * bottom edge. The featured tier gets a warm tint and a "Most popular" flag —
  * theme-aware `rgba` on gold, the same treatment the accommodation
@@ -21,7 +21,7 @@ export function MembershipTierCard({ tier }: { tier: MembershipTier }) {
       sx={[
         cardSurface(),
         tier.featured
-          ? { bgcolor: "rgba(196,168,50,0.10)", borderTopColor: colorTokens.gold[700] }
+          ? { bgcolor: "rgba(190,110,41,0.10)", borderTopColor: colorTokens.copper[500] }
           : {},
       ]}
     >

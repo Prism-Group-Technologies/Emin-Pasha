@@ -4,7 +4,6 @@ import { equatoriaMenu } from "@/containers/dining/copy/menus/equatoria";
 import { inRoomMenu } from "@/containers/dining/copy/menus/inRoom";
 import { manuteaMenu } from "@/containers/dining/copy/menus/manutea";
 import { rooftopMenu } from "@/containers/dining/copy/menus/rooftop";
-import { sirSamuelBakerMenu } from "@/containers/dining/copy/menus/sirSamuelBaker";
 import type { OutletMenu } from "@/containers/dining/copy/menus/types";
 
 export type { MenuItem, MenuCourse, OutletMenu } from "@/containers/dining/copy/menus/types";
@@ -12,7 +11,6 @@ export type { MenuItem, MenuCourse, OutletMenu } from "@/containers/dining/copy/
 /** A sample menu per outlet, keyed by the ids in `content/dining.ts`. */
 export const outletMenus = {
   [OUTLET_ID.equatoria]: equatoriaMenu,
-  [OUTLET_ID.sirSamuelBaker]: sirSamuelBakerMenu,
   [OUTLET_ID.rooftopTerrace]: rooftopMenu,
   [OUTLET_ID.manutea]: manuteaMenu,
   [OUTLET_ID.inRoom]: inRoomMenu,

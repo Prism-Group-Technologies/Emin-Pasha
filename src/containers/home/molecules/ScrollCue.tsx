@@ -41,7 +41,7 @@ export function ScrollCue() {
         Scroll
       </Text>
       <Box
-        sx={{ position: "relative", width: "1px", height: 96, bgcolor: "rgba(251,250,247,0.3)" }}
+        sx={{ position: "relative", width: "1px", height: 96, bgcolor: "rgba(250,248,246,0.3)" }}
       >
         <Box
           sx={{

@@ -12,9 +12,9 @@ export function HeroCrumbs({ items }: { items?: BreadcrumbItem[] }) {
   return (
     <Box
       sx={{
-        "& nav": { color: "rgba(251,250,247,0.82)" },
+        "& nav": { color: "rgba(250,248,246,0.82)" },
         "& a": { color: "common.white" },
-        "& [aria-current]": { color: "rgba(251,250,247,0.72)" },
+        "& [aria-current]": { color: "rgba(250,248,246,0.72)" },
       }}
     >
       <Breadcrumbs items={items} />

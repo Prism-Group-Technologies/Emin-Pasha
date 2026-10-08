@@ -1,77 +1,11 @@
 /**
- * Raw design tokens from docs/DESIGN_DIRECTION.md §B.1–B.4 (approved D01–D03).
- * Framework-agnostic — no MUI/React imports here. palette.ts / typography.ts
- * map these onto MUI's theme shape.
- */
-export const colorTokens = {
-  // gold.700 (#8A731A) is NOT safe as inline text on sand.50 — verified 4.42:1,
-  // fails AA for normal text (DESIGN_DIRECTION.md originally claimed 6.1:1;
-  // corrected after /styleguide's live contrast check caught the error, see
-  // DECISIONS.md D16). Use gold.800 for inline gold text on light surfaces;
-  // gold.700 is fine only for icons/borders/large text (>=3:1 needed).
-  //
-  // gold.800 also serves as the contained-button / brand-FAB *fill* now that
-  // those render white (ink.contrastCopy #FBFAF7) label text — white needs
-  // gold.800 (6.6:1) beneath it, not gold.500 (2.2:1). gold.900 (#4A3D0D) is
-  // the hover fill (10.2:1). Both pairs are asserted live in the /styleguide
-  // contrast rows.
-  // gold.50 (#F6F1DF) is a wash tint, background-only: it carries `ink.900`
-  // body text at 17.4:1 and `gold.800` at 5.1:1, so it is safe as the ground
-  // for a tinted icon chip or a soft section band. Never used as a fill under
-  // white text.
-  gold: {
-    50: "#F6F1DF",
-    500: "#C4A832",
-    300: "#D4BC5E",
-    700: "#8A731A",
-    800: "#6B5813",
-    900: "#4A3D0D",
-  },
-  // `contrastCopy`/`contrastMuted` are the two text values used on the dark
-  // band (see templates/sectionShellStyles.ts). They are fixed rather than
-  // scheme-dependent because the band itself is fixed — 17.9:1 and 8.4:1
-  // against ink/900, both comfortably past AA.
-  ink: {
-    900: "#0B0B0A",
-    800: "#121211",
-    600: "#2A2823",
-    contrastCopy: "#FBFAF7",
-    contrastMuted: "#B9B2A2",
-  },
-  sand: { 50: "#FBFAF7", 100: "#F2EFE8", 200: "#E4DFD3", 400: "#B9B2A2", 800: "#3A362E" },
-  // garden.50 (#E9F1EB) mirrors gold.50 as a background-only wash — `ink.900`
-  // on it measures 16.9:1, `garden.700` 6.4:1. Tinted chip ground / soft band
-  // only, never a fill under light text.
-  garden: { 50: "#E9F1EB", 700: "#22402F", 500: "#34614A", 200: "#A9C2B2" },
-  support: {
-    success: { light: "#2E7D5B", dark: "#6FBE99" },
-    warning: { light: "#B8860B", lightText: "#8C6408", dark: "#E0B84D" },
-    error: { light: "#9B2C2C", dark: "#E08585" },
-    info: { light: "#2F5D7C", dark: "#7FB0D1" },
-  },
-} as const;
-
-/**
- * Third-party brand colours. **Not part of the estate palette** and
- * deliberately not in `colorTokens` — nothing here is scheme-dependent,
- * because a brand mark that changes colour between light and dark stops
- * being recognisable, which is the only reason to use the vendor's colour
- * instead of our own gold in the first place.
+ * Design tokens. Framework-agnostic — no MUI/React imports here.
+ * palette.ts / typography.ts map these onto MUI's theme shape.
  *
- * `whatsapp.main` is WhatsApp's own **dark** green #128C7E, not the lighter
- * #25D366: the FAB carries a white glyph, and white measures **4.13:1** on
- * #128C7E — an AA pass for the graphical object — versus only 1.98:1 on
- * #25D366. `hover` (#0E7C6F) is a shade darker again, so the glyph stays
- * compliant through the hover state.
- *
- *   - `ring` (#0E7A3C) still outlines the control so its *boundary* is
- *     identifiable against both grounds — 5.2:1 on sand.50, 3.5:1 on ink.900.
- *   - The button is never icon-only to assistive tech: it carries a full
- *     `aria-label`, so the glyph is decoration over a named control.
+ * Colour lives in `./colorTokens` and is re-exported here so that
+ * `@/theme/tokens` stays the single import site for every token family.
  */
-export const brandColorTokens = {
-  whatsapp: { main: "#128C7E", hover: "#0E7C6F", ring: "#0E7A3C", glyph: "#FFFFFF" },
-} as const;
+export { colorTokens, brandColorTokens } from "./colorTokens";
 
 /** 4px base spacing scale, `space-1`…`space-11` in DESIGN_DIRECTION.md §B.4. */
 export const spacingScale = [4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192] as const;
@@ -106,7 +40,7 @@ export const radiusTokens = { sm: 6, md: 12, lg: 20, xl: 28, pill: 999 } as cons
 
 /**
  * Soft elevation, added alongside the radius relaxation. The rgba is built on
- * `ink.600` (#2A2823, a warm near-black) rather than pure black so the shadow
+ * `ink.600` (#312A24, a warm near-black) rather than pure black so the shadow
  * reads warm against the sand grounds. `xs`→`lg` is a four-step ramp for
  * resting/hover card states; `hover` is kept as an alias of `md` for the
  * existing `MuiButton` contained-hover override. `modal` is unchanged.
@@ -117,12 +51,12 @@ export const radiusTokens = { sm: 6, md: 12, lg: 20, xl: 28, pill: 999 } as cons
  */
 export const shadowTokens = {
   none: "none",
-  xs: "0 1px 2px rgba(42,40,35,0.06)",
-  sm: "0 4px 14px rgba(42,40,35,0.07)",
-  md: "0 12px 32px rgba(42,40,35,0.09)",
-  lg: "0 28px 64px rgba(42,40,35,0.13)",
-  hover: "0 12px 32px rgba(42,40,35,0.09)",
-  modal: "0 24px 64px rgba(11,11,10,0.24)",
+  xs: "0 1px 2px rgba(49,42,36,0.06)",
+  sm: "0 4px 14px rgba(49,42,36,0.07)",
+  md: "0 12px 32px rgba(49,42,36,0.09)",
+  lg: "0 28px 64px rgba(49,42,36,0.13)",
+  hover: "0 12px 32px rgba(49,42,36,0.09)",
+  modal: "0 24px 64px rgba(8,5,3,0.24)",
 } as const;
 
 /**

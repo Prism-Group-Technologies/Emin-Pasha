@@ -24,7 +24,7 @@ export function RhythmDayCard({ entry }: { entry: RhythmEntry }) {
         borderRadius: `${radiusTokens.md}px`,
         border: "1px solid",
         borderColor: entry.highlight ? "primary.main" : "divider",
-        bgcolor: entry.highlight ? "rgba(196,168,50,0.12)" : "background.default",
+        bgcolor: entry.highlight ? "rgba(208,171,66,0.12)" : "background.default",
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>

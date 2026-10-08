@@ -13,7 +13,7 @@ import { roomGallerySection } from "@/containers/accommodation/copy";
 import type { LightboxState } from "@/hooks/useLightbox";
 import { useSwipe } from "@/hooks/useSwipe";
 import type { AssetRef } from "@/schemas/content/assetRef";
-import { radiusTokens } from "@/theme/tokens";
+import { colorTokens, radiusTokens } from "@/theme/tokens";
 
 export interface RoomLightboxProps {
   photos: AssetRef[];
@@ -25,9 +25,9 @@ const navSx = {
   position: "absolute",
   top: "50%",
   transform: "translateY(-50%)",
-  bgcolor: "rgba(11,11,10,0.55)",
-  color: "#FBFAF7",
-  "&:hover, &:focus-visible": { bgcolor: "rgba(11,11,10,0.8)" },
+  bgcolor: "rgba(8,5,3,0.55)",
+  color: colorTokens.ink.contrastCopy,
+  "&:hover, &:focus-visible": { bgcolor: "rgba(8,5,3,0.8)" },
 } as const;
 
 /**

@@ -49,7 +49,7 @@ export function TrustBar({ motion = "up" }: { motion?: RevealDirection }) {
               sx={{
                 pl: { xs: 4, md: 5 },
                 borderLeft: "1px solid",
-                borderColor: colorTokens.gold[700],
+                borderColor: colorTokens.gold[600],
               }}
             >
               <TrustItem value={item.value} label={item.label} onDark />

@@ -11,7 +11,7 @@ import type { Inclusion } from "@/containers/experiences/transfer/copy/inclusion
 export function InclusionTile({ item }: { item: Inclusion }) {
   return (
     <Box component="li" sx={{ display: "flex", gap: 3, alignItems: "flex-start" }}>
-      <IconBadge name={item.icon} tone="garden" size={44} />
+      <IconBadge name={item.icon} tone="gold" size={44} />
       <Box sx={{ display: "grid", gap: 0.5 }}>
         <Text variant="subtitle2" component="p">
           {item.title}

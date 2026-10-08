@@ -19,10 +19,10 @@ export interface SeasonalOffer {
 /**
  * Time-boxed treatments each facility runs for a few weeks. Every offer is
  * built from an already-approved §6 capability (the Turkish bath, massage,
- * group classes, the pool) recombined for a season — no new service is
- * claimed. Prices are invented placeholders and flagged indicative; the
- * "window" lines are deliberately relative ("through the rains"), because a
- * specific date is a fact the source does not set.
+ * the pool) recombined for a season — no new service is claimed. Prices are
+ * invented placeholders and flagged indicative; the "window" lines are
+ * deliberately relative ("through the rains"), because a specific date is a
+ * fact the source does not set.
  */
 export const seasonalOffers: Record<FacilityId, SeasonalOffer[]> = {
   [FACILITY_ID.spa]: [
@@ -47,29 +47,6 @@ export const seasonalOffers: Record<FacilityId, SeasonalOffer[]> = {
       priceUgx: 360000,
       priceNote: "indicative, 75 min + lounge",
       endsNote: "One booking per Thursday evening",
-    },
-  ],
-  [FACILITY_ID.gym]: [
-    {
-      id: "new-year-reset",
-      facility: FACILITY_ID.gym,
-      badge: "January",
-      title: "The 21-Day Reset",
-      description:
-        "Three weeks of unlimited access, all classes, and two personal-training sessions to build the habit properly.",
-      priceUgx: 320000,
-      priceNote: "indicative, 21 days",
-      endsNote: "New Year intake only",
-    },
-    {
-      id: "bring-a-neighbour",
-      facility: FACILITY_ID.gym,
-      badge: "Members bring a guest",
-      title: "Bring a Neighbour Month",
-      description:
-        "Every membership adds four guest passes for the month, so the people on your street can try the floor.",
-      priceNote: "Included for members",
-      endsNote: "Runs one calendar month",
     },
   ],
   [FACILITY_ID.pool]: [

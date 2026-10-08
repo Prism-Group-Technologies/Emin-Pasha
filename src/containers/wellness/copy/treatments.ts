@@ -16,14 +16,13 @@ export interface Treatment {
   assetId?: string;
 }
 
-const { spa, gym, pool } = FACILITY_ID;
+const { spa, pool } = FACILITY_ID;
 
 /**
  * The signature-treatment strip. Prices and durations are **invented
  * placeholders** (TODO(EMIN-Q11)) and flagged "indicative" wherever they
  * render. Each name maps onto an approved §6 offering — tailored massage,
- * facials, deep sea-salt, the Turkish bath, personal training, group
- * classes, public swimming.
+ * facials, deep sea-salt, the Turkish bath, public swimming.
  */
 export const signatureTreatments: Treatment[] = [
   {
@@ -65,34 +64,6 @@ export const signatureTreatments: Treatment[] = [
     duration: "90 min",
     priceUgx: 300000,
     assetId: "wellness-treatment-sea-salt",
-  },
-  {
-    id: "pt-session",
-    facility: gym,
-    name: "Personal Training Session",
-    description:
-      "One-to-one with a certified trainer — technique, a plan you keep, someone counting.",
-    duration: "55 min",
-    priceUgx: 120000,
-    priceQualifier: "from",
-    assetId: "wellness-treatment-pt",
-  },
-  {
-    id: "fitness-assessment",
-    facility: gym,
-    name: "Fitness Assessment & Plan",
-    description: "Movement screen, baseline numbers and a written programme to train against.",
-    duration: "45 min",
-    priceUgx: 150000,
-  },
-  {
-    id: "group-class",
-    facility: gym,
-    name: "Group Class Drop-In",
-    description:
-      "Strength, conditioning, mobility or spin — pay for one class without a membership.",
-    duration: "45 min",
-    priceUgx: 45000,
   },
   {
     id: "pool-day-pass",

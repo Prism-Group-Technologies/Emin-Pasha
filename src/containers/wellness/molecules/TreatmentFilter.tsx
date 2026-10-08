@@ -7,7 +7,6 @@ import type { TreatmentFilterValue } from "@/containers/wellness/hooks/useTreatm
 const OPTIONS: { value: TreatmentFilterValue; label: string }[] = [
   { value: "all", label: "All" },
   { value: "spa", label: "Spa" },
-  { value: "gym", label: "Gym" },
   { value: "pool", label: "Pool" },
 ];
 

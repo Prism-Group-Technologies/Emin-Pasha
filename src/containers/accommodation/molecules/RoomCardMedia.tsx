@@ -61,7 +61,7 @@ export function RoomCardMedia({ asset, capacity, popular = false }: RoomCardMedi
           ...chipBase,
           bottom: 12,
           left: 12,
-          bgcolor: "rgba(11,11,10,0.72)",
+          bgcolor: "rgba(8,5,3,0.72)",
           color: "common.white",
         }}
       >

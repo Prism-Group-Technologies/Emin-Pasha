@@ -38,10 +38,12 @@ const raw: FaqItem[] = [
       "Yes — adequate and secure parking in a state-of-the-art lot, manned by security personnel.",
   },
   {
-    id: "non-guests-pool-spa-gym",
-    question: "Can non-guests use the pool, spa or gym?",
+    id: "non-guests-pool-spa",
+    question: "Can non-guests use the pool or spa?",
+    // TODO(EMIN-COPY): reworded from the §15 source, which also offered gym
+    // membership. The hotel has no gym; the pool and spa clauses are verbatim.
     answer:
-      "Yes. The pool is open to hotel guests and the general public, for swimming or as a venue for poolside parties and events. Gym membership is available for purchase, giving access to our modern facility and professional trainers. The spa welcomes non-resident bookings.",
+      "Yes. The pool is open to hotel guests and the general public, for swimming or as a venue for poolside parties and events. The spa welcomes non-resident bookings.",
   },
   {
     id: "children-welcome",

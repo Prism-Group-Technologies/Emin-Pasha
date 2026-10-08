@@ -15,7 +15,6 @@ const c = wellnessCopy.enquiry;
 const INTEREST_OPTIONS: { value: WellnessInterest; label: string }[] = [
   { value: "any", label: c.options.any },
   { value: "spa", label: c.options.spa },
-  { value: "gym", label: c.options.gym },
   { value: "pool", label: c.options.pool },
 ];
 
