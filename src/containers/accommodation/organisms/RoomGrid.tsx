@@ -10,10 +10,15 @@ import { useRoomFilter } from "@/containers/accommodation/hooks/useRoomFilter";
 import { radiusTokens } from "@/theme/tokens";
 
 export interface RoomGridProps {
-  /** Server-rendered cards, in the same order as `capacities`. */
+  /** Server-rendered cards, in the same order as `rooms`. */
   children: ReactNode[];
-  /** Each card's approved capacity string, parsed by the hook to filter. */
-  capacities: string[];
+  /**
+   * Each card's category id and approved capacity string, in card order. The
+   * capacity is what the hook parses to filter; the id is the React key.
+   * Capacity alone cannot key the list — two categories may sleep the same
+   * party size, and a duplicate key lets React drop a card on re-render.
+   */
+  rooms: { id: string; capacity: string }[];
 }
 
 /**
@@ -29,8 +34,10 @@ export interface RoomGridProps {
  * string — lives in `useRoomFilter`. The count is announced through
  * `aria-live` so a screen-reader user hears the grid change.
  */
-export function RoomGrid({ children, capacities }: RoomGridProps) {
-  const { guests, setGuests, guestCeiling, visible, statusText } = useRoomFilter(capacities);
+export function RoomGrid({ children, rooms }: RoomGridProps) {
+  const { guests, setGuests, guestCeiling, visible, statusText } = useRoomFilter(
+    rooms.map((room) => room.capacity),
+  );
 
   return (
     <Stack spacing={6}>
@@ -73,9 +80,9 @@ export function RoomGrid({ children, capacities }: RoomGridProps) {
           alignItems: "stretch",
         }}
       >
-        {children.map((card, index) => (
-          <Box key={capacities[index]} sx={{ display: visible[index] ? "grid" : "none" }}>
-            {card}
+        {rooms.map((room, index) => (
+          <Box key={room.id} sx={{ display: visible[index] ? "grid" : "none" }}>
+            {children[index]}
           </Box>
         ))}
       </Box>

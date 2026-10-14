@@ -31,7 +31,10 @@ export function NavCardMedia({ asset, orientation, active, revealed, sizes }: Na
     <Box sx={navCardMediaSx(orientation, active)}>
       {asset && revealed && (
         <Box className="NavCard-media" sx={navCardMediaInnerSx}>
-          <AssetImage asset={asset} sizes={sizes} />
+          {/* Navigation chrome, not content: the whole card is one link to
+              a destination, and a modal opened over an open mega-menu is a
+              dead end. */}
+          <AssetImage asset={asset} sizes={sizes} zoomable={false} />
         </Box>
       )}
     </Box>

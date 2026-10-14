@@ -20,7 +20,7 @@ export interface EventTypeCard {
 /**
  * The five occasions the events desk plans most. Every draw maps onto an
  * approved §5/§7 space or amenity (Kudara Hall, the meeting rooms, the
- * gardens, three restaurants, secure parking, on-site rooms); the numbers
+ * gardens, two restaurants, secure parking, on-site rooms); the numbers
  * that appear are the invented indicative capacities from `venues.ts` and are
  * labelled as such wherever they render.
  */
@@ -44,10 +44,10 @@ export const eventTypeCards: EventTypeCard[] = [
     rfpValue: "meeting",
     icon: "verified",
     title: "Board & private meetings",
-    blurb: "Newly designed private rooms for 8–40, cutting-edge tech, a dedicated F&B team.",
+    blurb: "One fitted boardroom for sixteen — built-in display, a dedicated F&B team.",
     points: [
-      "Boardroom, U-shape or cabaret, reset between sessions",
-      "Video-conference kit with waiting-room control",
+      "A fixed table and a private door, yours for the whole day",
+      "Interactive display with waiting-room control on video calls",
       "A private dinner in one of the restaurants to close the day",
     ],
     ctaHref: `#${ENQUIRE_ANCHOR_ID}`,

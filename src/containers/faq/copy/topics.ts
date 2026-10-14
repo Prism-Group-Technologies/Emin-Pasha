@@ -10,6 +10,12 @@ import type { FaqPlacement } from "@/containers/faq/types";
 export const approvedFaqTopics: Record<string, FaqPlacement> = {
   "where-is-the-hotel": { topic: "arrival" },
   "check-in-check-out-times": { topic: "stay", popular: true },
+  // Both reception answers sit under `arrival` beside the check-in question
+  // they qualify. `reception-hours` is popular: "is anyone there when I land
+  // at 2am" is the question the desk exists to answer, and it is the one a
+  // first-time visitor to Kampala actually asks.
+  "reception-hours": { topic: "arrival", popular: true },
+  "reception-services": { topic: "arrival" },
   "airport-transfers": { topic: "arrival", popular: true },
   "breakfast-included": { topic: "dining", popular: true },
   wifi: { topic: "stay" },

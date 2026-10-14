@@ -1,83 +1,60 @@
 import { Box } from "@/components/atoms/Box";
-import { Icon, type IconName } from "@/components/atoms/Icon";
-import { IconBadge } from "@/components/atoms/IconBadge";
-import { Link } from "@/components/atoms/Link";
-import { Text } from "@/components/atoms/Text";
+import { RelatedLinkTile } from "@/containers/accommodation/molecules/RelatedLinkTile";
 import { findNavItem } from "@/content/navigation";
-import { radiusTokens } from "@/theme/tokens";
-
-const ICON_BY_HREF: Record<string, IconName> = {
-  "/spa": "spa",
-  "/swimming-pool": "pool",
-  "/spa-etiquette": "info",
-  "/dining": "restaurant",
-  "/offers": "celebration",
-  "/experiences/airport-transfer": "directions",
-};
+import { revealSx } from "@/theme/motion";
 
 /**
- * Internal links out of Accommodation, as a row of cards. Labels resolve
- * from `navigation` by href, so a section renamed anywhere is renamed here
- * too (CLAUDE.md §5.4). Shared by the location band and the room detail page.
+ * Four is the ceiling. Past that the tiles are narrower than the labels they
+ * carry, and no caller passes more; below it the row is always full, so a
+ * three-link band never trails an empty cell.
+ */
+const MAX_COLUMNS = 4;
+
+function gridSx(count: number) {
+  return {
+    listStyle: "none",
+    m: 0,
+    p: 0,
+    display: "grid",
+    /**
+     * Two up even on a phone. This band is tertiary — it sits above the
+     * footer on roughly twenty pages — and one full-width 16:9 tile per row
+     * turned four cross-links into about 1100px of scrolling past content the
+     * reader has already decided not to read. Paired tiles keep the whole
+     * band inside one thumb-flick.
+     */
+    gridTemplateColumns: {
+      xs: "repeat(2, minmax(0, 1fr))",
+      md: `repeat(${Math.min(count, MAX_COLUMNS)}, minmax(0, 1fr))`,
+    },
+    gap: { xs: 2, sm: 3, md: 4 },
+    alignItems: "stretch",
+  };
+}
+
+/**
+ * Internal cross-links, as a row of photographic tiles. Shared by roughly
+ * twenty containers — the accommodation location band, every section index,
+ * and both detail-page templates — which is why it takes nothing but hrefs:
+ * labels resolve from `navigation` by href, so a section renamed anywhere is
+ * renamed here too (CLAUDE.md §5.4), and the photograph resolves from
+ * `pageHeroes` the same way.
  *
- * The desktop column count is derived from how many links there are, so the
- * last row is always full: four links render 2×2 rather than 3 + 1 with two
- * empty cells trailing off to the right. Three or six keep the 3-up rhythm.
+ * A Server Component with no state and no JavaScript: the hover choreography
+ * is CSS on the tile, and the entrance stagger is `revealSx`, which runs on a
+ * scroll timeline rather than an observer.
  */
 export function RelatedLinks({ hrefs }: { hrefs: string[] }) {
-  const desktopColumns = hrefs.length === 4 ? 2 : Math.min(hrefs.length, 3);
-
   return (
-    <Box
-      component="ul"
-      sx={{
-        listStyle: "none",
-        m: 0,
-        p: 0,
-        display: "grid",
-        gridTemplateColumns: {
-          xs: "1fr",
-          sm: hrefs.length > 1 ? "repeat(2, minmax(0, 1fr))" : "1fr",
-          md: `repeat(${desktopColumns}, minmax(0, 1fr))`,
-        },
-        gap: 3,
-      }}
-    >
-      {hrefs.map((href) => {
+    <Box component="ul" sx={gridSx(hrefs.length)}>
+      {hrefs.map((href, index) => {
         const item = findNavItem(href);
         if (!item) {
           return null;
         }
         return (
-          <Box component="li" key={href}>
-            <Link
-              href={href}
-              underline="none"
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 3,
-                p: 3,
-                height: "100%",
-                border: "1px solid",
-                borderColor: "divider",
-                borderRadius: `${radiusTokens.lg}px`,
-                color: "text.primary",
-                transition: "border-color 200ms cubic-bezier(0.16,1,0.3,1)",
-                "&:hover": { borderColor: "primary.main" },
-              }}
-            >
-              <IconBadge name={ICON_BY_HREF[href] ?? "arrow-forward"} size={40} />
-              <Text variant="h5" component="span" sx={{ flex: 1 }}>
-                {item.label}
-              </Text>
-              <Icon
-                name="arrow-forward"
-                fontSize="small"
-                aria-hidden
-                sx={{ color: "primary.main", flexShrink: 0 }}
-              />
-            </Link>
+          <Box component="li" key={href} sx={revealSx({ index })}>
+            <RelatedLinkTile href={href} label={item.label} />
           </Box>
         );
       })}

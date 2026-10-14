@@ -10,40 +10,11 @@
  * Run: `yarn check:photos`. Exits non-zero only if a slot is completely
  * unfilled, which `src/content/photoAssignments.test.ts` also guards.
  */
-import { contactMedia } from "@/containers/contact/copy/media";
-import { signatureDishAssets } from "@/containers/dining/copy/menus/assets";
-import { kudaraAssets } from "@/containers/events/copy/kudaraMedia";
-import { eventsAssets } from "@/containers/events/copy/media";
-import { transferAssets } from "@/containers/experiences/transfer/copy/media";
-import { faqAssets } from "@/containers/faq/copy/media";
-import { placeholderPhotos } from "@/containers/gallery/media";
-import { legalPromiseAsset } from "@/containers/legal/copy/media";
-import { spacesAssets } from "@/containers/spaces/copy/media";
-import { wellnessAssets } from "@/containers/wellness/copy/media";
-import { poolAssets } from "@/containers/wellness/copy/poolMedia";
-import { spaAssets } from "@/containers/wellness/copy/spaMedia";
-import { assets } from "@/content/assets";
+import { allImageSlots } from "@/content/mediaInventory";
 import { photoAssignments, stretchedAssignments } from "@/content/photoAssignments";
 import { photos } from "@/content/photography";
-import type { AssetRef } from "@/schemas/content/assetRef";
 
-const allSlots: AssetRef[] = [
-  ...assets,
-  ...placeholderPhotos.map((photo) => photo.asset),
-  ...spacesAssets,
-  ...signatureDishAssets,
-  ...eventsAssets,
-  ...kudaraAssets,
-  ...transferAssets,
-  ...contactMedia,
-  ...poolAssets,
-  ...spaAssets,
-  ...wellnessAssets,
-  ...faqAssets,
-  legalPromiseAsset,
-];
-
-const imageSlots = allSlots.filter((slot) => slot.kind === "image");
+const imageSlots = allImageSlots;
 const unfilled = imageSlots.filter((slot) => !slot.image);
 const stretched = imageSlots.filter((slot) => stretchedAssignments.has(slot.id));
 

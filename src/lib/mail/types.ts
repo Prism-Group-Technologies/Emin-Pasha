@@ -8,7 +8,16 @@
  * changes.
  */
 export type EnquiryKind =
-  "booking" | "rfp" | "spa" | "dining" | "story" | "transfer" | "spaces" | "contact" | "newsletter";
+  | "booking"
+  | "room"
+  | "rfp"
+  | "spa"
+  | "dining"
+  | "story"
+  | "transfer"
+  | "spaces"
+  | "contact"
+  | "newsletter";
 
 export interface MailMessage {
   kind: EnquiryKind;

@@ -15,7 +15,7 @@
  *
  * Every factual claim is traceable to already-approved content: rates and
  * inclusions from `content/rooms.ts`, check-in/out from `content/identity.ts`,
- * the estate (spa hours, 300ft pool, three restaurants, Kudara Hall, transfer)
+ * the estate (spa hours, 300ft pool, two restaurants, Kudara Hall, transfer)
  * from `content/site.ts` and `content/faq.ts`, Friday Band Night from
  * `content/offers.ts`. Nothing here invents a fact — only the framing.
  *

@@ -11,6 +11,7 @@
  * components must never import it (D25).
  */
 import type { GallerySeed } from "@/containers/gallery/copy/seedTypes";
+import { arrivalSeeds } from "@/containers/gallery/copy/seedsArrival";
 import { extraSeeds } from "@/containers/gallery/copy/seedsExtras";
 import { leisureSeeds } from "@/containers/gallery/copy/seedsLeisure";
 import { occasionSeeds } from "@/containers/gallery/copy/seedsOccasions";
@@ -42,6 +43,7 @@ export const placeholderPhotos = [
   ...staySeeds,
   ...leisureSeeds,
   ...occasionSeeds,
+  ...arrivalSeeds,
   ...extraSeeds,
 ].map((seed) => ({ seed, asset: toAsset(seed) }));
 

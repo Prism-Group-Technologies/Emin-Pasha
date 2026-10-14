@@ -40,7 +40,7 @@ describe("booking engine deep link", () => {
       buildDeepLink(
         BOOKING_ENGINE_URL,
         DEEP_LINK_PARAMS,
-        { ...search, rooms: 3, promoCode: "SUMMER", roomTypeId: "superior-room" },
+        { ...search, rooms: 3, promoCode: "SUMMER", roomTypeId: "apartment-room" },
         {},
       ),
     );

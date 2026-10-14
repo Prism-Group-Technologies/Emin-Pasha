@@ -1,6 +1,6 @@
-import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Text } from "@/components/atoms/Text";
+import { CutoutPortrait } from "@/components/molecules/CutoutPortrait";
 import { PullQuote } from "@/containers/story/molecules/PullQuote";
 import { StoryArticleSection } from "@/containers/story/molecules/StoryArticleSection";
 import { Timeline } from "@/containers/story/molecules/Timeline";
@@ -12,6 +12,13 @@ const portrait = assets.find((asset) => asset.id === "story-emin-pasha-portrait"
 
 /** One measure, applied to every prose block on the page. */
 const MEASURE = "68ch";
+
+/**
+ * Narrower than the 320px this slot used to reserve: the engraving is only
+ * 477px wide, so anything past ~236px asks `next/image` to upscale it and the
+ * line work goes soft. See `CutoutPortrait`.
+ */
+const PORTRAIT_WIDTH = { xs: 200, md: 236 } as const;
 
 /**
  * The four `<h2>` blocks of the namesake pillar page, in reading order.
@@ -36,8 +43,12 @@ export function StoryArticle() {
       <Box sx={revealSx({ index: 0 })}>
         <StoryArticleSection id="why-this-name" heading="Why we carry this name">
           {portrait && (
-            <Box sx={{ float: { md: "right" }, ml: { md: 6 }, mb: 4, maxWidth: { md: 320 } }}>
-              <AssetImage asset={portrait} sizes="(max-width: 900px) 100vw, 320px" />
+            <Box sx={{ float: { md: "right" }, ml: { md: 6 }, mb: 4 }}>
+              <CutoutPortrait
+                asset={portrait}
+                width={PORTRAIT_WIDTH}
+                sizes={`(max-width: 899px) ${PORTRAIT_WIDTH.xs}px, ${PORTRAIT_WIDTH.md}px`}
+              />
             </Box>
           )}
           <Text variant="body1" color="text.secondary" sx={{ maxWidth: MEASURE }}>

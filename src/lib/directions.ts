@@ -1,19 +1,22 @@
 import { identity } from "@/content/identity";
 import { whatsappOpenings } from "@/content/whatsapp";
+import { coordinateQuery } from "@/lib/geo";
 
 /**
- * Maps deep link for the sticky "Directions" action.
+ * Turn-by-turn navigation to the hotel — Google's documented
+ * `dir/?api=1&destination=` form, given the coordinate from `lib/geo.ts`.
  *
- * Built from the approved NAP address string
- * (02_CONTENT_SOURCE_OF_TRUTH.md §1) via Google's documented
- * `search?api=1&query=` form, which resolves a free-text address server-side.
- * It deliberately does **not** use a lat/long pin: the property's real
- * coordinates are TODO(EMIN-Q20) and inventing them would put a fabricated
- * fact in a live navigation link. Swap to a coordinate `query` once Q20 is
- * answered, and this is the only line that changes.
+ * For controls labelled "Directions", which promise a route, not a listing.
+ * Anything that instead means "show me this hotel" — an address row, an
+ * "Open in Google Maps" control — wants `placeUrl` from the same module:
+ * a coordinate has no business attached to it, so Google renders those as a
+ * nameless DMS point rather than the property.
+ *
+ * The coordinate's provenance is documented in `lib/geo.ts`; this file states
+ * the URL shape and nothing more.
  */
-export const directionsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  identity.address,
+export const directionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+  coordinateQuery,
 )}`;
 
 export const telephoneUrl = `tel:${identity.telephone.replace(/\s/g, "")}`;

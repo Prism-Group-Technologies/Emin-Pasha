@@ -1,10 +1,8 @@
 "use client";
 
-import { type RefObject, useCallback, useEffect, useRef, useState } from "react";
+import { type RefObject, useCallback, useRef, useState } from "react";
 
-/** Browsers without `requestIdleCallback` (older Safari) get a plain delay. */
-const IDLE_FALLBACK_MS = 1500;
-const IDLE_TIMEOUT_MS = 4000;
+import { useWhenIdle } from "@/hooks/useWhenIdle";
 
 interface HydrationState {
   hydrated: boolean;
@@ -39,7 +37,8 @@ export interface DeferredHydration extends HydrationState {
  * Idle is the safety net, not the mechanism: without it a visitor whose
  * pointer never enters the block would sit on inert markup forever, so the
  * swap always happens, just never during the load burst that produces LCP —
- * the same discipline `useCookieConsent` applies to the consent banner.
+ * the same discipline `useCookieConsent` applies to the consent banner. The
+ * idle request itself is `useWhenIdle`, shared with the image modal.
  *
  * The two returned flags are what make the swap invisible. `carriedValue`
  * lifts whatever was typed into the placeholder before the real control
@@ -58,17 +57,8 @@ export function useDeferredHydration(): DeferredHydration {
     );
   }, []);
 
-  useEffect(() => {
-    if (state.hydrated) {
-      return;
-    }
-    if (typeof window.requestIdleCallback !== "function") {
-      const timeout = setTimeout(() => activate(false), IDLE_FALLBACK_MS);
-      return () => clearTimeout(timeout);
-    }
-    const handle = window.requestIdleCallback(() => activate(false), { timeout: IDLE_TIMEOUT_MS });
-    return () => window.cancelIdleCallback(handle);
-  }, [activate, state.hydrated]);
+  const onIdle = useCallback(() => activate(false), [activate]);
+  useWhenIdle(onIdle, state.hydrated);
 
   return {
     ...state,

@@ -7,15 +7,11 @@ import { story } from "@/content/story";
  * pages that carry those names.
  */
 export const TIMELINE_LINKS: Record<string, { label: string; href: string }[]> = {
-  "germany-and-albania": [
-    { label: "Equatoria", href: "/dining/equatoria-restaurant-bar" },
-  ],
+  "germany-and-albania": [{ label: "Equatoria", href: "/dining/equatoria-restaurant-bar" }],
   "cairo-and-khartoum": [
     { label: "Mehmed Pasha Lounge", href: "/lounges-and-spaces#mehmed-pasha-lounge" },
   ],
-  equatoria: [
-    { label: "Equatorial Gardens", href: "/lounges-and-spaces#equatorial-gardens" },
-  ],
+  equatoria: [{ label: "Equatorial Gardens", href: "/lounges-and-spaces#equatorial-gardens" }],
 };
 
 /** Sections of the pillar page, in reading order — drives the sticky ToC. */

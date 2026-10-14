@@ -23,7 +23,7 @@ export interface EventPackage {
 
 /**
  * Bundled delegate packages. Every component maps onto an approved §7
- * facility — a meeting space, catering from the three restaurants, on-site
+ * facility — a meeting space, catering from both restaurants, on-site
  * rooms, secure parking — assembled into a rate. The numbers are placeholders
  * and flagged as such in the section copy and on each card.
  */
@@ -69,9 +69,9 @@ export const eventPackages: EventPackage[] = [
     forWhom: "6–20 guests",
     description: "A private room, a set menu with the chef, and the meeting space before it.",
     includes: [
-      "Half-day private meeting room with AV",
+      "Half-day in The Boardroom with AV",
       "Four-course tasting menu with wine pairing",
-      "Private room in Sir Samuel Baker or a garden pavilion",
+      "A private dining room or a garden pavilion",
       "Menu and seating agreed with the chef in advance",
     ],
     priceUgx: 4200000,

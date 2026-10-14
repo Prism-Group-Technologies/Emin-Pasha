@@ -27,7 +27,7 @@ export const diningVoices: DiningVoice[] = [
   },
   {
     id: "placeholder-tasting",
-    heading: "Sir Samuel Baker tasting menu",
+    heading: "The Rooftop Terrace at sunset",
     quote:
       "Five courses, paced perfectly, and the short rib was the best thing I have eaten this year. The pairing was worth every glass.",
     author: "Diner — placeholder",

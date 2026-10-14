@@ -17,8 +17,8 @@
  * into `src/content` after sign-off.
  *
  * Traceability. Every structural claim ties back to already-approved content:
- * Kudara Hall, the private meeting rooms and the Equatorial Gardens are
- * approved §5/§7 spaces; "three restaurants for
+ * Kudara Hall, The Boardroom and the Equatorial Gardens are
+ * approved §5/§7 spaces; "two restaurants for
  * catering", "secure parking", "accommodation on site" and the dedicated F&B
  * team are approved §7 amenities; the §14 group booking terms (14-day
  * confirmation, rooming lists 7 days out, 50% deposit above 10 rooms) are
@@ -33,6 +33,7 @@
 
 export { heroCopy } from "./hero";
 export { sections } from "./sections";
+export { type SpecGroup, type SpecItem } from "./specs";
 export { eventTypeCards, type EventTypeCard } from "./eventTypes";
 export {
   venues,
@@ -58,12 +59,7 @@ export {
   type KudaraLayout,
   type LayoutDiagram,
 } from "./kudaraLayouts";
-export {
-  kudaraProduction,
-  kudaraProductionNote,
-  type KudaraSpecGroup,
-  type KudaraSpecItem,
-} from "./kudaraProduction";
+export { kudaraProduction, kudaraProductionNote } from "./kudaraProduction";
 export {
   kudaraCateringPackages,
   kudaraCateringNote,
@@ -83,3 +79,13 @@ export {
   type KudaraFactSheetPoint,
 } from "./kudaraProof";
 export { kudaraAsset } from "./kudaraMedia";
+
+/* ---- bespoke Boardroom venue page ------------------------------------ */
+export { boardroomSections } from "./boardroomSections";
+export { boardroomSpec, boardroomSpecNote } from "./boardroomSpec";
+export { boardroomDay, boardroomDayNote } from "./boardroomDay";
+export { boardroomAssets, boardroomAsset, boardroomGalleryShots } from "./boardroomMedia";
+
+/* ---- celebrations rail on the Weddings page --------------------------- */
+export { celebrationsSection } from "./celebrationsSections";
+export { celebrationAssets, celebrationAsset, celebrationCaptions } from "./celebrationsMedia";

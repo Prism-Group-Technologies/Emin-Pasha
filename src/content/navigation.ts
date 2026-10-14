@@ -10,10 +10,10 @@ const raw: NavItem[] = [
     label: "Accommodation",
     href: "/accommodation",
     children: [
-      { label: "Superior Room", href: "/accommodation/superior-room" },
+      { label: "Apartment Room", href: "/accommodation/apartment-room" },
       { label: "Deluxe Room", href: "/accommodation/deluxe-room" },
       { label: "Deluxe Suites", href: "/accommodation/deluxe-suites" },
-      { label: "Superior Suites", href: "/accommodation/superior-suites" },
+      { label: "VIP Suite", href: "/accommodation/vip-suite" },
     ],
   },
   {
@@ -57,7 +57,7 @@ const raw: NavItem[] = [
     href: "/meetings-and-events",
     children: [
       { label: "Kudara Hall", href: "/kudara-hall" },
-      { label: "Private Meeting Rooms", href: "/meeting-rooms" },
+      { label: "The Boardroom", href: "/meeting-rooms" },
       { label: "Weddings & Celebrations", href: "/weddings" },
     ],
   },

@@ -16,6 +16,6 @@ export const galleryShots: GalleryShot[] = [
   { assetId: "events-gallery-banquet", caption: "Kudara Hall · banquet, 320" },
   { assetId: "events-gallery-ceremony", caption: "Equatorial Gardens · ceremony" },
   { assetId: "events-gallery-reception", caption: "Rooftop · drinks reception" },
-  { assetId: "events-gallery-cabaret", caption: "Meeting rooms · cabaret" },
-  { assetId: "events-gallery-breakout", caption: "Meeting rooms · breakout, U-shape" },
+  { assetId: "events-gallery-boardroom", caption: "The Boardroom · 16 at the table" },
+  { assetId: "events-gallery-breakout", caption: "Kudara Hall · syndicate breakout" },
 ];

@@ -5,7 +5,7 @@
       "url": [
         "http://localhost:3000/",
         "http://localhost:3000/accommodation",
-        "http://localhost:3000/accommodation/superior-room",
+        "http://localhost:3000/accommodation/apartment-room",
         "http://localhost:3000/dining",
         "http://localhost:3000/spa",
         "http://localhost:3000/weddings",

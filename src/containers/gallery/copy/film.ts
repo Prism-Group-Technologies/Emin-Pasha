@@ -24,13 +24,13 @@ export const filmChapters: FilmChapter[] = [
     id: "suites",
     mark: "00:42",
     title: "The suites",
-    caption: "Deluxe Suites and Superior Suites, balconies open, morning light on the linen.",
+    caption: "Deluxe Suites and the VIP Suite, balconies open, morning light on the linen.",
   },
   {
     id: "tables",
     mark: "01:25",
     title: "The tables",
-    caption: "From terrace breakfasts to the tasting menu at Sir Samuel Baker.",
+    caption: "From terrace breakfasts to dinner on the Rooftop Terrace.",
   },
   {
     id: "spa",

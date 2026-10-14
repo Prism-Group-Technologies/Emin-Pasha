@@ -2,7 +2,8 @@ import { Box } from "@/components/atoms/Box";
 import { Text } from "@/components/atoms/Text";
 import { NapRow } from "@/containers/contact/molecules/NapRow";
 import { identity } from "@/content/identity";
-import { directionsUrl, emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { placeUrl } from "@/lib/geo";
 
 /**
  * The NAP block. Every value reads from `content/identity.ts` — the same
@@ -17,7 +18,7 @@ export function ContactDetails() {
       <Text variant="h5" component="p">
         {identity.name}
       </Text>
-      <NapRow icon="location" label="Address" value={identity.address} href={directionsUrl} />
+      <NapRow icon="location" label="Address" value={identity.address} href={placeUrl} />
       <NapRow icon="phone" label="Front desk" value={identity.telephone} href={telephoneUrl} />
       <NapRow
         icon="whatsapp"

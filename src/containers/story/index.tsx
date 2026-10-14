@@ -1,5 +1,6 @@
 import { SectionShell } from "@/components/templates/SectionShell";
 import { RelatedLinks } from "@/containers/accommodation/organisms/RelatedLinks";
+import { ArrivalStrip } from "@/containers/reception";
 import { sections } from "@/containers/story/copy";
 import { storySectionMotion as m } from "@/containers/story/motion";
 import { FullStorySection } from "@/containers/story/organisms/FullStorySection";
@@ -55,6 +56,7 @@ export function StoryContainer() {
       <FullStorySection motion={m.fullStory} />
       <ValuesSection motion={m.values} />
       <HotelTodaySection motion={m.hotelToday} />
+      <ArrivalStrip variant="story" motion={m.threshold} />
       <NamedAfterSection motion={m.namedAfter} />
       <StoryChaptersSection
         eyebrow={sections.chapters.eyebrow}
@@ -73,12 +75,7 @@ export function StoryContainer() {
         heading={sections.related.heading}
       >
         <RelatedLinks
-          hrefs={[
-            "/accommodation",
-            "/dining/equatoria-restaurant-bar",
-            "/dining/sir-samuel-baker-fine-dining",
-            "/lounges-and-spaces",
-          ]}
+          hrefs={["/accommodation", "/dining/equatoria-restaurant-bar", "/lounges-and-spaces"]}
         />
       </SectionShell>
 

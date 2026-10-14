@@ -12,11 +12,27 @@ const cellSx = { py: 3, px: 2, borderBottom: "1px solid", borderColor: "divider"
 /**
  * Indicative capacities by layout, rendered from the invented `copy/venues.ts`
  * layer. Every figure is a placeholder (TODO(EMIN-Q12)) — the heading and the
- * note under the table say so — and any venue with partial data shows only the
- * layouts it actually lists, with "—" elsewhere. Scrolls inside its own
- * container below `md` so the page body never scrolls sideways.
+ * note under the table say so.
+ *
+ * Columns are derived from the venues actually passed in rather than from the
+ * full `LAYOUT_ORDER`. The hub passes all four venues and still gets every
+ * column; a single-venue page gets only the layouts that venue offers. Without
+ * this, The Boardroom — a fixed table with exactly one seating plan — rendered
+ * as one figure beside six em dashes, which reads as missing data rather than
+ * as a room that seats one way by design.
+ *
+ * Scrolls inside its own container below `md` so the page body never scrolls
+ * sideways.
  */
 export function VenueCapacityTable({ venues }: { venues: VenueEntry[] }) {
+  const columns = LAYOUT_ORDER.filter((key) =>
+    venues.some((venue) => venue.capacities[key] !== undefined),
+  );
+
+  if (columns.length === 0) {
+    return null;
+  }
+
   return (
     <Box sx={{ display: "grid", gap: 3 }}>
       <Text variant="overline" component="p" color="text.secondary">
@@ -24,10 +40,17 @@ export function VenueCapacityTable({ venues }: { venues: VenueEntry[] }) {
       </Text>
 
       <Box sx={{ overflowX: "auto" }}>
-        <Box component="table" sx={{ width: "100%", minWidth: 640, borderCollapse: "collapse" }}>
+        <Box
+          component="table"
+          sx={{
+            width: "100%",
+            minWidth: columns.length > 2 ? 640 : 320,
+            borderCollapse: "collapse",
+          }}
+        >
           <Box component="thead">
             <Box component="tr">
-              {["Venue", ...LAYOUT_ORDER.map((key) => LAYOUT_LABELS[key])].map((heading) => (
+              {["Venue", ...columns.map((key) => LAYOUT_LABELS[key])].map((heading) => (
                 <Box
                   key={heading}
                   component="th"
@@ -51,7 +74,7 @@ export function VenueCapacityTable({ venues }: { venues: VenueEntry[] }) {
                 <Box component="th" scope="row" sx={{ ...cellSx, textAlign: "left" }}>
                   <Text variant="body2">{venue.name}</Text>
                 </Box>
-                {LAYOUT_ORDER.map((key) => (
+                {columns.map((key) => (
                   <Box key={key} component="td" sx={cellSx}>
                     <Text variant="body2" color="text.secondary">
                       {venue.capacities[key] ?? "—"}

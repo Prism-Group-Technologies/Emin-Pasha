@@ -9,6 +9,7 @@ import { PlanYourStaySection } from "@/containers/faq/organisms/PlanYourStaySect
 import { QuickAnswersSection } from "@/containers/faq/organisms/QuickAnswersSection";
 import { StickyFaqCta } from "@/containers/faq/organisms/StickyFaqCta";
 import { VoicesTrustSection } from "@/containers/faq/organisms/VoicesTrustSection";
+import { ReceptionDeskSection } from "@/containers/reception";
 
 /**
  * The FAQ, rebuilt as a help centre that converts — the same funnel shape as
@@ -37,6 +38,7 @@ export function FaqContainer() {
       <FaqHero />
       <QuickAnswersSection motion={m.quick} />
       <FaqExplorerSection motion={m.questions} />
+      <ReceptionDeskSection motion={m.reception} />
       <PlanYourStaySection motion={m.guides} />
       <VoicesTrustSection motion={m.voices} />
       <FaqClosingSection motion={m.closing} />

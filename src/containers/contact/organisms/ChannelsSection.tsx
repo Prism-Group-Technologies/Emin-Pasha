@@ -6,7 +6,8 @@ import { type ChannelId, channelCopy, sections } from "@/containers/contact/copy
 import { ContactChannelCard } from "@/containers/contact/molecules/ContactChannelCard";
 import { ReplyPromiseStrip } from "@/containers/contact/molecules/ReplyPromiseStrip";
 import { identity } from "@/content/identity";
-import { directionsUrl, emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { placeUrl } from "@/lib/geo";
 import type { RevealDirection } from "@/theme/motion";
 
 /**
@@ -18,7 +19,7 @@ const TARGET: Record<ChannelId, { href: string; value: string }> = {
   whatsapp: { href: whatsappUrl, value: identity.whatsapp.display },
   call: { href: telephoneUrl, value: identity.telephone },
   email: { href: emailUrl, value: identity.email },
-  visit: { href: directionsUrl, value: identity.address.split(",")[0] ?? identity.address },
+  visit: { href: placeUrl, value: identity.address.split(",")[0] ?? identity.address },
 };
 
 /**

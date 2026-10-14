@@ -21,7 +21,7 @@ export const staySeeds: GallerySeed[] = [
     id: "gallery-room-desk-morning",
     category: "rooms",
     title: "A writing desk in morning light",
-    altText: "A work desk facing the garden window in a Superior Room",
+    altText: "A writing desk and armchairs in a Deluxe Room",
     shape: "landscape",
   },
   {

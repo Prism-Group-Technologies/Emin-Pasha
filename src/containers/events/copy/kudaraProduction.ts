@@ -1,23 +1,11 @@
-import type { IconName } from "@/components/atoms/Icon";
-
-export interface KudaraSpecItem {
-  label: string;
-  value: string;
-}
-
-export interface KudaraSpecGroup {
-  id: string;
-  title: string;
-  icon: IconName;
-  items: KudaraSpecItem[];
-}
+import type { SpecGroup } from "./specs";
 
 /**
  * The in-house production spec for Kudara Hall, grouped so an organiser or
  * their AV lead can scan it. Equipment models and counts are indicative
  * placeholders for planning — the final spec is set on the proposal.
  */
-export const kudaraProduction: KudaraSpecGroup[] = [
+export const kudaraProduction: SpecGroup[] = [
   {
     id: "stage-vision",
     title: "Stage & vision",

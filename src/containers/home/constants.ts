@@ -54,10 +54,10 @@ export const FEATURE_TILE_ICONS: Record<string, IconName> = {
 
 /** Where each room category's detail page lives, keyed by `content/rooms.ts` id. */
 export const ROOM_HREFS: Record<string, string> = {
-  "superior-room": "/accommodation/superior-room",
+  "apartment-room": "/accommodation/apartment-room",
   "deluxe-room": "/accommodation/deluxe-room",
   "deluxe-suites": "/accommodation/deluxe-suites",
-  "superior-suites": "/accommodation/superior-suites",
+  "vip-suite": "/accommodation/vip-suite",
 };
 
 /** Intro CTA destinations, in the order `site.homepage.introCtas` lists them. */

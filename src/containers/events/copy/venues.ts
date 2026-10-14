@@ -1,7 +1,8 @@
 /** ⚠️ INVENTED MARKETING COPY — NOT YET CLIENT-APPROVED. See ./index.ts. */
 import { EVENT_TYPE, type EventTypeId } from "@/containers/events/anchors";
 
-export type LayoutKey = "theatre" | "classroom" | "banquet" | "uShape" | "cabaret" | "reception";
+export type LayoutKey =
+  "boardroom" | "theatre" | "classroom" | "banquet" | "uShape" | "cabaret" | "reception";
 
 export interface VenueEntry {
   id: string;
@@ -32,20 +33,26 @@ export const venues: VenueEntry[] = [
     name: "Kudara Hall",
     assetId: "meetings-kudara-hall",
     href: "/kudara-hall",
-    blurb: "The pillar-free main hall — plenary conferences by day, gala dinners by night.",
+    blurb:
+      "The pillar-free main hall — plenary by day, syndicate breakouts beside it, gala dinners by night.",
     feature: "Stage + full in-house AV",
     suits: [conference, launch, wedding, social],
     capacities: { theatre: 500, classroom: 260, banquet: 320, cabaret: 240, reception: 600 },
   },
   {
-    id: "private-meeting-rooms",
-    name: "Private Meeting Rooms",
-    assetId: "meetings-private-rooms",
+    /**
+     * One fitted boardroom, not a suite of rooms. The table is a fixed
+     * installation, so `boardroom` is the only layout it offers — there is
+     * nothing to re-set it into. Syndicate breakouts live on Kudara Hall.
+     */
+    id: "boardroom",
+    name: "The Boardroom",
+    assetId: "meetings-boardroom",
     href: "/meeting-rooms",
-    blurb: "Three newly designed rooms for board sessions, breakouts and interviews.",
-    feature: "Video-conference ready",
-    suits: [meeting, conference, launch],
-    capacities: { theatre: 60, classroom: 36, uShape: 28, banquet: 40, cabaret: 32 },
+    blurb: "One fitted boardroom for the decisions that do not belong in an open-plan room.",
+    feature: "Interactive display + in-table power",
+    suits: [meeting],
+    capacities: { boardroom: 16 },
   },
   {
     id: "equatorial-gardens",
@@ -69,6 +76,7 @@ export const venues: VenueEntry[] = [
 ];
 
 export const LAYOUT_LABELS: Record<LayoutKey, string> = {
+  boardroom: "Boardroom",
   theatre: "Theatre",
   classroom: "Classroom",
   banquet: "Banquet",
@@ -79,6 +87,7 @@ export const LAYOUT_LABELS: Record<LayoutKey, string> = {
 
 /** Column order for the capacity table. */
 export const LAYOUT_ORDER: LayoutKey[] = [
+  "boardroom",
   "theatre",
   "classroom",
   "banquet",
@@ -88,4 +97,4 @@ export const LAYOUT_ORDER: LayoutKey[] = [
 ];
 
 export const capacitiesNote =
-  "Capacities are indicative maximums and vary with staging, dance floors and AV. Exact figures for your layout are confirmed on proposal.";
+  "Capacities are indicative maximums and vary with staging, dance floors and AV. The Boardroom is a fixed installation and seats one way only. Exact figures for your layout are confirmed on proposal.";

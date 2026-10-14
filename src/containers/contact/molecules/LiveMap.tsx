@@ -27,7 +27,9 @@ export interface LiveMapProps {
  * rotates the hue back: roads read light on dark, water stays blue, and the
  * page no longer has a white slab in the middle of it.
  *
- * TODO(EMIN-Q20): centred on the approved NAP string, not a coordinate pin.
+ * The caller passes `lib/geo.ts`'s pinned URL, so the marker sits on the
+ * hotel itself. The filter is why the pin has to be a pin and not a coloured
+ * dot read by hue alone: inverted, Google's red marker comes out cyan.
  */
 export function LiveMap({ embedUrl, openUrl, title, openLabel, loadingLabel }: LiveMapProps) {
   const [ref, inView] = useInView<HTMLDivElement>("300px");

@@ -27,7 +27,15 @@ import { formatUgx } from "@/utils/currency";
  */
 export function RoomBookingCard({ room }: { room: RoomCategory }) {
   return (
-    <Box id={BOOKING_ANCHOR_ID} sx={{ position: { md: "sticky" }, top: { md: 120 } }}>
+    <Box
+      id={BOOKING_ANCHOR_ID}
+      /* `scrollMarginTop` because this is an anchor target as well as a card:
+         every "Check dates" and "Reserve This Room" on the site jumps here, and
+         the fixed header would otherwise cover the rate the guest came to read.
+         Stated here rather than inherited from `sectionRoot` — this is the one
+         anchor target on the site that is not a `SectionShell`. */
+      sx={{ position: { md: "sticky" }, top: { md: 120 }, scrollMarginTop: 120 }}
+    >
       <Box
         sx={{
           overflow: "hidden",

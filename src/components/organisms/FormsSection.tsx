@@ -28,10 +28,10 @@ export function FormsSection() {
         label="Room category"
         defaultValue="deluxe-room"
         options={[
-          { value: "superior-room", label: "Superior Room" },
+          { value: "apartment-room", label: "Apartment Room" },
           { value: "deluxe-room", label: "Deluxe Room" },
           { value: "deluxe-suites", label: "Deluxe Suites" },
-          { value: "superior-suites", label: "Superior Suites" },
+          { value: "vip-suite", label: "VIP Suite" },
         ]}
       />
       <Checkbox label="I agree to be contacted about this enquiry" />
@@ -43,7 +43,7 @@ export function FormsSection() {
         onChange={(event) => setRadioValue(event.target.value)}
         options={[
           { value: "deluxe-room", label: "Deluxe Room" },
-          { value: "superior-room", label: "Superior Room" },
+          { value: "apartment-room", label: "Apartment Room" },
         ]}
       />
       <NumberStepper label="Guests" value={guests} onChange={setGuests} min={1} max={6} />

@@ -15,7 +15,7 @@ export const stayOffers: OfferItem[] = [
     title: "Stay Longer, Pay Less",
     summary: "Four nights or more and every night drops by a quarter — built for long work trips.",
     inclusions: [
-      "25% off a Superior Suite from the fourth night",
+      "25% off a VIP Suite from the fourth night",
       "Daily breakfast and weekly laundry",
       "One-way airport transfer",
     ],
@@ -23,7 +23,7 @@ export const stayOffers: OfferItem[] = [
     wasPriceUgx: 750_000,
     priceUnit: "per night",
     bookBy: "Rolling offer · stays of 4+ nights",
-    assetId: "room-superior-suites",
+    assetId: "room-vip-suite",
   },
   {
     id: "nakasero-weekender",
@@ -31,7 +31,7 @@ export const stayOffers: OfferItem[] = [
     title: "The Nakasero Weekender",
     summary: "A Friday-to-Sunday staycation for Kampala residents who need a proper break.",
     inclusions: [
-      "Two nights in a Superior Room",
+      "Two nights in an Apartment Room",
       "Late breakfast until 11am on Saturday and Sunday",
       "Pool access for two all weekend",
     ],
@@ -40,7 +40,7 @@ export const stayOffers: OfferItem[] = [
     priceUnit: "per weekend, for two",
     bookBy: "Fridays & Saturdays until 20 Dec 2026",
     urgency: "Weekends fill fast",
-    assetId: "room-superior-room",
+    assetId: "room-apartment-room",
   },
 ];
 

@@ -8,9 +8,9 @@
 export const sections = {
   outlets: {
     eyebrow: "§ THE OUTLETS",
-    heading: "Five rooms, one kitchen brigade",
+    heading: "Four rooms, one kitchen brigade",
     description:
-      "A premium all-day restaurant, a fine-dining room, a rooftop bar, a wine and whisky lounge, and a menu that comes to your door around the clock. Filter by what you are in the mood for.",
+      "An all-day restaurant in the garden, a second one on the roof, a wine and whisky lounge, and a menu that comes to your door around the clock. Filter by what you are in the mood for.",
   },
   menus: {
     eyebrow: "§ WHAT'S COOKING",

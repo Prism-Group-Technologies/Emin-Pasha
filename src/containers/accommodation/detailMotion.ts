@@ -14,6 +14,7 @@ const SCROLL_ORDER = [
   "gallery",
   "body",
   "inclusions",
+  "arrival",
   "policies",
   "packages",
   "guestVoices",

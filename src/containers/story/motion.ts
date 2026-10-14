@@ -19,6 +19,7 @@ const SCROLL_ORDER = [
   "fullStory",
   "values",
   "hotelToday",
+  "threshold",
   "namedAfter",
   "gm",
   "voices",

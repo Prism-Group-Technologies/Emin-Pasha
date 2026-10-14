@@ -15,6 +15,7 @@ import { TransferClosingSection } from "@/containers/experiences/transfer/organi
 import { TransferFaqSection } from "@/containers/experiences/transfer/organisms/TransferFaqSection";
 import { TransferHero } from "@/containers/experiences/transfer/organisms/TransferHero";
 import { TransferVoicesSection } from "@/containers/experiences/transfer/organisms/TransferVoicesSection";
+import { ArrivalStrip } from "@/containers/reception";
 import { alternatingDirection as d } from "@/theme/motion";
 
 const { related } = transferSections;
@@ -48,14 +49,15 @@ export function AirportTransferContainer() {
       <InclusionsSection motion={d(4)} />
       <PremiumServicesSection motion={d(5)} variant="raised" />
       <RouteSection motion={d(6)} />
-      <ChauffeurStandardsSection motion={d(7)} variant="raised" />
-      <TransferBookingSection motion={d(8)} />
-      <TransferVoicesSection motion={d(9)} variant="raised" />
-      <LongStayBenefitSection motion={d(10)} />
-      <TransferFaqSection motion={d(11)} />
-      <TransferClosingSection motion={d(12)} />
+      <ArrivalStrip variant="transfer" motion={d(7)} />
+      <ChauffeurStandardsSection motion={d(8)} variant="raised" />
+      <TransferBookingSection motion={d(9)} />
+      <TransferVoicesSection motion={d(10)} variant="raised" />
+      <LongStayBenefitSection motion={d(11)} />
+      <TransferFaqSection motion={d(12)} />
+      <TransferClosingSection motion={d(13)} />
 
-      <SectionShell motion={d(13)} eyebrow={related.eyebrow} heading={related.heading}>
+      <SectionShell motion={d(14)} eyebrow={related.eyebrow} heading={related.heading}>
         <RelatedLinks hrefs={["/accommodation", "/offers", "/contact", "/spa"]} />
       </SectionShell>
 

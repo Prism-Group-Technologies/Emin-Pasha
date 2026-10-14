@@ -2,6 +2,7 @@ import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
+import { ZoomTrigger, zoomTriggerHostSx } from "@/components/molecules/ZoomTrigger";
 import { formatUsd } from "@/containers/experiences/transfer/currency";
 import {
   fillImageSx,
@@ -21,35 +22,43 @@ export function CollectionCard({ collection }: { collection: GalleryCollectionVi
   const lead = collection.items[0];
 
   return (
-    <Link
-      href={`/gallery/${collection.slug}`}
-      underline="none"
-      sx={{
-        ...fillImageSx,
-        position: "relative",
-        display: "block",
-        height: "100%",
-        minHeight: { xs: 280, md: 340 },
-        overflow: "hidden",
-        borderRadius: `${radiusTokens.lg}px`,
-        bgcolor: "action.hover",
-        "& img": { transition: "transform 700ms cubic-bezier(0.16,1,0.3,1)" },
-        "&:hover img, &:focus-visible img": { transform: "scale(1.05)" },
-        "@media (prefers-reduced-motion: reduce)": { "& img": { transition: "none" } },
-      }}
-    >
-      {lead && <AssetImage asset={lead.asset} sizes="(max-width: 900px) 100vw, 33vw" />}
-      <Box sx={{ ...photoScrimSx, gap: 1, p: { xs: 4, md: 5 }, pt: 10 }}>
-        <Text variant="overline" component="p" sx={photoOverlineSx}>
-          {collection.mood}
-        </Text>
-        <Text variant="h4" component="h3" sx={{ color: "inherit" }}>
-          {collection.title}
-        </Text>
-        <Text variant="body2" sx={photoMutedSx}>
-          {`From ${formatUsd(collection.priceUsd)} ${collection.priceUnit} · indicative`}
-        </Text>
-      </Box>
-    </Link>
+    // The card is one link into the collection; the lead photograph gets a
+    // corner control so a visitor can look closer without leaving. See
+    // `ZoomTrigger`.
+    <Box sx={zoomTriggerHostSx}>
+      <Link
+        href={`/gallery/${collection.slug}`}
+        underline="none"
+        sx={{
+          ...fillImageSx,
+          position: "relative",
+          display: "block",
+          height: "100%",
+          minHeight: { xs: 280, md: 340 },
+          overflow: "hidden",
+          borderRadius: `${radiusTokens.lg}px`,
+          bgcolor: "action.hover",
+          "& img": { transition: "transform 700ms cubic-bezier(0.16,1,0.3,1)" },
+          "&:hover img, &:focus-visible img": { transform: "scale(1.05)" },
+          "@media (prefers-reduced-motion: reduce)": { "& img": { transition: "none" } },
+        }}
+      >
+        {lead && (
+          <AssetImage asset={lead.asset} sizes="(max-width: 900px) 100vw, 33vw" zoomable={false} />
+        )}
+        <Box sx={{ ...photoScrimSx, gap: 1, p: { xs: 4, md: 5 }, pt: 10 }}>
+          <Text variant="overline" component="p" sx={photoOverlineSx}>
+            {collection.mood}
+          </Text>
+          <Text variant="h4" component="h3" sx={{ color: "inherit" }}>
+            {collection.title}
+          </Text>
+          <Text variant="body2" sx={photoMutedSx}>
+            {`From ${formatUsd(collection.priceUsd)} ${collection.priceUnit} · indicative`}
+          </Text>
+        </Box>
+      </Link>
+      {lead && <ZoomTrigger asset={lead.asset} caption={lead.title} />}
+    </Box>
   );
 }

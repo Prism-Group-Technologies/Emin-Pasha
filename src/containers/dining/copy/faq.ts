@@ -17,25 +17,25 @@ export const diningFaq: DiningFaqItem[] = [
     id: "dress-code",
     question: "Is there a dress code?",
     answer:
-      "Smart-casual across all the outlets. Sir Samuel Baker leans a little more formal in the evening — a collared shirt or equivalent is the right note. The Rooftop Terrace is relaxed.",
+      "Smart-casual across both restaurants and the lounge. The Rooftop Terrace leans a little more formal after dark — a collared shirt or equivalent is the right note. Equatoria is relaxed at every service.",
   },
   {
     id: "dietary",
     question: "Can you cater for dietary requirements and allergies?",
     answer:
-      "Yes. Vegetarian and vegan options are on every menu, and the kitchen will adapt dishes for allergies, coeliac, halal and other needs. Tell us when you reserve so the brigade can plan — 24 hours' notice for the tasting menu.",
+      "Yes. Vegetarian and vegan options are on every menu, and the kitchen will adapt dishes for allergies, coeliac, halal and other needs. Tell us when you reserve so the brigade can plan — 24 hours' notice for the chef's table.",
   },
   {
     id: "children",
     question: "Are children welcome?",
     answer:
-      "Children are welcome at Equatoria and, earlier in the evening, on the Rooftop Terrace, with a children's menu and high chairs available. Sir Samuel Baker's tasting menu is better suited to older children and adults.",
+      "Children are welcome at Equatoria all day, and earlier in the evening on the Rooftop Terrace, with a children's menu and high chairs available. The lounge is better suited to older children and adults.",
   },
   {
     id: "walk-ins",
     question: "Do you take walk-ins, or do I need to book?",
     answer:
-      "Walk-ins are welcome at Equatoria and the Rooftop Terrace when there is space, but sunset tables and weekend evenings fill quickly — a reservation is the safe bet. Sir Samuel Baker is by reservation only.",
+      "Walk-ins are welcome at Equatoria and the Rooftop Terrace when there is space, but sunset tables and weekend evenings fill quickly — a reservation is the safe bet, and the only way to hold a table on the roof.",
   },
   {
     id: "corkage",

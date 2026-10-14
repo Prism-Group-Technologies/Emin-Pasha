@@ -39,6 +39,19 @@ const VARIANT_MAP: Record<ButtonVariant, Pick<MuiButtonProps, "variant" | "color
  * pointless and at worst breaks the handoff — so those render a plain anchor,
  * with the new-tab safety rel for external http(s).
  *
+ * **A bare `#fragment` is not a route either**, and this one is load-bearing.
+ * The App Router moves the hash with `history.pushState` after calling
+ * `preventDefault` on the click, and on a hash-only change there is no new
+ * segment to commit — so its scroll handler never runs and the viewport simply
+ * does not move. Measured on this site: clicking the room hero's "Check dates"
+ * (`#book`) left the page at y=0 with `#book` 2,174px further down, while
+ * assigning `location.hash` by hand scrolled correctly. Every in-page CTA on
+ * the site is one of these — "See the room", the sticky bars' jump links, the
+ * spaces chapter nav — so they all go native, which is what `SkipLink` and the
+ * FAQ's `HashLink` already do for the same reason. The browser then does the
+ * scroll, fires `hashchange` (which `useFaqDeepLink` listens for), and keeps
+ * the history entry.
+ *
  * Lifted out of the component body because it is a decision about the href,
  * not about this render, and because inlining all three branches pushed
  * `Button` past the complexity ceiling the lint config enforces.
@@ -46,6 +59,9 @@ const VARIANT_MAP: Record<ButtonVariant, Pick<MuiButtonProps, "variant" | "color
 function resolveLinkProps(href: string | undefined) {
   if (href === undefined) {
     return { linkProps: {}, newTab: false };
+  }
+  if (href.startsWith("#")) {
+    return { linkProps: { component: "a" as const, href }, newTab: false };
   }
   if (!/^(https?:|tel:|mailto:)/.test(href)) {
     return { linkProps: { component: NextLink, href }, newTab: false };

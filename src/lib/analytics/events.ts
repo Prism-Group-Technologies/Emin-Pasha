@@ -32,7 +32,17 @@ export type BookingAnalyticsEvent =
 export type HomeAnalyticsEvent =
   "home_lead_path_selected" | "home_cta_clicked" | "home_section_cta_clicked";
 
-export type AnalyticsEvent = BookingAnalyticsEvent | HomeAnalyticsEvent;
+/**
+ * The room reservation dialog. Separate from `BookingAnalyticsEvent` because
+ * it measures a different thing: that widget's success is a handoff to the
+ * engine, this one's is a request landing on the reservations desk. Reporting
+ * both as `availability_submitted` would hide which of the two paths the
+ * traffic actually takes, which is the only question these answer.
+ */
+export type AccommodationAnalyticsEvent = "room_reservation_opened" | "room_reservation_submitted";
+
+export type AnalyticsEvent =
+  BookingAnalyticsEvent | HomeAnalyticsEvent | AccommodationAnalyticsEvent;
 
 type EventPayload = Record<string, string | number | boolean | undefined>;
 

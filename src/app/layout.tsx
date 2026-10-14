@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
 
+import { ImageZoomLayer } from "@/components/organisms/ImageZoom";
+import {
+  RouteAnnouncer,
+  RouteProgressBar,
+  RouteTransition,
+} from "@/components/organisms/RouteTransition";
 import { PageShell } from "@/components/templates/PageShell";
 import { appIcons } from "@/config/icons";
 import { site } from "@/config/site";
@@ -72,6 +78,23 @@ export default function RootLayout({
             heroRoutes={shell.header.heroRoutes}
           />
           <DeferredMobileBookingSheet data={getBookingWidgetData()} />
+          {/* Route-change behaviour, mounted last on purpose. React runs
+              commit work in tree order, so a layout effect declared after the
+              shell runs after the router's own scroll handling inside it —
+              which is what lets `RouteTransition` have the final say on where
+              the viewport lands, in the same frame, before anything paints.
+              `focusTargetId` is passed down rather than read from
+              `@/content/shell` inside the client component, so the content
+              layer and Zod stay out of the always-loaded bundle (D25). */}
+          {/* Click-to-enlarge for every photograph on the site. Mounted here
+              for the same reason the shell and the booking bars are: one
+              delegated listener and one dialog that survive client-side
+              navigation, rather than a remount on every route change. It
+              renders nothing until a visitor opens a photograph. */}
+          <ImageZoomLayer />
+          <RouteTransition focusTargetId={shell.skipLink.targetId} />
+          <RouteProgressBar />
+          <RouteAnnouncer />
         </ThemeRegistry>
       </body>
     </html>

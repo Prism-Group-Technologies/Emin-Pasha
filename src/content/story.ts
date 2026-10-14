@@ -10,6 +10,19 @@ export const story = storySchema.parse({
     "Emin Pasha was truly one of the most extraordinary characters in Ugandan history. He was a doctor, a naturalist and a linguist — and an African at heart. Among all the bravado and machismo of the colonial age, he was a genuinely unique figure. His aim was not to conquer but to understand and to learn, and in doing so he came to respect and to fall in love with this country. We cannot imagine a more appropriate or more relevant person to name our hotel after.",
   lifeIntro:
     "His link to Uganda dates back to the late 1800s, during the era known as the Scramble for Africa. An explorer, physician and linguist, he was also fascinated by anthropology, botany, zoology and meteorology — and, importantly, he was actively opposed to the slave trade.",
+  // Historical reference, not §12.5 approved copy — see `storySchema`.
+  // Eduard Schnitzer, b. Oppeln 28 March 1840, d. Congo Free State 23
+  // October 1892 (Britannica; Jewish Encyclopedia). The en dash is the
+  // typographic form for a date span.
+  lifeDates: "1840 – 1892",
+  // Deliberately *not* dated. The engraving's year is not established
+  // anywhere in the asset record — `assets.ts` describes the slot only as a
+  // "Historical engraving of Emin Pasha" — so a "c. 1890" would be invented
+  // provenance on an archival object, which is the one place a guess is
+  // indefensible. The office is undated here for a plainer reason: against
+  // the life dates directly above it, a second numeral range read as noise
+  // and wrapped the label onto a third line.
+  portraitCaption: "Engraved portrait · Governor of Equatoria",
   timeline: [
     {
       id: "germany-and-albania",

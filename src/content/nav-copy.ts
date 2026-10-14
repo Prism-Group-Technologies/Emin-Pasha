@@ -14,7 +14,7 @@ import { type NavPanelCopy, navPanelCopySchema } from "@/schemas/content/navCopy
  * without a DECISIONS.md entry (TODO(EMIN-Q15)). So the four room lines below
  * claim nothing measurable. Each leans only on an attribute already approved
  * elsewhere — the Deluxe Room and Deluxe Suites lines reframe only those
- * rooms' approved `capacity` and `sellTo`; the Superior Suite's private
+ * rooms' approved `capacity` and `sellTo`; the VIP Suite's private
  * lounge area is in that room's approved `sellTo`. Nothing here invents a
  * feature, a size, a rate or a view.
  *
@@ -27,35 +27,32 @@ const raw: Record<string, NavPanelCopy> = {
     intro: "Four ways to stay, with the gardens outside every window.",
     viewAllLabel: "View all rooms & suites",
     descriptions: {
-      "/accommodation/superior-room": "A room for working and resting in equal measure.",
+      "/accommodation/apartment-room": "A room for working and resting in equal measure.",
       "/accommodation/deluxe-room": "For couples and first-time guests, at our entry rate.",
       "/accommodation/deluxe-suites": "More room to spread out, for families and longer stays.",
-      "/accommodation/superior-suites": "A private lounge to receive, to work, to unwind.",
+      "/accommodation/vip-suite": "A private lounge to receive, to work, to unwind.",
     },
     assetIds: {
-      "/accommodation/superior-room": "room-superior-room",
+      "/accommodation/apartment-room": "room-apartment-room",
       "/accommodation/deluxe-room": "room-deluxe-room",
       "/accommodation/deluxe-suites": "room-deluxe-suites",
-      "/accommodation/superior-suites": "room-superior-suites",
+      "/accommodation/vip-suite": "room-vip-suite",
     },
   },
 
   "/dining": {
     eyebrow: "Dining",
-    intro: "Three restaurants and two bars, across the estate.",
+    intro: "Two restaurants, a wine and whisky lounge, and room service around the clock.",
     viewAllLabel: "View all restaurants & bars",
     descriptions: {
       "/dining/equatoria-restaurant-bar":
         "Local and global flavours in a warm, contemporary dining room.",
-      "/dining/sir-samuel-baker-fine-dining":
-        "The finest ingredients, meticulous attention to detail.",
-      "/dining/rooftop-terrace": "Panoramic city views, and the calm to take them in.",
+      "/dining/rooftop-terrace": "A full restaurant upstairs, with the city laid out below.",
       "/dining/manutea-wine-whisky-lounge": "Fine wines and whiskies, carefully curated.",
       "/dining/in-room-dining": "Around the clock, in every room category.",
     },
     assetIds: {
       "/dining/equatoria-restaurant-bar": "dining-equatoria",
-      "/dining/sir-samuel-baker-fine-dining": "dining-sir-samuel-baker",
       "/dining/rooftop-terrace": "dining-rooftop-terrace",
       "/dining/manutea-wine-whisky-lounge": "dining-manutea",
       "/dining/in-room-dining": "dining-in-room",
@@ -83,12 +80,12 @@ const raw: Record<string, NavPanelCopy> = {
     viewAllLabel: "View meetings & events",
     descriptions: {
       "/kudara-hall": "A state-of-the-art hall for conferences and events.",
-      "/meeting-rooms": "Cutting-edge technology, dedicated F&B support.",
+      "/meeting-rooms": "One fitted boardroom. Interactive display, F&B support.",
       "/weddings": "The gardens for the ceremony, the estate for after.",
     },
     assetIds: {
       "/kudara-hall": "meetings-kudara-hall",
-      "/meeting-rooms": "meetings-private-rooms",
+      "/meeting-rooms": "meetings-boardroom",
       "/weddings": "weddings-equatorial-gardens",
     },
   },

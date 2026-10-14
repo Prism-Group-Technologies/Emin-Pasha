@@ -13,6 +13,9 @@ export type { EnquiryKind, MailMessage, MailResult } from "@/lib/mail/types";
  */
 const INBOX: Record<EnquiryKind, string> = {
   booking: identity.reservationsEmail,
+  // A named request to stay in one category, from the `RoomCard` dialog. Same
+  // desk as `booking` — it is the same enquiry with a person attached.
+  room: identity.reservationsEmail,
   rfp: identity.email,
   spa: identity.email,
   // Table reservations are handled by the reservations desk, the same team

@@ -26,9 +26,9 @@ export function CardsSection() {
             width: 320,
             height: 213,
           }}
-          title="Superior Room"
+          title="Apartment Room"
           description="Corporate, diplomatic, solo business travellers."
-          href="/accommodation/superior-room"
+          href="/accommodation/apartment-room"
         />
         <StatBlock value="300ft" label="Swimming pool" />
       </Stack>

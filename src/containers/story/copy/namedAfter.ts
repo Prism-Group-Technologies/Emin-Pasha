@@ -9,10 +9,19 @@ export interface NamedAfterLink {
   from: string;
   /** Invented one-line nudge to visit it. */
   blurb: string;
+  /**
+   * The slot in `@/content/assets` that pictures the space.
+   *
+   * An id rather than an imported asset: this file is copy, and the
+   * photography layer is server-only (DECISIONS.md D25). `catalogue.ts`
+   * resolves it, so a reshoot never touches this file and a typo surfaces as
+   * a missing image rather than a build error.
+   */
+  assetId: string;
 }
 
 /**
- * The internal-linking spine, as a card band. The names and the "from"
+ * The internal-linking spine, as an index. The names and the "from"
  * attributions come straight from `content/story.ts` and the existing
  * `containers/story/constants.ts` `TIMELINE_LINKS` map. Only `blurb` is
  * invented, and it promises nothing.
@@ -24,6 +33,7 @@ export const namedAfter: NamedAfterLink[] = [
     href: "/dining/equatoria-restaurant-bar",
     from: "the historic province Emin served and later governed",
     blurb: "A contemporary table inspired by Uganda's place in the wider Equatorial region.",
+    assetId: "dining-equatoria",
   },
   {
     id: "mehmed-pasha-lounge",
@@ -31,6 +41,7 @@ export const namedAfter: NamedAfterLink[] = [
     href: "/lounges-and-spaces#mehmed-pasha-lounge",
     from: "the name Emin took in Khartoum — Mehemet Emin",
     blurb: "The sitting room of the house: coffee in the afternoon, a quiet corner to work.",
+    assetId: "lounge-mehmed-pasha",
   },
   {
     id: "equatorial-gardens",
@@ -38,5 +49,6 @@ export const namedAfter: NamedAfterLink[] = [
     href: "/lounges-and-spaces#equatorial-gardens",
     from: "Equatoria, the province Emin governed",
     blurb: "The green heart of the plot — where the pool, the shade and the long lunches are.",
+    assetId: "lounge-equatorial-gardens",
   },
 ];

@@ -2,11 +2,11 @@ import { Box } from "@/components/atoms/Box";
 import { Reveal } from "@/components/atoms/Reveal";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
+import { PhotoCarousel } from "@/components/molecules/PhotoCarousel/PhotoCarousel";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { INTRO_CTA_HREFS } from "@/containers/home/constants";
 import { introLede, introStats } from "@/containers/home/copy";
 import { CtaPair } from "@/containers/home/molecules/CtaPair";
-import { ImageCarousel } from "@/containers/home/molecules/ImageCarousel";
 import { TrustItem } from "@/containers/home/molecules/TrustItem";
 import { assets } from "@/content/assets";
 import { site } from "@/content/site";
@@ -47,7 +47,7 @@ const [storyLabel = "Our Story", roomsLabel = "View Rooms"] = site.homepage.intr
  * It shows rooms, not the facade: the section's primary CTA is "View Rooms",
  * and a single exterior shot beside it was answering a question nobody in this
  * part of the page is asking. Five frames rather than one because the range —
- * Superior Room through Deluxe Suite — *is* the pitch, and a still frame can
+ * Apartment Room through VIP Suite — *is* the pitch, and a still frame can
  * only make it once.
  *
  * The carousel sits slightly low against the text baseline, which is the
@@ -120,7 +120,7 @@ export function IntroBlock({ motion = "up" }: { motion?: RevealDirection }) {
         {collageSlides.length > 0 && (
           <Reveal index={1} direction={oppositeOf(motion)} media>
             <Box sx={{ mt: { md: 7 } }}>
-              <ImageCarousel
+              <PhotoCarousel
                 slides={collageSlides}
                 sizes="(max-width: 900px) 100vw, 45vw"
                 label="Rooms and suites"

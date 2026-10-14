@@ -1,16 +1,36 @@
 import { Box } from "@/components/atoms/Box";
-import { BrandMark } from "@/components/atoms/BrandMark";
 import { Button } from "@/components/atoms/Button";
 import { Reveal } from "@/components/atoms/Reveal";
 import { Stack } from "@/components/atoms/Stack";
 import { Text } from "@/components/atoms/Text";
+import { PortraitPlate } from "@/components/molecules/PortraitPlate";
 import { SectionShell } from "@/components/templates/SectionShell";
+import { assets } from "@/content/assets";
 import { ctas } from "@/content/ctas";
 import { identity } from "@/content/identity";
 import { story } from "@/content/story";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 
 const readHistory = ctas.find((cta) => cta.id === "story-read");
+const portrait = assets.find((asset) => asset.id === "story-emin-pasha-portrait");
+
+/** Half the engraving's 477px intrinsic width — see `CutoutPortrait`. */
+const PORTRAIT_WIDTH = { xs: 200, md: 236 } as const;
+
+/**
+ * The media track.
+ *
+ * Fixed, not fractional, and this is the whole correction. The artwork is
+ * capped to its 477px source, so a `0.8fr` track — ~480px of the container —
+ * left a 236px engraving floating in roughly 250px of nothing, with the
+ * dissolved hem offering no edge to read the gap against. A track sized to
+ * what actually fills it cannot open a hole.
+ *
+ * 340px rather than the artwork's own 236px because `PortraitPlate` adds its
+ * frame and padding around it; the plate reaches both track edges at every
+ * breakpoint.
+ */
+const MEDIA_TRACK = 340;
 
 /**
  * The namesake teaser.
@@ -24,47 +44,41 @@ const readHistory = ctas.find((cta) => cta.id === "story-read");
  * The lock-up leads the grid here, so it takes the section's own direction and
  * the copy comes back against it — the mirror of `IntroBlock`, where the copy
  * leads.
+ *
+ * Aligned to `start`, not `center`: the plate is shorter than the copy, and
+ * centring it against a tall column opened dead space above *and* below on top
+ * of the horizontal gap. Starting both columns on one line is also what makes
+ * the eyebrow and the plate's top edge agree.
  */
 export function StorySection({ motion = "up" }: { motion?: RevealDirection }) {
   return (
     <SectionShell topRule motion={motion}>
       <Box
         sx={{
+          maxWidth: { lg: 1120 },
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "minmax(0, 0.8fr) minmax(0, 1.2fr)" },
+          gridTemplateColumns: { xs: "1fr", md: `minmax(0, ${MEDIA_TRACK}px) minmax(0, 1fr)` },
           gap: { xs: 6, md: 8 },
-          alignItems: "center",
+          alignItems: "start",
         }}
       >
         <Reveal direction={motion} media>
-          {/* The brand lock-up, not the photograph the assignment table
-              would resolve for `story-emin-pasha-portrait`. No portrait of
-              the namesake is confirmed as delivered or cleared for use
-              (TODO(EMIN-Q44), assets.ts), and the line-art lock-up *is* a
-              portrait of him — so this is the one honest image for the slot
-              until the client supplies one.
-
-              Rendered through `BrandMark` rather than `AssetImage` on
-              purpose. `AssetImage` is built for photographs: it crops with
-              `objectFit: cover` and paints `action.hover` behind the frame,
-              which on artwork with a transparent ground would both clip the
-              lock-up and put a grey plate behind it. `BrandMark` reserves the
-              artwork's own ratio and contains it, so CLS stays at 0 here too.
-
-              Capped and centred instead of filling the column: at 2.56:1 a
-              full-width lock-up would read as a stretched band across the
-              track on wide viewports, which is the opposite of what a
-              lock-up is for. */}
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <BrandMark
-              width={{ xs: 260, md: 340 }}
-              sizes="(max-width: 899px) 260px, 340px"
-              alt={identity.name}
+          {/* The engraved portrait, presented on a plate rather than loose on
+              the page ground. `PortraitPlate` carries the reasoning: the
+              cutout's own treatment dissolves its edges, which is right for
+              the artwork and leaves it unable to hold a column by itself. */}
+          {portrait && (
+            <PortraitPlate
+              asset={portrait}
+              width={PORTRAIT_WIDTH}
+              sizes={`(max-width: 899px) ${PORTRAIT_WIDTH.xs}px, ${PORTRAIT_WIDTH.md}px`}
+              dates={story.lifeDates}
+              caption={story.portraitCaption}
             />
-          </Box>
+          )}
         </Reveal>
         <Reveal index={1} direction={oppositeOf(motion)}>
-          <Stack spacing={5}>
+          <Stack spacing={5} sx={{ maxWidth: "68ch" }}>
             <Text
               variant="overline"
               component="p"

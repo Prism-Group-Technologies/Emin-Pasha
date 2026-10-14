@@ -48,7 +48,7 @@ export const faqGuides: FaqGuide[] = [
     id: "events",
     eyebrow: "Gather",
     title: "Meetings, weddings & celebrations",
-    body: "Kudara Hall, private meeting rooms and the Equatorial Gardens — with rooms for your guests on the same estate.",
+    body: "Kudara Hall, The Boardroom and the Equatorial Gardens — with rooms for your guests on the same estate.",
     href: "/meetings-and-events",
     cta: "Plan an event",
     questionIds: ["weddings-and-conferences", "event-lead-time", "site-visit"],

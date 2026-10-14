@@ -10,7 +10,7 @@ import { culinaryStory, sections } from "@/containers/dining/copy";
 import { assets } from "@/content/assets";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 
-const asset = assets.find((item) => item.id === "dining-sir-samuel-baker");
+const asset = assets.find((item) => item.id === "dining-equatoria");
 
 /**
  * The kitchen story: the dumbwaiter, the tri-continental menu and the

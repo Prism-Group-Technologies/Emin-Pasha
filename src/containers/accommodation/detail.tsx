@@ -10,6 +10,7 @@ import { RoomDetailHero } from "@/containers/accommodation/organisms/RoomDetailH
 import { RoomGallery } from "@/containers/accommodation/organisms/RoomGallery";
 import { RoomInclusions } from "@/containers/accommodation/organisms/RoomInclusions";
 import { RoomPolicies } from "@/containers/accommodation/organisms/RoomPolicies";
+import { ArrivalStrip } from "@/containers/reception";
 import type { RoomCategory } from "@/schemas/content/roomCategory";
 
 /**
@@ -50,6 +51,7 @@ export function RoomDetailContainer({ room }: { room: RoomCategory }) {
       <RoomGallery roomId={room.id} roomName={room.name} motion={m.gallery} />
       <RoomDetailBody room={room} motion={m.body} />
       <RoomInclusions motion={m.inclusions} />
+      <ArrivalStrip motion={m.arrival} />
       <RoomPolicies motion={m.policies} />
       <PackagesSection motion={m.packages} />
       <GuestVoices motion={m.guestVoices} />

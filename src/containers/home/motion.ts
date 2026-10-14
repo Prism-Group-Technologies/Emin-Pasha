@@ -26,6 +26,7 @@ const SCROLL_ORDER = [
   "intro",
   "planYourVisit",
   "featureTiles",
+  "reception",
   "roomsRates",
   "story",
   "pillars",

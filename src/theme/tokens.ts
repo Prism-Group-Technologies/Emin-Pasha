@@ -122,6 +122,13 @@ export const motionTokens = {
   cardHover: 200,
   /** Image scale-up on hover inside `MediaFrame`. */
   imageZoom: 640,
+  /**
+   * The cross-fade a newly committed route enters on — see `RouteTransition`.
+   * Deliberately shorter than `contentReveal`: this is not a reveal, it is the
+   * acknowledgement that the page underneath has been replaced, and it must be
+   * over before the guest starts reading the hero.
+   */
+  routeFade: 220,
 } as const;
 
 /**

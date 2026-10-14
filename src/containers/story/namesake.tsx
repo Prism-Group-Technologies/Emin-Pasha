@@ -68,12 +68,7 @@ export function NamesakePageContainer() {
         heading={sections.namedAfter.heading}
       >
         <RelatedLinks
-          hrefs={[
-            "/dining/equatoria-restaurant-bar",
-            "/dining/sir-samuel-baker-fine-dining",
-            "/lounges-and-spaces",
-            "/accommodation",
-          ]}
+          hrefs={["/dining/equatoria-restaurant-bar", "/lounges-and-spaces", "/accommodation"]}
         />
       </SectionShell>
       <StoryClosingSection motion={alternatingDirection(6)} />

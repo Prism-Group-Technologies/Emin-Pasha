@@ -34,14 +34,14 @@ export const outletMeta = {
     facts: outletFacts[OUTLET_ID.equatoria],
   },
   [OUTLET_ID.rooftopTerrace]: {
-    kicker: "Rooftop bar",
-    cuisine: "Small plates & cocktails",
+    kicker: "Rooftop restaurant",
+    cuisine: "Grills, small plates & cocktails",
     setting: "Open-air terrace above the trees",
     dress: "Relaxed",
     stats: [
       { value: "16:00–23:00", label: "daily" },
       { value: "Sundown", label: "the table everyone wants" },
-      { value: "Small plates", label: "and a long drinks list" },
+      { value: "Full menu", label: "and a long drinks list" },
       { value: "City", label: "skyline views" },
     ],
     facts: outletFacts[OUTLET_ID.rooftopTerrace],

@@ -52,6 +52,7 @@ import type { SvgIconProps } from "@mui/material/SvgIcon";
 
 import { LEGAL_ICONS } from "@/components/atoms/iconSetLegal";
 import { LEISURE_ICONS } from "@/components/atoms/iconSetLeisure";
+import { SERVICE_ICONS } from "@/components/atoms/iconSetService";
 
 const ICONS = {
   accessible: AccessibleOutlined,
@@ -106,6 +107,7 @@ const ICONS = {
   x: X,
   ...LEISURE_ICONS,
   ...LEGAL_ICONS,
+  ...SERVICE_ICONS,
 } as const;
 
 export type IconName = keyof typeof ICONS;
@@ -115,7 +117,8 @@ export interface IconProps extends SvgIconProps {
 }
 
 /**
- * With `iconSetLeisure.ts`, the only place `@mui/icons-material` is imported —
+ * With `iconSetLeisure.ts`, `iconSetLegal.ts` and `iconSetService.ts`, the only
+ * place `@mui/icons-material` is imported —
  * a closed, typed name map.
  */
 export function Icon({ name, ...rest }: IconProps) {

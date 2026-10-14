@@ -34,7 +34,6 @@ describe("diningReservationSchema", () => {
   it("accepts each real outlet id", () => {
     for (const outlet of [
       "equatoria-restaurant-bar",
-      "sir-samuel-baker-fine-dining",
       "rooftop-terrace",
       "manutea-wine-whisky-lounge",
       "in-room-dining",

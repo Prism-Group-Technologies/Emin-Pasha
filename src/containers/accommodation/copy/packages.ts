@@ -22,11 +22,11 @@ export const stayPackages: StayPackageCopy[] = [
   {
     id: "nakasero-business",
     name: "The Nakasero Business Rate",
-    tagline: "A Superior Room set up to work from, in the embassy quarter.",
+    tagline: "An Apartment Room set up to work from, in the embassy quarter.",
     fromUgx: 350_000,
     forGuests: "Corporate & diplomatic travellers",
     includes: [
-      "Superior Room with a dedicated work area on unlimited cabled fibre",
+      "Apartment Room with a dedicated work area on unlimited cabled fibre",
       "24/7 room service and secure, manned parking",
       "LPO billing for local companies",
       "Checkout by 10:00, with late checkout on request",
@@ -57,7 +57,7 @@ export const stayPackages: StayPackageCopy[] = [
       "Complimentary chauffeured airport transfer, both ways",
       "Daily à la carte breakfast and unlimited fibre",
       "A workspace in the room and a weekly housekeeping rhythm",
-      "Superior Suite available for a private lounge area",
+      "VIP Suite available for a private lounge area",
     ],
     ctaLabel: "Talk to reservations",
   },

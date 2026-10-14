@@ -12,7 +12,7 @@ import type { RevealDirection } from "@/theme/motion";
  * The three categories this page is not about.
  *
  * A room page that ends without one is a dead end: a guest who has decided
- * the Superior Room is too much or too little has nowhere to go but the back
+ * the Apartment Room is too much or too little has nowhere to go but the back
  * button, and the browsing grid they came from is two navigations away. Three
  * cards and a link to the comparison keep that guest on the funnel.
  *

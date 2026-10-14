@@ -1,12 +1,11 @@
-import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { Button } from "@/components/atoms/Button";
-import { Chip } from "@/components/atoms/Chip";
 import { Link } from "@/components/atoms/Link";
-import { MediaFrame } from "@/components/atoms/MediaFrame";
 import { Text } from "@/components/atoms/Text";
 import { cardSurface } from "@/components/templates/sectionShellStyles";
 import { OUTLET_ASSET_IDS } from "@/containers/dining/constants";
+import { outletCarousel } from "@/containers/dining/copy/carousels";
+import { OutletCardMedia } from "@/containers/dining/molecules/OutletCardMedia";
 import { assets } from "@/content/assets";
 
 export interface DiningOutletCardProps {
@@ -43,25 +42,16 @@ export function DiningOutletCard({
   reserveHref,
 }: DiningOutletCardProps) {
   const asset = assets.find((item) => item.id === OUTLET_ASSET_IDS[id]);
+  const slides = outletCarousel(id);
 
   return (
     <Box component="article" sx={[cardSurface(), { p: 0, overflow: "hidden" }]}>
-      {asset && (
-        <MediaFrame hoverZoom sx={{ borderRadius: 0 }}>
-          <AssetImage asset={asset} sizes="(max-width: 900px) 100vw, 45vw" />
-          <Chip
-            label={kicker}
-            size="small"
-            sx={{
-              position: "absolute",
-              top: 12,
-              left: 12,
-              bgcolor: "background.default",
-              fontFamily: "var(--font-cartographic)",
-            }}
-          />
-        </MediaFrame>
-      )}
+      <OutletCardMedia
+        slides={slides}
+        fallback={asset}
+        kicker={kicker}
+        label={`${name} — photographs`}
+      />
 
       <Box sx={{ display: "flex", flexDirection: "column", gap: 2, p: { xs: 4, md: 5 }, flex: 1 }}>
         <Text variant="h3" component="h3">

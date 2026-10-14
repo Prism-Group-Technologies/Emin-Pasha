@@ -25,9 +25,9 @@ export interface MapEmbedProps {
  * swapping one for the other moves nothing — CLS stays at zero through the
  * interaction.
  *
- * TODO(EMIN-Q20): the embed is centred on the approved NAP address string,
- * not on a coordinate pin — the property's real coordinates are unresolved
- * and inventing them would put a fabricated fact in a live map.
+ * `mapUrl` is expected to be `lib/geo.ts`'s pinned embed URL. Both callers
+ * pass exactly that; nothing here geocodes an address, which is what used to
+ * leave the map unmarked.
  */
 export function MapEmbed({ asset, mapUrl, label, loadLabel }: MapEmbedProps) {
   const [loaded, setLoaded] = useState(false);
@@ -50,7 +50,10 @@ export function MapEmbed({ asset, mapUrl, label, loadLabel }: MapEmbedProps) {
 
   return (
     <Box sx={{ position: "relative", width: "100%" }}>
-      {asset && <AssetImage asset={asset} sizes="(max-width: 900px) 100vw, 50vw" />}
+      {/* The click here already has a job — it loads the live map. */}
+      {asset && (
+        <AssetImage asset={asset} sizes="(max-width: 900px) 100vw, 50vw" zoomable={false} />
+      )}
       <Box
         sx={{
           position: "absolute",

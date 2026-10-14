@@ -5,6 +5,7 @@ import { Text } from "@/components/atoms/Text";
 import { cardSurface } from "@/components/templates/sectionShellStyles";
 import { ROOM_ASSET_IDS, ROOM_POPULAR_ID } from "@/containers/accommodation/constants";
 import { roomTaglines } from "@/containers/accommodation/copy";
+import { ReserveRoomButton } from "@/containers/accommodation/molecules/ReserveRoomButton";
 import { RoomCardMedia } from "@/containers/accommodation/molecules/RoomCardMedia";
 import { assets } from "@/content/assets";
 import { ctas } from "@/content/ctas";
@@ -80,7 +81,12 @@ export function RoomCard({ room }: { room: RoomCategory }) {
         <Button href={href} variant="ghost">
           {view?.label ?? "View the room"}
         </Button>
-        {reserve?.href && <Button href={`${href}#book`}>{reserve.label}</Button>}
+        <ReserveRoomButton
+          roomId={room.id}
+          roomName={room.name}
+          rateUgx={room.rateUgx}
+          label={reserve?.label ?? "Reserve This Room"}
+        />
       </Box>
     </Box>
   );

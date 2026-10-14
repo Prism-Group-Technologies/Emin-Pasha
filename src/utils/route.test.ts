@@ -11,7 +11,7 @@ describe("isActiveRoute", () => {
   });
 
   it("marks a section current on its own detail routes", () => {
-    expect(isActiveRoute("/accommodation/superior-room", "/accommodation")).toBe(true);
+    expect(isActiveRoute("/accommodation/apartment-room", "/accommodation")).toBe(true);
     expect(isActiveRoute("/accommodation-extra", "/accommodation")).toBe(false);
   });
 });

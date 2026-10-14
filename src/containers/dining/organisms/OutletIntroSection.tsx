@@ -4,21 +4,21 @@ import { type OutletId } from "@/containers/dining/anchors";
 import { outletMeta } from "@/containers/dining/copy";
 import { OutletFactGrid } from "@/containers/dining/molecules/OutletFactGrid";
 import { OutletIntroCopy } from "@/containers/dining/molecules/OutletIntroCopy";
-import { OutletIntroRail } from "@/containers/dining/molecules/OutletIntroRail";
+import { OutletIntroMedia } from "@/containers/dining/molecules/OutletIntroMedia";
 import type { Outlet } from "@/schemas/content/outlet";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 
 /**
  * The outlet's opening block — the room, argued rather than captioned.
  *
- * The band is an asymmetric sticky-rail split, not the centred 1:1 grid it
- * used to be, and the reason is a content fact rather than a taste: the
- * approved §5 source gives `rooftop-terrace` and `in-room-dining` a
- * single-sentence description and no `namedForNote`, so `NamesakeNote`
- * self-hid and those two pages rendered two lines of text, vertically
- * centred, beside a full-height photograph. A pinned rail is height-
- * independent by construction — see `OutletIntroRail` — so no outlet can
- * out-run or under-run its own image again.
+ * The band is an asymmetric split, not the centred 1:1 grid it used to be,
+ * and the reason is a content fact rather than a taste: the approved §5 source
+ * gives `rooftop-terrace` and `in-room-dining` a single-sentence description
+ * and no `namedForNote`, so `NamesakeNote` self-hid and those two pages
+ * rendered two lines of text, vertically centred, beside a full-height
+ * photograph. `alignItems: start` plus a fixed-ratio carousel is
+ * height-independent by construction — see `OutletIntroMedia` — so no outlet
+ * can out-run or under-run its own image again.
  *
  * The copy column is also deeper. `copy/rooms.ts` adds two editorial
  * paragraphs and a three-line case per outlet (invented, labelled), the
@@ -29,7 +29,7 @@ import { type RevealDirection, oppositeOf } from "@/theme/motion";
  * same whether or not the source happens to record a namesake.
  *
  * This organism stays a layout: the reading order lives in `OutletIntroCopy`,
- * the rail's stickiness in `OutletIntroRail`, and the "Good to know" facts
+ * the carousel and hours in `OutletIntroMedia`, and the "Good to know" facts
  * still run full width beneath the pair, where four equal columns use the
  * whole measure.
  */
@@ -53,7 +53,7 @@ export function OutletIntroSection({
         }}
       >
         <OutletIntroCopy outlet={outlet} />
-        <OutletIntroRail outletId={id} mediaMotion={oppositeOf(motion)} />
+        <OutletIntroMedia outletId={id} mediaMotion={oppositeOf(motion)} />
       </Box>
 
       <Box sx={{ mt: { xs: 8, md: 10 } }}>
