@@ -45,7 +45,7 @@ const EVENTS_RELATED_HREFS = [
  *   related         — cross-sell into the rest of the estate
  *
  * Every capacity, package rate and delegate number is invented and labelled
- * "indicative" — see `containers/events/copy`. The venues, "three restaurants
+ * "indicative" — see `containers/events/copy`. The venues, "two restaurants
  * for catering", secure parking, on-site rooms and the §14 group terms are
  * the approved §7/§14 facts the page is built on.
  */

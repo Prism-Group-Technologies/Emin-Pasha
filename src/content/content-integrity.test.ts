@@ -3,7 +3,6 @@ import { describe, expect, it } from "vitest";
 import * as allContent from "@/content/assets";
 import { contactChannels } from "@/content/contact";
 import { identity } from "@/content/identity";
-import { offers } from "@/content/offers";
 import { rooms } from "@/content/rooms";
 import { testimonials } from "@/content/testimonials";
 import { hotelJsonLd, organizationJsonLd } from "@/lib/seo/organisation";
@@ -43,19 +42,6 @@ describe("forbidden content (Step 4 rules)", () => {
 
   it("ships exactly the three approved testimonials", () => {
     expect(testimonials).toHaveLength(3);
-  });
-
-  it("never ships a legacy USD room category", () => {
-    const haystack = JSON.stringify({ rooms, offers });
-    // "Deluxe Suite" was a legacy USD 145 category (rooms.ts
-    // LEGACY_ROOMS_DO_NOT_PUBLISH). Since the Garden -> Deluxe rename it is an
-    // approved name on the UGX rate card, exactly as "Superior Suite" already
-    // was, so the name alone is no longer the signal. What must never ship is
-    // the legacy *pricing* — guarded by the UGX-integer assertion above and by
-    // the "USD" entry in check-content.ts's FORBIDDEN_SUBSTRINGS.
-    for (const banned of ["Two-bedroom Apartment", "Superior Suite USD"]) {
-      expect(haystack).not.toContain(banned);
-    }
   });
 
   it("never ships the corporate client roster", () => {

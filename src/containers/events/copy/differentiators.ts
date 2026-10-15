@@ -10,7 +10,7 @@ export interface Differentiator {
 
 /**
  * Why organisers rebook. Each point ties back to an approved §7 fact — one
- * estate for venue, catering and rooms; three restaurants; the Equatorial
+ * estate for venue, catering and rooms; two restaurants; the Equatorial
  * Gardens; secure parking; Nakasero location; a dedicated F&B team — framed
  * as a buying reason rather than a feature list.
  */

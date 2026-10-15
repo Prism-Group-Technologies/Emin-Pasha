@@ -18,6 +18,7 @@ const SCROLL_ORDER = [
   "amenities",
   "comparison",
   "packages",
+  "arrival",
   "bookDirect",
   "booking",
   "guestVoices",

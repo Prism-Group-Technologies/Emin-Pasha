@@ -10,6 +10,7 @@ import { GuestVoices } from "@/containers/accommodation/organisms/GuestVoices";
 import { LocationSection } from "@/containers/accommodation/organisms/LocationSection";
 import { PackagesSection } from "@/containers/accommodation/organisms/PackagesSection";
 import { RoomsSection } from "@/containers/accommodation/organisms/RoomsSection";
+import { ArrivalStrip } from "@/containers/reception";
 import { accommodationPageIntro } from "@/content/rooms";
 
 /**
@@ -25,6 +26,9 @@ import { accommodationPageIntro } from "@/content/rooms";
  *   amenities     — what every room includes, then the wider estate
  *   comparison    — the four side by side, the "compare" anchor target
  *   packages      — four reasons to be here, priced from the rate card
+ *   arrival       — what happens when you actually turn up, and who is there
+ *                   at the hour you land. The last unanswered question before
+ *                   the booking widget
  *   book direct   — the answer to "should I use an aggregator instead?"
  *   booking       — check dates: the primary conversion surface, #book
  *   guest voices  — three attributed reviews, accommodation first
@@ -43,6 +47,7 @@ export function AccommodationContainer() {
       <AmenitiesSection motion={m.amenities} />
       <ComparisonSection motion={m.comparison} />
       <PackagesSection motion={m.packages} />
+      <ArrivalStrip motion={m.arrival} />
       <BookDirectSection motion={m.bookDirect} />
       <BookingSection motion={m.booking} />
       <GuestVoices motion={m.guestVoices} />

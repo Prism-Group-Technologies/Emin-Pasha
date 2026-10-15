@@ -32,7 +32,7 @@ import type { BookingSearch } from "@/schemas/booking";
  * room type selected, and copy the resulting URL. Add those keys to
  * `BOOKING_ENGINE_PARAMS`; they start flowing with no change to this file.
  * `roomTypeId` additionally needs a slug→engine-id map: the form currently
- * carries a content slug (`superior-room`), which is not what the engine
+ * carries a content slug (`apartment-room`), which is not what the engine
  * identifies a room type by.
  */
 export const DEEP_LINK_PARAMS: Readonly<Partial<Record<keyof DeepLinkFields, string>>> =

@@ -67,6 +67,20 @@ const envSchema = z.object({
   /** Serves /styleguide when "true"; 404s otherwise. Never on in production. */
   ENABLE_STYLEGUIDE: z.preprocess((value) => value === "true", z.boolean()).default(false),
 
+  /**
+   * Web3Forms access keys, one per approved inbox (EMIN-Q34). Optional and
+   * blank-tolerant for the same reason the YCS vars are: with neither set the
+   * forms fall back to the API routes, which log the enquiry and answer
+   * `pending`, so a missing key is a degraded delivery path and never a
+   * broken build.
+   *
+   * Declared here for documentation and validation only. The browser reads
+   * them through `lib/web3forms/keys.ts`, which must reference
+   * `process.env.NEXT_PUBLIC_*` directly for Next to inline them.
+   */
+  NEXT_PUBLIC_WEB3FORMS_KEY_INFO: blankAsUnset(z.string().min(1)),
+  NEXT_PUBLIC_WEB3FORMS_KEY_RESERVATIONS: blankAsUnset(z.string().min(1)),
+
   YCS_ENVIRONMENT: z
     .preprocess((value) => (value === "" ? undefined : value), z.enum(["sandbox", "live"]))
     .default("sandbox"),

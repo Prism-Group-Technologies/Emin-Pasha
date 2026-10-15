@@ -14,15 +14,13 @@ import { identity } from "@/content/identity";
 import { shell } from "@/content/shell";
 import { site } from "@/content/site";
 import { directionsUrl, emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { mapEmbedUrl, placeUrl } from "@/lib/geo";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 
 const mapAsset = assets.find((asset) => asset.id === "contact-static-map");
 
-/** Google's documented embed form, keyed on the approved NAP address. */
-const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(identity.address)}&output=embed`;
-
 const CONTACT_ROWS = [
-  { icon: "location", href: directionsUrl, text: identity.address },
+  { icon: "location", href: placeUrl, text: identity.address },
   { icon: "phone", href: telephoneUrl, text: identity.telephone },
   { icon: "mail", href: emailUrl, text: identity.email },
   { icon: "whatsapp", href: whatsappUrl, text: identity.whatsapp.display },
@@ -38,6 +36,10 @@ const CONTACT_ROWS = [
  * Each contact row is an icon plus a live link rather than plain text: on the
  * device most of this traffic arrives on, a tappable number is the difference
  * between an enquiry and a copy-paste.
+ *
+ * The map is pinned on the hotel's coordinate from `lib/geo.ts`, not geocoded
+ * from the address: the P.O. Box in the NAP string defeated Google's
+ * geocoder, which left this block showing an unmarked map of Kampala.
  */
 export function LocationBlock({ motion = "up" }: { motion?: RevealDirection }) {
   return (
@@ -111,7 +113,7 @@ export function LocationBlock({ motion = "up" }: { motion?: RevealDirection }) {
         <Reveal index={1} direction={oppositeOf(motion)}>
           <MapEmbed
             asset={mapAsset}
-            mapUrl={embedUrl}
+            mapUrl={mapEmbedUrl}
             label={identity.address}
             loadLabel={shell.stickyBar.directions}
           />

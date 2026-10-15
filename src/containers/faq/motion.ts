@@ -5,7 +5,15 @@ import { type RevealDirection, alternatingDirection } from "@/theme/motion";
  * `containers/offers/motion.ts`. The hero is absent on purpose: it is above
  * the fold, so a viewport-keyed reveal would only risk flashing the LCP.
  */
-const SCROLL_ORDER = ["quick", "questions", "guides", "voices", "closing", "related"] as const;
+const SCROLL_ORDER = [
+  "quick",
+  "questions",
+  "reception",
+  "guides",
+  "voices",
+  "closing",
+  "related",
+] as const;
 
 export type FaqSectionId = (typeof SCROLL_ORDER)[number];
 

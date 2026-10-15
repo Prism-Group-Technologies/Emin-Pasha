@@ -6,6 +6,7 @@ import Container from "@mui/material/Container";
 import { SectionHeader } from "@/components/templates/SectionHeader";
 import { type SectionVariant, sectionRoot } from "@/components/templates/sectionShellStyles";
 import { type RevealDirection, revealSx } from "@/theme/motion";
+import { zoomGroup } from "@/utils/imageZoom";
 
 export interface SectionShellProps {
   children: ReactNode;
@@ -49,8 +50,9 @@ export interface SectionShellProps {
  *
  * The eyebrow is rendered in the cartographic face as "§ LABEL", the
  * motif-only use of the signature element sanctioned by §B.6 — never a
- * fabricated coordinate, which stays reserved for the Contact page once
- * TODO(EMIN-Q20) is answered.
+ * coordinate. The property's real coordinate now exists in `lib/geo.ts`
+ * (EMIN-Q20 closed), but it stays reserved for the Contact page's map rather
+ * than being sprinkled through section headers as decoration.
  *
  * `description`, `action`, `align` and `topRule` are additive: every existing
  * caller that omits them renders exactly as before. They exist so a marketing
@@ -126,7 +128,11 @@ export function SectionShell(props: SectionShellProps) {
   );
 
   return (
-    <Box component="section" id={id} sx={sectionRoot(variant, topRule)}>
+    // `zoomGroup` makes the section the default boundary for the image modal:
+    // arrows move through the photographs of the band the visitor was reading,
+    // not through every picture on the route. A tighter wrapper that spreads
+    // `zoomGroup` of its own wins, because `closest` stops at the first match.
+    <Box component="section" id={id} {...zoomGroup} sx={sectionRoot(variant, topRule)}>
       {variant === "bleed" ? body : <Container maxWidth="xl">{body}</Container>}
     </Box>
   );

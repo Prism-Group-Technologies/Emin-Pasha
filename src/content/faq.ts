@@ -14,6 +14,22 @@ const raw: FaqItem[] = [
     answer:
       "Check-in from 14h00, check-out strictly by 10h00. Early check-in and late check-out are available on request, subject to availability and charges.",
   },
+  // Confirmed by the hotel for the 2026 reception build, not drawn from
+  // §15 of the source document — the only two entries in this file with a
+  // provenance other than "publish as written". Both state facts the hotel
+  // verified directly; neither may be edited without re-confirming them.
+  {
+    id: "reception-hours",
+    question: "Is reception staffed 24 hours?",
+    answer:
+      "Yes. The front desk is staffed around the clock, every day. Whatever time your flight lands, someone is at the desk to check you in, carry your bags and answer a question.",
+  },
+  {
+    id: "reception-services",
+    question: "What can reception arrange for me?",
+    answer:
+      "Check-in and check-out, including early arrival and late departure; tables in the restaurants, spa treatments and event enquiries; tours, excursions and guidance on the city; luggage storage, currency exchange, laundry and printing; and transport — airport transfers, taxis, car hire and drivers. If it is easier to ask than to arrange yourself, ask at the desk.",
+  },
   {
     id: "airport-transfers",
     question: "Do you offer airport transfers?",
@@ -61,7 +77,7 @@ const raw: FaqItem[] = [
     id: "weddings-and-conferences",
     question: "Do you host weddings and conferences?",
     answer:
-      "Yes. Kudara Hall for conferences and corporate events, private meeting rooms for board-level sessions, and the Equatorial Gardens and wider grounds for weddings, receptions and outdoor events — with accommodation, three restaurants and a dedicated F&B support team on site.",
+      "Yes. Kudara Hall for conferences and corporate events, The Boardroom for board-level sessions, and the Equatorial Gardens and wider grounds for weddings, receptions and outdoor events — with accommodation, two restaurants and a dedicated F&B support team on site.",
   },
   {
     id: "payment-methods",

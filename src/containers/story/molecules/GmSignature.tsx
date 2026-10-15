@@ -49,7 +49,9 @@ export function GmSignature({ dense = false }: GmSignatureProps) {
           }}
         >
           <Box sx={{ borderRadius: `${radiusTokens.md}px`, overflow: "hidden" }}>
-            <AssetImage asset={gmPhoto} sizes="(max-width: 900px) 240px, 320px" />
+            {/* Matted and framed as a signature detail beside the letter,
+                not a photograph offered for closer inspection. */}
+            <AssetImage asset={gmPhoto} sizes="(max-width: 900px) 240px, 320px" zoomable={false} />
           </Box>
         </Box>
       )}

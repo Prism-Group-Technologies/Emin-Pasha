@@ -18,7 +18,7 @@ export interface OutletIntro {
  *
  * Traceability, same rule as the rest of this folder: every structural claim
  * restates something already approved — the all-day room and its terrace, the
- * fine-dining tasting sequence, the rooftop's panoramic views, Manutea's
+ * rooftop's panoramic views and its full menu, Manutea's
  * curated wines and whiskies, and 24/7 in-room dining with a Special-Select
  * menu are all in `content/dining.ts`; the dumbwaiter and the Asian/European/
  * African influences are in `diningOverview`. Times and covers restate the
@@ -43,7 +43,7 @@ export const outletIntros = {
     ],
     whyCome: [
       "The highest table on the property, and the only one with the skyline in it.",
-      "Small plates and cocktails rather than a sit-down menu — stay an hour or the evening.",
+      "A full menu and a long drinks list, served above the treeline — stay an hour or the evening.",
       "Walk-ins welcome, though the sundown tables go first.",
     ],
   },

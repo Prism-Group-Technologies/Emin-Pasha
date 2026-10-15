@@ -8,7 +8,7 @@ export interface EventFaqItem {
 
 /**
  * The questions the events desk fields most. Answers stay inside what the
- * source supports — secure parking, three restaurants for catering, on-site
+ * source supports — secure parking, two restaurants for catering, on-site
  * accommodation, the §14 group booking terms (14-day confirmation, rooming
  * lists 7 days out, 50% deposit above 10 rooms) — and flag anything not yet
  * confirmed (exact capacities, response-time SLA, cancellation scale) rather
@@ -31,7 +31,7 @@ export const eventFaq: EventFaqItem[] = [
     id: "catering",
     question: "Do we have to use your catering?",
     answer:
-      "Yes — and it is a feature, not a restriction. All food and drink come from the hotel's three restaurants, so there is no external caterer's mark-up, tastings happen on site, and dietary requirements are handled by the kitchen that will cook on the day.",
+      "Yes — and it is a feature, not a restriction. All food and drink come from the hotel's own restaurants, so there is no external caterer's mark-up, tastings happen on site, and dietary requirements are handled by the kitchen that will cook on the day.",
   },
   {
     id: "av",

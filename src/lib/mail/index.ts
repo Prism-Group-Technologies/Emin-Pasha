@@ -1,44 +1,20 @@
 import "server-only";
 
-import { identity } from "@/content/identity";
 import { consoleAdapter } from "@/lib/mail/consoleAdapter";
-import type { EnquiryKind, MailAdapter, MailMessage, MailResult } from "@/lib/mail/types";
+import type { MailAdapter, MailMessage, MailResult } from "@/lib/mail/types";
 
 export type { EnquiryKind, MailMessage, MailResult } from "@/lib/mail/types";
+/** Re-exported so server callers keep importing routing from `@/lib/mail`. */
+export { inboxFor } from "@/lib/mail/inbox";
 
 /**
- * Department routing, from the approved §1 NAP and §9 contact channels — the
- * source lists exactly two addresses, so nothing invents a third
- * (`events@`, `spa@` and the like do not exist).
- */
-const INBOX: Record<EnquiryKind, string> = {
-  booking: identity.reservationsEmail,
-  rfp: identity.email,
-  spa: identity.email,
-  // Table reservations are handled by the reservations desk, the same team
-  // that fields room bookings — no separate dining@ address exists (§1).
-  dining: identity.reservationsEmail,
-  // "Stay in the story" enquiries are room-booking leads — same desk, same
-  // reasoning as dining. No separate address exists (§1).
-  story: identity.reservationsEmail,
-  // Transfers are arranged by reservations — the approved §8 copy says so
-  // ("Arrange transfers at reservations@eminpasha.com").
-  transfer: identity.reservationsEmail,
-  // Lounge tables, experiences and photoshoots go to reservations by default;
-  // the spaces route overrides `to` for private hire, which the events team
-  // on the general inbox handles (the same split as `rfp`).
-  spaces: identity.reservationsEmail,
-  contact: identity.email,
-  newsletter: identity.email,
-};
-
-export function inboxFor(kind: EnquiryKind): string {
-  return INBOX[kind];
-}
-
-/**
- * The active adapter. Swapping providers is this one line — everything else
- * depends on `MailAdapter`, not on a vendor (TODO(EMIN-Q34)).
+ * The active adapter, used only when no Web3Forms access key is configured.
+ *
+ * Submission is client-side now (`lib/submitEnquiry.ts` posts straight to
+ * Web3Forms), so in a configured environment this adapter is never reached.
+ * It stays as the honest fallback: with no key set the forms still post to
+ * these routes, the enquiry is logged, and the UI shows its `pending` copy
+ * rather than claiming an email was sent (CLAUDE.md §3.5).
  */
 const adapter: MailAdapter = consoleAdapter;
 

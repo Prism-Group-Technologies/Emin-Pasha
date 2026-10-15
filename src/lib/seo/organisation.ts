@@ -3,6 +3,7 @@ import { identity } from "@/content/identity";
 import { rooms } from "@/content/rooms";
 import { socialLinks } from "@/content/social";
 import { spa } from "@/content/wellness";
+import { geoJsonLd, placeUrl } from "@/lib/geo";
 
 const address = {
   "@type": "PostalAddress",
@@ -25,6 +26,15 @@ const lowestRate = Math.min(...rooms.map((room) => room.rateUgx));
  * until verified reviews exist, and §0.7 forbids inventing a star rating.
  * `priceRange` is the real UGX floor from the approved rate card, not a
  * `$$$`-style guess.
+ *
+ * `geo` + `hasMap` were blocked on EMIN-Q20 and are now populated from
+ * `lib/geo.ts`. They matter more here than anywhere: `address` alone leaves
+ * Google to geocode a string containing a P.O. Box — the same thing that left
+ * the on-page maps unpinned — whereas an explicit `GeoCoordinates` states the
+ * position outright, which is what a map pack and a knowledge panel key on.
+ * `hasMap` is the property's own Maps listing rather than a coordinate link,
+ * so the entity declared here and the entity Google already ranks are
+ * unambiguously the same one.
  */
 export function hotelJsonLd() {
   return {
@@ -38,6 +48,8 @@ export function hotelJsonLd() {
     telephone: identity.telephone,
     email: identity.email,
     address,
+    geo: geoJsonLd,
+    hasMap: placeUrl,
     sameAs,
     currenciesAccepted: identity.currency,
     priceRange: `${identity.currency} ${lowestRate.toLocaleString("en-UG")}+`,

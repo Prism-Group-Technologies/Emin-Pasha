@@ -13,9 +13,10 @@ import { SocialProof } from "@/containers/home/organisms/SocialProof";
 import { StorySection } from "@/containers/home/organisms/StorySection";
 import { TrustBar } from "@/containers/home/organisms/TrustBar";
 import { WhyBookDirect } from "@/containers/home/organisms/WhyBookDirect";
+import { ReceptionBand } from "@/containers/reception";
 
 /**
- * The homepage. A Server Component that composes thirteen section organisms
+ * The homepage. A Server Component that composes fourteen section organisms
  * and holds no logic of its own — the only client islands on the page are the
  * hero video layer, the hero booking widget, the Plan Your Visit tabs and the
  * click-to-load map. The sticky booking bar is mounted once in the root layout,
@@ -42,6 +43,9 @@ import { WhyBookDirect } from "@/containers/home/organisms/WhyBookDirect";
  *   plan visit    — the fork: stay / host an event / spend the day. The
  *                   earliest possible conversion point for all three audiences
  *   estate        — six reasons to explore further
+ *   reception     — who is actually going to look after you, and for how many
+ *                   hours a day. The objection that sits between wanting the
+ *                   place and paying for it
  *   rooms & rates — the price, published, rather than hidden behind a flow
  *   story         — the thing no competitor can copy, and the site's link magnet
  *   pillars       — the brand, for anyone still reading
@@ -64,6 +68,7 @@ export function HomeContainer() {
       <IntroBlock motion={m.intro} />
       <PlanYourVisit motion={m.planYourVisit} />
       <FeatureTiles motion={m.featureTiles} />
+      <ReceptionBand motion={m.reception} />
       <RoomsRates motion={m.roomsRates} />
       <StorySection motion={m.story} />
       <PillarsSection motion={m.pillars} />

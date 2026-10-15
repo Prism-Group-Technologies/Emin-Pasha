@@ -61,15 +61,12 @@ export const corporateOffers: OfferItem[] = [
     category: OFFER_CATEGORY.corporate,
     title: "Corporate Stay Rate",
     summary: "A standing company rate for teams who come to Kampala often.",
-    inclusions: [
-      "20% off the best available room rate",
-      "Express check-in and 2pm late check-out",
-    ],
+    inclusions: ["20% off the best available room rate", "Express check-in and 2pm late check-out"],
     priceUgx: 360_000,
     wasPriceUgx: 450_000,
     priceUnit: "per night, from",
     bookBy: "Company agreements for 2027 open now",
-    assetId: "meetings-private-rooms",
+    assetId: "meetings-boardroom",
   },
 ];
 
@@ -81,7 +78,7 @@ export const seasonalOffers: OfferItem[] = [
     summary: "Two nights over Christmas with a candlelit Eve dinner and a long Christmas lunch.",
     inclusions: [
       "Two nights, 24–26 December",
-      "Christmas Eve dinner at Sir Samuel Baker",
+      "Christmas Eve dinner at Equatoria",
       "Christmas Day family lunch and carols in the garden",
     ],
     priceUgx: 1_950_000,
@@ -89,7 +86,7 @@ export const seasonalOffers: OfferItem[] = [
     priceUnit: "per stay, for two",
     bookBy: "Book by 10 Dec 2026",
     urgency: "Few rooms left",
-    assetId: "dining-sir-samuel-baker",
+    assetId: "dining-equatoria",
   },
   {
     id: "new-years-eve-gala",

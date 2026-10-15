@@ -11,21 +11,26 @@ import { TravelTimeList } from "@/containers/contact/molecules/TravelTimeList";
 import { ContactDetails } from "@/containers/contact/organisms/ContactDetails";
 import { identity } from "@/content/identity";
 import { directionsUrl } from "@/lib/directions";
+import { mapEmbedUrl, placeUrl } from "@/lib/geo";
 import type { RevealDirection } from "@/theme/motion";
-
-/**
- * Name + approved address, so Google resolves the hotel's own listing rather
- * than a bare street. Still the NAP string, never an invented coordinate
- * (TODO(EMIN-Q20)).
- */
-const MAP_QUERY = encodeURIComponent(`${identity.name}, ${identity.address}`);
-const EMBED_URL = `https://www.google.com/maps?q=${MAP_QUERY}&output=embed`;
 
 /**
  * Where the hotel is and how to get to it: the live map on the wide side,
  * and beside it the machine-readable NAP, a directions button and the drive
  * times from the places guests actually come from. Map first on phones, since
  * it is what a visitor scrolling here is looking for.
+ *
+ * The embed URL is no longer built here. This section used to geocode
+ * `"<name>, <address>"` as free text, and because the approved address
+ * carries a P.O. Box, Google could not resolve it to a building: the iframe
+ * rendered a view of Kampala with no marker on it — a map that answers
+ * "where is this hotel" with a shrug. `lib/geo.ts` now holds the hotel's
+ * coordinate and the pinned URL derived from it, shared with the home page
+ * and `/our-story/the-hotel` so all three cannot drift apart again.
+ *
+ * `title` keeps the full NAP string: it is the iframe's accessible name, read
+ * aloud by a screen reader, where "Plot 27 Akii Bua Road" is worth far more
+ * than a pair of decimals.
  */
 export function GettingHereSection({ motion = "up" }: { motion?: RevealDirection }) {
   const copy = sections.gettingHere;
@@ -48,8 +53,8 @@ export function GettingHereSection({ motion = "up" }: { motion?: RevealDirection
         }}
       >
         <LiveMap
-          embedUrl={EMBED_URL}
-          openUrl={directionsUrl}
+          embedUrl={mapEmbedUrl}
+          openUrl={placeUrl}
           title={`Map of ${identity.name}, ${identity.address}`}
           openLabel={copy.openMap}
           loadingLabel={copy.mapLoading}

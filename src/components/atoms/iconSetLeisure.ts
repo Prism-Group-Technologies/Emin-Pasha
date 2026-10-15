@@ -9,6 +9,7 @@ import LocalCafeOutlined from "@mui/icons-material/LocalCafeOutlined";
 import LogoutOutlined from "@mui/icons-material/LogoutOutlined";
 import LuggageOutlined from "@mui/icons-material/LuggageOutlined";
 import MusicNoteOutlined from "@mui/icons-material/MusicNoteOutlined";
+import OpenInFullOutlined from "@mui/icons-material/OpenInFullOutlined";
 import ParkOutlined from "@mui/icons-material/ParkOutlined";
 import PaymentsOutlined from "@mui/icons-material/PaymentsOutlined";
 import PhotoCameraOutlined from "@mui/icons-material/PhotoCameraOutlined";
@@ -35,6 +36,7 @@ export const LEISURE_ICONS = {
   "check-out": LogoutOutlined,
   diamond: DiamondOutlined,
   fireplace: FireplaceOutlined,
+  "open-in-full": OpenInFullOutlined,
   garden: ParkOutlined,
   help: HelpOutline,
   key: KeyOutlined,

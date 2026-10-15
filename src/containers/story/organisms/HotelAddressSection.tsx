@@ -12,17 +12,13 @@ import { assets } from "@/content/assets";
 import { identity } from "@/content/identity";
 import { shell } from "@/content/shell";
 import { directionsUrl } from "@/lib/directions";
+import { mapEmbedUrl } from "@/lib/geo";
 import { type RevealDirection, oppositeOf } from "@/theme/motion";
 import { radiusTokens } from "@/theme/tokens";
 
 const { location } = theHotelPageCopy;
 
 const mapAsset = assets.find((asset) => asset.id === "contact-static-map");
-
-/** Google's documented embed form, keyed on the approved NAP address — no
- *  coordinate pin (EMIN-Q20), the same construction the home `LocationBlock`
- *  uses. */
-const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(identity.address)}&output=embed`;
 
 /**
  * The left column: the positioning prose and the crawlable NAP gathered into a
@@ -110,7 +106,8 @@ function VisitPanel() {
  * `identity.address` and `identity.neighbourhood` render verbatim from
  * `content/identity.ts` — the same strings the footer and every JSON-LD
  * builder read; the framing prose is `containers/story/copy`, labelled and
- * outside the governed layer.
+ * outside the governed layer. The map's URL comes from `lib/geo.ts`, shared
+ * with the home page and the contact page so one coordinate serves all three.
  */
 export function HotelAddressSection({ motion = "up" }: { motion?: RevealDirection }) {
   return (
@@ -136,7 +133,7 @@ export function HotelAddressSection({ motion = "up" }: { motion?: RevealDirectio
         <Reveal index={1} direction={oppositeOf(motion)}>
           <MapEmbed
             asset={mapAsset}
-            mapUrl={embedUrl}
+            mapUrl={mapEmbedUrl}
             label={identity.address}
             loadLabel={shell.stickyBar.directions}
           />

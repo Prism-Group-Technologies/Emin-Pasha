@@ -85,7 +85,7 @@ export const planPaths: PlanPathCopy[] = [
     points: [
       "300ft pool and gardens, open to the public",
       "Turkish bath, tailored massage and sea-salt treatments daily",
-      "Three restaurants, two bars and a rooftop terrace",
+      "Two restaurants and a wine and whisky lounge",
     ],
     primary: { label: "Book a Treatment", href: "/contact" },
     secondary: { label: "See What's On", href: "/offers" },

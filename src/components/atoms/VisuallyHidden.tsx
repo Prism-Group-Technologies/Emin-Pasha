@@ -5,9 +5,23 @@ import type { ReactNode } from "react";
  * none`, which removes it from the accessibility tree too). Plain inline
  * style, not `sx`: this never needs a theme value.
  */
-export function VisuallyHidden({ children }: { children: ReactNode }) {
+export interface VisuallyHiddenProps {
+  children: ReactNode;
+  /**
+   * Turns the span into a live region, for text that exists only to be
+   * announced — a filtered result count, a form's success line.
+   *
+   * Opt-in: a live region that is mounted on every use of this atom would
+   * have assistive tech announce every piece of hidden supplementary text on
+   * the site, including the new-tab notes on every external link.
+   */
+  live?: "polite" | "assertive";
+}
+
+export function VisuallyHidden({ children, live }: VisuallyHiddenProps) {
   return (
     <span
+      aria-live={live}
       style={{
         position: "absolute",
         width: 1,

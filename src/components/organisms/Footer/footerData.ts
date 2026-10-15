@@ -5,7 +5,8 @@ import { offers } from "@/content/offers";
 import { shell } from "@/content/shell";
 import { socialLinks } from "@/content/social";
 import { spa } from "@/content/wellness";
-import { directionsUrl, emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { emailUrl, telephoneUrl, whatsappUrl } from "@/lib/directions";
+import { placeUrl } from "@/lib/geo";
 
 export interface FooterLinkItem {
   href: string;
@@ -99,7 +100,7 @@ const social: FooterSocialLink[] = socialLinks.flatMap((link) =>
 );
 
 const napItems: FooterLinkItem[] = [
-  { href: directionsUrl, label: identity.address, external: true },
+  { href: placeUrl, label: identity.address, external: true },
   { href: telephoneUrl, label: identity.telephone, external: true },
   { href: emailUrl, label: identity.email, external: true },
   {

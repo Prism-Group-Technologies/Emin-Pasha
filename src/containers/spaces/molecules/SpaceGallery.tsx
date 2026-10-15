@@ -2,17 +2,23 @@ import { AssetImage } from "@/components/atoms/AssetImage";
 import { Box } from "@/components/atoms/Box";
 import { MediaFrame } from "@/components/atoms/MediaFrame";
 import { spacesAsset } from "@/containers/spaces/copy/media";
+import { zoomGroup } from "@/utils/imageZoom";
 
 /**
  * A three-frame mosaic for one space: a wide lead image over two square
  * supporting frames. Each slot holds its real aspect ratio through
  * `AssetImage`, so real photography drops in with no layout shift.
+ *
+ * Its own zoom group: the three frames are one space shot three ways, so the
+ * modal's arrows should walk that set rather than wander into the cards
+ * further down the band.
  */
 export function SpaceGallery({ assetIds }: { assetIds: readonly [string, string, string] }) {
   const [lead, ...supporting] = assetIds.map((id) => spacesAsset(id));
 
   return (
     <Box
+      {...zoomGroup}
       sx={{
         display: "grid",
         gap: { xs: 2, md: 3 },

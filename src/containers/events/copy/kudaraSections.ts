@@ -15,7 +15,7 @@ export const kudaraSections = {
     eyebrow: "§ THE SPACE, SET",
     heading: "Six ways to lay the room",
     description:
-      "The floor is column-free, so the seating plan is a choice, not a compromise. Indicative maximums per layout — your exact figure is confirmed on the proposal.",
+      "The floor is column-free, so the seating plan is a choice, not a compromise — including sectioning the hall for syndicate breakouts beside the plenary. Indicative maximums per layout — your exact figure is confirmed on the proposal.",
   },
   production: {
     eyebrow: "§ STAGE & PRODUCTION",

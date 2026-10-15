@@ -5,12 +5,12 @@ import { meetingsPageIntro } from "@/content/meetings";
 import { eventVenueJsonLd } from "@/lib/seo/eventVenue";
 
 /** Verified inclusions only — no capacity figure exists (§0.7). */
-const AMENITIES = ["Secure parking", "Three restaurants for catering", "Accommodation on site"];
+const AMENITIES = ["Secure parking", "Two restaurants for catering", "Accommodation on site"];
 
 export const metadata: Metadata = {
   title: "Conference Venue Kampala | Kudara Hall, Emin Pasha",
   description:
-    "Kudara Hall — a state-of-the-art conference and events venue in Nakasero, Kampala. Secure parking, three restaurants for catering and rooms on site.",
+    "Kudara Hall — a state-of-the-art conference and events venue in Nakasero, Kampala. Secure parking, two restaurants for catering and rooms on site.",
   alternates: { canonical: "/kudara-hall" },
 };
 

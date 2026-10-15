@@ -6,19 +6,19 @@ const raw: SeoMeta[] = [
     page: "home",
     title: "Emin Pasha Hotel & Spa | Boutique Hotel Kampala",
     description:
-      "Kampala's distinguished boutique hotel in Nakasero. Gardens, spa, three restaurants and a 300ft pool. Rooms from UGX 250,000. Book direct.",
+      "Kampala's distinguished boutique hotel in Nakasero. Gardens, spa, two restaurants and a 300ft pool. Rooms from UGX 250,000. Book direct.",
   },
   {
     page: "accommodation",
     title: "Rooms & Suites | Emin Pasha Hotel Kampala",
     description:
-      "Superior Rooms, Deluxe Rooms and Suites from UGX 250,000 per night. Fibre internet, 24/7 room service and à la carte breakfast included.",
+      "Apartment Rooms, Deluxe Rooms and Suites from UGX 250,000 per night. Fibre internet, 24/7 room service and à la carte breakfast included.",
   },
   {
     page: "dining",
     title: "Restaurants & Bars | Emin Pasha Hotel Kampala",
     description:
-      "Three restaurants and two bars in Nakasero. Asian, European and African influences, fine dining and a rooftop terrace with city views.",
+      "Two restaurants and a wine and whisky lounge in Nakasero. Asian, European and African influences, and a rooftop terrace with city views.",
   },
   {
     page: "spa",
@@ -30,7 +30,7 @@ const raw: SeoMeta[] = [
     page: "meetings",
     title: "Conference & Event Venue | Emin Pasha Kampala",
     description:
-      "Kudara Hall, private meeting rooms and the Equatorial Gardens. Kampala's most characterful venue for conferences, launches and weddings.",
+      "Kudara Hall, The Boardroom and the Equatorial Gardens. Kampala's most characterful venue for conferences, launches and weddings.",
   },
   {
     page: "weddings",
@@ -77,7 +77,7 @@ export const keywordClusters = {
     "conference venue Kampala",
     "wedding venue Kampala",
     "hotel near Entebbe airport transfer",
-    "fine dining Kampala",
+    "rooftop restaurant Kampala",
     "rooftop bar Kampala",
   ],
   longTail: [

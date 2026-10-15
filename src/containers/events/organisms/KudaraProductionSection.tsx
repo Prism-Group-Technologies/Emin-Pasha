@@ -3,7 +3,7 @@ import { Reveal } from "@/components/atoms/Reveal";
 import { Text } from "@/components/atoms/Text";
 import { SectionShell } from "@/components/templates/SectionShell";
 import { kudaraProduction, kudaraProductionNote, kudaraSections } from "@/containers/events/copy";
-import { KudaraSpecGroup } from "@/containers/events/molecules/KudaraSpecGroup";
+import { SpecGroupCard } from "@/containers/events/molecules/SpecGroupCard";
 import type { RevealDirection } from "@/theme/motion";
 
 const { production } = kudaraSections;
@@ -36,7 +36,7 @@ export function KudaraProductionSection({ motion = "up" }: { motion?: RevealDire
       >
         {kudaraProduction.map((group, index) => (
           <Reveal key={group.id} index={index} fill>
-            <KudaraSpecGroup group={group} />
+            <SpecGroupCard group={group} />
           </Reveal>
         ))}
       </Box>

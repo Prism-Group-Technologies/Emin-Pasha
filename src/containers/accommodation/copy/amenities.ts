@@ -68,7 +68,7 @@ export const estateAmenities: AmenityCopy[] = [
   },
   {
     icon: "restaurant",
-    title: "Three restaurants, two bars",
+    title: "Two restaurants and a lounge",
     description: "Asian, European and African influences, plus a rooftop terrace over the gardens.",
   },
   {

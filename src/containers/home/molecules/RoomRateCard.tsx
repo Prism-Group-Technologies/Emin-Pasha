@@ -3,6 +3,7 @@ import { Box } from "@/components/atoms/Box";
 import { Icon } from "@/components/atoms/Icon";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
+import { ZoomTrigger, zoomTriggerHostSx } from "@/components/molecules/ZoomTrigger";
 import { cardMedia, cardSurface } from "@/components/templates/sectionShellStyles";
 import { roomsSection } from "@/containers/home/copy";
 import type { AssetRef } from "@/schemas/content/assetRef";
@@ -70,63 +71,68 @@ export function RoomRateCard({
   imageSizes = "(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 25vw",
 }: RoomRateCardProps) {
   return (
-    <Link
-      href={href}
-      underline="none"
-      sx={[
-        cardSurface(),
-        {
-          color: "text.primary",
-          "&:hover .rate-cta, &:focus-visible .rate-cta": { gap: 3 },
-        },
-      ]}
-    >
-      {image && (
-        <Box sx={cardMedia()}>
-          <AssetImage asset={image} sizes={imageSizes} />
-        </Box>
-      )}
-      <Text
-        variant="overline"
-        component="p"
-        sx={{ fontFamily: "var(--font-cartographic)", color: "primary.main", mb: 2 }}
+    // The whole card is the link to the room, so the photograph cannot also be
+    // a button — it gets a corner control instead. See `ZoomTrigger`.
+    <Box sx={zoomTriggerHostSx}>
+      <Link
+        href={href}
+        underline="none"
+        sx={[
+          cardSurface(),
+          {
+            color: "text.primary",
+            "&:hover .rate-cta, &:focus-visible .rate-cta": { gap: 3 },
+          },
+        ]}
       >
-        {capacity}
-      </Text>
-      <Text variant="h3" component="h3" sx={{ mb: 3 }}>
-        {name}
-      </Text>
-      {tagline && (
-        <Text variant="body2" color="text.secondary" sx={{ mb: 3, textWrap: "pretty" }}>
-          {tagline}
-        </Text>
-      )}
-      <Text
-        variant="body2"
-        sx={{ mb: 5, pb: 4, borderBottom: "1px solid", borderColor: "divider", opacity: 0.8 }}
-      >
-        {sellTo}
-      </Text>
-
-      <Box sx={{ mt: "auto", display: "grid", gap: 2 }}>
+        {image && (
+          <Box sx={cardMedia()}>
+            <AssetImage asset={image} sizes={imageSizes} zoomable={false} />
+          </Box>
+        )}
         <Text
           variant="overline"
           component="p"
-          sx={{ color: "text.secondary", fontFamily: "var(--font-cartographic)" }}
+          sx={{ fontFamily: "var(--font-cartographic)", color: "primary.main", mb: 2 }}
         >
-          {roomsSection.fromLabel}
+          {capacity}
         </Text>
-        <Text component="p" sx={rateSx}>
-          {formatUgx(rateUgx)}
+        <Text variant="h3" component="h3" sx={{ mb: 3 }}>
+          {name}
         </Text>
-        <Text variant="body2" color="text.secondary">
-          {roomsSection.rateNote}
+        {tagline && (
+          <Text variant="body2" color="text.secondary" sx={{ mb: 3, textWrap: "pretty" }}>
+            {tagline}
+          </Text>
+        )}
+        <Text
+          variant="body2"
+          sx={{ mb: 5, pb: 4, borderBottom: "1px solid", borderColor: "divider", opacity: 0.8 }}
+        >
+          {sellTo}
         </Text>
-        <Text className="rate-cta" variant="overline" component="span" sx={rateCtaSx}>
-          {roomsSection.reserveLabel}
-          <Icon name="arrow-forward" fontSize="small" sx={{ color: "primary.main" }} />
-        </Text>
-      </Box>
-    </Link>
+
+        <Box sx={{ mt: "auto", display: "grid", gap: 2 }}>
+          <Text
+            variant="overline"
+            component="p"
+            sx={{ color: "text.secondary", fontFamily: "var(--font-cartographic)" }}
+          >
+            {roomsSection.fromLabel}
+          </Text>
+          <Text component="p" sx={rateSx}>
+            {formatUgx(rateUgx)}
+          </Text>
+          <Text variant="body2" color="text.secondary">
+            {roomsSection.rateNote}
+          </Text>
+          <Text className="rate-cta" variant="overline" component="span" sx={rateCtaSx}>
+            {roomsSection.reserveLabel}
+            <Icon name="arrow-forward" fontSize="small" sx={{ color: "primary.main" }} />
+          </Text>
+        </Box>
+      </Link>
+      {image && <ZoomTrigger asset={image} />}
+    </Box>
   );
 }

@@ -49,6 +49,16 @@ export const sectionRoot = (
    * nothing else in the section is trimmed.
    */
   overflowX: "clip",
+  /**
+   * Every section carries an optional `id`, which makes every section a
+   * possible anchor target — `#book`, `#enquire`, `#reserve`, `#compare`. The
+   * header is `position: fixed`, so a jump that lands flush on the section top
+   * puts its first 96px underneath the header. 120 is the offset the rest of
+   * the site already uses for exactly this (`Accordion`'s `anchored` panels,
+   * the story articles, the dining dish cards); stating it once here means a
+   * section does not have to remember to.
+   */
+  scrollMarginTop: 120,
   ...(variant === "raised" && { bgcolor: "background.paper" }),
   ...(variant === "contrast" && {
     backgroundImage: CONTRAST_BAND,

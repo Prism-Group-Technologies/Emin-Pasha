@@ -14,6 +14,17 @@ const timelineChapterSchema = z.object({
 export const storySchema = z.object({
   whyWeCarryThisName: z.string().min(1),
   lifeIntro: z.string().min(1),
+  /**
+   * The namesake's life dates and the one-line label under his portrait.
+   *
+   * Both are **historical reference**, not approved marketing copy, which is
+   * why they are optional: they describe the man the way a gallery card
+   * would, and they carry none of the hotel's voice. They sit here rather
+   * than in a container because `timeline` already makes this module the
+   * namesake's biography, and because two pages render the same portrait.
+   */
+  lifeDates: z.string().min(1).optional(),
+  portraitCaption: z.string().min(1).optional(),
   timeline: z.array(timelineChapterSchema).min(1),
   whatWeTakeFromIt: z.string().min(1),
   generalManagerMessage: z.string().min(1),

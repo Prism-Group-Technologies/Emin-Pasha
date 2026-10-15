@@ -22,14 +22,14 @@ const raw: SocialLink[] = [
     platform: "x",
     url: identity.social.x,
     bioText:
-      "Kampala's boutique landmark. Gardens, spa, three restaurants, a 300ft pool — and the story of the physician who refused to be rescued. Nakasero, Uganda.",
+      "Kampala's boutique landmark. Gardens, spa, two restaurants, a 300ft pool — and the story of the physician who refused to be rescued. Nakasero, Uganda.",
     charLimit: 160,
   },
   {
     // TODO(EMIN-Q67): LinkedIn URL not in the §1 NAP table — url left undefined.
     platform: "linkedin",
     bioText:
-      "The Emin Pasha Hotel & Spa is one of Kampala's most distinguished boutique hotels — a garden estate in Nakasero offering elegant accommodation, three restaurants, a full spa and wellness centre, and Kudara Hall for conferences and corporate events. Independent, characterful and built for guests who want more than a room.",
+      "The Emin Pasha Hotel & Spa is one of Kampala's most distinguished boutique hotels — a garden estate in Nakasero offering elegant accommodation, two restaurants, a full spa and wellness centre, and Kudara Hall for conferences and corporate events. Independent, characterful and built for guests who want more than a room.",
   },
 ];
 

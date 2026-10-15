@@ -8,10 +8,10 @@
  */
 export const manifestCaptions: Record<string, string> = {
   "home-hero-poster": "The estate from the gardens",
-  "room-superior-room": "The Superior Room",
+  "room-apartment-room": "The Apartment Room",
   "room-deluxe-room": "A Deluxe Room opening onto the grounds",
   "room-deluxe-suites": "The Deluxe Suite",
-  "room-superior-suites": "The Superior Suite",
+  "room-vip-suite": "The VIP Suite",
   "dining-equatoria": "Equatoria",
   "dining-rooftop-terrace": "The Rooftop Terrace over Kampala",
   "dining-manutea": "Manutea Wine & Whisky Lounge",
@@ -22,7 +22,7 @@ export const manifestCaptions: Record<string, string> = {
   "spa-treatment-room": "A treatment room at the spa",
   "spa-pool": "The pool beneath the trees",
   "meetings-kudara-hall": "Kudara Hall, set for a conference",
-  "meetings-private-rooms": "A private meeting room",
+  "meetings-boardroom": "The Boardroom",
   "weddings-equatorial-gardens": "A wedding in the Equatorial Gardens",
   "story-the-hotel": "The main house",
   "gallery-exterior": "The garden estate",

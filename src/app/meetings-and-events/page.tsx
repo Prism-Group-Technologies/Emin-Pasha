@@ -8,7 +8,7 @@ import { eventVenueJsonLd } from "@/lib/seo/eventVenue";
 const meta = seoMeta.find((entry) => entry.page === "meetings");
 
 /** Verified inclusions only — no capacity figure exists (§0.7). */
-const AMENITIES = ["Secure parking", "Three restaurants for catering", "Accommodation on site"];
+const AMENITIES = ["Secure parking", "Two restaurants for catering", "Accommodation on site"];
 
 export const metadata: Metadata = {
   title: meta?.title,

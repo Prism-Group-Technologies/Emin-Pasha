@@ -52,7 +52,11 @@ export function PhotoTile({ item, onOpen, openLabel }: PhotoTileProps) {
         },
       }}
     >
-      <AssetImage asset={item.asset} sizes={SIZES} />
+      {/* The tile is the button and it opens the gallery's own lightbox,
+          which carries the "book this view" offer the site-wide modal has no
+          business showing. A second button inside this one would be invalid
+          HTML as well as a second dialog. */}
+      <AssetImage asset={item.asset} sizes={SIZES} zoomable={false} />
       <Box
         className="tile-caption"
         aria-hidden

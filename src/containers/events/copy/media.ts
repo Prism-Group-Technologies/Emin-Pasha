@@ -36,9 +36,9 @@ const SEEDS: MediaSeed[] = [
     shape: "wide",
   },
   {
-    id: "meetings-private-rooms",
-    subject: "A private meeting room set boardroom-style with a video-conference screen",
-    altText: "A private meeting room at The Emin Pasha Hotel & Spa",
+    id: "meetings-boardroom",
+    subject: "The Boardroom — the fixed table set for sixteen, interactive display at the head",
+    altText: "The Boardroom at The Emin Pasha Hotel & Spa",
   },
   {
     id: "weddings-equatorial-gardens",
@@ -82,9 +82,9 @@ const SEEDS: MediaSeed[] = [
     altText: "A gala banquet in Kudara Hall",
   },
   {
-    id: "events-gallery-cabaret",
-    subject: "A meeting room in cabaret layout — curved tables facing a screen",
-    altText: "A meeting room in cabaret layout",
+    id: "events-gallery-boardroom",
+    subject: "The Boardroom in session — sixteen at the fixed table, display lit",
+    altText: "The Boardroom set for a board session",
   },
   {
     id: "events-gallery-ceremony",
@@ -98,8 +98,8 @@ const SEEDS: MediaSeed[] = [
   },
   {
     id: "events-gallery-breakout",
-    subject: "A breakout session in a private meeting room, small group at a U-shape",
-    altText: "A breakout session in a private meeting room",
+    subject: "A syndicate breakout — a small group at a U-shape away from the plenary",
+    altText: "A syndicate breakout set U-shape",
   },
 ];
 

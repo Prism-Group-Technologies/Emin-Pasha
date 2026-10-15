@@ -18,10 +18,10 @@ export const ROOM_POPULAR_ID = "deluxe-room";
 
 /** Per-category hero/gallery assets, by the ids already in content/assets.ts. */
 export const ROOM_ASSET_IDS: Record<string, string> = {
-  "superior-room": "room-superior-room",
+  "apartment-room": "room-apartment-room",
   "deluxe-room": "room-deluxe-room",
   "deluxe-suites": "room-deluxe-suites",
-  "superior-suites": "room-superior-suites",
+  "vip-suite": "room-vip-suite",
 };
 
 /**
@@ -45,33 +45,51 @@ export const CROSS_SELL_HREFS = ["/spa", "/dining", "/offers"];
 export const GALLERY_ANCHOR_ID = "gallery";
 
 /**
- * Every angle delivered per category, lead shot first. The lead is the same
+ * The eight angles delivered per category, lead shot first. The lead is the same
  * id as `ROOM_ASSET_IDS`, so the mosaic opens on the photograph the card and
  * the hero already showed. A category absent here falls back to its lead
  * alone rather than repeating a frame to pad the grid — `roomMosaic` has a
  * closing layout for a single photograph too.
  */
 export const ROOM_GALLERY_IDS: Record<string, string[]> = {
-  "superior-room": ["room-superior-room", "room-superior-room-2", "room-superior-room-3"],
+  "apartment-room": [
+    "room-apartment-room",
+    "room-apartment-room-2",
+    "room-apartment-room-3",
+    "room-apartment-room-4",
+    "room-apartment-room-5",
+    "room-apartment-room-6",
+    "room-apartment-room-7",
+    "room-apartment-room-8",
+  ],
   "deluxe-room": [
     "room-deluxe-room",
     "room-deluxe-room-2",
     "room-deluxe-room-3",
     "room-deluxe-room-4",
     "room-deluxe-room-5",
+    "room-deluxe-room-6",
+    "room-deluxe-room-7",
+    "room-deluxe-room-8",
   ],
   "deluxe-suites": [
     "room-deluxe-suites",
     "room-deluxe-suites-2",
     "room-deluxe-suites-3",
     "room-deluxe-suites-4",
+    "room-deluxe-suites-5",
+    "room-deluxe-suites-6",
+    "room-deluxe-suites-7",
+    "room-deluxe-suites-8",
   ],
-  "superior-suites": [
-    "room-superior-suites",
-    "room-superior-suites-2",
-    "room-superior-suites-3",
-    "room-superior-suites-4",
-    "room-superior-suites-5",
-    "room-superior-suites-6",
+  "vip-suite": [
+    "room-vip-suite",
+    "room-vip-suite-2",
+    "room-vip-suite-3",
+    "room-vip-suite-4",
+    "room-vip-suite-5",
+    "room-vip-suite-6",
+    "room-vip-suite-7",
+    "room-vip-suite-8",
   ],
 };

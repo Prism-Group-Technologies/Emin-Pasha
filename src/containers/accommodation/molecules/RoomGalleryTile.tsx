@@ -22,7 +22,7 @@ export interface RoomGalleryTileProps {
  * A button rather than a div with a click handler: this is the only way in to
  * the lightbox, so it has to be tabbable, operable with Enter and Space, and
  * announced as something you can activate. The accessible name is the asset's
- * own `altText` plus its position, because "Superior Room" four times over
+ * own `altText` plus its position, because "Apartment Room" four times over
  * tells a screen-reader user nothing about which one they are on.
  *
  * `MediaFrame` is deliberately not reused here — its radius and hover zoom
@@ -56,9 +56,12 @@ export function RoomGalleryTile({ asset, cell, index, onOpen, remaining }: RoomG
         },
       }}
     >
+      {/* The tile is the button, and the mosaic's own lightbox carries the
+          booking CTA that makes the band worth having. */}
       <AssetImage
         asset={asset}
         ratio="fill"
+        zoomable={false}
         priority={index === 0}
         sizes={
           index === 0

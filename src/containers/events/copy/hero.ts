@@ -7,7 +7,7 @@ import { ENQUIRE_ANCHOR_ID, VENUES_ANCHOR_ID } from "@/containers/events/anchors
  * Traceability: "one address" for venue + catering + rooms + parking is the
  * approved §7 argument (`meetingsPageIntro`); Kudara Hall, the private
  * meeting rooms and the Equatorial Gardens are approved §5/§7 spaces;
- * "three restaurants" and "secure parking" are approved §7 amenities. The
+ * "two restaurants" and "secure parking" are approved §7 amenities. The
  * figures on the rail restate those — the "500" and the delegate rate are
  * invented (TODO(EMIN-Q12)) and never rendered as a hard promise; the venue
  * count reflects the four listed spaces.
@@ -15,7 +15,7 @@ import { ENQUIRE_ANCHOR_ID, VENUES_ANCHOR_ID } from "@/containers/events/anchors
 export const heroCopy = {
   eyebrow: "§ MEETINGS & EVENTS",
   headline: "One address for the whole event",
-  lede: "Kudara Hall for the conference, private rooms for the board, the Equatorial Gardens for the reception — with three restaurants for catering, secure parking and rooms upstairs when the day runs long. Nakasero, ten minutes from the CBD.",
+  lede: "Kudara Hall for the conference, private rooms for the board, the Equatorial Gardens for the reception — with two restaurants for catering, secure parking and rooms upstairs when the day runs long. Nakasero, ten minutes from the CBD.",
   primaryCta: { label: "Request a proposal", href: `#${ENQUIRE_ANCHOR_ID}` },
   secondaryCta: { label: "See the venues", href: `#${VENUES_ANCHOR_ID}` },
   stats: [

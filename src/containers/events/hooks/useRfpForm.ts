@@ -5,7 +5,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 
+import { contactCopy } from "@/content/contact-copy";
 import { rfpCopy } from "@/content/rfp-copy";
+import { submitEnquiry } from "@/lib/submitEnquiry";
 import { type RfpInput, type RfpValues, rfpSchema } from "@/schemas/rfp";
 import { useRfpStore } from "@/stores/rfpStore";
 
@@ -76,28 +78,27 @@ export function useRfpForm() {
 
   const back = useCallback(() => setStep(Math.max(step - 1, 0)), [setStep, step]);
 
+  /**
+   * Submission goes through `submitEnquiry` like every other form, rather than
+   * the hand-rolled `fetch` this hook used to carry. That is what routes the
+   * RFP through Web3Forms, and it means `pending` is finally honoured here:
+   * with no provider configured the lead is recorded but not delivered, so the
+   * step shows the "not connected yet" line instead of a plain confirmation.
+   */
   const onSubmit = form.handleSubmit(async (values) => {
     setStatus("submitting");
     setMessage(null);
-    try {
-      const response = await fetch("/api/enquiry/rfp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      const payload = (await response.json()) as { ok: boolean; message: string };
-      if (!response.ok || !payload.ok) {
-        setStatus("error");
-        setMessage(payload.message ?? rfpCopy.failure);
-        return;
-      }
-      setStatus("sent");
-      setMessage(payload.message);
-      clear();
-    } catch {
+    const response = await submitEnquiry("/api/enquiry/rfp", values, rfpCopy.failure);
+    if (!response.ok) {
       setStatus("error");
-      setMessage(rfpCopy.failure);
+      setMessage(response.message);
+      return;
     }
+    setStatus("sent");
+    // The RFP copy has no delivery-pending line of its own, so this reuses
+    // the approved shared one rather than inventing a message (CLAUDE.md §3).
+    setMessage(response.pending ? contactCopy.messages.pending : response.message);
+    clear();
   });
 
   return { form, onSubmit, status, message, step, next, back, persist };

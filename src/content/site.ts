@@ -14,13 +14,13 @@ export const site = siteConfigSchema.parse({
       "For the discerning traveller, diplomat, executive and Kampala local who wants luxury with a soul rather than luxury off a shelf, The Emin Pasha Hotel & Spa is a boutique hotel and spa set in landscaped gardens in the heart of Nakasero that blends historic charm with modern comfort, bespoke service and a genuine appreciation of Uganda's heritage. Unlike the international chain hotels that dominate Kampala's upper tier, Emin Pasha is independent, intimate, garden-set and rooted in a specific Ugandan story — a place where guests feel they have arrived somewhere, not merely checked in.",
     oneLiner: "A collage of history, culture and nature — in a pouch of serenity.",
     elevatorPitch:
-      "The Emin Pasha Hotel & Spa is Kampala's boutique landmark: a garden estate in the heart of Nakasero with three restaurants, two bars, a full spa and wellness centre, a 300ft pool and some of the city's most characterful event spaces. It is named after Emin Pasha — the physician and naturalist who came to this region not to conquer it but to understand it — and that spirit of curiosity, humanity and warmth is what our guests actually feel when they stay with us.",
+      "The Emin Pasha Hotel & Spa is Kampala's boutique landmark: a garden estate in the heart of Nakasero with two restaurants, a wine and whisky lounge, a full spa and wellness centre, a 300ft pool and some of the city's most characterful event spaces. It is named after Emin Pasha — the physician and naturalist who came to this region not to conquer it but to understand it — and that spirit of curiosity, humanity and warmth is what our guests actually feel when they stay with us.",
   },
   pillars: [
     {
       name: "History",
       description:
-        "architecture and interiors that journey through time, tasteful décor infused with Uganda's heritage, outlets named for the people and places in the story (Equatoria, Sir Samuel Baker, Mehmed Pasha, Acropole).",
+        "architecture and interiors that journey through time, tasteful décor infused with Uganda's heritage, outlets named for the people and places in the story (Equatoria, Mehmed Pasha, Acropole).",
       cues: [
         "heritage",
         "journey through time",
@@ -61,7 +61,7 @@ export const site = siteConfigSchema.parse({
       name: "Corporate & diplomatic (primary, highest value)",
       description:
         "embassy staff, NGO and development-agency personnel, multinational executives, government contractors, consultants.",
-      leadWith: ["Superior Room", "airport transfer", "fibre", "security", "LPO billing"],
+      leadWith: ["Apartment Room", "airport transfer", "fibre", "security", "LPO billing"],
       notes: "Watch for long-stay and repeat bookings.",
     },
     {
@@ -151,7 +151,7 @@ export const site = siteConfigSchema.parse({
         id: "dining",
         headline: "Dine",
         supportingLine:
-          "Three restaurants, two bars and a rooftop terrace. Asian, European and African influences.",
+          "Two restaurants and a wine and whisky lounge. Asian, European and African influences.",
         ctaLabel: "Explore dining",
       },
       {

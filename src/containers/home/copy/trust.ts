@@ -39,7 +39,7 @@ export interface TrustItemCopy {
 export const trustItems: TrustItemCopy[] = [
   { value: "Nakasero", label: "Kampala's embassy quarter" },
   { value: "Est. 2004", label: "Independent & boutique" },
-  { value: "3 + 2", label: "Restaurants & bars" },
+  { value: "2 + 1", label: "Restaurants & bars" },
   { value: "300ft", label: "Garden swimming pool" },
   { value: "7am–9pm", label: "Spa, seven days" },
   { value: "Unlimited", label: "Fibre in every room" },

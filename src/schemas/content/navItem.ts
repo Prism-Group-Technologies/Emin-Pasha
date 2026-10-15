@@ -2,7 +2,7 @@ import { z } from "zod";
 
 /**
  * Site architecture, docs/02_CONTENT_SOURCE_OF_TRUTH.md §12.1. Recursive —
- * a nav item may have children (e.g. Accommodation → Superior Room).
+ * a nav item may have children (e.g. Accommodation → Apartment Room).
  */
 export type NavItem = {
   label: string;

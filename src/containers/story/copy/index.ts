@@ -39,4 +39,4 @@ export { storyVoices, type StoryVoice } from "./voices";
 export { pressQuotes, type PressQuote } from "./press";
 export { storyFaq, type StoryFaqItem } from "./faq";
 export { enquiryCopy, storyFocusOptions, type StoryFocusOption } from "./enquiry";
-export { namesakePageCopy, theHotelPageCopy, gmPageCopy, type StorySubPageHero } from "./pages";
+export { namesakePageCopy, theHotelPageCopy, type StorySubPageHero } from "./pages";

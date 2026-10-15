@@ -8,7 +8,7 @@ export const stayCollections: CollectionCopy[] = [
     mood: "Candlelit, unhurried, just the two of you",
     summary: "A Deluxe Suite, a table for two and a couples' ritual in the Turkish bath.",
     story:
-      "Arrive to petals on the bed and chilled bubbles in the suite. Spend the afternoon in the couples' treatment room, watch the garden turn gold from your balcony, then dine by candlelight at Sir Samuel Baker. Breakfast arrives whenever you decide the day has started.",
+      "Arrive to petals on the bed and chilled bubbles in the suite. Spend the afternoon in the couples' treatment room, watch the garden turn gold from your balcony, then dine by candlelight at Equatoria. Breakfast arrives whenever you decide the day has started.",
     highlights: [
       "Deluxe Suite with petal turndown",
       "60-minute couples' massage",
@@ -37,10 +37,10 @@ export const stayCollections: CollectionCopy[] = [
     mood: "Quiet, connected, minutes from everything",
     summary: "A calm room to work from, alcoves for meetings and a swim before the city wakes.",
     story:
-      "Stay in the diplomatic quarter without the noise of it. Take the first call from a desk facing the gardens, meet a client in a discreet lounge alcove, and borrow a private meeting room for the afternoon. The pool is open early, and the car to Entebbe is one message away.",
+      "Stay in the diplomatic quarter without the noise of it. Take the first call from a desk facing the gardens, meet a client in a discreet lounge alcove, and take The Boardroom for the afternoon. The pool is open early, and the car to Entebbe is one message away.",
     highlights: [
-      "Superior Room with work desk and fast Wi-Fi",
-      "Two hours in a private meeting room",
+      "Apartment Room with work desk and fast Wi-Fi",
+      "Two hours in The Boardroom",
       "Breakfast served from 06:30",
       "Same-day pressing and laundry",
     ],
@@ -49,9 +49,9 @@ export const stayCollections: CollectionCopy[] = [
     priceUnit: "per night",
     assetIds: [
       "gallery-room-desk-morning",
-      "room-superior-room",
+      "room-apartment-room",
       "gallery-lounge-alcove-meeting",
-      "meetings-private-rooms",
+      "meetings-boardroom",
       "gallery-meeting-boardroom-break",
       "gallery-pool-morning-laps",
       "gallery-dining-breakfast-terrace",
@@ -65,12 +65,12 @@ export const stayCollections: CollectionCopy[] = [
     mood: "Steam, stillness and nowhere to be",
     summary: "Two nights built around the Turkish bath, the pool and long, slow breakfasts.",
     story:
-      "Begin in the hammam, where the heat does most of the work. A full-body treatment follows, then tea in the relaxation room and a swim under the trees. The second day is yours — the only schedule is a table booked for dinner and a Superior Suite to return to.",
+      "Begin in the hammam, where the heat does most of the work. A full-body treatment follows, then tea in the relaxation room and a swim under the trees. The second day is yours — the only schedule is a table booked for dinner and a VIP Suite to return to.",
     highlights: [
       "Turkish bath ritual with scrub",
       "90-minute signature treatment",
       "Unlimited pool access",
-      "Superior Suite with breakfast",
+      "VIP Suite with breakfast",
     ],
     bestFor: "Solo resets, friends and couples",
     priceUsd: 290,
@@ -82,7 +82,7 @@ export const stayCollections: CollectionCopy[] = [
       "gallery-pool-morning-laps",
       "spa-pool",
       "gallery-spa-couples-suite",
-      "room-superior-suites",
+      "room-vip-suite",
     ],
     metaDescription:
       "A spa weekend at The Emin Pasha, Kampala — Turkish bath rituals, poolside afternoons and suites, pictured before you book.",

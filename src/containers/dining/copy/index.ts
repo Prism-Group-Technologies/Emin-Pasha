@@ -16,7 +16,7 @@
  * `src/content` after sign-off.
  *
  * Traceability. Every structural claim ties back to already-approved content:
- * the three restaurants + two bars, the modern dumbwaiter, the Asian/European/
+ * the two restaurants + the lounge, the modern dumbwaiter, the Asian/European/
  * African influences and 24/7 in-room dining are all in `content/dining.ts`;
  * the namesakes are in `content/dining.ts` (`namedForNote`) and the story
  * pillar; Friday Band Night is in `content/offers.ts`; the Nakasero garden

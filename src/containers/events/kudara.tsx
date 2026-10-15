@@ -51,7 +51,8 @@ export function KudaraHallContainer() {
       inclusions={[
         "Pillar-free floor with a built-in stage and screens",
         "In-house AV and a technician on the day",
-        "Catering from three restaurants — no external caterer",
+        "Sectioned for syndicate breakouts alongside the plenary",
+        "Catering from both restaurants — no external caterer",
         "Secure parking and a separate event entrance",
         "Delegate room block and late checkout on site",
       ]}

@@ -39,7 +39,7 @@ export function NavigationSection() {
         items={[
           { label: "Home", href: "/" },
           { label: "Accommodation", href: "/accommodation" },
-          { label: "Superior Room" },
+          { label: "Apartment Room" },
         ]}
       />
       <Tabs items={tabItems} value={tab} onChange={setTab} aria-label="Room detail tabs" />

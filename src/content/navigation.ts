@@ -10,10 +10,10 @@ const raw: NavItem[] = [
     label: "Accommodation",
     href: "/accommodation",
     children: [
-      { label: "Superior Room", href: "/accommodation/superior-room" },
+      { label: "Apartment Room", href: "/accommodation/apartment-room" },
       { label: "Deluxe Room", href: "/accommodation/deluxe-room" },
       { label: "Deluxe Suites", href: "/accommodation/deluxe-suites" },
-      { label: "Superior Suites", href: "/accommodation/superior-suites" },
+      { label: "VIP Suite", href: "/accommodation/vip-suite" },
     ],
   },
   {
@@ -57,7 +57,7 @@ const raw: NavItem[] = [
     href: "/meetings-and-events",
     children: [
       { label: "Kudara Hall", href: "/kudara-hall" },
-      { label: "Private Meeting Rooms", href: "/meeting-rooms" },
+      { label: "The Boardroom", href: "/meeting-rooms" },
       { label: "Weddings & Celebrations", href: "/weddings" },
     ],
   },
@@ -75,13 +75,7 @@ const raw: NavItem[] = [
     href: "/our-story",
     children: [
       { label: "The Hotel", href: "/our-story/the-hotel" },
-      { label: "Emin Pasha — Our Namesake", href: "/our-story/emin-pasha" },
-      // Q65: standalone route vs. merged section — pending; kept as its own
-      // link until that's decided.
-      {
-        label: "Message from the General Manager",
-        href: "/our-story/message-from-the-general-manager",
-      },
+      { label: "Emin Pasha — Our Namesake", href: "/our-story/emin-pasha" }
     ],
   },
   { label: "Gallery", href: "/gallery" },

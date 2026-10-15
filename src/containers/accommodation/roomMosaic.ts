@@ -2,10 +2,12 @@
  * The room gallery's tile geometry, as data.
  *
  * The old gallery poured every photograph into a uniform `repeat(2, 1fr)`,
- * which only ever looks right on an even count. The four categories ship 3,
- * 5, 4 and 6 photographs, so three of the four pages ended on a half-empty
- * row — a stranded cell reads as a broken grid, which is exactly the problem
- * the fallback in the old file was written to avoid one line further up.
+ * which only ever looks right on an even count, so a category with an odd
+ * number of frames ended on a half-empty row — a stranded cell reads as a
+ * broken grid, which is exactly the problem the fallback in the old file was
+ * written to avoid one line further up. All four categories now ship eight
+ * photographs, so the mosaic shows `MOSAIC_MAX` of them and the remaining two
+ * reach the guest through the lightbox counter.
  *
  * Here every count gets a layout that closes: a 12×6 placement table, one
  * entry per supported count, chosen so the mosaic is always a full rectangle.

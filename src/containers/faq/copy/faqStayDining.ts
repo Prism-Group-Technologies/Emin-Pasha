@@ -20,7 +20,7 @@ export const stayDiningFaqs: InventedFaq[] = [
     topic: "stay",
     question: "How do I choose between a room and a suite?",
     answer:
-      "Superior Rooms suit short business stays, Deluxe Rooms are our value-led way in, and the Deluxe and Superior Suites add space to spread out on longer or shared stays. Tell us on WhatsApp who is travelling and why, and we will recommend the one that fits.",
+      "Apartment Rooms suit short business stays, Deluxe Rooms are our value-led way in, and the Deluxe Suites and the VIP Suite add space to spread out on longer or shared stays. Tell us on WhatsApp who is travelling and why, and we will recommend the one that fits.",
   },
   {
     id: "long-stay-rates",

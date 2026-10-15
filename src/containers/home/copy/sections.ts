@@ -70,10 +70,10 @@ export const roomsSection = {
   action: { label: "View Rooms & Rates", href: "/accommodation" },
   /** Per-room one-liners, keyed to `content/rooms.ts` ids. */
   taglines: {
-    "superior-room": "Our largest standard room — the corporate and diplomatic default.",
+    "apartment-room": "Our largest standard room — the corporate and diplomatic default.",
     "deluxe-room": "Our value-led way in — for couples, leisure and first-time guests.",
     "deluxe-suites": "A separate living space, for families and stays measured in weeks.",
-    "superior-suites": "A private lounge area for executives who work where they sleep.",
+    "vip-suite": "A private lounge area for executives who work where they sleep.",
   } as Record<string, string>,
   rateNote: "per night",
   fromLabel: "from",

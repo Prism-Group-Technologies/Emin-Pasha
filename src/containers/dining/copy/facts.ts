@@ -48,7 +48,7 @@ export const outletFacts: Record<OutletId, OutletFact[]> = {
     },
     {
       label: "Kitchen to 22:00",
-      detail: "Small plates until the kitchen closes at 22:00",
+      detail: "Full menu until the kitchen closes at 22:00",
       icon: "restaurant",
     },
     {

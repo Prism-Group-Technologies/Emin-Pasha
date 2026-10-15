@@ -19,7 +19,7 @@ export function RoomsSection({ motion = "up" }: { motion?: RevealDirection }) {
       heading={roomsSection.heading}
       description={roomsSection.description}
     >
-      <RoomGrid capacities={rooms.map((room) => room.capacity)}>
+      <RoomGrid rooms={rooms.map(({ id, capacity }) => ({ id, capacity }))}>
         {rooms.map((room) => (
           <RoomCard key={room.id} room={room} />
         ))}
