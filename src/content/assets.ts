@@ -695,6 +695,19 @@ const raw: AssetRefInput[] = [
     altText: "Swimming pool at The Emin Pasha Hotel & Spa",
     status: "placeholder",
   },
+  {
+    // The mega-menu's third Spa & Wellness card. It shares the geometry of the
+    // two above it so the panel's row of thumbnails stays square with itself.
+    id: "spa-etiquette",
+    page: "spa/etiquette",
+    subject: "The spa corridor — lanterns along the floor, the treatment rooms beyond",
+    kind: "image",
+    width: 1600,
+    height: 1067,
+    priority: "normal",
+    altText: "The candlelit corridor into the spa at The Emin Pasha Hotel & Spa",
+    status: "placeholder",
+  },
 
   {
     id: "meetings-kudara-hall",
@@ -805,6 +818,7 @@ const raw: AssetRefInput[] = [
     height: 523,
     priority: "high",
     altText: "Engraved portrait of Emin Pasha in a fez and military tunic",
+    cutout: true,
     status: "placeholder",
   },
   // TODO(EMIN-Q21): GM name/photo not confirmed.

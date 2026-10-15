@@ -32,6 +32,18 @@ const assetRefInputSchema = z.object({
   priority: z.enum(["lcp", "high", "normal", "low"]),
   altText: z.string(),
   decorative: z.boolean().optional(),
+  /**
+   * Artwork with a transparent ground rather than a photograph — the Emin
+   * Pasha engraving is the only one so far.
+   *
+   * It exists because `objectFit: cover` is the right default for a
+   * photograph and a defect for a cutout: a photograph has spare margin to
+   * crop into, a figure cut to its own silhouette has none, so covering it
+   * trims the subject itself. Renderers that fill a frame of someone else's
+   * choosing read this and contain instead (`NavCard`); the dedicated
+   * `CutoutPortrait` treatment is still what the story pages use.
+   */
+  cutout: z.boolean().optional(),
   status: z.enum(["placeholder", "delivered"]).default("placeholder"),
   image: deliveredImageSchema.optional(),
 });

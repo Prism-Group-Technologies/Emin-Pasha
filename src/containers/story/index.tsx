@@ -4,7 +4,6 @@ import { ArrivalStrip } from "@/containers/reception";
 import { sections } from "@/containers/story/copy";
 import { storySectionMotion as m } from "@/containers/story/motion";
 import { FullStorySection } from "@/containers/story/organisms/FullStorySection";
-import { GmWelcomeSection } from "@/containers/story/organisms/GmWelcomeSection";
 import { HotelTodaySection } from "@/containers/story/organisms/HotelTodaySection";
 import { JourneyMapSection } from "@/containers/story/organisms/JourneyMapSection";
 import { NamedAfterSection } from "@/containers/story/organisms/NamedAfterSection";
@@ -63,7 +62,6 @@ export function StoryContainer() {
         heading={sections.chapters.heading}
         motion={m.namedAfter}
       />
-      <GmWelcomeSection motion={m.gm} />
       <StoryVoicesSection motion={m.voices} />
       <PressSection motion={m.press} />
       <StoryEnquirySection motion={m.enquiry} />

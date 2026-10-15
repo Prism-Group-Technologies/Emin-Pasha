@@ -73,11 +73,11 @@ export function SpaContainer() {
       <SeasonalOffersSection motion={d(7)} facility="spa" />
       <SpaPassesSection motion={d(8)} />
       <JourneySection motion={d(9)} variant="default" />
-      <TherapistsSection motion={d(10)} />
+      {/* <TherapistsSection motion={d(10)} /> */}
       <SpaGroupsSection motion={d(11)} />
       <WellnessEnquirySection motion={d(12)} interest="spa" />
       <GiftVoucherSection motion={d(13)} />
-      <WellnessVoicesSection motion={d(14)} variant="raised" />
+      {/* <WellnessVoicesSection motion={d(14)} variant="raised" /> */}
       <WellnessFaqSection motion={d(15)} />
       <WellnessClosingCtaSection motion={d(16)} />
 

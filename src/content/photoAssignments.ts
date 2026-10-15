@@ -143,10 +143,10 @@ export const photoAssignments: Record<string, PhotoKey> = {
   "home-rate-vip-suite": "vipSuiteLivingRoom",
 
   // Estate tiles. One per `site.homepage.featureTiles` id.
-  "home-feature-rooms": "vipSuiteLounge",
-  "home-feature-dining": "equatoriaDiningRoom",
+  "home-feature-rooms": "vipSuiteBedBench",
+  "home-feature-dining": "equatoriaVaultedRoom",
   "home-feature-spa": "bathroomTub", // STRETCH: no spa photography exists
-  "home-feature-pool": "poolNight",
+  "home-feature-pool": "poolLoungers",
   "home-feature-events": "celebrationNight",
   "home-feature-story": "estateFacadeDay", // STRETCH: no portrait of Emin Pasha
 
@@ -191,7 +191,7 @@ export const photoAssignments: Record<string, PhotoKey> = {
   "room-vip-suite-8": "vipSuiteTeaTray",
 
   // ── Dining outlets ────────────────────────────────────────────────────
-  "dining-equatoria": "equatoriaDiningRoom",
+  "dining-equatoria": "equatoriaRoomFullLength",
   "dining-rooftop-terrace": "terraceDiningNight",
   "dining-manutea": "manuteaLounge",
   "dining-in-room": "inRoomTray",
@@ -201,12 +201,13 @@ export const photoAssignments: Record<string, PhotoKey> = {
   "lounge-mehmed-pasha": "mehmedLounge",
   "lounge-equatorial-gardens": "gardensLush",
 
-  // ── Wellness (no spa photography delivered) ───────────────────────────
+  // ── Wellness (no treatment-room photography delivered) ────────────────
   "spa-treatment-room": "bathroomTub", // STRETCH: a guest bathroom, not a treatment room
   "spa-pool": "poolDusk",
+  "spa-etiquette": "spaEtiquette",
 
   // ── Meetings and events ───────────────────────────────────────────────
-  "meetings-kudara-hall": "kudaraBoardroom",
+  "meetings-kudara-hall": "boardroomScreenWall",
   "meetings-boardroom": "boardroomScreenWall",
   "meetings-kudara-floorplan": "banquetHall", // STRETCH: a photo where a diagram belongs
   "meetings-poolside-lawn": "poolNight",
@@ -340,16 +341,16 @@ export const photoAssignments: Record<string, PhotoKey> = {
 
   // ── Pool page ─────────────────────────────────────────────────────────
   "wellness-pool-gardens": "poolLoungers",
-  "wellness-pool-private-hire": "poolNight",
+  "wellness-pool-private-hire": "poolDusk",
   "wellness-pool-family-event": "poolAerial",
-  "wellness-pool-wedding-brunch": "gardenVerandaDining",
+  "wellness-pool-wedding-brunch": "celebrationTableNumber",
 
   // ── Meetings & Events packages and gallery ────────────────────────────
   "events-package-day-delegate": "coffeeCappuccino",
   "events-package-residential": "deluxeRoomGoldCushions",
   "events-package-board-dinner": "privateTableEight",
   "events-package-wedding": "celebrationNight",
-  "events-gallery-conference": "kudaraBoardroom",
+  "events-gallery-conference": "boardroomScreenWall",
   "events-gallery-banquet": "banquetHall",
   "events-gallery-boardroom": "boardroomHeadOfTable",
   "events-gallery-ceremony": "gardensLawn",

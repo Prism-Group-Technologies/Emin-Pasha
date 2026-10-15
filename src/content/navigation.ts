@@ -75,13 +75,7 @@ const raw: NavItem[] = [
     href: "/our-story",
     children: [
       { label: "The Hotel", href: "/our-story/the-hotel" },
-      { label: "Emin Pasha — Our Namesake", href: "/our-story/emin-pasha" },
-      // Q65: standalone route vs. merged section — pending; kept as its own
-      // link until that's decided.
-      {
-        label: "Message from the General Manager",
-        href: "/our-story/message-from-the-general-manager",
-      },
+      { label: "Emin Pasha — Our Namesake", href: "/our-story/emin-pasha" }
     ],
   },
   { label: "Gallery", href: "/gallery" },

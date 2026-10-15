@@ -28,13 +28,13 @@ const HEROES: Record<string, PhotoKey> = {
 
   // Dining
   dining: "equatoriaGardenRoom",
-  "equatoria-restaurant-bar": "equatoriaDiningRoom",
+  "equatoria-restaurant-bar": "equatoriaToKitchenCounter",
   "rooftop-terrace": "terraceDiningNight",
   "manutea-wine-whisky-lounge": "manuteaLoungeSeating",
   "in-room-dining": "inRoomTrayDetail",
 
   // Meetings, events and weddings
-  events: "kudaraBoardroom",
+  events: "boardroomScreenWall",
   "kudara-hall": "banquetHall",
   "meeting-rooms": "boardroomArtWall",
   weddings: "celebrationNight",
@@ -42,8 +42,8 @@ const HEROES: Record<string, PhotoKey> = {
   // Wellness
   wellness: "poolDusk",
   spa: "bathroomTub",
-  pool: "poolNight",
-  "spa-etiquette": "poolAerial",
+  pool: "poolAerial",
+  "spa-etiquette": "spaEtiquette",
 
   // Experiences
   "airport-transfer": "estateAerialPalms",
@@ -52,7 +52,7 @@ const HEROES: Record<string, PhotoKey> = {
   // Our Story
   story: "estateFacadeDay",
   "story-gm": "lobbyLounge",
-  "story-namesake": "estateDuskVeranda",
+  "story-namesake": "estateFacadeDay",
   "story-the-hotel": "estateFacadeGarden",
 
   // Everything else

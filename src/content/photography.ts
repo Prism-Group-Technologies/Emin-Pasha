@@ -78,8 +78,6 @@ import equatoriaStarFruitTree from "@/assets/images/dining/equatoria/DSC_1472.we
 import equatoriaBarAndStage from "@/assets/images/dining/equatoria/DSC_1474.webp";
 import gardensLush from "@/assets/images/dining/garden.webp";
 import gardensLawn from "@/assets/images/dining/gardenview6.webp";
-import manuteaLoungeRed from "@/assets/images/dining/kkp-67.webp";
-import acropoleLoungeChandelier from "@/assets/images/dining/kkp-140.webp";
 import terraceDiningNight from "@/assets/images/dining/kkp-213.webp";
 // Manutea — the 2026 delivery
 import manuteaBarHeadOn from "@/assets/images/dining/manutea/DSC_1401.webp";
@@ -111,8 +109,6 @@ import celebrationCourtyardWide from "@/assets/images/events/celebrations/DSC_55
 import celebrationCourtyardDusk from "@/assets/images/events/celebrations/DSC_5532.webp";
 import celebrationCourtyardTree from "@/assets/images/events/celebrations/DSC_5533.webp";
 import celebrationCourtyardLit from "@/assets/images/events/celebrations/DSC_5534.webp";
-// Lounges
-import acropoleLounge from "@/assets/images/general/acropole.webp";
 import acropoleLoungeBar from "@/assets/images/general/acropolenew2.webp";
 // Estate, exterior and grounds
 import estateAerial from "@/assets/images/general/arielview1.webp";
@@ -129,8 +125,6 @@ import estateAerialDrive from "@/assets/images/general/parking1.webp";
 import estateAerialGardens from "@/assets/images/general/parking2.webp";
 import estateAerialPalms from "@/assets/images/general/parking-arial.webp";
 import estateTerraceDusk from "@/assets/images/general/partyview1.webp";
-import bathroomVanity from "@/assets/images/general/washroom2.webp";
-import bathroomTub from "@/assets/images/general/washroom.webp";
 import boardroomArtWall from "@/assets/images/meetings/boardroom/DSC_1798.webp";
 import boardroomHeadOfTable from "@/assets/images/meetings/boardroom/DSC_1801.webp";
 import boardroomScreenCentred from "@/assets/images/meetings/boardroom/DSC_1804.webp";
@@ -147,6 +141,18 @@ import boardroomGarden from "@/assets/images/meetings/meetingroom5.webp";
 import celebrationNight from "@/assets/images/meetings/meetingroom7.webp";
 // Meetings, banquets and celebrations
 import banquetHall from "@/assets/images/meetings/meetingroom15.webp";
+import acropoleLoungeChandelier from "@/assets/images/new-images/lounge/DSC_1953.webp";
+import manuteaLoungeRed from "@/assets/images/new-images/lounge/DSC_1976.webp";
+// Lounges
+import acropoleLounge from "@/assets/images/new-images/lounge/DSC_1984.webp";
+// Spa
+import spaEtiquette from "@/assets/images/new-images/spa/DSC_1754.webp";
+import bathroomVanity from "@/assets/images/new-images/spa/DSC_1773.webp";
+import bathroomTub from "@/assets/images/new-images/spa/DSC_1788.webp";
+// Pool
+import poolAerial from "@/assets/images/new-images/swimming-pool/DSC_1868.webp";
+import poolLoungers from "@/assets/images/new-images/swimming-pool/DSC_1874.webp";
+import poolDusk from "@/assets/images/new-images/swimming-pool/DSC_1888.webp";
 // Reception, lobby and arrival
 import receptionLoungeArmchairs from "@/assets/images/reception/DSC_1993.webp";
 import receptionWaitingWindow from "@/assets/images/reception/DSC_1999.webp";
@@ -157,10 +163,6 @@ import receptionDeskStaff from "@/assets/images/reception/DSC_2009.webp";
 import receptionDeskWide from "@/assets/images/reception/DSC_2013.webp";
 import receptionDeskDetail from "@/assets/images/reception/DSC_2018.webp";
 import receptionLobbySeating from "@/assets/images/reception/DSC_2022.webp";
-import poolDusk from "@/assets/images/wellness/kkp-207.webp";
-// Pool
-import poolAerial from "@/assets/images/wellness/swimming-pool-2.webp";
-import poolLoungers from "@/assets/images/wellness/swimming-pool-3.webp";
 import poolNight from "@/assets/images/wellness/swimming-pool-night.webp";
 
 /**
@@ -268,6 +270,9 @@ export const photos = {
   poolDusk, // The pool at dusk, loungers and the lit garden wing
   poolLoungers, // Loungers on the pool deck against dense planting
   poolNight, // The pool lit from within at night, seen from above
+
+  // — Spa —
+  spaEtiquette, // The corridor into the spa, lanterns along the floor, treatment rooms beyond
 
   // — The Boardroom —
   // The 2026 delivery: ten frames of the one fitted boardroom. A single fixed

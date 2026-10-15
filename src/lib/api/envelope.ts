@@ -3,19 +3,19 @@ import { NextResponse } from "next/server";
 import "server-only";
 import type { z } from "zod";
 
+import type { ApiEnvelope } from "@/lib/api/envelope.types";
 import { verifySpamToken } from "@/lib/api/spamCheck";
 import { inboxFor, sendEnquiry } from "@/lib/mail";
 import type { EnquiryKind, MailMessage } from "@/lib/mail/types";
 import { checkRateLimit, clientKey } from "@/lib/rateLimit";
 
-/** The one response shape every enquiry endpoint returns. */
-export interface ApiEnvelope {
-  ok: boolean;
-  message: string;
-  /** Present only when delivery is accepted but not yet configured. */
-  pending?: boolean;
-}
+export type { ApiEnvelope } from "@/lib/api/envelope.types";
 
+/**
+ * A kind's `EnquirySpec` plus its schema. Routes spread the spec in rather
+ * than restating the subject, desk and field mapping, so the email this path
+ * composes and the one the browser sends to Web3Forms cannot drift apart.
+ */
 export interface HandlerConfig<Schema extends z.ZodType> {
   kind: EnquiryKind;
   schema: Schema;

@@ -81,22 +81,3 @@ export const theHotelPageCopy: StorySubPageCopy & {
     heading: "The name, and a word from the person who runs the house",
   },
 };
-
-export const gmPageCopy: StorySubPageCopy & {
-  framing: { eyebrow: string; heading: string; body: string };
-} = {
-  hero: {
-    eyebrow: "§ A WELCOME",
-    headline: "A message from the General Manager",
-    lede: "A word of welcome to The Emin Pasha Hotel & Spa — and a note on what the name is meant to stand for: a bold spirit of unity, humanity and an appreciation of nature's marvels.",
-  },
-  framing: {
-    eyebrow: "§ WHAT IT STANDS FOR",
-    heading: "Emin's instinct, put into a welcome",
-    body: "The welcome below is unattributed beyond the title on purpose — it is the house speaking, not one person, until the General Manager's name is confirmed. What it promises is small and specific: architecture you can walk through like a period of history, décor drawn from Uganda's own heritage, and a pouch of serenity in the middle of Kampala. The four principles the hotel takes from Emin Pasha's life are what that welcome is built on.",
-  },
-  onward: {
-    eyebrow: "§ CARRY ON",
-    heading: "The man, and the house he lends his name to",
-  },
-};

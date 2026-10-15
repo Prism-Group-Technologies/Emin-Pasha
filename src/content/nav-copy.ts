@@ -71,6 +71,7 @@ const raw: Record<string, NavPanelCopy> = {
     assetIds: {
       "/spa": "spa-treatment-room",
       "/swimming-pool": "spa-pool",
+      "/spa-etiquette": "spa-etiquette",
     },
   },
 
@@ -129,12 +130,10 @@ const raw: Record<string, NavPanelCopy> = {
     descriptions: {
       "/our-story/the-hotel": "A garden estate in the heart of Nakasero.",
       "/our-story/emin-pasha": "Doctor, naturalist, linguist — an African at heart.",
-      "/our-story/message-from-the-general-manager": "A word of welcome.",
     },
     assetIds: {
       "/our-story/the-hotel": "story-the-hotel",
       "/our-story/emin-pasha": "story-emin-pasha-portrait",
-      "/our-story/message-from-the-general-manager": "story-gm-photo",
     },
   },
 };

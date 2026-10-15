@@ -23,6 +23,13 @@ export interface AssetImageProps {
    */
   ratio?: "asset" | "fill";
   /**
+   * How the image meets its box. `cover` fills and crops, which is what a
+   * photograph wants. `contain` is for artwork cut to its own silhouette,
+   * which has no spare margin to crop into — pass it for any asset flagged
+   * `cutout`, or the figure itself is what gets trimmed.
+   */
+  fit?: "cover" | "contain";
+  /**
    * Whether clicking the photograph opens the site-wide image modal.
    *
    * **Default true**, which is the point: a visitor who wants a closer look at
@@ -55,7 +62,7 @@ const FRAME = {
  * `SectionShell` makes, and for the same reason: three default parameters cost
  * three branches against the `complexity` ceiling, and one spread costs none.
  */
-const ASSET_DEFAULTS = { priority: false, ratio: "asset", zoomable: true } as const;
+const ASSET_DEFAULTS = { priority: false, ratio: "asset", fit: "cover", zoomable: true } as const;
 
 /**
  * Button resets, plus the affordance that says the frame opens.
@@ -160,7 +167,7 @@ function zoomProps(asset: AssetRef, zoomable: boolean, caption?: string) {
  * is no photograph behind the stand-in to enlarge.
  */
 export function AssetImage(props: AssetImageProps) {
-  const { asset, sizes, priority, ratio, zoomable, zoomCaption } = {
+  const { asset, sizes, priority, ratio, fit, zoomable, zoomCaption } = {
     ...ASSET_DEFAULTS,
     ...props,
   };
@@ -185,7 +192,7 @@ export function AssetImage(props: AssetImageProps) {
         sizes={sizes}
         priority={priority}
         blurDataURL={image?.blurDataURL}
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: fit }}
       />
       {!image && <PlaceholderLabel asset={asset} />}
     </Box>

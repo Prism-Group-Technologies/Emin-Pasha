@@ -1,5 +1,10 @@
-import "server-only";
 
+/**
+ * Isomorphic on purpose — this was `server-only` while the Contact route was
+ * the only caller. The browser now composes the same fields to post to
+ * Web3Forms (via `lib/enquiry/specs/contact.ts`), and nothing here touches a
+ * secret or the network: it reads approved copy and maps validated values.
+ */
 import { contactTimeOptions, replyChannelOptions } from "@/containers/contact/copy/form";
 import { intentById } from "@/containers/contact/copy/intents";
 import { identity } from "@/content/identity";
