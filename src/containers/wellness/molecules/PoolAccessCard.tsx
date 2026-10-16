@@ -71,12 +71,12 @@ export function PoolAccessCard({ option }: { option: PoolAccessOption }) {
           gap: 3,
         }}
       >
-        <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
+        {/* <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
           {formatUgx(option.priceUgx)}{" "}
           <Text component="span" variant="body2" color="text.secondary">
             {option.priceUnit} · indicative
           </Text>
-        </Text>
+        </Text> */}
         <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, alignItems: "center" }}>
           <WhatsAppCta label="Book on WhatsApp" variant="ghost" />
           <Link href={`#${ENQUIRE_ANCHOR_ID}`} variant="body2" underline="hover">

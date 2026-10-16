@@ -50,14 +50,14 @@ export function DishRow({ item, signatureHref }: DishRowProps) {
           {item.description}
         </Text>
       </Box>
-      {item.priceUgx > 0 && (
+      {/* {item.priceUgx > 0 && (
         <Text
           variant="body2"
           sx={{ fontFamily: "var(--font-cartographic)", whiteSpace: "nowrap", flexShrink: 0 }}
         >
           {formatUgx(item.priceUgx)}
         </Text>
-      )}
+      )} */}
     </Box>
   );
 }

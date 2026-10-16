@@ -46,12 +46,12 @@ export function KudaraCateringCard({ pkg }: { pkg: KudaraCateringPackage }) {
       </Text>
 
       <Box sx={{ mt: "auto", display: "grid", gap: 2 }}>
-        <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
+        {/* <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
           {formatUgx(pkg.perDelegateUgx)}{" "}
           <Text component="span" variant="body2" color="text.secondary">
             per delegate · indicative
           </Text>
-        </Text>
+        </Text> */}
         <Button href={`#${ENQUIRE_ANCHOR_ID}`} variant="ghost" sx={{ alignSelf: "flex-start" }}>
           Add to my proposal
         </Button>

@@ -84,7 +84,7 @@ export function EventPage(props: EventPageProps) {
       <ProcessSection motion={m(1)} variant="raised" />
       <PackagesSection motion={m(2)} />
       <DifferentiatorsSection motion={m(3)} />
-      <EventVoicesSection motion={m(4)} />
+      {/* <EventVoicesSection motion={m(4)} /> */}
       <RfpSection motion={m(5)} />
       <EventsFaqSection motion={m(6)} />
       <EventsClosingCtaSection motion={m(7)} />

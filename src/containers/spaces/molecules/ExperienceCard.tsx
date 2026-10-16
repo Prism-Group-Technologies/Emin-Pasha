@@ -82,7 +82,7 @@ export function ExperienceCard({
             gap: 3,
           }}
         >
-          <PriceTag amountUsd={experience.priceUsd} unit={experience.unit} />
+          {/* <PriceTag amountUsd={experience.priceUsd} unit={experience.unit} /> */}
           <SeedEnquiryButton
             label="Book this experience"
             variant="ghost"

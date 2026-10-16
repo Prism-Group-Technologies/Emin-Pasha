@@ -1,4 +1,4 @@
-import { identity } from "@/content/identity";
+// import { identity } from "@/content/identity";
 
 const groups = new Intl.NumberFormat("en-UG");
 
@@ -17,5 +17,5 @@ const groups = new Intl.NumberFormat("en-UG");
  * `identity.currency`, the single approved source.
  */
 export function formatUgx(amount: number): string {
-  return `${identity.currency} ${groups.format(amount)}`;
+  return `USD ${groups.format(amount)}`;
 }

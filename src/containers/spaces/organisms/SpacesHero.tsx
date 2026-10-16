@@ -14,7 +14,7 @@ const MAX_GUESTS = Math.max(...spaceProfiles.map((profile) => profile.standing))
 const HERO_STATS = [
   { value: String(spaceProfiles.length), label: "lounges & gardens" },
   { value: "07:00 – late", label: "first coffee to nightcap" },
-  { value: formatUsd(FROM_USD), label: "signature experiences from" },
+  // { value: formatUsd(FROM_USD), label: "signature experiences from" },
   { value: `${MAX_GUESTS}`, label: "guests in the gardens" },
 ];
 

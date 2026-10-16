@@ -31,7 +31,7 @@ export function OutletDetailHero({ outlet }: { outlet: Outlet }) {
           ? { label: "See the menu", href: `#${MENUS_ANCHOR_ID}` }
           : { label: "Reserve a table", href: `#${RESERVE_ANCHOR_ID}` }
       }
-      secondaryCta={isInRoom ? undefined : { label: "See the menu", href: `#${MENUS_ANCHOR_ID}` }}
+      // secondaryCta={isInRoom ? undefined : { label: "See the menu", href: `#${MENUS_ANCHOR_ID}` }}
       stats={meta.stats}
       minHeight={{ xs: 520, md: 600 }}
     />

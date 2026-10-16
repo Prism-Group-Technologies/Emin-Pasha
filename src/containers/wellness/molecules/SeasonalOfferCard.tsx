@@ -52,7 +52,7 @@ export function SeasonalOfferCard({ offer }: { offer: SeasonalOffer }) {
           gap: 3,
         }}
       >
-        <Box
+        {/* <Box
           sx={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", gap: 2 }}
         >
           <Text component="span" sx={{ fontFamily: "var(--font-display)", fontSize: "1.375rem" }}>
@@ -61,7 +61,7 @@ export function SeasonalOfferCard({ offer }: { offer: SeasonalOffer }) {
           <Text variant="body2" component="span" color="text.secondary">
             {offer.priceUgx ? offer.priceNote : ""}
           </Text>
-        </Box>
+        </Box> */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 2, color: "text.secondary" }}>
           <Icon name="event" aria-hidden fontSize="small" sx={{ color: "primary.main" }} />
           <Text variant="body2" component="span">

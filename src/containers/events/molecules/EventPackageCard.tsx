@@ -65,12 +65,12 @@ export function EventPackageCard({ pkg }: { pkg: EventPackage }) {
         </Box>
 
         <Box sx={{ mt: "auto", display: "grid", gap: 3 }}>
-          <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
+          {/* <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
             {formatUgx(pkg.priceUgx)}{" "}
             <Text component="span" variant="body2" color="text.secondary">
               {pkg.unit} · indicative
             </Text>
-          </Text>
+          </Text> */}
           <Button href={pkg.ctaHref} sx={{ alignSelf: "flex-start" }}>
             {pkg.ctaLabel}
           </Button>

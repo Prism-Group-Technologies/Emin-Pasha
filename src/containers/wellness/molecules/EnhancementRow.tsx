@@ -80,9 +80,9 @@ export function EnhancementRow({
         <Text variant="overline" component="span" color="text.secondary">
           {duration}
         </Text>
-        <Text component="span" sx={{ fontFamily: "var(--font-cartographic)" }}>
+        {/* <Text component="span" sx={{ fontFamily: "var(--font-cartographic)" }}>
           {price}
-        </Text>
+        </Text> */}
       </Box>
     </Box>
   );

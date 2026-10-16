@@ -69,12 +69,12 @@ export function WellnessPackageCard({ pkg }: { pkg: WellnessPackage }) {
         </Box>
 
         <Box sx={{ mt: "auto", display: "grid", gap: 3 }}>
-          <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
+          {/* <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
             {formatUgx(pkg.priceUgx)}{" "}
             <Text component="span" variant="body2" color="text.secondary">
               {pkg.priceUnit} · indicative
             </Text>
-          </Text>
+          </Text> */}
           <WhatsAppCta label="Book this package" variant="ghost" />
         </Box>
       </Box>

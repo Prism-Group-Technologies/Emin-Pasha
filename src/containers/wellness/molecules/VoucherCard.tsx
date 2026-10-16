@@ -47,7 +47,7 @@ export function VoucherCard({ voucher }: { voucher: GiftVoucher }) {
         </Text>
       </Box>
 
-      <Box sx={{ display: "grid", gap: 0.5 }}>
+      {/* <Box sx={{ display: "grid", gap: 0.5 }}>
         <Text
           component="p"
           sx={{ fontFamily: "var(--font-display)", fontSize: "2rem", lineHeight: 1.05 }}
@@ -57,7 +57,7 @@ export function VoucherCard({ voucher }: { voucher: GiftVoucher }) {
         <Text variant="body2" component="p" color="text.secondary">
           {voucher.priceUgx ? voucher.priceNote : "Any value, redeemable across the spa"}
         </Text>
-      </Box>
+      </Box> */}
 
       <Text variant="body2" color="text.secondary" sx={{ textWrap: "pretty" }}>
         {voucher.blurb}
