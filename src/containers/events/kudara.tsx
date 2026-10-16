@@ -62,9 +62,9 @@ export function KudaraHallContainer() {
       <KudaraLayoutsSection motion={m(1)} />
       <KudaraProductionSection motion={m(2)} />
       <KudaraCateringSection motion={m(3)} />
-      <KudaraCaseStudiesSection motion={m(4)} />
-      <KudaraEstimatorSection motion={m(5)} />
-      <KudaraPlanningAidsSection motion={m(6)} />
+      {/* <KudaraCaseStudiesSection motion={m(4)} /> */}
+      {/* <KudaraEstimatorSection motion={m(5)} /> */}
+      {/* <KudaraPlanningAidsSection motion={m(6)} /> */}
     </EventPage>
   );
 }

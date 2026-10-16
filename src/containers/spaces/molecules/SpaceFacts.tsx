@@ -17,7 +17,8 @@ const factsFor = (profile: SpaceProfile): { icon: IconName; label: string; value
   {
     icon: "payments",
     label: "Private hire",
-    value: `from ${formatUsd(profile.hireFromUsd)} min. spend`,
+    // value: `from ${formatUsd(profile.hireFromUsd)} min. spend`,
+    value: `Charged per minute spend`,
   },
 ];
 

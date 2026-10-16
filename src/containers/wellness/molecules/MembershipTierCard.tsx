@@ -38,12 +38,12 @@ export function MembershipTierCard({ tier }: { tier: MembershipTier }) {
         )}
       </Box>
 
-      <Text component="p" sx={{ mt: 2, fontFamily: "var(--font-display)", fontSize: "1.75rem" }}>
+      {/* <Text component="p" sx={{ mt: 2, fontFamily: "var(--font-display)", fontSize: "1.75rem" }}>
         {formatUgx(tier.priceUgx)}{" "}
         <Text component="span" variant="body2" color="text.secondary">
           {tier.cadence}
         </Text>
-      </Text>
+      </Text> */}
       <Text variant="body2" color="text.secondary" sx={{ mt: 1, mb: 4 }}>
         {tier.bestFor}
       </Text>

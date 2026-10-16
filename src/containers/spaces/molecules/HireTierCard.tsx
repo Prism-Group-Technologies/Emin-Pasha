@@ -36,7 +36,7 @@ export function HireTierCard({ tier }: { tier: HireTier }) {
       <Text variant="body2" color="text.secondary">
         {tier.capacity} · {tier.duration}
       </Text>
-      <PriceTag amountUsd={tier.minSpendUsd} unit="minimum spend" />
+      {/* <PriceTag amountUsd={tier.minSpendUsd} unit="minimum spend" /> */}
       <Text variant="body2" sx={{ textWrap: "pretty" }}>
         {tier.pitch}
       </Text>

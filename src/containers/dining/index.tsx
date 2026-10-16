@@ -45,13 +45,13 @@ export function DiningContainer() {
     <>
       <DiningHero />
       <OutletsSection motion={m.outlets} />
-      <SignatureMenuSection motion={m.menus} />
+      {/* <SignatureMenuSection motion={m.menus} /> */}
       <CulinaryStorySection motion={m.story} />
       <AmbienceSection motion={m.ambience} />
       <PrivateDiningSection motion={m.privateDining} />
       <HoursSection motion={m.hours} />
       <ReservationSection motion={m.reservation} />
-      <GuestVoicesSection motion={m.voices} />
+      {/* <GuestVoicesSection motion={m.voices} /> */}
       <DiningFaqSection motion={m.faq} />
       <ClosingCtaSection motion={m.closing} />
       <SectionShell

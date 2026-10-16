@@ -18,7 +18,7 @@ export const heroCopy = {
   primaryCta: { label: "Check availability", href: "#book" },
   secondaryCta: { label: "Compare the rooms", href: "#compare" },
   stats: [
-    { value: "from UGX 250,000", label: "per night · breakfast included" },
+    { value: "from USD 135", label: "per night · breakfast included" },
     { value: "4", label: "room & suite categories" },
     { value: "Nakasero", label: "Kampala's embassy quarter" },
     { value: "Est. 2004", label: "independent & boutique" },

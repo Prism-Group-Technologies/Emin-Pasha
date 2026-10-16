@@ -17,7 +17,7 @@ const HEADINGS = [
   "Seated / standing",
   "Hours",
   "Best for",
-  "Hire from",
+  // "Hire from",
 ] as const;
 const cell = {
   py: 3,
@@ -32,7 +32,7 @@ const cellsFor = ({ profile }: CompareRow) => [
   `${profile.seated} / ${profile.standing}`,
   profile.hours,
   profile.bestFor.slice(0, 2).join(", "),
-  formatUsd(profile.hireFromUsd),
+  // formatUsd(profile.hireFromUsd),
 ];
 
 /**

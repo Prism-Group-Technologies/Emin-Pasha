@@ -33,7 +33,7 @@ export function OutletMenuSection({
       description={menu.summary}
     >
       <Stack spacing={{ xs: 7, md: 9 }}>
-        <SignatureDishStrip dishes={menu.signatureDishes} />
+        {/* <SignatureDishStrip dishes={menu.signatureDishes} /> */}
 
         <Box component="section">
           <Box

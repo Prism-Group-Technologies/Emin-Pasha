@@ -24,7 +24,7 @@ const raw: RoomCategory[] = [
   {
     id: "apartment-room",
     name: "Apartment Room",
-    rateUgx: 350_000,
+    rateUgx: 180,
     capacity: "1–2 guests",
     sellTo: "Corporate, diplomatic, solo business travellers",
     inclusions: commonInclusions,
@@ -32,7 +32,7 @@ const raw: RoomCategory[] = [
   {
     id: "deluxe-room",
     name: "Deluxe Room",
-    rateUgx: 250_000,
+    rateUgx: 135,
     capacity: "1–2 guests",
     sellTo: "Couples, leisure, first-time guests, value-conscious corporate",
     inclusions: commonInclusions,
@@ -40,7 +40,7 @@ const raw: RoomCategory[] = [
   {
     id: "deluxe-suites",
     name: "Deluxe Suites",
-    rateUgx: 250_000,
+    rateUgx: 145,
     capacity: "2–3 guests",
     sellTo: "Families, extended stay, small groups",
     inclusions: commonInclusions,
@@ -48,7 +48,7 @@ const raw: RoomCategory[] = [
   {
     id: "vip-suite",
     name: "VIP Suite",
-    rateUgx: 250_000,
+    rateUgx: 200,
     capacity: "1–3 guests",
     sellTo: "Long-stay executives, guests wanting a private lounge area",
     inclusions: commonInclusions,

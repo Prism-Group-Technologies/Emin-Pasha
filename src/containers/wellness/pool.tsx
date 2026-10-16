@@ -64,7 +64,7 @@ export function PoolContainer() {
       <PoolWaysToSwimSection motion={d(3)} variant="raised" />
       <PoolPassesSection motion={d(4)} />
       <PoolPrivateHireSection motion={d(5)} variant="raised" />
-      <PoolPlannerSection motion={d(6)} />
+      {/* <PoolPlannerSection motion={d(6)} /> */}
       <SeasonalOffersSection motion={d(7)} facility="pool" />
       <WellnessVoicesSection motion={d(8)} variant="raised" />
       <WellnessFaqSection motion={d(9)} items={poolFaq} copy={poolSections.faq} />

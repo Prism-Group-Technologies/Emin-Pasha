@@ -81,14 +81,14 @@ export function TreatmentCard({ treatment }: { treatment: Treatment }) {
           <Text variant="overline" component="span" color="text.secondary">
             {treatment.duration}
           </Text>
-          <Text
+          {/* <Text
             component="span"
             sx={{ fontFamily: "var(--font-cartographic)", color: "text.primary" }}
           >
             {treatment.priceQualifier === "from" && "from "}
             {formatUgx(treatment.priceUgx)}
             {treatment.priceQualifier === "per person" && " pp"}
-          </Text>
+          </Text> */}
         </Box>
       </Box>
     </Box>

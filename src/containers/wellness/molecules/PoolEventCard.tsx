@@ -68,12 +68,12 @@ export function PoolEventCard({ event, asset }: { event: PoolEvent; asset?: Asse
         </Box>
 
         <Box sx={{ mt: "auto", pt: 4, display: "grid", gap: 3 }}>
-          <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
+          {/* <Text component="p" sx={{ fontFamily: "var(--font-display)", fontSize: "1.5rem" }}>
             from {formatUgx(event.fromUgx)}{" "}
             <Text component="span" variant="body2" color="text.secondary">
               {event.priceUnit} · indicative
             </Text>
-          </Text>
+          </Text> */}
           <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, alignItems: "center" }}>
             <WhatsAppCta label="Ask about a date" variant="ghost" />
             <Link href={`#${ENQUIRE_ANCHOR_ID}`} variant="body2" underline="hover">

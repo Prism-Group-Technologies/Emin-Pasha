@@ -58,14 +58,14 @@ export function OutletDishTeaser({ dishes }: OutletDishTeaserProps) {
               <Text variant="h4" component="h3">
                 {dish.name}
               </Text>
-              {dish.priceUgx > 0 && (
+              {/* {dish.priceUgx > 0 && (
                 <Text
                   variant="body2"
                   sx={{ fontFamily: "var(--font-cartographic)", whiteSpace: "nowrap" }}
                 >
                   {formatUgx(dish.priceUgx)}
                 </Text>
-              )}
+              )} */}
             </Box>
             <Text variant="body2" color="text.secondary" sx={{ textWrap: "pretty" }}>
               {dish.description}
