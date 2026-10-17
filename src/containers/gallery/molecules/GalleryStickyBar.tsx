@@ -3,7 +3,7 @@
 import { Box } from "@/components/atoms/Box";
 import { Link } from "@/components/atoms/Link";
 import { Text } from "@/components/atoms/Text";
-import { STICKY_BAR_HEIGHT } from "@/components/organisms/Header/constants";
+import { STICKY_BAR_HEIGHT, atNav } from "@/components/organisms/Header/constants";
 import { COLLECTIONS_ANCHOR_ID } from "@/containers/gallery/anchors";
 // Leaf module, not the `copy` barrel, so only the strings this bar needs ship to the client.
 import { sections } from "@/containers/gallery/copy/sections";
@@ -38,7 +38,7 @@ export function GalleryStickyBar({
       sx={{
         position: "fixed",
         left: "50%",
-        bottom: { xs: STICKY_BAR_HEIGHT + 12, md: 24 },
+        bottom: atNav(STICKY_BAR_HEIGHT + 12, 24),
         zIndex: zIndexTokens.appBar,
         display: "flex",
         alignItems: "center",

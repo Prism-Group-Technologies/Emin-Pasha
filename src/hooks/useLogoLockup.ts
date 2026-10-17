@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { brandLockupSizes, brandLockupWidth } from "@/config/brand";
+import { type LockupWidth, brandLockupSizes, brandLockupWidth } from "@/config/brand";
 import { easingTokens, motionTokens } from "@/theme/tokens";
 
 export interface UseLogoLockupArgs {
@@ -9,7 +9,7 @@ export interface UseLogoLockupArgs {
 
 /** Plain values only — no MUI types, so the hook stays outside the boundary. */
 export interface LogoLockup {
-  width: { xs: number; md: number };
+  width: LockupWidth;
   sizes: string;
   transition: string;
 }

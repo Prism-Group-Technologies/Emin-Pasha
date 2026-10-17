@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 
 import { Button } from "@/components/atoms/Button";
-import { STICKY_BAR_HEIGHT } from "@/components/organisms/Header/constants";
+import { STICKY_BAR_HEIGHT, atNav } from "@/components/organisms/Header/constants";
 import { shell } from "@/content/shell";
 import { easingTokens, motionTokens } from "@/theme/tokens";
 
@@ -51,7 +51,7 @@ export function ConsentBanner({ onAcceptAll, onRejectAll, onManage }: ConsentBan
         position: "fixed",
         left: 0,
         right: 0,
-        bottom: { xs: `${STICKY_BAR_HEIGHT}px`, md: 0 },
+        bottom: atNav<string | number>(`${STICKY_BAR_HEIGHT}px`, 0),
         zIndex: (theme) => theme.zIndex.snackbar,
         bgcolor: "background.paper",
         borderTop: "1px solid",

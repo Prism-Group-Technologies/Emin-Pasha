@@ -3,10 +3,11 @@ import Box from "@mui/material/Box";
 import lockupLight from "@/assets/images/logo-lockup-light.webp";
 import lockup from "@/assets/images/logo-lockup.webp";
 import { Image } from "@/components/atoms/Image";
+import type { LockupWidth } from "@/config/brand";
 
 export interface BrandMarkProps {
   /** Rendered width in px, per breakpoint; height follows the intrinsic ratio. */
-  width: { xs: number; md: number };
+  width: LockupWidth;
   sizes: string;
   /** The light lock-up sits over the hero video; the dark one over the page. */
   variant?: "light" | "dark";
@@ -20,10 +21,18 @@ export interface BrandMarkProps {
   transition?: string;
 }
 
-const RATIO = lockup.width / lockup.height;
-
-/** The artwork's own ratio, applied to the one axis the layout pins. */
-const height = (width: number) => Math.round(width / RATIO);
+/**
+ * The artwork's own ratio, as CSS rather than as a height map.
+ *
+ * It used to be a second responsive object — one height per declared width —
+ * which meant the ratio was written down twice and a step added to one map
+ * and not the other would have stretched the lock-up at exactly one window
+ * size. `aspect-ratio` states it once and lets the height follow whatever
+ * width the box actually resolves to, which is also what makes `maxWidth`
+ * below safe: a lock-up that has to narrow on a 320px phone gets shorter in
+ * proportion rather than squashed.
+ */
+const ASPECT_RATIO = `${lockup.width} / ${lockup.height}`;
 
 /**
  * The delivered brand lock-up: the line-art portrait, the rule, and "The
@@ -72,7 +81,13 @@ export function BrandMark({ width, sizes, variant = "dark", alt, transition }: B
         position: "relative",
         flexShrink: 0,
         width,
-        height: { xs: height(width.xs), md: height(width.md) },
+        // The cap the smallest phones need. `Logo` lets its link shrink
+        // below `NAV_BREAKPOINT` and refuses to above it, so this binds only
+        // where the row genuinely has less than 150px to give — a 320px
+        // viewport, where the lock-up used to overhang the menu button
+        // instead. `aspectRatio` keeps the artwork's shape while it does.
+        maxWidth: "100%",
+        aspectRatio: ASPECT_RATIO,
         transition,
         "@media (prefers-reduced-motion: reduce)": { transition: "none" },
       }}

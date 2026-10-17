@@ -6,6 +6,12 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import { Icon } from "@/components/atoms/Icon";
+import {
+  NAV_CHEVRON_HIT_INSET,
+  NAV_CHEVRON_SIZE,
+  NAV_LABEL_TYPE,
+  NAV_METRICS,
+} from "@/components/organisms/Header/constants";
 import type { NavItem } from "@/schemas/content/navItem";
 import { easingTokens, motionTokens } from "@/theme/tokens";
 
@@ -44,7 +50,7 @@ export function NavTrigger(props: NavTriggerProps) {
     <Box
       onPointerEnter={hasPanel ? props.onScheduleOpen : undefined}
       onPointerLeave={hasPanel ? props.onScheduleClose : undefined}
-      sx={{ display: "flex", alignItems: "center", gap: 0.5 }}
+      sx={{ display: "flex", alignItems: "center", gap: NAV_METRICS.triggerGap, flexShrink: 0 }}
     >
       <Typography
         component={NextLink}
@@ -54,6 +60,7 @@ export function NavTrigger(props: NavTriggerProps) {
         onClick={props.onClose}
         sx={{
           color,
+          ...NAV_LABEL_TYPE,
           textDecoration: "none",
           whiteSpace: "nowrap",
           position: "relative",
@@ -92,10 +99,19 @@ export function NavTrigger(props: NavTriggerProps) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            // Kept at the 44px minimum target the rest of the header uses
-            // (CLAUDE.md §10), even though this control is desktop-only.
-            width: 44,
-            height: 44,
+            // Pointer-only control: it is never rendered on a touch
+            // viewport, where the drawer's full-width rows open the same
+            // sections. So the governing target size is WCAG 2.5.8's 24×24,
+            // not the 44px AAA square the touch controls here keep — and the
+            // height stays 44 regardless, so only the width is given back.
+            // Five of these at 44 wide cost the bar 220px (see
+            // `NAV_CHEVRON_SIZE`).
+            ...NAV_CHEVRON_SIZE,
+            flexShrink: 0,
+            position: "relative",
+            // The touch target, which is wider than the box — see
+            // `NAV_CHEVRON_HIT_INSET`.
+            "&::after": { content: '""', position: "absolute", inset: NAV_CHEVRON_HIT_INSET },
             p: 0,
             border: 0,
             background: "none",
