@@ -2,7 +2,7 @@ import { Box } from "@/components/atoms/Box";
 import { Button } from "@/components/atoms/Button";
 import { Text } from "@/components/atoms/Text";
 import { cardSurface } from "@/components/templates/sectionShellStyles";
-import { formatUgx } from "@/utils/currency";
+import { identity } from "@/content/identity";
 
 export interface OfferCardProps {
   name: string;
@@ -13,6 +13,25 @@ export interface OfferCardProps {
   ctaHref: string;
 }
 
+const priceGroups = new Intl.NumberFormat("en-UG");
+
+/**
+ * Formats this card's rate as the approved copy writes it: `UGX 85,000`.
+ *
+ * Local on purpose. `utils/currency.ts#formatUgx` is shared by ~20 price
+ * surfaces and currently emits a hard-coded `USD` prefix, so correcting it
+ * there would move every one of those surfaces at once. This card owns its
+ * own presentation instead, and takes the code from `identity.currency` —
+ * the single approved source — rather than a literal "UGX".
+ *
+ * Only the grouping comes from `Intl`, for the same reason `formatUgx` gives:
+ * `style: "currency"` renders UGX as **"USh"**, a legitimate symbol the
+ * approved copy never uses.
+ */
+function formatOfferPrice(amount: number): string {
+  return `${identity.currency} ${priceGroups.format(amount)}`;
+}
+
 /**
  * One standing offer.
  *
@@ -21,6 +40,9 @@ export interface OfferCardProps {
  * previous version put both meta values in a thin row at the bottom and left
  * the rest of a tall card empty, which is exactly the "nothing anchors the
  * bottom edge" problem that made this row look unfinished.
+ *
+ * **The price is rendered in UGX**, matching the `priceUgx` figure the content
+ * layer actually stores — see `formatOfferPrice` above.
  *
  * **The day conflict is respected by omission.** The source gives conflicting
  * day ranges for Happy Hour, so `content/offers.ts` carries only the confirmed
@@ -35,7 +57,9 @@ export function OfferCard({
   ctaLabel,
   ctaHref,
 }: OfferCardProps) {
-  const facts = [priceUgx !== undefined ? formatUgx(priceUgx) : null, schedule].filter(Boolean);
+  const facts = [priceUgx !== undefined ? formatOfferPrice(priceUgx) : undefined, schedule].filter(
+    (fact): fact is string => Boolean(fact),
+  );
 
   return (
     <Box sx={cardSurface()}>

@@ -1,5 +1,6 @@
 import type { SxProps, Theme } from "@mui/material/styles";
 
+import { atNav } from "@/components/organisms/Header/constants";
 import { zIndexTokens } from "@/theme/tokens";
 
 import { FLOATING_DOCK_INSET } from "./constants";
@@ -24,10 +25,10 @@ import { FLOATING_DOCK_INSET } from "./constants";
 export function floatingSlotSx(side: "left" | "right"): SxProps<Theme> {
   return {
     position: "fixed",
-    // Below `md` the mobile sticky action bar owns the bottom of the screen
-    // and already carries a WhatsApp action; a second one floating over it
-    // would be the same destination twice, overlapping.
-    display: { xs: "none", md: "inline-flex" },
+    // Below `NAV_BREAKPOINT` the mobile sticky action bar owns the bottom of
+    // the screen and already carries a WhatsApp action; a second one floating
+    // over it would be the same destination twice, overlapping.
+    display: atNav("none", "inline-flex"),
     bottom: FLOATING_DOCK_INSET,
     [side]: FLOATING_DOCK_INSET,
     zIndex: zIndexTokens.fab,

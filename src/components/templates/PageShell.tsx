@@ -6,7 +6,13 @@ import { SkipLink } from "@/components/atoms/SkipLink";
 import { CookieConsent } from "@/components/organisms/CookieConsent";
 import { FloatingActionDock } from "@/components/organisms/FloatingActionDock";
 import { Footer } from "@/components/organisms/Footer";
-import { Header, HeaderSpacer, STICKY_BAR_HEIGHT, headerData } from "@/components/organisms/Header";
+import {
+  Header,
+  HeaderSpacer,
+  STICKY_BAR_HEIGHT,
+  atNav,
+  headerData,
+} from "@/components/organisms/Header";
 import { StickyActionBar } from "@/components/organisms/StickyActionBar";
 import { WebVitals } from "@/components/organisms/WebVitals";
 import { shell } from "@/content/shell";
@@ -51,9 +57,9 @@ export function PageShell({ children }: { children: ReactNode }) {
         {children}
       </Box>
       <Footer />
-      <Box aria-hidden sx={{ height: { xs: `${STICKY_BAR_HEIGHT}px`, md: 0 } }} />
+      <Box aria-hidden sx={{ height: atNav<string | number>(`${STICKY_BAR_HEIGHT}px`, 0) }} />
       <StickyActionBar />
-      {/* `md` and up only, and unlike the two bars it reserves no space:
+      {/* `NAV_BREAKPOINT` and up only, and unlike the two bars it reserves no space:
           `position: fixed` in the corners, out of flow, zero CLS. */}
       <FloatingActionDock />
       <CookieConsent />

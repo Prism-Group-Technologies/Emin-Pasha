@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 
 import { ExternalLink } from "@/components/atoms/ExternalLink";
 import { Icon, type IconName } from "@/components/atoms/Icon";
-import { STICKY_BAR_HEIGHT } from "@/components/organisms/Header/constants";
+import { STICKY_BAR_HEIGHT, atNav } from "@/components/organisms/Header/constants";
 import { BookNowAction } from "@/components/organisms/StickyActionBar/BookNowAction";
 import { bookNowCta } from "@/content/navigation";
 import { shell } from "@/content/shell";
@@ -41,7 +41,11 @@ const actionSx = {
 /**
  * Mobile-only sticky action bar — CLAUDE.md §6.5's persistent CTA plus the
  * three highest-intent contact actions this property converts on. Hidden
- * from `md` up, where the same actions sit in the header utility row.
+ * from `NAV_BREAKPOINT` up, where the same actions sit in the header utility
+ * row. It shares that one constant with the drawer and the header bar so the
+ * swap happens at a single width: a tablet-landscape viewport showing the
+ * drawer must still have these actions somewhere, and it used to lose them
+ * at 900px while the bar they moved into did not fit until 1512px.
  *
  * A **Server Component**: only the Book action is a client leaf
  * (`BookNowAction`, which opens the mobile booking sheet rather than
@@ -63,7 +67,7 @@ export function StickyActionBar() {
         left: 0,
         right: 0,
         height: STICKY_BAR_HEIGHT,
-        display: { xs: "grid", md: "none" },
+        display: atNav("grid", "none"),
         gridTemplateColumns: "repeat(4, 1fr)",
         bgcolor: "background.paper",
         borderTop: "1px solid",

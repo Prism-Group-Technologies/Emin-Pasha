@@ -75,7 +75,7 @@ const raw: NavItem[] = [
     href: "/our-story",
     children: [
       { label: "The Hotel", href: "/our-story/the-hotel" },
-      { label: "Emin Pasha — Our Namesake", href: "/our-story/emin-pasha" }
+      { label: "Emin Pasha — Our Namesake", href: "/our-story/emin-pasha" },
     ],
   },
   { label: "Gallery", href: "/gallery" },
@@ -94,6 +94,12 @@ export const navigation: NavItem[] = raw.map((item) => navItemSchema.parse(item)
  * mega-menu panel, from the footer columns, and in full from the mobile
  * drawer, which renders `navigation` unabridged. Derived by href rather than
  * re-listed, so a label exists in exactly one place (CLAUDE.md §5.4).
+ *
+ * "Would not fit" is now a measured number rather than a judgement: see
+ * `Header/constants.ts` → `NAV_BREAKPOINT` for the bar's horizontal budget,
+ * and `Header/headerData.test.ts` for the assertion that guards it. A
+ * seventh entry here, or a materially longer label on an existing one, fails
+ * that test.
  */
 const HEADER_NAV_HREFS = [
   "/accommodation",

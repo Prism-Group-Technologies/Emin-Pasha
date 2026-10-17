@@ -17,6 +17,8 @@ import {
   HEADER_HEIGHT_CONDENSED,
   HEADER_TRANSITION,
   HERO_SCRIM,
+  NAV_METRICS,
+  atNav,
 } from "@/components/organisms/Header/constants";
 import type { HeaderData } from "@/components/organisms/Header/headerData";
 import { useHeaderScroll } from "@/hooks/useHeaderScroll";
@@ -83,7 +85,18 @@ export function Header({ data }: { data: HeaderData }) {
         }}
       >
         <Container maxWidth="xl">
-          <Toolbar disableGutters sx={{ minHeight: 0, gap: 4, justifyContent: "space-between" }}>
+          <Toolbar
+            disableGutters
+            sx={{
+              minHeight: 0,
+              // Stepped, not a constant 4: between `lg` and `xl` the three
+              // groups are competing for a container only 1152–1488px wide,
+              // and 64px of gap was the cheapest 64px to give back.
+              gap: NAV_METRICS.toolbarGap,
+              justifyContent: "space-between",
+              flexWrap: "nowrap",
+            }}
+          >
             <Logo variant={variant} name={data.brandName} condensed={condensed} />
             <DesktopNav variant={variant} data={data} menu={menu} />
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -93,7 +106,7 @@ export function Header({ data }: { data: HeaderData }) {
                 aria-label={data.labels.openMenuLabel}
                 aria-expanded={nav.open}
                 color="inherit"
-                sx={{ width: 44, height: 44, display: { xs: "inline-flex", md: "none" } }}
+                sx={{ width: 44, height: 44, display: atNav("inline-flex", "none") }}
               >
                 <Icon name="menu" />
               </MuiIconButton>

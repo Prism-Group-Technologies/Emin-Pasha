@@ -9,6 +9,7 @@ import MuiDrawer from "@mui/material/Drawer";
 
 import { MobileNavBar, MobileNavFooter } from "@/components/organisms/Header/MobileNavChrome";
 import { MobileNavSection } from "@/components/organisms/Header/MobileNavSection";
+import { atNav } from "@/components/organisms/Header/constants";
 import type { HeaderData } from "@/components/organisms/Header/headerData";
 import { drawerPaperSx } from "@/components/organisms/Header/mobileNavStyles";
 import { motionTokens } from "@/theme/tokens";
@@ -45,7 +46,7 @@ export function MobileNav({ open, expandedHref, onClose, onToggleSection, data }
       anchor="right"
       transitionDuration={motionTokens.navFade}
       slotProps={{ paper: { sx: drawerPaperSx } }}
-      sx={{ display: { xs: "block", md: "none" } }}
+      sx={{ display: atNav("block", "none") }}
     >
       <MobileNavBar
         brandName={data.brandName}

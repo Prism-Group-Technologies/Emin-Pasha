@@ -8,6 +8,7 @@ import Box from "@mui/material/Box";
 
 import { MegaMenuLayer } from "@/components/organisms/Header/MegaMenuLayer";
 import { NavTrigger } from "@/components/organisms/Header/NavTrigger";
+import { NAV_METRICS, atNav } from "@/components/organisms/Header/constants";
 import type { HeaderData } from "@/components/organisms/Header/headerData";
 import type { MegaMenuState } from "@/hooks/useMegaMenu";
 import { isActiveRoute } from "@/utils/route";
@@ -24,8 +25,8 @@ export interface DesktopNavProps {
 }
 
 /**
- * The `md`-and-up primary navigation: a row of triggers, plus one panel layer
- * rendered as their sibling.
+ * The `NAV_BREAKPOINT`-and-up primary navigation: a row of triggers, plus one
+ * panel layer rendered as their sibling.
  *
  * Escape and focus-out are handled on this wrapper rather than per trigger, so
  * one listener covers the triggers *and* the panels their focus can move into.
@@ -46,7 +47,18 @@ export function DesktopNav({ variant, data, menu }: DesktopNavProps) {
       aria-label={data.labels.primaryNavLabel}
       onKeyDown={menu.onKeyDown}
       onBlur={menu.onBlur}
-      sx={{ display: { xs: "none", md: "flex" }, alignItems: "center", gap: 4, minWidth: 0 }}
+      sx={{
+        display: atNav("none", "flex"),
+        alignItems: "center",
+        gap: NAV_METRICS.itemGap,
+        // `flexShrink: 0`, not `minWidth: 0`. Shrinking this box did not
+        // shrink anything inside it — every label is `white-space: nowrap`,
+        // so the children simply overflowed the box and painted on top of
+        // the utility row. Refusing to shrink makes that failure mode
+        // impossible; `NAV_BREAKPOINT` is what keeps the bar from being
+        // mounted at a width where it would have had to.
+        flexShrink: 0,
+      }}
     >
       {data.headerNavigation.map((item) => (
         <NavTrigger

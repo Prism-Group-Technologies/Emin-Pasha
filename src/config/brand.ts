@@ -31,13 +31,30 @@
  * viewport's content box with the 44px menu button: 150 + 32 gap + 44 still
  * fits inside 272px of gutter-less container.
  *
+ * **`lg` dips below `md`, on purpose.** The scale is not monotonic because
+ * the lock-up's competition is not monotonic: from `xs` to `lg` the lock-up
+ * shares the bar with one 44px menu button and can take the full 200,
+ * whereas `lg`–`xl` is the one band where the whole desktop nav, the utility
+ * icons and the CTA are in the row with it and the container is still only
+ * 1152–1488px wide (see `Header/constants.ts`, `NAV_BREAKPOINT`). 168 is
+ * what the measured budget leaves there; `xl` hands the 200 straight back.
+ *
  * No imports on purpose: this module is reachable from the always-loaded
  * client bundle and must not pull the Zod-validated content layer in with it
  * (DECISIONS.md D25).
  */
+/**
+ * Rendered lock-up width in px, keyed by breakpoint. `xs` is required
+ * because it is the base every other key steps up from; the rest are
+ * optional so a call site declares only the steps its layout actually needs
+ * — the header needs a narrower lock-up in the one band where the nav bar
+ * competes with it for the row, the footer needs one width and no steps.
+ */
+export type LockupWidth = { xs: number } & Partial<Record<"sm" | "md" | "lg" | "xl", number>>;
+
 export const brandLockupWidth = {
-  expanded: { xs: 150, md: 200 },
-  condensed: { xs: 116, md: 132 },
+  expanded: { xs: 150, md: 200, lg: 168, xl: 200 },
+  condensed: { xs: 116, md: 132, lg: 120, xl: 132 },
 } as const;
 
 /**

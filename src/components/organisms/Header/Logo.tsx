@@ -5,6 +5,7 @@ import NextLink from "next/link";
 import Box from "@mui/material/Box";
 
 import { BrandMark } from "@/components/atoms/BrandMark";
+import { atNav } from "@/components/organisms/Header/constants";
 import { useLogoLockup } from "@/hooks/useLogoLockup";
 
 export interface LogoProps {
@@ -44,7 +45,23 @@ export function Logo({ variant, name, condensed = false }: LogoProps) {
     <Box
       component={NextLink}
       href="/"
-      sx={{ display: "flex", alignItems: "center", textDecoration: "none", minWidth: 0 }}
+      /**
+       * The link used to be `minWidth: 0` at every width, and `BrandMark`
+       * inside it refuses to shrink — so squeezing the link never made the
+       * lock-up smaller, it only made the box narrower than the artwork,
+       * which then overhung its neighbour. Both halves of that are fixed
+       * here: from `NAV_BREAKPOINT` up the link refuses to shrink at all
+       * (the desktop bar has a measured budget and the lock-up's 168–200px
+       * is part of it), and below it the link may shrink while `BrandMark`'s
+       * `maxWidth` scales the artwork to match instead of overhanging.
+       */
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        textDecoration: "none",
+        minWidth: 0,
+        flexShrink: atNav(1, 0),
+      }}
     >
       <BrandMark
         width={lockup.width}
