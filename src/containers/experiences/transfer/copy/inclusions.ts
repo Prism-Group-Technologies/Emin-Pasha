@@ -25,7 +25,7 @@ export const transferInclusions: Inclusion[] = [
     title: "Multilingual chauffeurs",
     detail: "English, plus French or Swahili.",
   },
-  { icon: "support-agent", title: "24/7 dispatch", detail: "A person answers, whatever the hour." },
+  { icon: "support-agent", title: "Dispatch desk", detail: "A person answers, not a machine." },
 ];
 
 export interface PremiumService {

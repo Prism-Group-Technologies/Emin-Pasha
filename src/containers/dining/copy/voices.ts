@@ -36,9 +36,9 @@ export const diningVoices: DiningVoice[] = [
   },
   {
     id: "placeholder-inroom",
-    heading: "In-room, after a late flight",
+    heading: "In-room, after a long flight",
     quote:
-      "Landed at midnight, ordered the club and a soup from the overnight menu, and it was at the door in twenty minutes. Exactly what you want.",
+      "Got in after a long flight, ordered the club and a soup to the room, and it was at the door in twenty minutes. Exactly what you want.",
     author: "Guest — placeholder",
     location: "London, United Kingdom",
     date: "Stay, placeholder date",

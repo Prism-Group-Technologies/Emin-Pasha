@@ -8,7 +8,7 @@ const groups = new Intl.NumberFormat("en-UG");
  * Deliberately **not** `Intl.NumberFormat(…, { style: "currency" })`. That
  * renders UGX as **"USh"** — verified, not assumed — which is a legitimate
  * symbol but not the presentation
- * 02_CONTENT_SOURCE_OF_TRUTH.md uses anywhere ("Rates from UGX 250,000 per
+ * 02_CONTENT_SOURCE_OF_TRUTH.md uses anywhere ("Rates start from as low as USD 110. per
  * night", §4, §12.2, §12.3). Shipping "USh" would quietly contradict the
  * approved copy on the same page, and `check:content`'s no-USD guard would
  * not catch it because "USh" is not "USD".

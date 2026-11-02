@@ -13,7 +13,7 @@ export interface CategoryOffer {
  * its category. Invented, indicative US-dollar starting rates.
  */
 export const categoryOffers: Record<GalleryCategory, CategoryOffer> = {
-  rooms: { label: "A garden-view room or suite", priceUsd: 180, unit: "per night" },
+  rooms: { label: "A room or suite", priceUsd: 180, unit: "per night" },
   dining: { label: "A table for dinner", priceUsd: 45, unit: "per guest" },
   spaces: { label: "Afternoon tea or a fireside table", priceUsd: 18, unit: "per guest" },
   wellness: { label: "A spa treatment or day pass", priceUsd: 65, unit: "per treatment" },

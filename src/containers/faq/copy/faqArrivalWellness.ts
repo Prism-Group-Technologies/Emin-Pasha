@@ -19,7 +19,7 @@ export const arrivalWellnessFaqs: InventedFaq[] = [
     topic: "arrival",
     question: "What if my flight lands late at night?",
     answer:
-      "Share your flight number when you book. Your driver tracks the flight and the front desk expects you whatever the hour, so your room is ready when you walk in.",
+      "Share your flight number when you book. Your driver tracks the flight and the front desk expects you, so your room is ready when you walk in.",
   },
   {
     id: "getting-around-kampala",

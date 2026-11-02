@@ -86,18 +86,18 @@ export const outletFacts: Record<OutletId, OutletFact[]> = {
   ],
   [OUTLET_ID.inRoom]: [
     {
-      label: "Around the clock",
-      detail: "Available around the clock in every room category",
+      label: "Every room",
+      detail: "Available in every room category",
       icon: "king-bed",
     },
     {
-      label: "Full menu to 23:00",
-      detail: "Full Special-Select menu until 23:00",
+      label: "Full menu",
+      detail: "The same kitchen as the restaurants",
       icon: "restaurant",
     },
     {
-      label: "Overnight menu",
-      detail: "A shorter overnight menu through to breakfast",
+      label: "Light bites",
+      detail: "A shorter list of lighter plates",
       icon: "auto-awesome",
     },
     {

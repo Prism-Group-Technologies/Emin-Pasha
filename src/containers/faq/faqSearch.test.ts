@@ -25,14 +25,14 @@ const entry = (
 
 const ENTRIES: FaqEntry[] = [
   entry("wifi", "stay", "Is there Wi-Fi?", "Yes — fast, unlimited fibre."),
-  entry("breakfast", "dining", "Is breakfast included?", "Yes — à la carte breakfast."),
+  entry("breakfast", "dining", "Is breakfast included?", "Yes — with café au lait."),
   entry("vegan", "dining", "Can the kitchen cater for vegans?", "Yes, tell us when you book."),
   entry("parking", "arrival", "Is there parking?", "Secure parking on site."),
 ];
 
 describe("faqSearch", () => {
   it("normalises case and accents", () => {
-    expect(normaliseText("À la Carte")).toBe("a la carte");
+    expect(normaliseText("Crème Brûlée")).toBe("creme brulee");
   });
 
   it("tokenises on anything that is not a letter or digit", () => {
@@ -41,7 +41,7 @@ describe("faqSearch", () => {
   });
 
   it("requires every token to match, across question and answer", () => {
-    expect(filterFaqs(ENTRIES, "all", "a la carte").map((e) => e.id)).toEqual(["breakfast"]);
+    expect(filterFaqs(ENTRIES, "all", "cafe").map((e) => e.id)).toEqual(["breakfast"]);
     expect(filterFaqs(ENTRIES, "all", "yes book").map((e) => e.id)).toEqual(["vegan"]);
     expect(filterFaqs(ENTRIES, "all", "wifi")).toEqual([]);
   });

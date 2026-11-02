@@ -18,8 +18,8 @@ const copy = receptionSections.home;
  * the funnel where it does any work. By that point a visitor wants the place
  * and has not yet seen the price, and the objection in between is not "is it
  * beautiful" — the six tiles above just settled that — but "will anyone
- * actually look after me when I land at midnight in a city I do not know".
- * A desk that never closes is the answer, and this is the only band on the
+ * actually look after me when I land in a city I do not know".
+ * A staffed front desk is the answer, and this is the only band on the
  * page whose photograph contains someone who works here.
  *
  * Copy and photography enter from opposite sides, the device `IntroBlock`

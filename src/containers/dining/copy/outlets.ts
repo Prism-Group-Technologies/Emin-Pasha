@@ -27,7 +27,7 @@ export const outletMeta = {
     dress: "Smart-casual",
     stats: [
       { value: "06:30–late", label: "breakfast to nightcap" },
-      { value: "À la carte", label: "and handcrafted cocktails" },
+      { value: "Fusion plates", label: "and handcrafted cocktails" },
       { value: "Garden", label: "terrace seating" },
       { value: "Walk-ins", label: "welcome when there's space" },
     ],
@@ -61,13 +61,13 @@ export const outletMeta = {
   },
   [OUTLET_ID.inRoom]: {
     kicker: "In-room dining",
-    cuisine: "Special-Select menu",
+    cuisine: "In-room menu",
     setting: "Your room, any category",
     dress: "As you are",
     stats: [
-      { value: "24/7", label: "every room category" },
-      { value: "06:00–23:00", label: "full menu" },
-      { value: "Overnight", label: "menu from 23:00" },
+      { value: "Every room", label: "category served" },
+      { value: "One call", label: "to order" },
+      { value: "Light bites", label: "and full plates" },
       { value: "~20 min", label: "typical delivery" },
     ],
     facts: outletFacts[OUTLET_ID.inRoom],

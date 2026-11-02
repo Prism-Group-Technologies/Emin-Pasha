@@ -37,7 +37,7 @@ export async function generateMetadata({
     title: `${room.name} | Emin Pasha Hotel Kampala`,
     // Built only from verified fields — capacity, rate and the approved
     // inclusions. No size, bed or view, exactly as on the page itself.
-    description: `${room.name} at The Emin Pasha Hotel & Spa, Nakasero. Sleeps ${room.capacity}. From UGX ${room.rateUgx.toLocaleString("en-UG")} per night, including à la carte breakfast, unlimited fibre and 24/7 room service.`,
+    description: `${room.name} at The Emin Pasha Hotel & Spa, Nakasero. Sleeps ${room.capacity}. From UGX ${room.rateUgx.toLocaleString("en-UG")} per night, including breakfast, unlimited fibre and room service.`,
     alternates: { canonical: `/accommodation/${room.id}` },
   };
 }

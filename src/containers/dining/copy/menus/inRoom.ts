@@ -4,10 +4,10 @@ import type { OutletMenu } from "@/containers/dining/copy/menus/types";
 export const inRoomMenu: OutletMenu = {
   label: "In-Room Dining",
   summary:
-    "A Special-Select menu, every room category, around the clock. Full menu until late; a shorter overnight list from 23:00.",
+    "Room service in every room category: full plates and a shorter list of light bites.",
   courses: [
     {
-      name: "Any hour",
+      name: "Full plates",
       items: [
         {
           name: "The Emin Pasha club",
@@ -38,7 +38,7 @@ export const inRoomMenu: OutletMenu = {
       ],
     },
     {
-      name: "Overnight (from 23:00)",
+      name: "Light bites",
       items: [
         {
           name: "Soup of the day & bread",

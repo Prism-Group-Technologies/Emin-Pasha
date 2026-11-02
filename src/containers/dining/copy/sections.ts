@@ -10,7 +10,7 @@ export const sections = {
     eyebrow: "§ THE OUTLETS",
     heading: "Four rooms, one kitchen brigade",
     description:
-      "An all-day restaurant in the garden, a second one on the roof, a wine and whisky lounge, and a menu that comes to your door around the clock. Filter by what you are in the mood for.",
+      "An all-day restaurant in the garden, a second one on the roof, a wine and whisky lounge, and a menu that comes to your door. Filter by what you are in the mood for.",
   },
   menus: {
     eyebrow: "§ WHAT'S COOKING",

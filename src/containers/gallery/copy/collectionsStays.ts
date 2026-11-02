@@ -8,7 +8,7 @@ export const stayCollections: CollectionCopy[] = [
     mood: "Candlelit, unhurried, just the two of you",
     summary: "A Deluxe Suite, a table for two and a couples' ritual in the Turkish bath.",
     story:
-      "Arrive to petals on the bed and chilled bubbles in the suite. Spend the afternoon in the couples' treatment room, watch the garden turn gold from your balcony, then dine by candlelight at Equatoria. Breakfast arrives whenever you decide the day has started.",
+      "Arrive to petals on the bed and chilled bubbles in the suite. Spend the afternoon in the couples' treatment room, ask for a room with a balcony and watch the evening turn gold, then dine by candlelight at Equatoria. Breakfast arrives whenever you decide the day has started.",
     highlights: [
       "Deluxe Suite with petal turndown",
       "60-minute couples' massage",
@@ -37,7 +37,7 @@ export const stayCollections: CollectionCopy[] = [
     mood: "Quiet, connected, minutes from everything",
     summary: "A calm room to work from, alcoves for meetings and a swim before the city wakes.",
     story:
-      "Stay in the diplomatic quarter without the noise of it. Take the first call from a desk facing the gardens, meet a client in a discreet lounge alcove, and take The Boardroom for the afternoon. The pool is open early, and the car to Entebbe is one message away.",
+      "Stay in the diplomatic quarter without the noise of it. Take the first call from the desk in your room, meet a client in a discreet lounge alcove, and take The Boardroom for the afternoon. The pool is open early, and the car to Entebbe is one message away.",
     highlights: [
       "Apartment Room with work desk and fast Wi-Fi",
       "Two hours in The Boardroom",

@@ -19,8 +19,8 @@ export interface OutletIntro {
  * Traceability, same rule as the rest of this folder: every structural claim
  * restates something already approved — the all-day room and its terrace, the
  * rooftop's panoramic views and its full menu, Manutea's
- * curated wines and whiskies, and 24/7 in-room dining with a Special-Select
- * menu are all in `content/dining.ts`; the dumbwaiter and the Asian/European/
+ * curated wines and whiskies, and in-room dining
+ * are all in `content/dining.ts`; the dumbwaiter and the Asian/European/
  * African influences are in `diningOverview`. Times and covers restate the
  * sample hours in `./hours.ts` and are invented (TODO(EMIN-Q12)).
  */
@@ -60,12 +60,12 @@ export const outletIntros = {
   },
   [OUTLET_ID.inRoom]: {
     paragraphs: [
-      "The same kitchen, brought upstairs. The Special-Select menu runs in every room category around the clock, which matters most on the two occasions a hotel is usually least able to help: the night you land at two in the morning, and the morning a meeting starts before the restaurant does.",
-      "The full menu is available until eleven at night; after that a shorter overnight card carries through to breakfast. One call to the in-room phone or the reception line is the whole ordering process, and a tray typically arrives inside twenty minutes.",
+      "The same kitchen, brought upstairs. Room service runs in every room category, which matters most on the evenings you would rather not go out again: after a long flight, a long meeting or a long day in the city.",
+      "There is a full menu and a shorter list of light bites. One call to the in-room phone or the reception line is the whole ordering process, and a tray typically arrives inside twenty minutes.",
     ],
     whyCome: [
-      "Every room category, every hour — including the ones nobody plans for.",
-      "A full menu until 23:00, and a shorter overnight card through to breakfast.",
+      "Every room category, no need to dress for dinner.",
+      "A full menu, plus a shorter list of light bites.",
       "One call to order. No app, no ordering window, no minimum.",
     ],
   },

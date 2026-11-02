@@ -36,7 +36,7 @@ export function OutletReserveCard({ outletName, isInRoom }: OutletReserveCardPro
       </Text>
       <Text variant="body2" color="text.secondary" sx={{ textWrap: "pretty" }}>
         {isInRoom
-          ? "Dial the in-room phone or the reception line — no reservation needed, at any hour."
+          ? "Dial the in-room phone or the reception line — no reservation needed."
           : "Tell us the date, the time and how many. We confirm by email, usually the same day."}
       </Text>
       <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, mt: 1 }}>

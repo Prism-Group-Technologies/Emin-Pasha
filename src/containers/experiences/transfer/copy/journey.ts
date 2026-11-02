@@ -7,14 +7,14 @@ import type { JourneyStep } from "@/containers/wellness/copy/journey";
  * the wellness shapes because the page reuses `AssuranceBar` and
  * `JourneyStepCard` as-is. Flight monitoring, courteous chauffeurs, luggage
  * help and safety are approved §8 claims; the 60-minute waiting allowance
- * and the 24/7 line are invented (TODO(EMIN-Q09)).
+ * and the dispatch line are invented (TODO(EMIN-Q09)).
  */
 export const transferAssurance: AssuranceItem[] = [
   { icon: "flight", label: "Flight tracked", detail: "Early or late, we adjust" },
   { icon: "schedule", label: "60 min free wait", detail: "Counted from landing" },
   { icon: "payments", label: "Fixed fare", detail: "Tolls and parking included" },
   { icon: "verified", label: "Hotel chauffeurs", detail: "Vetted, never subcontracted" },
-  { icon: "support-agent", label: "24/7 line", detail: "A person, day or night" },
+  { icon: "support-agent", label: "Dispatch line", detail: "A person, not a menu" },
   { icon: "king-bed", label: "Free on 8+ nights", detail: "Long stays ride on us" },
 ];
 

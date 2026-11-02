@@ -8,9 +8,9 @@ export interface AmenityCopy {
 }
 
 /**
- * The four common inclusions from `content/rooms.ts`, plus the two facts the
+ * The four common inclusions from `content/rooms.ts`, plus the one fact the
  * approved intro line and `site.setting` already state about every room — the
- * garden outlook and the quiet. Framed, not invented.
+ * quiet. Framed, not invented. (No garden outlook: not every room has one.)
  *
  * Each carries its own glyph rather than six copies of the same tick. A grid
  * of identical checks is a bulleted list that has been made harder to scan:
@@ -26,24 +26,18 @@ export const inRoomAmenities: AmenityCopy[] = [
   },
   {
     icon: "support-agent",
-    title: "24/7 room service",
-    description: "Round-the-clock, from a Special-Select In-Room Dining Menu.",
+    title: "Room service",
+    description: "Order from the in-room dining menu, in every room category.",
   },
   {
     icon: "breakfast",
-    title: "À la carte breakfast",
-    description:
-      "Cooked to order with a bespoke service offering — the way you like it, not a buffet tray.",
+    title: "Breakfast",
+    description: "Included with every room and suite.",
   },
   {
     icon: "key",
     title: "In-room safe",
     description: "For a laptop, a passport and anything else you would rather not carry.",
-  },
-  {
-    icon: "garden",
-    title: "A window onto the gardens",
-    description: "The landscaped grounds outside the glass, and birdsong instead of traffic.",
   },
   {
     icon: "bedtime",

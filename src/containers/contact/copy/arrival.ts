@@ -48,7 +48,7 @@ export const arrivalNotes: ArrivalNote[] = [
     id: "late",
     icon: "bedtime",
     title: "Arriving late",
-    body: "The desk never closes. Tell us your arrival time and your room will be ready and the kitchen told.",
+    body: "Tell us your arrival time and your room will be ready and the kitchen told.",
   },
   {
     id: "access",

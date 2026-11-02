@@ -9,8 +9,8 @@ import type { RevealDirection } from "@/theme/motion";
  * What the nightly rate actually buys, as a grid of glyphs rather than the
  * bulleted list this used to be inside the detail body.
  *
- * Same six items the hub band leads with — the four approved inclusions from
- * `content/rooms.ts` plus the garden outlook and the quiet that the approved
+ * Same five items the hub band leads with — the four approved inclusions from
+ * `content/rooms.ts` plus the quiet that the approved
  * intro line and `site.setting` already state. They are reused rather than
  * rewritten precisely because they are the same facts: a room page that
  * restated them in its own words would be a second, unverified source for
