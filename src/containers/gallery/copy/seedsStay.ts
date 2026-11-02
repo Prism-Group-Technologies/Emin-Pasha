@@ -34,8 +34,8 @@ export const staySeeds: GallerySeed[] = [
   {
     id: "gallery-room-garden-balcony",
     category: "rooms",
-    title: "Coffee on a garden balcony",
-    altText: "Two coffee cups on a balcony table overlooking the gardens",
+    title: "Coffee on the balcony",
+    altText: "Two coffee cups on a balcony table",
     shape: "portrait",
   },
   {

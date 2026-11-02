@@ -52,9 +52,9 @@ export const planPaths: PlanPathCopy[] = [
     headline: "A garden estate, minutes from every meeting you came for",
     body: "Four room and suite categories set around landscaped grounds in Nakasero — close enough to the business district to walk to a breakfast meeting, quiet enough that you'll forget the city is there.",
     points: [
-      "Rates from UGX 250,000 per night, breakfast included",
+      "Rates start from as low as USD 110, breakfast included",
       "Unlimited fibre on a secure cabled and Wi-Fi network",
-      "24/7 room service and airport transfer on request",
+      "Room service and airport transfer on request",
     ],
     // The only one of the three paths LetsBook can serve — it sells rooms.
     // "Request a Proposal" and "Book a Treatment" below stay on the enquiry

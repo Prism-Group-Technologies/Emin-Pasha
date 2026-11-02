@@ -52,7 +52,7 @@ export const bookDirect = {
     {
       title: "Requests that survive",
       description:
-        "Early arrival, a quiet wing, a garden view, a dietary need: tell us once and it reaches housekeeping and the kitchen.",
+        "Early arrival, a quiet wing, a dietary need: tell us once and it reaches housekeeping and the kitchen.",
     },
     {
       title: "Flexible on the details",
@@ -66,7 +66,7 @@ export const roomsSection = {
   eyebrow: "§ ROOMS & RATES",
   heading: "Four ways to stay",
   description:
-    "Every room and suite opens onto the gardens and comes with fibre, 24/7 room service and an à la carte breakfast. Rates are per night, in Ugandan shillings, with nothing hidden behind a final step.",
+    "Every room and suite comes with fibre, room service and breakfast. Rates are per night, in Ugandan shillings, with nothing hidden behind a final step.",
   action: { label: "View Rooms & Rates", href: "/accommodation" },
   /** Per-room one-liners, keyed to `content/rooms.ts` ids. */
   taglines: {

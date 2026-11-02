@@ -30,7 +30,7 @@ export const faqGuides: FaqGuide[] = [
     id: "dining",
     eyebrow: "Eat",
     title: "Breakfast to a late dinner",
-    body: "À la carte breakfast is included; after that it's fine dining, the rooftop terrace or a quiet table in the lounges.",
+    body: "Breakfast is included; after that it's fine dining, the rooftop terrace or a quiet table in the lounges.",
     href: "/dining",
     cta: "Explore dining",
     questionIds: ["breakfast-included", "dietary-requirements", "dine-without-staying"],

@@ -32,7 +32,7 @@ function SpecStrip({ room }: { room: RoomCategory }) {
     >
       <RoomStat value={room.capacity} label="Sleeps" />
       <RoomStat value={formatUgx(room.rateUgx)} label="From · per night" />
-      <RoomStat value="À la carte" label="Breakfast included" />
+      <RoomStat value="Included" label="Breakfast" />
     </Box>
   );
 }

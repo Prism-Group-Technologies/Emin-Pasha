@@ -10,7 +10,7 @@ const variants: { variant: Variant; sample: string }[] = [
   { variant: "h4", sample: "Four ways to stay" },
   { variant: "h5", sample: "The Equatorial Gardens" },
   { variant: "h6", sample: "Book Your Stay" },
-  { variant: "subtitle1", sample: "Rates from UGX 250,000 per night." },
+  { variant: "subtitle1", sample: "Rates start from as low as USD 110." },
   { variant: "subtitle2", sample: "Reserve directly for the best available rate." },
   { variant: "body1", sample: "Every room and suite comes with fast unlimited fibre." },
   { variant: "body2", sample: "Children stay free while using existing bedding." },

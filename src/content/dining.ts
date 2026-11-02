@@ -49,7 +49,7 @@ const raw: Outlet[] = [
     id: "in-room-dining",
     name: "In-Room Dining",
     type: "in-room",
-    description: "24/7 across every room category, with a Special-Select In-Room Dining Menu.",
+    description: "Room service across every room category.",
   },
 ];
 

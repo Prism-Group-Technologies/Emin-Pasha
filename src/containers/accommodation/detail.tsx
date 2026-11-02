@@ -53,7 +53,7 @@ export function RoomDetailContainer({ room }: { room: RoomCategory }) {
       <RoomInclusions motion={m.inclusions} />
       <ArrivalStrip motion={m.arrival} />
       <RoomPolicies motion={m.policies} />
-      <PackagesSection motion={m.packages} />
+      {/* <PackagesSection motion={m.packages} /> */}
       <GuestVoices motion={m.guestVoices} />
       <OtherRooms currentRoomId={room.id} motion={m.otherRooms} />
 

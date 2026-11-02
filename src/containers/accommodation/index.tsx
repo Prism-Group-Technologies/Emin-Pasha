@@ -46,7 +46,7 @@ export function AccommodationContainer() {
       <RoomsSection motion={m.rooms} />
       <AmenitiesSection motion={m.amenities} />
       <ComparisonSection motion={m.comparison} />
-      <PackagesSection motion={m.packages} />
+      {/* <PackagesSection motion={m.packages} /> */}
       <ArrivalStrip motion={m.arrival} />
       <BookDirectSection motion={m.bookDirect} />
       <BookingSection motion={m.booking} />

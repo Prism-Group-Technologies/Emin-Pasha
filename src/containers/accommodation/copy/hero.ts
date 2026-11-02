@@ -7,14 +7,14 @@ export interface HeroStatCopy {
 
 /**
  * The above-the-fold pitch. The headline reframes the approved intro line
- * ("the gardens outside your window"); the lede itself is the verbatim
+ * ("the quiet of Nakasero"); the lede itself is the verbatim
  * approved `accommodationPageIntro`, passed in by the organism rather than
  * restated here. The stats are all traceable figures — the rate card, the
  * founding year, the Nakasero positioning, the four categories.
  */
 export const heroCopy = {
   eyebrow: "§ ROOMS & SUITES",
-  headline: "Rooms that open onto the garden",
+  headline: "Quiet rooms in the heart of Nakasero",
   primaryCta: { label: "Check availability", href: "#book" },
   secondaryCta: { label: "Compare the rooms", href: "#compare" },
   stats: [

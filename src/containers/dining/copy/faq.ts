@@ -8,7 +8,7 @@ export interface DiningFaqItem {
 
 /**
  * Six questions the reservations desk fields most. Answers stay inside what
- * the source supports — 24/7 in-room dining, breakfast entitlement for
+ * the source supports — in-room dining, breakfast entitlement for
  * resident guests, the garden setting, transfers — and flag anything not yet
  * confirmed rather than inventing a policy.
  */

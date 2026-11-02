@@ -15,7 +15,7 @@ const FROM_USD = Math.min(...vehicles.map((vehicle) => vehicle.transferUsd));
 /** Derived from the copy layer, so the rail can never disagree with the fleet or the FAQ. */
 const HERO_STATS = [
   { value: "≈ 60 min", label: "Entebbe to Nakasero" },
-  { value: "24/7", label: "every flight covered" },
+  { value: "Every flight", label: "tracked on approach" },
   { value: formatUsd(FROM_USD), label: "fixed fare, tolls in" },
   { value: `${TRANSFER_PRICING.complimentaryMinNights}+ nights`, label: "transfers on us" },
 ];

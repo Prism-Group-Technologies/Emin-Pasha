@@ -20,9 +20,9 @@ const raw: FaqItem[] = [
   // verified directly; neither may be edited without re-confirming them.
   {
     id: "reception-hours",
-    question: "Is reception staffed 24 hours?",
+    question: "When is reception staffed?",
     answer:
-      "Yes. The front desk is staffed around the clock, every day. Whatever time your flight lands, someone is at the desk to check you in, carry your bags and answer a question.",
+      "The front desk is staffed every day. Tell us when your flight lands and someone will be at the desk to check you in, carry your bags and answer a question.",
   },
   {
     id: "reception-services",
@@ -40,7 +40,7 @@ const raw: FaqItem[] = [
     id: "breakfast-included",
     question: "Is breakfast included?",
     answer:
-      "Yes — guests are entitled to an à la carte breakfast with a bespoke service offering. Children may not be eligible for complimentary breakfast.",
+      "Yes — breakfast is included for guests. Children may not be eligible for complimentary breakfast.",
   },
   {
     id: "wifi",

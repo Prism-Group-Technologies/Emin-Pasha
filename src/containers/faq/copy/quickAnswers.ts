@@ -35,7 +35,7 @@ export const quickAnswers: QuickAnswer[] = [
     id: "breakfast",
     icon: "breakfast",
     label: "Breakfast",
-    value: "Included, à la carte",
+    value: "Included",
     target: "breakfast-included",
   },
   { id: "wifi", icon: "wifi", label: "Wi-Fi", value: "Fast & unlimited", target: "wifi" },

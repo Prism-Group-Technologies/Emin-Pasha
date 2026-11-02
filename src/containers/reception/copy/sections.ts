@@ -13,8 +13,8 @@ export const receptionSections = {
   /** The homepage band. */
   home: {
     eyebrow: "Arrival",
-    heading: "One desk, and it never closes",
-    lede: "Reception is staffed around the clock. It is where your stay is checked in, your table is held, your transfer is called and your questions get a straight answer — at any hour, from someone standing in front of you.",
+    heading: "One desk for everything",
+    lede: "Reception is where your stay is checked in, your table is held, your transfer is called and your questions get a straight answer — from someone standing in front of you.",
     primaryCta: { label: "Talk to the desk", href: "/contact" },
     secondaryCta: { label: "What reception handles", href: "/faq#reception-desk" },
   },
@@ -49,13 +49,11 @@ export const receptionSections = {
 } as const;
 
 /**
- * The three facts worth stating before any service is listed. `24 hours` leads
- * because it is the only one a competitor in this tier cannot simply match on
- * a rate page, and because it is what makes every other row on this page true
- * at 3am as well as at noon.
+ * The three facts worth stating before any service is listed: the desk is
+ * staffed every day, and the check-in and check-out times.
  */
 export const receptionStats = [
-  { value: "24h", label: "Reception staffed" },
+  { value: "Daily", label: "Reception staffed" },
   { value: "14h00", label: "Check-in from" },
   { value: "10h00", label: "Check-out by" },
 ] as const;

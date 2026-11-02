@@ -41,7 +41,7 @@ export const otherRoomsSection = {
   eyebrow: "§ THE OTHER THREE",
   heading: "Not quite the right fit?",
   description:
-    "Four categories share the gardens, the fibre and the breakfast. What changes is the space and who it suits.",
+    "Four categories share the fibre, the room service and the breakfast. What changes is the space and who it suits.",
 };
 
 /**
@@ -52,7 +52,7 @@ export const otherRoomsSection = {
  */
 export const bookingCardCopy = {
   assurances: [
-    "Rates in Ugandan shillings, à la carte breakfast included",
+    "Rates in Ugandan shillings, breakfast included",
     "Booked direct — the people confirming your room are the ones at the gate",
     "Reservations reply the same working day",
   ],

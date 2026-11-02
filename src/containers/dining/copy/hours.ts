@@ -44,9 +44,8 @@ export const outletHours = {
   [OUTLET_ID.inRoom]: {
     label: "In-Room Dining",
     rows: [
-      { label: "Full menu", time: "06:00 – 23:00" },
-      { label: "Overnight menu", time: "23:00 – 06:00" },
-      { label: "Availability", time: "Every room, 24/7" },
+      { label: "Availability", time: "Every room category" },
+      { label: "Hours", time: "Ask reception" },
     ],
   },
 } satisfies Record<OutletId, OutletHours>;

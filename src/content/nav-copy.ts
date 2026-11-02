@@ -24,7 +24,7 @@ import { type NavPanelCopy, navPanelCopySchema } from "@/schemas/content/navCopy
 const raw: Record<string, NavPanelCopy> = {
   "/accommodation": {
     eyebrow: "Accommodation",
-    intro: "Four ways to stay, with the gardens outside every window.",
+    intro: "Four ways to stay, each with fibre, room service and breakfast.",
     viewAllLabel: "View all rooms & suites",
     descriptions: {
       "/accommodation/apartment-room": "A room for working and resting in equal measure.",
@@ -42,14 +42,14 @@ const raw: Record<string, NavPanelCopy> = {
 
   "/dining": {
     eyebrow: "Dining",
-    intro: "Two restaurants, a wine and whisky lounge, and room service around the clock.",
+    intro: "Two restaurants, a wine and whisky lounge, and room service.",
     viewAllLabel: "View all restaurants & bars",
     descriptions: {
       "/dining/equatoria-restaurant-bar":
         "Local and global flavours in a warm, contemporary dining room.",
       "/dining/rooftop-terrace": "A full restaurant upstairs, with the city laid out below.",
       "/dining/manutea-wine-whisky-lounge": "Fine wines and whiskies, carefully curated.",
-      "/dining/in-room-dining": "Around the clock, in every room category.",
+      "/dining/in-room-dining": "Room service in every room category.",
     },
     assetIds: {
       "/dining/equatoria-restaurant-bar": "dining-equatoria",

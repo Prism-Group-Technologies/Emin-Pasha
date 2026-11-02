@@ -14,9 +14,9 @@ import { type RoomCategory, roomCategorySchema } from "@/schemas/content/roomCat
  * the old-to-new mapping.
  */
 const commonInclusions = [
-  "24/7 room service with a Special-Select In-Room Dining Menu",
+  "room service",
   "fast unlimited fibre internet across a secure cabled and Wi-Fi network",
-  "à la carte breakfast with a bespoke service offering",
+  "breakfast",
   "in-room safe for valuables",
 ];
 
@@ -57,11 +57,11 @@ const raw: RoomCategory[] = [
 
 export const rooms: RoomCategory[] = raw.map((room) => roomCategorySchema.parse(room));
 
-export const ratesFromCopy = "Rates from UGX 250,000 per night.";
+export const ratesFromCopy = "Rates start from as low as USD 110.";
 
 /** docs/02_CONTENT_SOURCE_OF_TRUTH.md §12.3 — use verbatim. */
 export const accommodationPageIntro =
-  "Four ways to stay, one thing in common: the gardens outside your window and the quiet of Nakasero beyond them. Every room and suite comes with fast unlimited fibre, 24/7 room service and an à la carte breakfast served the way you like it. Rates from UGX 250,000 per night.";
+  "Four ways to stay, one thing in common: the quiet of Nakasero. Every room and suite comes with fast unlimited fibre, room service and breakfast. Rates start from as low as USD 110.";
 
 export const childrenAndExtraBeds: PolicySection = policySectionSchema.parse({
   id: "children-and-extra-beds",

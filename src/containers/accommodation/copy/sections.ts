@@ -9,7 +9,7 @@ export const roomsSection = {
   eyebrow: "§ THE FOUR",
   heading: "Choose your room",
   description:
-    "Every room and suite opens onto the gardens and comes with fast unlimited fibre, 24/7 room service and an à la carte breakfast. Set the number of guests to see the categories that fit.",
+    "Every room and suite comes with fast unlimited fibre, room service and breakfast. Set the number of guests to see the categories that fit.",
 };
 
 export const amenitiesSection = {
@@ -32,7 +32,7 @@ export const packagesSection = {
   eyebrow: "§ WAYS TO STAY",
   heading: "Packages built around a reason to be here",
   description:
-    "Business in Nakasero, a weekend in the garden, a month between postings, a family in one suite. Tell reservations which one you are and the rest is arranged before you arrive.",
+    "Business in Nakasero, a quiet weekend away, a month between postings, a family in one suite. Tell reservations which one you are and the rest is arranged before you arrive.",
 };
 
 export const bookDirectSection = {
@@ -54,7 +54,7 @@ export const bookDirectSection = {
     {
       title: "Requests that stick",
       description:
-        "Early arrival, a garden-facing room, a quiet wing, a dietary need — tell us once and it reaches housekeeping and the kitchen.",
+        "Early arrival, a quiet wing, a dietary need — tell us once and it reaches housekeeping and the kitchen.",
     },
     {
       title: "Arranged directly",

@@ -20,7 +20,7 @@ type Searchable = Pick<FaqEntry, "question" | "answer">;
 const ALL_TOPICS_LABEL = "All topics";
 
 /**
- * Lower-cases and strips accents, so "a la carte" finds "à la carte": NFD
+ * Lower-cases and strips accents, so "cafe" finds "café": NFD
  * splits "à" into "a" + a combining mark, and `\p{M}` removes the mark.
  */
 export function normaliseText(value: string): string {

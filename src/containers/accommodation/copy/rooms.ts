@@ -29,5 +29,5 @@ export const roomDescriptions: Record<string, string> = {
   "deluxe-suites":
     "Separate living and sleeping areas give couples, small families and extended-stay guests room to spread out, with the quiet of Nakasero keeping the city at a comfortable distance. Accommodates up to three guests.",
   "vip-suite":
-    "Space, quiet and the hotel's most characterful interiors. A separate lounge area makes the VIP Suite equally suited to a long stay, a small private meeting or an evening in with room service and the In-Room Dining Menu. Accommodates up to three guests.",
+    "Space, quiet and the hotel's most characterful interiors. A separate lounge area makes the VIP Suite equally suited to a long stay, a small private meeting or an evening in with room service. Accommodates up to three guests.",
 };

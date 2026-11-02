@@ -272,13 +272,13 @@ const raw: AssetRefInput[] = [
   {
     id: "room-apartment-room-2",
     page: "accommodation/apartment-room",
-    subject: "Apartment Room — the bed beside the garden window",
+    subject: "Apartment Room — the bed beside the window",
     kind: "image",
     width: 1600,
     height: 1067,
     priority: "normal",
     altText:
-      "Apartment Room at The Emin Pasha Hotel & Spa, the bed beside a window onto the gardens",
+      "Apartment Room at The Emin Pasha Hotel & Spa, the bed beside a window",
     status: "placeholder",
   },
   {
@@ -387,13 +387,13 @@ const raw: AssetRefInput[] = [
   {
     id: "room-deluxe-room-5",
     page: "accommodation/deluxe-room",
-    subject: "Deluxe Room — the television cabinet, garden doors open",
+    subject: "Deluxe Room — the television cabinet, doors open",
     kind: "image",
     width: 1600,
     height: 1067,
     priority: "normal",
     altText:
-      "The television cabinet in a Deluxe Room at The Emin Pasha Hotel & Spa, garden doors open beyond",
+      "The television cabinet in a Deluxe Room at The Emin Pasha Hotel & Spa, doors open beyond",
     status: "placeholder",
   },
   {
@@ -445,13 +445,13 @@ const raw: AssetRefInput[] = [
   {
     id: "room-deluxe-suites-3",
     page: "accommodation/deluxe-suites",
-    subject: "Deluxe Suite — the bed facing the garden window and desk",
+    subject: "Deluxe Suite — the bed facing the window and desk",
     kind: "image",
     width: 1600,
     height: 1067,
     priority: "normal",
     altText:
-      "Deluxe Suite at The Emin Pasha Hotel & Spa, the bed facing a garden window and writing desk",
+      "Deluxe Suite at The Emin Pasha Hotel & Spa, the bed facing a window and writing desk",
     status: "placeholder",
   },
   {
@@ -630,7 +630,7 @@ const raw: AssetRefInput[] = [
   {
     id: "dining-in-room",
     page: "dining/in-room-dining",
-    subject: "In-Room Dining service, Special-Select menu",
+    subject: "In-Room Dining service",
     kind: "image",
     width: 1600,
     height: 1067,

@@ -59,7 +59,7 @@ export const termsHighlights: LegalBand = {
     {
       icon: "auto-awesome",
       title: "Room preferences noted",
-      body: "Garden view, quiet wing or connecting rooms — requested direct, recorded before you arrive.",
+      body: "A quiet wing or connecting rooms — requested direct, recorded before you arrive.",
     },
   ],
   cta: { label: "See current offers", href: "/offers" },
